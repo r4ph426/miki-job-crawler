@@ -1,0 +1,79 @@
+name: Miki weekday job search
+
+on:
+  schedule:
+    # Berlin 10:00 in summer/winter, plus a retry. Stored state prevents duplicates.
+    - cron: "0 8,9,10 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Offline demo, live research without email, or production delivery"
+        type: choice
+        options: [offline-demo, live-dry-run, send]
+        default: offline-demo
+
+concurrency:
+  group: miki-weekday-delivery
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    if: github.event_name == 'workflow_dispatch' || vars.SERVICE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate the service
+        run: python3 -m unittest discover -s tests -v
+      - name: Run research and optional delivery
+        env:
+          RUN_MODE: ${{ github.event_name == 'schedule' && 'send' || inputs.mode }}
+          MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY }}
+          RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC }}
+          STATE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          case "$RUN_MODE" in
+            offline-demo)
+              python3 -m miki_jobsearch run --fixture tests/fixtures/report.json --dry-run
+              ;;
+            live-dry-run)
+              python3 -m miki_jobsearch run --dry-run
+              ;;
+            send)
+              python3 -m miki_jobsearch run --send --persist-git
+              ;;
+            *) exit 2 ;;
+          esac
+      - name: Upload generated reports and run records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: miki-run-${{ github.run_id }}
+          path: |
+            out/
+            state/runs/
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Delivery status
+        if: always()
+        run: |
+          python3 -m miki_jobsearch status > /tmp/miki-status.json
+          python3 scripts/workflow_summary.py /tmp/miki-status.json >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,70 @@
+# Operations
+
+Run `python3 -m miki_jobsearch status` from the checkout to inspect JSON state.
+GitHub workflow summaries show recent dates, statuses and hit counts. Do not treat a
+green offline check, skipped job, or running process as evidence of live delivery.
+
+| Stored status | Meaning and next action |
+| --- | --- |
+| `research_failed` | API/coverage/validation failed. No email or reported-job history update. Fix the cause; the next slot can retry. |
+| `prepared` | Saved report; not yet accepted by SMTP. A retry reuses this report. |
+| `failed` | SMTP explicitly rejected delivery, or failed before DATA. Fix credentials/service; retry reuses the report. |
+| `sending` | Durable checkpoint before SMTP DATA. After a crash, acceptance is unknown; reconcile. |
+| `uncertain` | Connection interrupted during DATA; inspect Gmail using `message_id`. No automatic resend. |
+| `partial` | SMTP accepted for some recipients but rejected others. No resend to all recipients. Investigate and complete delivery separately. |
+| `sent` | SMTP accepted for all configured recipients. Same-date production runs skip. |
+
+Research and detail-page fetches preserve TLS verification. In a managed cloud
+environment the HTTP client uses `REQUESTS_CA_BUNDLE`/`SSL_CERT_FILE` when supplied.
+Direct detail-page requests are limited to configured HTTPS source domains, with
+bounded response sizes and timeouts. Only an accessible matching evidence quote
+admits a candidate. JavaScript-only or blocked pages may therefore be omitted.
+Configure an additional public source domain before accepting a newly found company
+career URL; inspect the report's rejected candidates when coverage is unexpectedly low.
+
+Source outages and failed candidate verification appear in the email. A complete
+source outage is a failed search rather than a misleading zero-hit email. If a source
+recovers, its seven-day window normally catches recent jobs; use a reviewed wider
+sweep after a prolonged outage. Family counts and source checks are reported by the
+research provider; live search-tool execution is checked independently, but these
+counts are not a deterministic scraper audit.
+
+## Reconcile uncertain delivery
+
+First inspect Gmail's Sent folder or provider logs for the stored Message-ID. Gmail
+search supports `rfc822msgid:`. Absence from an inbox or a single search is insufficient
+evidence that SMTP did not accept the message. Confirm provider acceptance before
+choosing a result. Keep the repository checked out at its latest state.
+
+```sh
+python3 -m miki_jobsearch reconcile YYYY-MM-DD --result sent --note "Confirmed stored Message-ID in Gmail Sent"
+```
+
+This records the operator decision, marks delivery accepted and adds its jobs to
+reported history. When you have confirmed there was no acceptance, use
+`--result not-sent`; this makes the saved report eligible for retry. A partially accepted
+message cannot be marked entirely unsent. On the Actions state backend, set
+`STATE_BRANCH` to the default branch and use `--persist-git` to push the decision;
+otherwise review and push the changed `state/` files through the usual Git process.
+
+The same stable Message-ID is retained on a retry. SMTP cannot provide atomic
+exactly-once delivery together with an external Git commit. If final state persistence
+fails after acceptance, the remote `sending` checkpoint stops automatic redelivery,
+but an operator must verify acceptance. Do not delete run records to make a job green.
+Jobs from uncertain or interrupted deliveries are reserved on later days until
+reconciliation, so a future run does not recommend the same jobs while acceptance
+is unknown. They are counted separately from confirmed reported history.
+
+## Historical data and the frontend
+
+The imported ledger is a record of recommendations, not a verified email log. One
+historical recommendation has no score and is preserved as unknown. Detailed legacy
+deadlines, rejections, research notes and application progress are not silently
+converted into confirmed current state; the original ZIP remains the source for
+those records. The original schedule and archived agent instructions are not active.
+
+The next frontend can show the last run, next eligible weekday, accepted/failed/
+uncertain delivery, source health, recommended jobs and run history. A manual-run or
+pause control needs authentication and should use the same scheduler and delivery
+guard. Do not expose credentials or the original CV through that frontend. Current
+`status` output is local state, not proof that an external scheduler is activated.

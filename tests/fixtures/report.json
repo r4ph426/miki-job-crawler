@@ -1,0 +1,41 @@
+{
+  "summary": "Ein Beispieltreffer für die Offline-Prüfung des Stellenberichts.",
+  "next_action": "Eine Bewerbungsvorlage für eine operative Einkaufsrolle vorbereiten.",
+  "weekend_action": "60 Minuten: den Lebenslauf auf Lieferantensteuerung und Nachorder ausrichten.",
+  "searches": {
+    "A": ["Projektkoordination", "Projektassistenz", "Teamassistenz", "Office Management"],
+    "B": ["Einkäufer", "Sachbearbeiter Einkauf", "Supply Chain"],
+    "C": ["Product Coordinator", "Vertriebsinnendienst"]
+  },
+  "family_observations": {
+    "A": "Beispiel: Koordinationsrollen liefern gemischte Treffer.",
+    "B": "Beispiel: operative Beschaffung passt gut.",
+    "C": "Beispiel: Produktaufgaben stehen häufig unter Einkaufstiteln."
+  },
+  "source_checks": [
+    {"group": "arbeitsagentur", "status": "ok", "details": "Offline-Testdaten; Quelle nicht live abgefragt"},
+    {"group": "stepstone", "status": "ok", "details": "Offline-Testdaten; Quelle nicht live abgefragt"},
+    {"group": "ats", "status": "ok", "details": "Offline-Testdaten; Quelle nicht live abgefragt"},
+    {"group": "berlin", "status": "ok", "details": "Offline-Testdaten; Quelle nicht live abgefragt"},
+    {"group": "fashion", "status": "ok", "details": "Offline-Testdaten; Quelle nicht live abgefragt"}
+  ],
+  "jobs": [{
+    "title": "Operative Einkaufskoordination (Offline-Beispiel)",
+    "employer": "Beispielfirma",
+    "url": "https://example.org/jobs/offline-demo",
+    "district": "Berlin-Mitte",
+    "hours": "30–40 Stunden",
+    "contract": "unbefristet (Beispiel)",
+    "salary": "nicht genannt",
+    "commute": "geschätzt 35 Minuten",
+    "pro": "Nachorder und Lieferantenabstimmung entsprechen der bisherigen Arbeit.",
+    "con": "Das Zielprodukt wäre neu; Einarbeitung ist erforderlich.",
+    "effort_details": "40 Anschreiben + 10 Lebenslauf + 5 Formular",
+    "effort_minutes": 55,
+    "deadline": "",
+    "evidence": "Die Aufgaben umfassen operative Bestellungen und die Abstimmung mit Lieferanten.",
+    "family": "B",
+    "source_group": "ats",
+    "scores": {"skill": 36, "entry": 26, "commute": 15, "conditions": 6}
+  }]
+}
