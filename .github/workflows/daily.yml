@@ -26,7 +26,7 @@ on:
         default: ""
 
 concurrency:
-  group: miki-weekday-delivery
+  group: miki-weekday-service
   cancel-in-progress: false
 
 permissions:
