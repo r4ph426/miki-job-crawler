@@ -12,7 +12,20 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 
 class ResearchError(RuntimeError):
-    pass
+    def __init__(self, message, *, code="research_error", http_status=None, api_status=None):
+        super().__init__(message)
+        # Only fixed identifiers enter durable state; exception text and provider
+        # error bodies can contain credentials or other private input.
+        codes = {"research_error", "invalid_report", "insufficient_search_coverage",
+                 "invalid_source_checks", "all_sources_unavailable", "missing_candidate_evidence",
+                 "short_candidate_evidence", "invalid_deadline", "missing_api_key",
+                 "api_http_error", "api_connection_error", "api_incomplete", "no_web_search",
+                 "invalid_api_json"}
+        self.diagnostic = {"code": code if code in codes else "research_error"}
+        if type(http_status) is int and 100 <= http_status <= 599:
+            self.diagnostic["http_status"] = http_status
+        if api_status in {"completed", "incomplete", "failed", "cancelled", "queued", "in_progress"}:
+            self.diagnostic["api_status"] = api_status
 
 
 def tls_context():
@@ -74,50 +87,50 @@ def validate_report(report):
         kind = schema["type"]
         if kind == "object":
             if not isinstance(value, dict) or set(value) != set(schema["properties"]):
-                raise ResearchError(f"Invalid fields at {path}")
+                raise ResearchError(f"Invalid fields at {path}", code="invalid_report")
             for key, subschema in schema["properties"].items():
                 check(value[key], subschema, f"{path}.{key}")
         elif kind == "array":
             if not isinstance(value, list) or len(value) > 250:
-                raise ResearchError(f"Invalid array at {path}")
+                raise ResearchError(f"Invalid array at {path}", code="invalid_report")
             for item in value:
                 check(item, schema["items"], path)
         elif kind == "string":
             if not isinstance(value, str) or len(value) > 12000:
-                raise ResearchError(f"Invalid text at {path}")
+                raise ResearchError(f"Invalid text at {path}", code="invalid_report")
             if "enum" in schema and value not in schema["enum"]:
-                raise ResearchError(f"Invalid choice at {path}")
+                raise ResearchError(f"Invalid choice at {path}", code="invalid_report")
         elif kind == "integer":
             if type(value) is not int or not schema["minimum"] <= value <= schema["maximum"]:
-                raise ResearchError(f"Invalid number at {path}")
+                raise ResearchError(f"Invalid number at {path}", code="invalid_report")
     check(report, report_schema())
     for family, count in [("A", 4), ("B", 3), ("C", 2)]:
         terms = {term.strip().casefold() for term in report["searches"][family] if term.strip()}
         if len(terms) < count:
-            raise ResearchError(f"Insufficient search coverage for family {family}")
+            raise ResearchError(f"Insufficient search coverage for family {family}", code="insufficient_search_coverage")
     groups = [s["group"] for s in report["source_checks"]]
     if sorted(groups) != sorted(["arbeitsagentur", "stepstone", "ats", "berlin", "fashion"]):
-        raise ResearchError("Missing or duplicated source checks")
+        raise ResearchError("Missing or duplicated source checks", code="invalid_source_checks")
     if all(s["status"] == "unavailable" for s in report["source_checks"]):
-        raise ResearchError("All research sources are unavailable; cannot report zero results")
+        raise ResearchError("All research sources are unavailable; cannot report zero results", code="all_sources_unavailable")
     from datetime import date
     for job in report["jobs"]:
         if not all(job[k].strip() for k in ["title", "employer", "url", "pro", "con", "evidence"]):
-            raise ResearchError("Candidate lacks essential evidence or assessment")
+            raise ResearchError("Candidate lacks essential evidence or assessment", code="missing_candidate_evidence")
         if len(job["evidence"].strip()) < 40:
-            raise ResearchError("Candidate evidence is too short")
+            raise ResearchError("Candidate evidence is too short", code="short_candidate_evidence")
         if job["deadline"]:
             try:
                 date.fromisoformat(job["deadline"])
             except ValueError as error:
-                raise ResearchError("Invalid application deadline") from error
+                raise ResearchError("Invalid application deadline", code="invalid_deadline") from error
     return report
 
 
 def research(root, config, history, day):
     key = os.environ.get("MIKI_OPENAI_API_KEY") or os.environ.get("OPENAI_API_KEY")
     if not key:
-        raise ResearchError("MIKI_OPENAI_API_KEY is missing; configure it securely")
+        raise ResearchError("MIKI_OPENAI_API_KEY is missing; configure it securely", code="missing_api_key")
     brief = (root / "config/research-brief.md").read_text(encoding="utf-8")
     known = [{k: j[k] for k in ["date", "title", "employer", "url"]} for j in history]
     payload = {
@@ -140,20 +153,20 @@ def research(root, config, history, day):
         with urllib.request.urlopen(request, timeout=600, context=tls_context()) as response:
             result = json.load(response)
     except urllib.error.HTTPError as error:
-        raise ResearchError(f"Research API returned HTTP {error.code}") from error
+        raise ResearchError(f"Research API returned HTTP {error.code}", code="api_http_error", http_status=error.code) from error
     except (urllib.error.URLError, TimeoutError, OSError) as error:
-        raise ResearchError(f"Research API connection failed ({type(error).__name__})") from error
+        raise ResearchError(f"Research API connection failed ({type(error).__name__})", code="api_connection_error") from error
     if result.get("status") != "completed":
-        raise ResearchError("Research API did not complete")
+        raise ResearchError("Research API did not complete", code="api_incomplete", api_status=result.get("status"))
     output = result.get("output", [])
     if not any(o.get("type") == "web_search_call" and o.get("status") == "completed" for o in output):
-        raise ResearchError("Research did not execute web search")
+        raise ResearchError("Research did not execute web search", code="no_web_search")
     fragments = [c["text"] for o in output if o.get("type") == "message"
                  for c in o.get("content", []) if c.get("type") == "output_text"]
     try:
         return validate_report(json.loads("".join(fragments)))
     except (ValueError, TypeError) as error:
-        raise ResearchError("Research API returned invalid JSON") from error
+        raise ResearchError("Research API returned invalid JSON", code="invalid_api_json") from error
 
 
 def allowed_url(url, domains):

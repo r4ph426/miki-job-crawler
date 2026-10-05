@@ -250,10 +250,13 @@ class DeliveryTests(unittest.TestCase):
 
     def test_research_failure_is_saved_and_never_sends(self):
         sender = Mock()
-        self.researcher.side_effect = ResearchError("API unavailable")
+        self.researcher.side_effect = ResearchError("Private provider message: unit-test-secret",
+                                                   code="api_http_error", http_status=429)
         with self.assertRaises(ResearchError):
             self.invoke(sender=sender)
         self.assertEqual(self.record()["status"], "research_failed")
+        self.assertEqual(self.record()["research_diagnostic"], {"code": "api_http_error", "http_status": 429})
+        self.assertNotIn("unit-test-secret", json.dumps(self.record()))
         sender.assert_not_called()
         self.assertEqual(len(load_history(ROOT, self.store)), 145)
 

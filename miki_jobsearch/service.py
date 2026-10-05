@@ -15,7 +15,7 @@ from email.message import EmailMessage
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from .research import canonical_url, research, select_jobs, tls_context, validate_report, verify_job
+from .research import ResearchError, canonical_url, research, select_jobs, tls_context, validate_report, verify_job
 
 BERLIN = ZoneInfo("Europe/Berlin")
 TERMINAL = {"sent", "sending", "uncertain", "partial"}
@@ -321,6 +321,8 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                 if not dry_run:
                     failure = {"date": str(day), "status": "research_failed", "hits": 0,
                                "failed_at": now.isoformat(), "error": f"Research failed ({type(error).__name__}); see workflow log"}
+                    if isinstance(error, ResearchError):
+                        failure["research_diagnostic"] = error.diagnostic
                     atomic_json(path, failure)
                     persist(failure)
                 raise
