@@ -1,7 +1,7 @@
 {
   "date": "2026-10-05",
   "created_at": "2026-10-05T14:53:05.185229+00:00",
-  "status": "configuration_failed",
+  "status": "prepared",
   "subject": "Stellen für Miki · 05.10.2026 · 0 neue Treffer",
   "report": {
     "summary": "4 passende Anzeigen gefunden (Stichtag Berlin: 2026-10-05). Schwerpunkt heute: ein klarer B‑Treffer (Einkauf, Food) plus zwei A‑Treffer (Office Management) und ein C‑Treffer (Vertriebsinnendienst).",
@@ -84,8 +84,7 @@
   "attempts": [],
   "hits": 0,
   "message_id": "<miki-2026-10-05-346a708488b552f7@miki-jobsearch>",
-  "last_attempt_at": "2026-10-05T19:02:00.889610+00:00",
-  "last_attempt_run_id": "37360405145",
-  "error": "Missing secure mail configuration: BREVO_API_KEY",
-  "configuration_diagnostic": "missing_mail_configuration"
+  "last_attempt_at": "2026-10-05T19:06:41.978589+00:00",
+  "last_attempt_run_id": "37360980400",
+  "email_provider": "brevo"
 }
