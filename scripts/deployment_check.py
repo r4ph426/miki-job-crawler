@@ -7,13 +7,17 @@ from pathlib import Path
 
 
 def readiness(mode, environ):
+    provider = environ.get("EMAIL_PROVIDER", "").strip().lower() or "brevo"
     required = ["MIKI_OPENAI_API_KEY"]
     if mode == "send":
-        required += ["GMAIL_USER", "GMAIL_APP_PASSWORD", "MAIL_TO"]
+        required += (["GMAIL_USER", "GMAIL_APP_PASSWORD"] if provider == "gmail" else ["BREVO_API_KEY"]) + ["MAIL_TO"]
+        if not (environ.get("MAIL_FROM", "").strip() or environ.get("GMAIL_USER", "").strip()):
+            required += ["MAIL_FROM"]
     missing = [name for name in required if not environ.get(name, "").strip()]
     result = {"status": "credentials_missing" if missing else "credentials_present",
               "missing_requirements": missing, "checked_requirements": required}
     if mode == "send":
+        result["email_provider"] = provider if provider in {"brevo", "gmail"} else "unsupported"
         def plain_addresses(value, required=True):
             if not value.strip():
                 return not required
@@ -21,9 +25,17 @@ def readiness(mode, environ):
                        for part in value.split(","))
         password = "".join(environ.get("GMAIL_APP_PASSWORD", "").split())
         user = environ.get("GMAIL_USER", "").strip()
+        mail_from = environ.get("MAIL_FROM", "").strip() or user
+        api_key = environ.get("BREVO_API_KEY", "").strip()
+        credentials = ({"GMAIL_USER": "," not in user and plain_addresses(user),
+                        "GMAIL_APP_PASSWORD": len(password) == 16 and password.isascii() and password.isalnum()}
+                       if provider == "gmail" else
+                       {"BREVO_API_KEY": bool(api_key) and api_key.isascii() and api_key.isprintable()
+                        and not any(c.isspace() or c in "\"'`" for c in api_key)})
         result["mail_format_checks"] = {
-            "GMAIL_USER": "," not in user and plain_addresses(user),
-            "GMAIL_APP_PASSWORD": len(password) == 16 and password.isascii() and password.isalnum(),
+            **credentials,
+            "EMAIL_PROVIDER": provider in {"brevo", "gmail"},
+            "MAIL_FROM": "," not in mail_from and plain_addresses(mail_from),
             "MAIL_TO": plain_addresses(environ.get("MAIL_TO", "")),
             "MAIL_CC": plain_addresses(environ.get("MAIL_CC", ""), required=False),
         }

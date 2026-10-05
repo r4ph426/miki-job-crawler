@@ -12,4 +12,4 @@ for record in data["runs"][:10]:
     print(f"| {record['date']} | {record['status']} | {record.get('hits', 0)} |")
 if not data["runs"]:
     print("| — | No production runs recorded | — |")
-print("\n`sent` means Gmail SMTP accepted the message, not that it arrived in the inbox.")
+print("\n`sent` means the email provider accepted the message, not that it arrived in the inbox. Brevo delivery/bounce details are in its transactional logs.")

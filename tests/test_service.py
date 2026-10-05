@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG = json.loads((ROOT / "config/search.json").read_text())
 FIXTURE = json.loads((ROOT / "tests/fixtures/report.json").read_text())
 MONDAY = datetime.fromisoformat("2026-10-05T10:05:00+02:00")
-MAIL_ENV = {"GMAIL_USER": "sender@example.org", "GMAIL_APP_PASSWORD": "unit-test-only",
+MAIL_ENV = {"EMAIL_PROVIDER": "gmail", "GMAIL_USER": "sender@example.org", "GMAIL_APP_PASSWORD": "unit-test-only",
             "MAIL_TO": "recipient@example.org", "MAIL_CC": "copy@example.org"}
 
 
@@ -481,13 +481,13 @@ class ReportTests(unittest.TestCase):
         self.assertIn("1 Kandidaten konnten nicht unabhängig", body)
 
     def test_deployment_check_records_names_without_credential_values(self):
-        result = readiness("send", {"MIKI_OPENAI_API_KEY": "private-value", "GMAIL_USER": "private-address"})
+        result = readiness("send", {"EMAIL_PROVIDER": "gmail", "MIKI_OPENAI_API_KEY": "private-value", "GMAIL_USER": "private-address"})
         self.assertEqual(result["missing_requirements"], ["GMAIL_APP_PASSWORD", "MAIL_TO"])
         self.assertNotIn("private", json.dumps(result))
         self.assertEqual(readiness("live-dry-run", {"MIKI_OPENAI_API_KEY": "test"})["status"], "credentials_present")
 
     def test_mail_format_check_detects_wrong_password_without_exposing_values(self):
-        values = {"MIKI_OPENAI_API_KEY": "private-api-key", "GMAIL_USER": "sender@example.org",
+        values = {"EMAIL_PROVIDER": "gmail", "MIKI_OPENAI_API_KEY": "private-api-key", "GMAIL_USER": "sender@example.org",
                   "GMAIL_APP_PASSWORD": "abcd efgh\u00a0ijkl mnop", "MAIL_TO": "recipient@example.org"}
         result = readiness("send", values)
         self.assertEqual(result["invalid_mail_formats"], [])
@@ -496,7 +496,7 @@ class ReportTests(unittest.TestCase):
         values["GMAIL_APP_PASSWORD"] = "private-key-pasted-in-wrong-field"
         values["GMAIL_USER"] = '"sender@example.org"'
         result = readiness("send", values)
-        self.assertEqual(result["invalid_mail_formats"], ["GMAIL_USER", "GMAIL_APP_PASSWORD"])
+        self.assertEqual(result["invalid_mail_formats"], ["GMAIL_USER", "GMAIL_APP_PASSWORD", "MAIL_FROM"])
         self.assertNotIn("private", json.dumps(result))
 
     def test_friday_includes_daily_hits_weekly_totals_and_deadline(self):

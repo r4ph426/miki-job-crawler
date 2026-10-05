@@ -7,12 +7,13 @@ green offline check, skipped job, or running process as evidence of live deliver
 | Stored status | Meaning and next action |
 | --- | --- |
 | `research_failed` | API/coverage/validation failed. No email or reported-job history update. Fix the cause; the next slot can retry. |
-| `prepared` | Saved report; not yet accepted by SMTP. A retry reuses this report. |
-| `failed` | SMTP explicitly rejected delivery, or failed before DATA. Fix credentials/service; retry reuses the report. |
-| `sending` | Durable checkpoint before SMTP DATA. After a crash, acceptance is unknown; reconcile. |
-| `uncertain` | Connection interrupted during DATA; inspect Gmail using `message_id`. No automatic resend. |
+| `configuration_failed` | Required mail settings missing/invalid. Fix the named secure setting; any saved research is retained. |
+| `prepared` | Saved report; not yet accepted by the provider. A retry reuses this report. |
+| `failed` | Provider explicitly rejected delivery, or preparation failed before submission. Fix credentials/service; retry reuses the report. |
+| `sending` | Durable checkpoint before the API POST or SMTP DATA. After a crash, acceptance is unknown; reconcile. |
+| `uncertain` | Submission outcome unknown; inspect provider logs. No automatic resend. |
 | `partial` | SMTP accepted for some recipients but rejected others. No resend to all recipients. Investigate and complete delivery separately. |
-| `sent` | SMTP accepted for all configured recipients. Same-date production runs skip. |
+| `sent` | Provider accepted the submission for all configured recipients; inbox receipt is not yet proven. Same-date production runs skip. |
 
 Research and detail-page fetches preserve TLS verification. In a managed cloud
 environment the HTTP client uses `REQUESTS_CA_BUNDLE`/`SSL_CERT_FILE` when supplied.
@@ -31,13 +32,15 @@ counts are not a deterministic scraper audit.
 
 ## Reconcile uncertain delivery
 
-First inspect Gmail's Sent folder or provider logs for the stored Message-ID. Gmail
-search supports `rfc822msgid:`. Absence from an inbox or a single search is insufficient
-evidence that SMTP did not accept the message. Confirm provider acceptance before
+First inspect Brevo's transactional logs for the date, subject, recipients and stored
+`provider_message_id` (when an acknowledgement was received). The API also includes
+the stable `message_id` in a custom `X-Miki-Message-ID` header. For Gmail, inspect its
+Sent folder using `rfc822msgid:`. Absence from an inbox or a single search is insufficient
+evidence that the provider did not accept the message. Confirm provider acceptance before
 choosing a result. Keep the repository checked out at its latest state.
 
 ```sh
-python3 -m miki_jobsearch reconcile YYYY-MM-DD --result sent --note "Confirmed stored Message-ID in Gmail Sent"
+python3 -m miki_jobsearch reconcile YYYY-MM-DD --result sent --note "Confirmed acceptance in provider logs"
 ```
 
 This records the operator decision, marks delivery accepted and adds its jobs to
@@ -47,13 +50,29 @@ message cannot be marked entirely unsent. On the Actions state backend, set
 `STATE_BRANCH` to the default branch and use `--persist-git` to push the decision;
 otherwise review and push the changed `state/` files through the usual Git process.
 
-The same stable Message-ID is retained on a retry. SMTP cannot provide atomic
-exactly-once delivery together with an external Git commit. If final state persistence
+The same stable Message-ID is retained when the report content is unchanged. Brevo
+requests also carry a deterministic `Idempotency-Key`; the service's durable guard
+does not rely on the provider retaining that key indefinitely. Neither backend can
+provide an atomic delivery together with an external Git commit. If final state persistence
 fails after acceptance, the remote `sending` checkpoint stops automatic redelivery,
 but an operator must verify acceptance. Do not delete run records to make a job green.
 Jobs from uncertain or interrupted deliveries are reserved on later days until
 reconciliation, so a future run does not recommend the same jobs while acceptance
 is unknown. They are counted separately from confirmed reported history.
+
+## Brevo delivery failures
+
+`401` usually means an invalid API key. For `400`, `403` or `422`, check sender
+verification, account approval, and transactional email activation. `402`/`429`
+require checking quota/billing/rate limits. Provider bodies are not copied into logs
+or state because they may contain private data. Network interruptions, server errors,
+redirects, duplicate-key conflicts and invalid success acknowledgements are treated
+as uncertain acceptance and require reconciliation. An acknowledged send stores
+`email_provider`, `provider_message_id` and `accepted_at`; check Brevo for subsequent
+bounces or delivery events.
+
+Gmail's Sent folder will not contain mail submitted through Brevo. A Brevo plugin
+in a chat is not required: the unattended GitHub runner uses the API directly.
 
 ## Historical data and the frontend
 

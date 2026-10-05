@@ -1,4 +1,4 @@
-"""Durable outbox, Berlin scheduling, report rendering and SMTP delivery."""
+"""Durable outbox, Berlin scheduling, report rendering and email delivery."""
 
 import copy
 import fcntl
@@ -6,9 +6,12 @@ import hashlib
 import html
 import json
 import os
+import re
 import smtplib
 import subprocess
 import tempfile
+import urllib.error
+import urllib.request
 from contextlib import contextmanager
 from datetime import date, datetime, timedelta, timezone
 from email.message import EmailMessage
@@ -188,33 +191,117 @@ def render_report(report, day, history, fixture=False):
     return subject, "\n".join(body)
 
 
-def mail_settings():
-    required = ["GMAIL_USER", "GMAIL_APP_PASSWORD", "MAIL_TO"]
-    missing = [k for k in required if not os.environ.get(k, "").strip()]
+def plain_addresses(value, required=True, single=False):
+    if not value.strip():
+        return not required
+    parts = value.split(",")
+    if single and len(parts) != 1:
+        return False
+    return all(re.fullmatch(r"[^@\s<>\"'`]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}", part.strip())
+               for part in parts)
+
+
+def mail_settings(environ=None):
+    environ = os.environ if environ is None else environ
+    provider = environ.get("EMAIL_PROVIDER", "").strip().lower() or "brevo"
+    if provider not in {"brevo", "gmail"}:
+        raise MailConfigurationError("EMAIL_PROVIDER must be brevo or gmail", "unsupported_mail_provider")
+    required = (["GMAIL_USER", "GMAIL_APP_PASSWORD"] if provider == "gmail" else ["BREVO_API_KEY"]) + ["MAIL_TO"]
+    missing = [k for k in required if not environ.get(k, "").strip()]
+    mail_from = environ.get("MAIL_FROM", "").strip() or environ.get("GMAIL_USER", "").strip()
+    if not mail_from:
+        missing.append("MAIL_FROM")
     if missing:
         raise MailConfigurationError("Missing secure mail configuration: " + ", ".join(missing), "missing_mail_configuration")
-    settings = {k: os.environ.get(k, "").strip() for k in required + ["MAIL_CC"]}
-    # Google's display groups app passwords using spaces, sometimes nonbreaking.
-    settings["GMAIL_APP_PASSWORD"] = "".join(settings["GMAIL_APP_PASSWORD"].split())
-    for key in ["GMAIL_USER", "MAIL_TO", "MAIL_CC"]:
+    settings = {k: environ.get(k, "").strip() for k in required + ["MAIL_CC"]}
+    settings.update(EMAIL_PROVIDER=provider, MAIL_FROM=mail_from)
+    if provider == "gmail":
+        # Google's display groups app passwords using spaces, sometimes nonbreaking.
+        settings["GMAIL_APP_PASSWORD"] = "".join(settings["GMAIL_APP_PASSWORD"].split())
+    else:
+        key = settings["BREVO_API_KEY"]
+        if not key.isascii() or not key.isprintable() or any(c.isspace() for c in key) or any(c in key for c in "\"'`"):
+            raise MailConfigurationError("BREVO_API_KEY must be the unquoted API key", "invalid_mail_api_key")
+    for key in ["MAIL_FROM", "MAIL_TO", "MAIL_CC"] + (["GMAIL_USER"] if provider == "gmail" else []):
         if "\r" in settings[key] or "\n" in settings[key]:
             raise MailConfigurationError(f"{key} must not contain line breaks", "mail_address_line_breaks")
-        addresses = [settings[key]] if key == "GMAIL_USER" else settings[key].split(",")
-        for address in addresses:
-            if address.strip() and ("@" not in address or " " in address.strip()):
-                raise MailConfigurationError(f"{key} must contain plain email addresses", "invalid_mail_addresses")
+        if not plain_addresses(settings[key], required=key != "MAIL_CC", single=key in {"GMAIL_USER", "MAIL_FROM"}):
+            raise MailConfigurationError(f"{key} must contain plain email addresses", "invalid_mail_addresses")
     return settings
 
 
 def make_message(record, body, settings):
     message = EmailMessage()
-    message["From"], message["To"] = settings["GMAIL_USER"], settings["MAIL_TO"]
+    message["From"], message["To"] = settings["MAIL_FROM"], settings["MAIL_TO"]
     if settings["MAIL_CC"]:
         message["Cc"] = settings["MAIL_CC"]
     message["Subject"], message["Message-ID"] = record["subject"], record["message_id"]
     message.set_content("Der Stellenbericht liegt als HTML-Version vor. Bitte einen HTML-fähigen E-Mail-Client verwenden.")
     message.add_alternative(body, subtype="html")
     return message
+
+
+class NoMailRedirect(urllib.request.HTTPRedirectHandler):
+    """Never forward a mail API credential or delivery body to a redirect."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
+
+
+def send_brevo(message, settings, on_sending):
+    """Save a durable marker before POST; never retry an uncertain acceptance."""
+    payload = {
+        "sender": {"email": settings["MAIL_FROM"], "name": "Stellen für Miki"},
+        "to": [{"email": address.strip()} for address in settings["MAIL_TO"].split(",")],
+        "subject": str(message["Subject"]),
+        "htmlContent": message.get_body(preferencelist=("html",)).get_content(),
+        "textContent": message.get_body(preferencelist=("plain",)).get_content(),
+        "headers": {"X-Miki-Message-ID": str(message["Message-ID"])},
+        "tags": ["miki-jobsearch"],
+    }
+    if settings["MAIL_CC"]:
+        payload["cc"] = [{"email": address.strip()} for address in settings["MAIL_CC"].split(",")]
+    # Additional provider deduplication; durable local/Git state remains the guard.
+    payload["headers"]["Idempotency-Key"] = hashlib.sha256(
+        json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
+    request = urllib.request.Request("https://api.brevo.com/v3/smtp/email",
+                                     data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+                                     headers={"api-key": settings["BREVO_API_KEY"],
+                                              "Content-Type": "application/json", "Accept": "application/json"},
+                                     method="POST")
+    opener = urllib.request.build_opener(NoMailRedirect(), urllib.request.HTTPSHandler(context=tls_context()))
+    on_sending()  # A failed checkpoint must prevent even the first POST.
+    try:
+        with opener.open(request, timeout=45) as response:
+            code = response.status
+            raw = response.read(16001)
+    except urllib.error.HTTPError as error:
+        # Body may contain private data. Only fixed guidance and the status are saved.
+        code = error.code
+        error.close()
+        if code in {400, 401, 402, 403, 404, 405, 413, 415, 422, 429}:
+            guidance = ("check the API key" if code == 401 else
+                        "check sender verification and account approval" if code in {400, 403, 422} else
+                        "check account quota or billing" if code in {402, 429} else "check mail configuration")
+            raise DeliveryFailure(f"Brevo rejected delivery (HTTP {code}); {guidance}") from error
+        raise DeliveryFailure(f"Brevo acceptance is uncertain (HTTP {code}); inspect transactional logs before retrying",
+                              ambiguous=True) from error
+    except (OSError, urllib.error.URLError) as error:
+        raise DeliveryFailure("Brevo acceptance is uncertain (connection interrupted); inspect transactional logs before retrying",
+                              ambiguous=True) from error
+    try:
+        data = json.loads(raw) if len(raw) <= 16000 else None
+        provider_id = data.get("messageId") if isinstance(data, dict) else None
+        if code != 201 or not isinstance(provider_id, str) or not re.fullmatch(r"<?[A-Za-z0-9_.+\-]{1,160}@[A-Za-z0-9.-]{1,90}>?", provider_id):
+            raise ValueError("Missing acknowledgement")
+    except (ValueError, UnicodeError):
+        raise DeliveryFailure("Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
+                              ambiguous=True) from None
+    return {"status": "sent", "refused_count": 0, "provider_message_id": provider_id}
+
+
+def send_mail(message, settings, on_sending):
+    sender = send_brevo if settings["EMAIL_PROVIDER"] == "brevo" else send_smtp
+    return sender(message, settings, on_sending)
 
 
 def send_smtp(message, settings, on_sending):
@@ -307,7 +394,7 @@ def record_delivered_jobs(store, record):
 
 
 def reconcile(store, day, result, note, persist=None):
-    """Explicit operator decision after checking Gmail's stable Message-ID."""
+    """Explicit operator decision after checking provider delivery logs."""
     day = date.fromisoformat(day).isoformat()
     if result not in ["sent", "not-sent"] or not note.strip():
         raise ValueError("Reconciliation requires sent/not-sent and an evidence note")
@@ -333,7 +420,7 @@ def reconcile(store, day, result, note, persist=None):
 
 
 def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
-        researcher=research, verifier=verify_job, sender=send_smtp, persist=None):
+        researcher=research, verifier=verify_job, sender=send_mail, persist=None):
     now = now or datetime.now(timezone.utc)
     config = read_json(root / "config/search.json", {})
     if not dry_run and fixture is not None:
@@ -400,15 +487,16 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         path.parent.mkdir(parents=True, exist_ok=True)
         (path.with_suffix(".html")).write_text(body, encoding="utf-8")
         record["status"] = "prepared"
+        record["email_provider"] = settings["EMAIL_PROVIDER"]
         record.pop("error", None)
         record.pop("configuration_diagnostic", None)
         atomic_json(path, record)
-        persist(record)  # If this fails, SMTP must not be called.
+        persist(record)  # If this fails, delivery must not be called.
         def on_sending():
             record["status"] = "sending"
             record["attempts"].append({"started_at": datetime.now(timezone.utc).isoformat(), "status": "sending"})
             atomic_json(path, record)
-            persist(record)  # Durable ambiguity marker exists before any DATA command.
+            persist(record)  # Durable ambiguity marker exists before SMTP DATA or API POST.
         try:
             outcome = sender(make_message(record, body, settings), settings, on_sending)
         except DeliveryFailure as error:
@@ -430,6 +518,8 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
             raise
         record["status"] = outcome["status"]
         record["refused_count"] = outcome["refused_count"]
+        if outcome.get("provider_message_id"):
+            record["provider_message_id"] = outcome["provider_message_id"]
         record["accepted_at"] = datetime.now(timezone.utc).isoformat()
         record["attempts"][-1]["status"] = record["status"]
         record_delivered_jobs(store, record)

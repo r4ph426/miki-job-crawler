@@ -18,19 +18,48 @@ In GitHub repository Settings → Secrets and variables → Actions, add these s
 | Secret | Purpose |
 | --- | --- |
 | `MIKI_OPENAI_API_KEY` | Paid research API key for OpenAI Responses and web search |
-| `GMAIL_USER` | The sender account from the archive |
-| `GMAIL_APP_PASSWORD` | Gmail app password for that account, with 2FA enabled |
+| `BREVO_API_KEY` | Brevo API key (not an SMTP key); enables transactional email delivery |
+| `MAIL_FROM` | Sender email verified in Brevo; optional if the existing `GMAIL_USER` secret contains that address |
 | `MAIL_TO` | The primary recipient from the archive, or an explicitly chosen replacement |
 | `MAIL_CC` | The CC recipient from the archive; omit for no CC |
 
 Recipient and sender values intentionally have no hardcoded fallback. Real keys
 and passwords belong in secure settings, not chat, `.env.example`, Git, or reports.
 An optional Actions variable `RESEARCH_MODEL` overrides the configured model.
+`EMAIL_PROVIDER` defaults to `brevo`; no Google password is needed with this backend.
 Weekday scheduled runs are enabled by default. Set the Actions variable
 `SERVICE_ENABLED` to `false` to pause them; unset it or set `true` to resume.
-Pushing changes to `.github/workflows/daily.yml` also requests an immediate
-production run. Set up credentials before deploying that workflow if a coordinated
-handover is needed. Manual workflow dispatch defaults to an offline demo.
+Pushing code runs offline checks; it does not send email. Manual workflow dispatch
+defaults to an offline demo.
+
+## Set up Brevo
+
+1. Create an account at [Brevo](https://www.brevo.com/). Check its current free plan
+   and transactional email quota; this service normally sends one message to the
+   configured To/CC recipients each weekday. OpenAI research costs are separate.
+2. In **Settings → Senders, Domains & Dedicated IPs → Senders**, add the sender
+   address and complete the verification email. The existing Gmail address can be
+   submitted as the sender; this verifies access to its inbox without a Google app
+   password. Follow any Brevo account-approval or domain-authentication requirements.
+   Brevo may rewrite a public-domain sender for authentication/deliverability. A
+   verified domain you own is preferable when available; never attempt to authenticate
+   a domain belonging to Gmail or another provider.
+3. In **SMTP & API → API Keys**, generate an API key named for this service.
+   Save it as `BREVO_API_KEY` in the repository's **Settings → Secrets and variables
+   → Actions**. Do not paste it into chat. Keep `MAIL_TO`, `MAIL_CC`, and the existing
+   OpenAI secret. If using a different verified sender, set `MAIL_FROM` as well.
+4. Verify that transactional email is enabled/approved in the Brevo account, then
+   manually dispatch **Miki weekday job search → send**. Confirm API acceptance in
+   the dated state record and delivery in Brevo's transactional logs and the inbox.
+
+The sender need not log into Gmail to send: the GitHub runner calls
+`https://api.brevo.com/v3/smtp/email`. Google account passwords and app passwords
+are unused. Existing unsent live reports are reused, including today's saved report.
+If acceptance is uncertain, inspect Brevo's logs before any retry.
+
+For the optional Gmail backend, set the Actions variable `EMAIL_PROVIDER=gmail` and
+configure `GMAIL_USER` and `GMAIL_APP_PASSWORD`. That requires a Google account that
+supports app passwords; this is not the default delivery route.
 
 ## Verify the replacement
 
@@ -44,7 +73,7 @@ handover is needed. Manual workflow dispatch defaults to an offline demo.
    the same day, do not choose a day whose legacy email has already been sent.
    Refresh `data/seed-history.json` from a current legacy ledger if the old service
    has continued since the ZIP's last entries on 2 October 2026.
-4. Run `send` on the handover day after 10:00. Confirm Gmail accepted the delivery,
+4. Run `send` on the handover day after 10:00. Confirm the provider accepted the delivery,
    `state/` commits reached the default branch, and the intended recipient received
    it. A `sent` run record alone does not establish inbox receipt.
 5. Retire the old automation as part of that coordinated handover. Scheduled runs
@@ -57,7 +86,7 @@ handover is needed. Manual workflow dispatch defaults to an offline demo.
 
 Cron fires at 08:00, 09:00 and 10:00 UTC Monday–Friday. Berlin's local-time guard
 allows runs from 10:00 onward; stored state prevents a second accepted daily email.
-The later slots retry confirmed research/send failures. A crash or uncertain SMTP
+The later slots retry confirmed research/send failures. A crash or uncertain provider
 acceptance requires reconciliation rather than an automatic resend.
 
 All runs share a non-cancelling concurrency group. Outputs are uploaded even if

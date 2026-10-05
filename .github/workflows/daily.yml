@@ -1,9 +1,6 @@
 name: Miki weekday job search
 
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/daily.yml]
   schedule:
     # Berlin 10:00 in summer/winter, plus a retry. Stored state prevents duplicates.
     - cron: "0 8,9,10 * * 1-5"
@@ -44,6 +41,9 @@ jobs:
         env:
           RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
+          EMAIL_PROVIDER: ${{ vars.EMAIL_PROVIDER || 'brevo' }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM || vars.MAIL_FROM || secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_USER: ${{ secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
@@ -63,6 +63,9 @@ jobs:
           RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
+          EMAIL_PROVIDER: ${{ vars.EMAIL_PROVIDER || 'brevo' }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM || vars.MAIL_FROM || secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_USER: ${{ secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
