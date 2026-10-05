@@ -486,6 +486,19 @@ class ReportTests(unittest.TestCase):
         self.assertNotIn("private", json.dumps(result))
         self.assertEqual(readiness("live-dry-run", {"MIKI_OPENAI_API_KEY": "test"})["status"], "credentials_present")
 
+    def test_mail_format_check_detects_wrong_password_without_exposing_values(self):
+        values = {"MIKI_OPENAI_API_KEY": "private-api-key", "GMAIL_USER": "sender@example.org",
+                  "GMAIL_APP_PASSWORD": "abcd efgh\u00a0ijkl mnop", "MAIL_TO": "recipient@example.org"}
+        result = readiness("send", values)
+        self.assertEqual(result["invalid_mail_formats"], [])
+        self.assertNotIn("sender@example.org", json.dumps(result))
+        self.assertNotIn("abcdefghijklmnop", json.dumps(result))
+        values["GMAIL_APP_PASSWORD"] = "private-key-pasted-in-wrong-field"
+        values["GMAIL_USER"] = '"sender@example.org"'
+        result = readiness("send", values)
+        self.assertEqual(result["invalid_mail_formats"], ["GMAIL_USER", "GMAIL_APP_PASSWORD"])
+        self.assertNotIn("private", json.dumps(result))
+
     def test_friday_includes_daily_hits_weekly_totals_and_deadline(self):
         report = copy.deepcopy(FIXTURE)
         report["jobs"][0]["score"] = 83
