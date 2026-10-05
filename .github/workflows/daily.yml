@@ -14,8 +14,8 @@ on:
       runner:
         description: "Hosted runner pool; alternate pools are available if acquisition fails"
         type: choice
-        options: [ubuntu-24.04, ubuntu-24.04-arm, macos-15]
-        default: ubuntu-24.04
+        options: [ubuntu-24.04-arm, ubuntu-24.04, macos-15]
+        default: ubuntu-24.04-arm
       revision:
         description: "Optional explicit revision ID for an authorized correction (preserves the original)"
         type: string
@@ -35,7 +35,7 @@ permissions:
 jobs:
   run:
     if: github.event_name != 'schedule' || vars.SERVICE_ENABLED != 'false'
-    runs-on: ${{ inputs.runner || 'ubuntu-24.04' }}
+    runs-on: ${{ inputs.runner || 'ubuntu-24.04-arm' }}
     timeout-minutes: 40
     permissions:
       contents: write
