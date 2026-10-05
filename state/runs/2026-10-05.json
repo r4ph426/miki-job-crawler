@@ -1,7 +1,7 @@
 {
   "date": "2026-10-05",
   "created_at": "2026-10-05T14:53:05.185229+00:00",
-  "status": "failed",
+  "status": "prepared",
   "subject": "Stellen für Miki · 05.10.2026 · 0 neue Treffer",
   "report": {
     "summary": "4 passende Anzeigen gefunden (Stichtag Berlin: 2026-10-05). Schwerpunkt heute: ein klarer B‑Treffer (Einkauf, Food) plus zwei A‑Treffer (Office Management) und ein C‑Treffer (Vertriebsinnendienst).",
@@ -84,7 +84,6 @@
   "attempts": [],
   "hits": 0,
   "message_id": "<miki-2026-10-05-346a708488b552f7@miki-jobsearch>",
-  "last_attempt_at": "2026-10-05T15:44:21.175112+00:00",
-  "last_attempt_run_id": "37335216622",
-  "error": "SMTP authenticate-login failed on port 587 (SMTPAuthenticationError; SMTP 535)"
+  "last_attempt_at": "2026-10-05T15:56:14.228600+00:00",
+  "last_attempt_run_id": "37336817081"
 }
