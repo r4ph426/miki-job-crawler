@@ -327,5 +327,7 @@
   "revision": "updated-list",
   "revision_reason": "User requested a fresh crawl, assessment and corrected list after receiving the empty report; seven jobs independently reviewed against live pages.",
   "supersedes_message_id": "<miki-2026-10-05-346a708488b552f7@miki-jobsearch>",
-  "last_attempt_at": "2026-10-05T20:06:02.043504+00:00"
+  "last_attempt_at": "2026-10-05T20:21:23.648126+00:00",
+  "last_attempt_run_id": "37369113759",
+  "email_provider": "brevo"
 }
