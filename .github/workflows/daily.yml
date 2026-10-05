@@ -1,6 +1,9 @@
 name: Miki weekday job search
 
 on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/daily.yml]
   schedule:
     # Berlin 10:00 in summer/winter, plus a retry. Stored state prevents duplicates.
     - cron: "0 8,9,10 * * 1-5"
@@ -21,7 +24,7 @@ permissions:
 
 jobs:
   run:
-    if: github.event_name == 'workflow_dispatch' || vars.SERVICE_ENABLED == 'true'
+    if: github.event_name != 'schedule' || vars.SERVICE_ENABLED != 'false'
     runs-on: ubuntu-latest
     timeout-minutes: 40
     permissions:
@@ -36,15 +39,34 @@ jobs:
           python-version: "3.12"
       - name: Validate the service
         run: python3 -m unittest discover -s tests -v
+      - name: Check and record production credential readiness
+        if: github.event_name != 'workflow_dispatch' || inputs.mode != 'offline-demo'
+        env:
+          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
+          MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER || vars.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
+        run: |
+          set -euo pipefail
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          python3 scripts/deployment_check.py
+          git add -- state/deployment.json
+          if ! git diff --cached --quiet -- state/deployment.json; then
+            git commit --only -m "Record Miki deployment credential readiness" -- state/deployment.json
+            git push origin HEAD:refs/heads/main
+          fi
       - name: Run research and optional delivery
         env:
-          RUN_MODE: ${{ github.event_name == 'schedule' && 'send' || inputs.mode }}
-          MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY }}
+          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
+          MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          MAIL_TO: ${{ secrets.MAIL_TO }}
-          MAIL_CC: ${{ secrets.MAIL_CC }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
           STATE_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
@@ -70,6 +92,7 @@ jobs:
           path: |
             out/
             state/runs/
+            state/deployment.json
           if-no-files-found: ignore
           retention-days: 30
       - name: Delivery status

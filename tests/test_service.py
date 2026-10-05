@@ -16,6 +16,7 @@ from miki_jobsearch.research import ResearchError, allowed_url, select_jobs, val
 from miki_jobsearch.service import (DeliveryFailure, StateSyncError, atomic_json, due,
                                     git_persister, load_history, next_run, reconcile, render_report, run, send_smtp, status)
 from scripts.import_archive import convert_history
+from scripts.deployment_check import readiness
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = json.loads((ROOT / "config/search.json").read_text())
@@ -356,6 +357,12 @@ class SmtpTests(unittest.TestCase):
 
 
 class ReportTests(unittest.TestCase):
+    def test_deployment_check_records_names_without_credential_values(self):
+        result = readiness("send", {"MIKI_OPENAI_API_KEY": "private-value", "GMAIL_USER": "private-address"})
+        self.assertEqual(result["missing_requirements"], ["GMAIL_APP_PASSWORD", "MAIL_TO"])
+        self.assertNotIn("private", json.dumps(result))
+        self.assertEqual(readiness("live-dry-run", {"MIKI_OPENAI_API_KEY": "test"})["status"], "credentials_present")
+
     def test_friday_includes_daily_hits_weekly_totals_and_deadline(self):
         report = copy.deepcopy(FIXTURE)
         report["jobs"][0]["score"] = 83

@@ -26,7 +26,11 @@ In GitHub repository Settings → Secrets and variables → Actions, add these s
 Recipient and sender values intentionally have no hardcoded fallback. Real keys
 and passwords belong in secure settings, not chat, `.env.example`, Git, or reports.
 An optional Actions variable `RESEARCH_MODEL` overrides the configured model.
-Leave the Actions variable `SERVICE_ENABLED` unset during validation.
+Weekday scheduled runs are enabled by default. Set the Actions variable
+`SERVICE_ENABLED` to `false` to pause them; unset it or set `true` to resume.
+Pushing changes to `.github/workflows/daily.yml` also requests an immediate
+production run. Set up credentials before deploying that workflow if a coordinated
+handover is needed. Manual workflow dispatch defaults to an offline demo.
 
 ## Verify the replacement
 
@@ -43,9 +47,9 @@ Leave the Actions variable `SERVICE_ENABLED` unset during validation.
 4. Run `send` on the handover day after 10:00. Confirm Gmail accepted the delivery,
    `state/` commits reached the default branch, and the intended recipient received
    it. A `sent` run record alone does not establish inbox receipt.
-5. Retire the old automation as part of that coordinated handover and set the Actions
-   variable `SERVICE_ENABLED` to `true`. Leave it unset or set `false` to pause future
-   scheduled runs. Manual `send` remains an explicit separate operation.
+5. Retire the old automation as part of that coordinated handover. Scheduled runs
+   are enabled unless `SERVICE_ENABLED` is `false`. Manual `send` remains an explicit
+   separate operation.
 6. Verify the first unattended weekday run, including the intended inbox and the
    stored run record. GitHub can delay or miss scheduled jobs; use workflow failure
    notifications and inspect missing weekday records. Check Actions usage and the

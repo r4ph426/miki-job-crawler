@@ -10,8 +10,9 @@ recorded 145 recommendations through 2 October 2026; these are imported into
 `data/seed-history.json`. The archive's CV, home address, recipient addresses, and
 old agent instructions are not copied into the repository.
 
-**Deployment status:** local implementation and offline validation only. No live
-research or email has been verified, and the production schedule is not activated.
+**Deployment:** GitHub Actions runs the service after a workflow deployment and on
+the weekday schedule. Real research and delivery require configured credentials.
+Check `state/deployment.json` and dated run records for actual runner outcomes.
 The Codex development environment does not provide an unattended scheduler.
 
 ## Development
@@ -36,7 +37,7 @@ Provider/model compatibility still needs a live dry run during deployment.
 
 ## Running continuously
 
-Use the [deployment guide](docs/deployment.md) to activate GitHub Actions, configure
+Use the [deployment guide](docs/deployment.md) to configure GitHub Actions,
 credentials and recipients, validate one real delivery, and hand over from the old
 service. Scheduled runs target 10:00 Europe/Berlin, Monday–Friday, including daylight
 saving changes. GitHub may delay scheduled jobs; this is not a precise-time SLA.
