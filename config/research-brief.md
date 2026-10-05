@@ -40,6 +40,16 @@ timeout means unverifiable, not expired. If a source fails, report it and contin
 with the others. Do not call an incomplete search a complete zero-result search.
 All known recommendations, including cross-source variants, must be excluded.
 
+Find a useful shortlist across all three families, aiming for 6–10 plausible
+candidates when available. Explore several employers instead of stopping at the
+first few results. Do not invent candidates to reach a count. The list is checked
+as of the research date; distinguish this from an advertisement published today.
+When configuration includes previous_candidate_urls, reopen these as leads and
+continue the full fresh search. They were previously rejected, not verified.
+The application will download each candidate page and reassess its complete duties
+and requirements. Evidence must be one contiguous quotation, never a paraphrase or
+several bullets joined with ellipses.
+
 Exclude jobs requiring engineering, architecture, IT degrees, social work, care or
 medicine, SÜ2 clearance, or over three years of specialist experience Miki lacks.
 Apply this to required qualifications, not the employer's products. Technical

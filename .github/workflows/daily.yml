@@ -9,8 +9,16 @@ on:
       mode:
         description: "Offline demo, live research without email, or production delivery"
         type: choice
-        options: [offline-demo, live-dry-run, send]
+        options: [offline-demo, live-dry-run, prepare, send]
         default: offline-demo
+      revision:
+        description: "Optional explicit revision ID for an authorized correction (preserves the original)"
+        type: string
+        default: ""
+      revision_reason:
+        description: "Required explanation when requesting a revision"
+        type: string
+        default: ""
 
 concurrency:
   group: miki-weekday-delivery
@@ -40,6 +48,8 @@ jobs:
         if: github.event_name != 'workflow_dispatch' || inputs.mode != 'offline-demo'
         env:
           RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
+          REPORT_REVISION: ${{ inputs.revision }}
+          REVISION_REASON: ${{ inputs.revision_reason }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           EMAIL_PROVIDER: ${{ vars.EMAIL_PROVIDER || 'brevo' }}
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
@@ -61,6 +71,8 @@ jobs:
       - name: Run research and optional delivery
         env:
           RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
+          REPORT_REVISION: ${{ inputs.revision }}
+          REVISION_REASON: ${{ inputs.revision_reason }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
           EMAIL_PROVIDER: ${{ vars.EMAIL_PROVIDER || 'brevo' }}
@@ -75,6 +87,10 @@ jobs:
           set -euo pipefail
           git config user.name "miki-jobsearch-bot"
           git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          revision_args=()
+          if [ -n "$REPORT_REVISION" ]; then
+            revision_args=(--revision "$REPORT_REVISION" --revision-reason "$REVISION_REASON")
+          fi
           case "$RUN_MODE" in
             offline-demo)
               python3 -m miki_jobsearch run --fixture tests/fixtures/report.json --dry-run
@@ -83,7 +99,10 @@ jobs:
               python3 -m miki_jobsearch run --dry-run
               ;;
             send)
-              python3 -m miki_jobsearch run --send --persist-git
+              python3 -m miki_jobsearch run --send --persist-git "${revision_args[@]}"
+              ;;
+            prepare)
+              python3 -m miki_jobsearch run --prepare --persist-git "${revision_args[@]}"
               ;;
             *) exit 2 ;;
           esac

@@ -30,6 +30,35 @@ sweep after a prolonged outage. Family counts and source checks are reported by 
 research provider; live search-tool execution is checked independently, but these
 counts are not a deterministic scraper audit.
 
+## Fresh research and explicitly requested corrections
+
+Discovery uses live web search. Candidate duties and qualifications are then
+reassessed from independently downloaded full detail pages. Evidence quotes must
+match those pages; inline HTML and typographic spacing are normalized. If every
+plausible candidate fails independent verification, the run fails research instead
+of sending a misleading zero-result email. Genuine empty searches and exhausted
+previously reported results can still produce an honest zero-result report.
+
+When the user explicitly requests a corrected email after a confirmed delivery,
+use a separate revision identifier and a reason. Never reset/delete the original
+sent record. In **Miki weekday job search**, choose mode `prepare`, revision
+`updated-list`, and the user's correction reason. This performs fresh research,
+including a fresh check of earlier rejected URLs, and persists
+`state/runs/YYYY-MM-DD--updated-list.json` plus HTML for review without sending.
+Review titles, complete requirements, evidence, scores, commute and exclusions.
+Then dispatch `send` with the same revision and reason to deliver the prepared
+report without repeating research. Empty revised reports are refused.
+
+The original daily record remains unchanged. Both the normal email and its
+correction have durable checkpoints and independent duplicate guards. Repeated
+dispatches with the same revision skip after acceptance. For an uncertain revised
+delivery, reconcile with `--revision updated-list`; its jobs stay reserved until
+the provider outcome is confirmed. A revision never authorizes an automatic resend
+of the original email.
+
+The list is checked as of its research date. Do not describe all included vacancies
+as published that day when publication dates are unknown.
+
 ## Reconcile uncertain delivery
 
 First inspect Brevo's transactional logs for the date, subject, recipients and stored

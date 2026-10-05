@@ -2,7 +2,8 @@
 
 Weekday job research for Miki, with a German email report and a Friday overview.
 The service searches public job sites through the OpenAI Responses web-search tool,
-checks candidate detail pages independently, filters previously reported jobs, and
+reassesses candidates from downloaded detail pages, checks exact source evidence,
+filters previously reported jobs, and
 delivers through Brevo's transactional email API. Gmail SMTP remains an optional
 backend. Research criteria are in `config/`.
 
@@ -49,6 +50,10 @@ and `state/history.json` persist with Git commits before and after email deliver
 These commits are essential to the next runner's duplicate guard. A successful
 provider response means accepted for delivery, not proven inbox receipt. Brevo's
 transactional logs show delivery and bounce events.
+
+An explicitly requested correction can prepare a fresh crawl under a separate
+revision, review its scored shortlist, then send it while preserving the original
+email and its duplicate guard. See the correction workflow in the operations guide.
 
 See [operations](docs/operations.md) for failures, reconciliation and the future
 overview frontend. Run records already expose dates, hits, source checks, excluded

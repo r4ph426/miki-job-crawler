@@ -108,7 +108,7 @@ def status(root, store, now=None):
     config = read_json(root / "config/search.json", {})
     runs = [read_json(p, {}) for p in sorted((store / "runs").glob("*.json"), reverse=True)]
     day = now.astimezone(BERLIN).date().isoformat()
-    today = next((r for r in runs if r["date"] == day), None)
+    today = read_json(store / "runs" / f"{day}.json", {})
     eligible = due(now, config) and (not today or today.get("status") not in TERMINAL)
     planned = now.astimezone(BERLIN).isoformat() if eligible else next_run(now, config)
     return {
@@ -120,20 +120,25 @@ def status(root, store, now=None):
     }
 
 
-def render_report(report, day, history, fixture=False):
+def render_report(report, day, history, fixture=False, revision=None):
     esc = lambda value: html.escape(str(value), quote=True)
     jobs = report["jobs"]
     weekly = day.weekday() == 4
     subject = (f"Wochenüberblick Stellensuche · KW {day.isocalendar().week}" if weekly
                else f"Stellen für Miki · {day:%d.%m.%Y} · {len(jobs)} neue Treffer")
+    if revision:
+        subject = f"Aktualisierte Stellenliste für Miki · {day:%d.%m.%Y} · {len(jobs)} geprüfte Treffer"
     body = ["<!doctype html><html lang='de'><head><meta charset='utf-8'></head>",
             "<body style='font-family:Arial,sans-serif;max-width:720px;margin:24px auto;color:#20252b;line-height:1.55'>",
             f"<h1>{esc(subject)}</h1>"]
     if fixture:
         body.append("<p><strong>Testdaten: keine Live-Recherche, keine E-Mail versendet.</strong></p>")
+    if revision:
+        body.append("<p>Aktualisierung nach erneuter Recherche und Prüfung der Originalanzeigen. Diese Liste ersetzt den früheren heutigen Bericht.</p>")
+    body.append(f"<p>Prüfstand: {day:%d.%m.%Y}. Die Anzeigen sind aktuell abrufbar; ihr Veröffentlichungsdatum ist nicht überall bekannt.</p>")
     summary = report["summary"]
     action = report["next_action"]
-    if not jobs or report["rejected"]:
+    if not jobs or report["rejected"] or report.get("assessment_pages_checked"):
         summary = f"{len(jobs)} neue, unabhängig verifizierte Treffer ab 55 Punkten."
         action = (f"Heute die Anzeige {jobs[0]['title']} bei {jobs[0]['employer']} prüfen und die Bewerbung vorbereiten "
                   f"(geschätzter Aufwand: {jobs[0]['effort_minutes']} Minuten)." if jobs else
@@ -159,8 +164,10 @@ def render_report(report, day, history, fixture=False):
             f"<section style='border-top:1px solid #ddd;margin-top:24px;padding-top:16px'><h2>{esc(j['title'])}</h2>",
             f"<p>{esc(j['employer'])} · {esc(j['district'])} · <strong>{j['score']}/100</strong></p>",
             f"<p>{esc(j['commute'])} · {esc(j['hours'])} · {esc(j['contract'])} · {esc(j['salary'])}</p>",
+            f"<p>Passung {j['scores']['skill']}/40 · Zugang {j['scores']['entry']}/30 · Pendeln {j['scores']['commute']}/20 · Bedingungen {j['scores']['conditions']}/10</p>",
             f"<p><strong>Dafür:</strong> {esc(j['pro'])}<br><strong>Dagegen:</strong> {esc(j['con'])}</p>",
             f"<p><strong>Aufwand:</strong> {j['effort_minutes']} Min. ({esc(j['effort_details'])})</p>",
+            f"<blockquote style='border-left:3px solid #ddd;padding-left:12px;font-size:13px'><strong>Beleg aus der Anzeige:</strong> {esc(j['evidence'])}</blockquote>",
             f"<p><a href='{esc(j['url'])}'>Anzeige öffnen →</a></p></section>",
         ])
     if not jobs:
@@ -393,14 +400,21 @@ def record_delivered_jobs(store, record):
     atomic_json(store / "history.json", delivered)
 
 
-def reconcile(store, day, result, note, persist=None):
+def record_path(store, day, revision=None):
+    if revision and not re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,39}", revision):
+        raise ValueError("Revision must use 1–40 lowercase letters, digits, hyphens or underscores")
+    suffix = f"--{revision}" if revision else ""
+    return store / "runs" / f"{day}{suffix}.json"
+
+
+def reconcile(store, day, result, note, persist=None, revision=None):
     """Explicit operator decision after checking provider delivery logs."""
     day = date.fromisoformat(day).isoformat()
     if result not in ["sent", "not-sent"] or not note.strip():
         raise ValueError("Reconciliation requires sent/not-sent and an evidence note")
     persist = persist or (lambda record: None)
     with run_lock(store):
-        path = store / "runs" / f"{day}.json"
+        path = record_path(store, day, revision)
         record = read_json(path, {})
         if record.get("status") not in ["sending", "uncertain", "partial"]:
             raise ValueError("Only sending, uncertain or partial deliveries require reconciliation")
@@ -420,11 +434,16 @@ def reconcile(store, day, result, note, persist=None):
 
 
 def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
-        researcher=research, verifier=verify_job, sender=send_mail, persist=None):
+        researcher=research, verifier=verify_job, sender=send_mail, persist=None,
+        prepare=False, revision=None, revision_reason=None):
     now = now or datetime.now(timezone.utc)
     config = read_json(root / "config/search.json", {})
-    if not dry_run and fixture is not None:
+    if (not dry_run or prepare) and fixture is not None:
         raise ValueError("Fixture data cannot be emailed")
+    if prepare and dry_run:
+        raise ValueError("Preparation writes durable live state; do not combine it with dry-run")
+    if revision and not (revision_reason and revision_reason.strip()):
+        raise ValueError("An explicit reason is required for a revised report")
     day = now.astimezone(ZoneInfo(config["timezone"])).date()
     if not due(now, config) and fixture is None:
         return {"date": str(day), "status": "skipped", "reason": "Outside weekday Berlin delivery window"}
@@ -434,41 +453,61 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
     with run_lock(store):
         history = load_history(root, store)
         exclusion_history = history + reserved_jobs(store)
-        path = store / "runs" / f"{day}.json"
+        path = record_path(store, str(day), revision)
         record = read_json(path, {})
         if not dry_run and record.get("status") in TERMINAL:
             return {"date": str(day), "status": "skipped", "delivery_status": record["status"],
                     "reason": "Already sent or requires manual delivery reconciliation"}
+        if revision:
+            original = read_json(record_path(store, str(day)), {})
+            if original.get("status") != "sent":
+                raise ValueError("A revised report requires a confirmed sent original")
+            if any(r.get("status") in {"sending", "uncertain", "partial"}
+                   for r in [read_json(p, {}) for p in (store / "runs").glob(f"{day}--*.json")]):
+                raise ValueError("Reconcile existing revised deliveries before preparing another")
+            config = dict(config, previous_candidate_urls=[j["url"] for j in original.get("report", {}).get("rejected", [])])
         if not dry_run:
             record.update(date=str(day), last_attempt_at=now.isoformat())
             if os.environ.get("GITHUB_RUN_ID"):
                 record["last_attempt_run_id"] = os.environ["GITHUB_RUN_ID"]
         try:
-            settings = mail_settings() if not dry_run else None
+            settings = mail_settings() if not dry_run and not prepare else None
         except MailConfigurationError as error:
             record.update(status="configuration_failed", error=str(error), configuration_diagnostic=error.code)
             atomic_json(path, record)
             persist(record)
             raise
-        if dry_run or not record.get("report"):
+        if dry_run or prepare or not record.get("report"):
             try:
                 raw = validate_report(copy.deepcopy(fixture)) if fixture is not None else researcher(root, config, exclusion_history, day)
                 verifier_fn = (lambda job, config: (True, "Fixture only; not live verified")) if fixture is not None else verifier
                 jobs, rejected = select_jobs(raw, config, exclusion_history, day, verifier_fn)
                 report = dict(raw, jobs=jobs, rejected=rejected)
-                subject, body = render_report(report, day, history, fixture is not None)
+                verification_failures = [j for j in rejected if j["reason"] not in {
+                    "Already reported or repeated within this run", "Below score threshold", "Application deadline passed", "Expired"}]
+                if not jobs and verification_failures and fixture is None:
+                    raise ResearchError("All plausible candidates failed independent verification; retry research instead of reporting zero jobs",
+                                        code="no_verified_candidates")
+                subject, body = render_report(report, day, history, fixture is not None, revision)
             except Exception as error:
                 if not dry_run:
                     failure = {"date": str(day), "status": "research_failed", "hits": 0,
                                "failed_at": now.isoformat(), "error": f"Research failed ({type(error).__name__}); see workflow log"}
                     if isinstance(error, ResearchError):
                         failure["research_diagnostic"] = error.diagnostic
+                    if revision:
+                        failure.update(revision=revision, revision_reason=revision_reason)
+                    if "report" in locals():
+                        failure["candidate_diagnostics"] = report.get("rejected", [])
                     atomic_json(path, failure)
                     persist(failure)
                 raise
             record = {"date": str(day), "created_at": now.isoformat(), "status": "prepared", "subject": subject,
                       "report": report, "attempts": [], "hits": len(jobs),
                       "message_id": f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"}
+            if revision:
+                record.update(revision=revision, revision_reason=revision_reason,
+                              supersedes_message_id=original["message_id"])
             if not dry_run:
                 record["last_attempt_at"] = now.isoformat()
                 if os.environ.get("GITHUB_RUN_ID"):
@@ -476,7 +515,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         else:
             # Reuse the live research but apply current rendering to an unsent outbox.
             # Terminal delivery states were already blocked above.
-            record["subject"], body = render_report(record["report"], day, history)
+            record["subject"], body = render_report(record["report"], day, history, revision=revision)
             record["message_id"] = f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"
         if dry_run:
             output = output_dir or root / "out" / str(day)
@@ -487,11 +526,16 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         path.parent.mkdir(parents=True, exist_ok=True)
         (path.with_suffix(".html")).write_text(body, encoding="utf-8")
         record["status"] = "prepared"
-        record["email_provider"] = settings["EMAIL_PROVIDER"]
+        if settings:
+            record["email_provider"] = settings["EMAIL_PROVIDER"]
         record.pop("error", None)
         record.pop("configuration_diagnostic", None)
         atomic_json(path, record)
         persist(record)  # If this fails, delivery must not be called.
+        if prepare:
+            return {"date": str(day), "revision": revision, "status": "prepared", "hits": record["hits"], "record": str(path)}
+        if revision and not record["report"]["jobs"]:
+            raise ResearchError("Refusing to send an empty revised report", code="no_verified_candidates")
         def on_sending():
             record["status"] = "sending"
             record["attempts"].append({"started_at": datetime.now(timezone.utc).isoformat(), "status": "sending"})

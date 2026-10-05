@@ -20,14 +20,18 @@ def main():
     resolve.add_argument("--result", choices=["sent", "not-sent"], required=True)
     resolve.add_argument("--note", required=True, help="Evidence from provider logs; never include credentials")
     resolve.add_argument("--persist-git", action="store_true")
+    resolve.add_argument("--revision", help="Revision identifier for a separate updated report")
     execute = commands.add_parser("run")
     delivery = execute.add_mutually_exclusive_group()
     delivery.add_argument("--send", action="store_true", help="Enable real delivery (default: dry run)")
     delivery.add_argument("--dry-run", action="store_true")
+    delivery.add_argument("--prepare", action="store_true", help="Prepare and persist live research for review, without sending")
     execute.add_argument("--fixture", type=Path, help="Offline demo data; never compatible with --send")
     execute.add_argument("--output-dir", type=Path)
     execute.add_argument("--persist-git", action="store_true", help="Push outbox transitions; for the Actions runner")
     execute.add_argument("--now", help="ISO time for dry-run testing only")
+    execute.add_argument("--revision", help="Explicitly authorized update of an already sent report; preserves the original")
+    execute.add_argument("--revision-reason", help="Reason for the explicitly authorized updated report")
     args = parser.parse_args()
     root = args.root.resolve()
     store = (args.state_dir or root / "state").resolve()
@@ -35,15 +39,16 @@ def main():
         result = status(root, store)
     elif args.command == "reconcile":
         persist = git_persister(root, store) if args.persist_git else None
-        result = reconcile(store, args.date, args.result, args.note, persist=persist)
+        result = reconcile(store, args.date, args.result, args.note, persist=persist, revision=args.revision)
     else:
-        if args.send and (args.fixture or args.now):
-            parser.error("--send cannot use fixtures or override the clock")
+        if (args.send or args.prepare) and (args.fixture or args.now):
+            parser.error("--send/--prepare cannot use fixtures or override the clock")
         now = datetime.fromisoformat(args.now) if args.now else None
         fixture = json.loads(args.fixture.read_text(encoding="utf-8")) if args.fixture else None
         persist = git_persister(root, store) if args.persist_git else None
-        result = run(root, store, now=now, dry_run=not args.send, fixture=fixture,
-                     output_dir=args.output_dir, persist=persist)
+        result = run(root, store, now=now, dry_run=not (args.send or args.prepare), fixture=fixture,
+                     output_dir=args.output_dir, persist=persist, prepare=args.prepare,
+                     revision=args.revision, revision_reason=args.revision_reason)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if result.get("status") == "partial" or result.get("delivery_status") in {"sending", "uncertain", "partial"}:
         return 1

@@ -48,6 +48,60 @@ class ScheduleTests(unittest.TestCase):
 
 
 class ResearchTests(unittest.TestCase):
+    def test_inline_markup_unicode_and_punctuation_spacing_preserve_real_quote(self):
+        job = copy.deepcopy(FIXTURE["jobs"][0])
+        job["url"] = "https://aeyde.jobs.personio.de/job/123"
+        job["evidence"] = "Lieferantenmanagement: Abstimmung von Bestellungen und Lieferzeiten."
+        response = Mock()
+        response.headers.get_content_charset.return_value = "utf-8"
+        response.read.return_value = "<p>Lieferanten<b>management</b> : Abstimmung von Bestellungen und Lieferzeiten.</p>".encode()
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with patch.object(provider.urllib.request, "build_opener") as build:
+            build.return_value.open.return_value = response
+            self.assertTrue(provider.verify_job(job, CONFIG)[0])
+            job["evidence"] = "Lieferantenmanagement: Strategische Verhandlung aller Verträge."
+            self.assertFalse(provider.verify_job(job, CONFIG)[0])
+
+    def test_closed_job_with_http_200_is_not_verified(self):
+        job = copy.deepcopy(FIXTURE["jobs"][0])
+        job["url"] = "https://aeyde.jobs.personio.de/job/123"
+        response = Mock()
+        response.headers.get_content_charset.return_value = "utf-8"
+        response.read.return_value = ("<p>Dieser Job ist nicht mehr verfügbar</p><p>" + job["evidence"] + "</p>").encode()
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with patch.object(provider.urllib.request, "build_opener") as build:
+            build.return_value.open.return_value = response
+            self.assertEqual(provider.verify_job(job, CONFIG), (False, "Expired"))
+
+    def test_grounded_assessment_receives_full_actual_page_and_replaces_bad_discovery_quote(self):
+        report = copy.deepcopy(FIXTURE)
+        report["jobs"][0]["url"] = "https://aeyde.jobs.personio.de/job/123"
+        report["jobs"][0]["evidence"] = "Invented sentence that does not exist in the detail page."
+        grounded = copy.deepcopy(report["jobs"][0])
+        grounded["evidence"] = "Sie koordinieren Bestellungen und Liefertermine mit unseren Lieferanten."
+        text = grounded["evidence"] + " Erforderlich ist eine kaufmännische Ausbildung."
+        with patch.object(provider, "fetch_job_page", return_value=(text, "Live page")), \
+             patch.object(provider, "response_json", return_value={"jobs": [grounded], "excluded": []}) as response:
+            result = provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
+        payload = response.call_args.args[0]
+        self.assertIn(text, payload["input"])
+        self.assertNotIn("Invented sentence", payload["input"])
+        self.assertEqual(result["jobs"][0]["evidence"], grounded["evidence"])
+        self.assertEqual(result["assessment_pages_checked"], 1)
+        with patch.object(provider, "fetch_job_page", return_value=(text, "Live page")), \
+             patch.object(provider, "response_json", return_value={"jobs": [dict(grounded, url="https://evil.example/job")], "excluded": []}):
+            with self.assertRaises(ResearchError):
+                provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
+
+    def test_grounded_assessment_must_account_for_every_fetched_candidate(self):
+        report = copy.deepcopy(FIXTURE)
+        with patch.object(provider, "fetch_job_page", return_value=("Full duties and required qualifications", "Live page")), \
+             patch.object(provider, "response_json", return_value={"jobs": [], "excluded": []}):
+            with self.assertRaises(ResearchError):
+                provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
+
     def test_all_sources_down_is_failure_not_empty_mail(self):
         report = copy.deepcopy(FIXTURE)
         report["jobs"] = []
@@ -146,6 +200,77 @@ class ResearchTests(unittest.TestCase):
 
 
 class DeliveryTests(unittest.TestCase):
+    def test_prepare_then_send_revision_preserves_original_and_prevents_repeated_correction(self):
+        self.invoke()
+        original_path = self.store / "runs/2026-10-05.json"
+        original = original_path.read_bytes()
+        updated = copy.deepcopy(FIXTURE)
+        updated["jobs"][0].update(title="New verified role", employer="New employer", url="https://example.org/new-role")
+        self.researcher.side_effect = lambda *args: copy.deepcopy(updated)
+        sender = Mock()
+        options = {"revision": "updated-list", "revision_reason": "Fresh crawl requested by the recipient"}
+        self.assertEqual(self.invoke(prepare=True, sender=sender, **options)["status"], "prepared")
+        sender.assert_not_called()
+        self.assertEqual(original_path.read_bytes(), original)
+        revision_path = self.store / "runs/2026-10-05--updated-list.json"
+        prepared = json.loads(revision_path.read_text())
+        self.assertEqual(prepared["hits"], 1)
+        self.assertNotEqual(prepared["message_id"], self.record()["message_id"])
+        self.assertIn("Aktualisierte Stellenliste", prepared["subject"])
+        calls = self.researcher.call_count
+        self.assertEqual(self.invoke(**options)["status"], "sent")
+        self.assertEqual(self.researcher.call_count, calls)
+        self.assertEqual(original_path.read_bytes(), original)
+        self.assertEqual(self.invoke(**options)["delivery_status"], "sent")
+        self.assertEqual(self.invoke()["delivery_status"], "sent")
+        self.assertEqual(len(load_history(ROOT, self.store)), 147)
+
+    def test_revision_requires_sent_original_explicit_reason_and_safe_identifier(self):
+        with self.assertRaises(ValueError):
+            self.invoke(revision="updated-list", revision_reason="Requested correction")
+        self.invoke()
+        for options in [{"revision": "updated-list"}, {"revision": "../escape", "revision_reason": "Requested correction"}]:
+            with self.subTest(options=options):
+                with self.assertRaises(ValueError):
+                    self.invoke(**options)
+
+    def test_failed_candidate_verification_is_research_failure_not_zero_result_email(self):
+        sender = Mock()
+        with self.assertRaises(ResearchError):
+            self.invoke(verifier=lambda *args: (False, "Supporting quotation not present in accessible detail-page text"), sender=sender)
+        sender.assert_not_called()
+        self.assertEqual(self.record()["status"], "research_failed")
+        self.assertEqual(self.record()["research_diagnostic"]["code"], "no_verified_candidates")
+        self.assertEqual(len(self.record()["candidate_diagnostics"]), 1)
+
+    def test_empty_revision_cannot_be_sent(self):
+        self.invoke()
+        empty = copy.deepcopy(FIXTURE)
+        empty["jobs"] = []
+        self.researcher.side_effect = lambda *a: copy.deepcopy(empty)
+        options = {"revision": "updated-list", "revision_reason": "Requested correction"}
+        self.invoke(prepare=True, **options)
+        sender = Mock()
+        with self.assertRaises(ResearchError):
+            self.invoke(sender=sender, **options)
+        sender.assert_not_called()
+
+    def test_uncertain_revision_blocks_retry_and_reserves_jobs_until_reconciliation(self):
+        self.invoke()
+        updated = copy.deepcopy(FIXTURE)
+        updated["jobs"][0].update(title="New verified role", employer="New employer", url="https://example.org/new-role")
+        self.researcher.side_effect = lambda *a: copy.deepcopy(updated)
+        options = {"revision": "updated-list", "revision_reason": "Requested correction"}
+        def unknown(message, settings, marker):
+            marker()
+            raise DeliveryFailure("Uncertain submission", ambiguous=True)
+        with self.assertRaises(DeliveryFailure):
+            self.invoke(sender=unknown, **options)
+        self.assertEqual(self.invoke(**options)["delivery_status"], "uncertain")
+        self.assertEqual(status(ROOT, self.store, MONDAY)["reserved_jobs_awaiting_reconciliation"], 1)
+        reconcile(self.store, "2026-10-05", "sent", "Confirmed revised message in provider logs", revision="updated-list")
+        self.assertEqual(self.invoke(**options)["delivery_status"], "sent")
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
