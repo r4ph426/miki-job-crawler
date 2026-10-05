@@ -1,11 +1,87 @@
 {
   "date": "2026-10-05",
-  "status": "research_failed",
+  "created_at": "2026-10-05T14:53:05.185229+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 05.10.2026 · 0 neue Treffer",
+  "report": {
+    "summary": "4 passende Anzeigen gefunden (Stichtag Berlin: 2026-10-05). Schwerpunkt heute: ein klarer B‑Treffer (Einkauf, Food) plus zwei A‑Treffer (Office Management) und ein C‑Treffer (Vertriebsinnendienst).",
+    "next_action": "Heute VielfaltMenü (Einkäufer) priorisieren: Lebenslauf mit Einkaufs-/Lieferantenbezug (MOQ, Lead Times, Reorders, Frachtkosten, PLM/SAP) zuschneiden und über Personio senden; parallel kurze LinkedIn‑Notiz an Einkauf/HR. Danach Schnellbewerbung GRENKE (BA).",
+    "weekend_action": "",
+    "jobs": [],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de (7 Tage)",
+        "Teamassistenz Berlin site:arbeitsagentur.de (7 Tage)",
+        "Office Management Berlin site:jobs.personio.de",
+        "Office Manager Berlin site:jobs.personio.de ucm"
+      ],
+      "B": [
+        "Einkäufer Berlin site:arbeitsagentur.de (7 Tage)",
+        "Einkäufer Berlin site:jobs.personio.de (VielfaltMenü)",
+        "Beschaffung Berlin site:myworkdayjobs.com / site:wd3.myworkdayjobs.com"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de (7 Tage)",
+        "Product Coordinator Berlin site:personio.de / Aeyde",
+        "Order Management Berlin site:stepstone.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Viele neue/aktualisierte Office‑Management‑Anzeigen in Agentur- und KMU‑Umfeld; Gehaltsspannen selten, ucm bildet eine Ausnahme (38–50 T€).",
+      "B": "Wenige neue BA‑Einkaufsanzeigen zum Wochenstart; stärkster Treffer heute über ATS (VielfaltMenü, Food). Mehrere Workday‑Anzeigen zielen auf Senior‑Profile (EPC/Energy).",
+      "C": "BA liefert stabile Zahl an Vertriebsinnendienst‑Rollen mit hybriden Anteilen; bank-/leasingnahe Profile (GRENKE) sind präsent, fachlich aber nur mittel nah an Produktkoordination."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche/Details geladen; einige ältere Trefferdetails 410 (abgelaufen). Neue Detailseiten heute abrufbar (z. B. GRENKE, H.B.C.)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen sichtbar; für heute keine zusätzlichen, klar passenden Detailseiten >55 gefunden."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio mehrfach nutzbar (VielfaltMenü, ucm, Zytomics)."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal erreichbar; heutige Einträge überwiegend pädagogisch/sozial; keine direkt passende Beschaffungs-/Assistenzrolle >55."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/FashionJobs erreichbar; heutige Treffer überwiegend Retail‑Sales; keine neue passende Koordinations-/Einkaufsrolle."
+      }
+    ],
+    "rejected": [
+      {
+        "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+        "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+        "reason": "Supporting quotation not present in accessible detail-page text"
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst Team Anfrage (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17784-44377159-820-S",
+        "reason": "Supporting quotation not present in accessible detail-page text"
+      },
+      {
+        "title": "Office Manager:in – VZ/TZ (38.000–50.000 €)",
+        "url": "https://ucm.jobs.personio.de/job/2757520",
+        "reason": "Supporting quotation not present in accessible detail-page text"
+      },
+      {
+        "title": "Office Manager / Specialist Office Management (m/w/d)",
+        "url": "https://zytomics.jobs.personio.de/job/2697519",
+        "reason": "Supporting quotation not present in accessible detail-page text"
+      }
+    ]
+  },
+  "attempts": [],
   "hits": 0,
-  "failed_at": "2026-10-05T14:45:19.107622+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "api_http_error",
-    "http_status": 429
-  }
+  "message_id": "<miki-2026-10-05-0a56d2ea1602fdef@miki-jobsearch>"
 }
