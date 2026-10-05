@@ -369,6 +369,34 @@ class GitPersistenceTests(unittest.TestCase):
 
 
 class SmtpTests(unittest.TestCase):
+    def test_closed_ssl_connection_uses_verified_starttls_before_login_and_data(self):
+        smtp = Mock()
+        smtp.send_message.return_value = {}
+        marker = Mock()
+        with patch("miki_jobsearch.service.smtplib.SMTP_SSL", side_effect=smtplib.SMTPServerDisconnected("test")), \
+             patch("miki_jobsearch.service.smtplib.SMTP", return_value=smtp):
+            result = send_smtp(Mock(), MAIL_ENV, marker)
+        calls = [call[0] for call in smtp.method_calls]
+        self.assertLess(calls.index("starttls"), calls.index("login"))
+        self.assertLess(calls.index("login"), calls.index("send_message"))
+        self.assertIsNotNone(smtp.starttls.call_args.kwargs["context"])
+        marker.assert_called_once()
+        self.assertEqual(result["status"], "sent")
+
+    def test_starttls_failure_never_authenticates_or_submits_data(self):
+        smtp = Mock()
+        smtp.starttls.side_effect = smtplib.SMTPNotSupportedError("private server text")
+        marker = Mock()
+        with patch("miki_jobsearch.service.smtplib.SMTP_SSL", side_effect=smtplib.SMTPServerDisconnected("test")), \
+             patch("miki_jobsearch.service.smtplib.SMTP", return_value=smtp):
+            with self.assertRaises(DeliveryFailure) as caught:
+                send_smtp(Mock(), MAIL_ENV, marker)
+        self.assertIn("starttls failed on port 587", str(caught.exception))
+        self.assertNotIn("private server text", str(caught.exception))
+        smtp.login.assert_not_called()
+        smtp.send_message.assert_not_called()
+        marker.assert_not_called()
+
     def test_data_acceptance_survives_close(self):
         smtp = Mock()
         smtp.send_message.return_value = {}

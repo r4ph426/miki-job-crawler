@@ -213,13 +213,31 @@ def make_message(record, body, settings):
 def send_smtp(message, settings, on_sending):
     """Persist sending before DATA; distinguish rejection from ambiguous acceptance."""
     connection = None
-    try:
-        connection = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=45, context=tls_context())
-        connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"])
-    except (OSError, smtplib.SMTPException, UnicodeError) as error:
-        if connection is not None:
-            connection.close()
-        raise DeliveryFailure(f"SMTP connection/authentication failed ({type(error).__name__})") from error
+    for port in [465, 587]:
+        connection = None
+        phase = "connect"
+        try:
+            if port == 465:
+                connection = smtplib.SMTP_SSL("smtp.gmail.com", port, timeout=45, context=tls_context())
+            else:
+                connection = smtplib.SMTP("smtp.gmail.com", port, timeout=45)
+                phase = "starttls"
+                connection.ehlo()
+                connection.starttls(context=tls_context())
+                connection.ehlo()
+            phase = "authenticate"
+            connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"])
+            break
+        except (OSError, smtplib.SMTPException, UnicodeError) as error:
+            if connection is not None:
+                connection.close()
+            # Both routes require verified TLS before authentication. A definite
+            # credential rejection needs account correction rather than retries.
+            if port == 465 and not isinstance(error, (smtplib.SMTPAuthenticationError, UnicodeError)):
+                continue
+            smtp_code = getattr(error, "smtp_code", None)
+            code_note = f"; SMTP {smtp_code}" if type(smtp_code) is int and 100 <= smtp_code <= 599 else ""
+            raise DeliveryFailure(f"SMTP {phase} failed on port {port} ({type(error).__name__}{code_note})") from error
     try:
         on_sending()
         recipients = [s.strip() for s in (settings["MAIL_TO"] + "," + settings["MAIL_CC"]).split(",") if s.strip()]
