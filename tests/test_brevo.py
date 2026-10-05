@@ -168,8 +168,12 @@ class BrevoDeliveryTests(unittest.TestCase):
             researcher = Mock(side_effect=lambda *a: copy.deepcopy(FIXTURE))
             options = dict(root=ROOT, store=store, now=MONDAY, dry_run=False, researcher=researcher,
                            verifier=lambda *a: (True, "mock verified"))
-            with self.assertRaises(DeliveryFailure):
-                run(**options, sender=Mock(side_effect=DeliveryFailure("Prior SMTP authentication rejection")))
+            with patch.dict(os.environ, {"EMAIL_PROVIDER": "gmail", "GMAIL_USER": ENV["MAIL_FROM"],
+                                         "GMAIL_APP_PASSWORD": "unit-test-password"}):
+                with self.assertRaises(DeliveryFailure):
+                    run(**options, sender=Mock(side_effect=DeliveryFailure("Prior SMTP authentication rejection")))
+            prior = json.loads((store / "runs/2026-10-05.json").read_text())
+            self.assertEqual(prior["email_provider"], "gmail")
             order = []
             opener = Mock()
             opener.open.side_effect = lambda *a, **k: (order.append("post") or acknowledgement())
