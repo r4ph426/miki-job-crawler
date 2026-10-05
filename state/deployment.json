@@ -19,7 +19,7 @@
   "invalid_mail_formats": [
     "BREVO_API_KEY"
   ],
-  "checked_at": "2026-10-05T16:50:55.982411+00:00",
+  "checked_at": "2026-10-05T19:01:59.697440+00:00",
   "runner": "GitHub Actions",
-  "run_id": "37343937510"
+  "run_id": "37360405145"
 }
