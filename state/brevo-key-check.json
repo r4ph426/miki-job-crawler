@@ -1,10 +1,11 @@
 {
   "required_secret": "BREVO_API_KEY",
   "operation": "read-only account authentication",
-  "status": "ip_access_denied",
-  "http_status": 401,
-  "guidance": "Brevo API IP security rejected the GitHub runner. Review Authorized IPs in Brevo SMTP & API settings; hosted runners use changing IP addresses.",
-  "checked_at": "2026-10-05T19:16:47.785427+00:00",
+  "status": "ready",
+  "http_status": 200,
+  "guidance": "Brevo authenticated the API key. Sender verification and delivery still require a send check.",
+  "transactional_email_enabled": true,
+  "checked_at": "2026-10-05T19:22:55.773538+00:00",
   "runner": "GitHub Actions",
-  "run_id": "37362222500"
+  "run_id": "37362907316"
 }
