@@ -1,8 +1,6 @@
 {
-  "status": "credentials_missing",
-  "missing_requirements": [
-    "BREVO_API_KEY"
-  ],
+  "status": "credentials_present",
+  "missing_requirements": [],
   "checked_requirements": [
     "MIKI_OPENAI_API_KEY",
     "BREVO_API_KEY",
@@ -10,16 +8,14 @@
   ],
   "email_provider": "brevo",
   "mail_format_checks": {
-    "BREVO_API_KEY": false,
+    "BREVO_API_KEY": true,
     "EMAIL_PROVIDER": true,
     "MAIL_FROM": true,
     "MAIL_TO": true,
     "MAIL_CC": true
   },
-  "invalid_mail_formats": [
-    "BREVO_API_KEY"
-  ],
-  "checked_at": "2026-10-05T19:01:59.697440+00:00",
+  "invalid_mail_formats": [],
+  "checked_at": "2026-10-05T19:06:40.687404+00:00",
   "runner": "GitHub Actions",
-  "run_id": "37360405145"
+  "run_id": "37360980400"
 }
