@@ -84,8 +84,8 @@
   "attempts": [],
   "hits": 0,
   "message_id": "<miki-2026-10-05-346a708488b552f7@miki-jobsearch>",
-  "last_attempt_at": "2026-10-05T16:50:57.139944+00:00",
-  "last_attempt_run_id": "37343937510",
+  "last_attempt_at": "2026-10-05T19:02:00.889610+00:00",
+  "last_attempt_run_id": "37360405145",
   "error": "Missing secure mail configuration: BREVO_API_KEY",
   "configuration_diagnostic": "missing_mail_configuration"
 }
