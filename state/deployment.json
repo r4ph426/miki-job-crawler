@@ -1,10 +1,17 @@
 {
-  "status": "credentials_present",
-  "missing_requirements": [],
-  "checked_requirements": [
-    "MIKI_OPENAI_API_KEY"
+  "status": "credentials_missing",
+  "missing_requirements": [
+    "GMAIL_USER",
+    "GMAIL_APP_PASSWORD",
+    "MAIL_TO"
   ],
-  "checked_at": "2026-10-05T14:15:47.012313+00:00",
+  "checked_requirements": [
+    "MIKI_OPENAI_API_KEY",
+    "GMAIL_USER",
+    "GMAIL_APP_PASSWORD",
+    "MAIL_TO"
+  ],
+  "checked_at": "2026-10-05T14:24:45.862363+00:00",
   "runner": "GitHub Actions",
-  "run_id": "37323261009"
+  "run_id": "37324467908"
 }
