@@ -387,6 +387,23 @@ class GitPersistenceTests(unittest.TestCase):
 
 
 class SmtpTests(unittest.TestCase):
+    def test_advertised_login_fallback_requires_tls_and_does_not_repeat_plain_auth(self):
+        smtp = Mock()
+        smtp.esmtp_features = {"auth": "LOGIN PLAIN"}
+        smtp.send_message.return_value = {}
+        marker = Mock()
+        with patch("miki_jobsearch.service.smtplib.SMTP_SSL", side_effect=smtplib.SMTPServerDisconnected("test")), \
+             patch("miki_jobsearch.service.smtplib.SMTP", return_value=smtp):
+            result = send_smtp(Mock(), MAIL_ENV, marker)
+        calls = [call[0] for call in smtp.method_calls]
+        self.assertLess(calls.index("starttls"), calls.index("auth"))
+        self.assertLess(calls.index("auth"), calls.index("send_message"))
+        self.assertEqual(smtp.auth.call_args.args[0], "LOGIN")
+        self.assertFalse(smtp.auth.call_args.kwargs["initial_response_ok"])
+        smtp.login.assert_not_called()
+        marker.assert_called_once()
+        self.assertEqual(result["status"], "sent")
+
     def test_closed_ssl_connection_uses_verified_starttls_before_login_and_data(self):
         smtp = Mock()
         smtp.send_message.return_value = {}

@@ -233,7 +233,16 @@ def send_smtp(message, settings, on_sending):
                 connection.starttls(context=tls_context())
                 connection.ehlo()
             phase = "authenticate"
-            connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"], initial_response_ok=False)
+            features = connection.esmtp_features
+            if port == 587 and isinstance(features, dict) and "LOGIN" in features.get("auth", "").upper().split():
+                # smtplib.login prefers PLAIN. A server closing that exchange may
+                # still accept its advertised LOGIN mechanism on a fresh TLS session.
+                phase = "authenticate-login"
+                connection.user = settings["GMAIL_USER"]
+                connection.password = settings["GMAIL_APP_PASSWORD"]
+                connection.auth("LOGIN", connection.auth_login, initial_response_ok=False)
+            else:
+                connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"], initial_response_ok=False)
             break
         except (OSError, smtplib.SMTPException, UnicodeError) as error:
             if connection is not None:
