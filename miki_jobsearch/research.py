@@ -12,7 +12,8 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 
 class ResearchError(RuntimeError):
-    def __init__(self, message, *, code="research_error", http_status=None, api_status=None):
+    def __init__(self, message, *, code="research_error", http_status=None, api_status=None,
+                 error_code=None, incomplete_reason=None):
         super().__init__(message)
         # Only fixed identifiers enter durable state; exception text and provider
         # error bodies can contain credentials or other private input.
@@ -24,8 +25,14 @@ class ResearchError(RuntimeError):
         self.diagnostic = {"code": code if code in codes else "research_error"}
         if type(http_status) is int and 100 <= http_status <= 599:
             self.diagnostic["http_status"] = http_status
-        if api_status in {"completed", "incomplete", "failed", "cancelled", "queued", "in_progress"}:
+        if isinstance(api_status, str) and api_status in {"completed", "incomplete", "failed", "cancelled", "queued", "in_progress"}:
             self.diagnostic["api_status"] = api_status
+        known_errors = {"invalid_api_key", "insufficient_quota", "billing_hard_limit_reached",
+                        "model_not_found", "rate_limit_exceeded", "account_deactivated", "server_error"}
+        if isinstance(error_code, str) and error_code in known_errors:
+            self.diagnostic["error_code"] = error_code
+        if isinstance(incomplete_reason, str) and incomplete_reason in {"max_output_tokens", "content_filter"}:
+            self.diagnostic["incomplete_reason"] = incomplete_reason
 
 
 def tls_context():
@@ -138,6 +145,7 @@ def research(root, config, history, day):
         "store": False,
         "tools": [{"type": "web_search"}],
         "max_tool_calls": 50,
+        "max_output_tokens": 12000,
         "include": ["web_search_call.action.sources"],
         "instructions": brief,
         "input": "Research date (Berlin): " + str(day) + "\nConfiguration:\n" + json.dumps(config, ensure_ascii=False)
@@ -145,6 +153,8 @@ def research(root, config, history, day):
                  + "\nReturn the structured report. An unavailable source is explicit. Deadlines use YYYY-MM-DD or an empty string.",
         "text": {"format": {"type": "json_schema", "name": "miki_daily_report", "strict": True, "schema": report_schema()}},
     }
+    if payload["model"] in {"gpt-5", "gpt-5-mini", "gpt-5-nano"} or re.fullmatch(r"gpt-5(?:-mini|-nano)?-\d{4}-\d{2}-\d{2}", payload["model"]):
+        payload["reasoning"] = {"effort": "low"}
     request = urllib.request.Request(
         "https://api.openai.com/v1/responses", data=json.dumps(payload).encode(),
         headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"}, method="POST",
@@ -153,11 +163,19 @@ def research(root, config, history, day):
         with urllib.request.urlopen(request, timeout=600, context=tls_context()) as response:
             result = json.load(response)
     except urllib.error.HTTPError as error:
-        raise ResearchError(f"Research API returned HTTP {error.code}", code="api_http_error", http_status=error.code) from error
+        try:
+            provider_code = json.loads(error.read(16000)).get("error", {}).get("code")
+        except (ValueError, TypeError, AttributeError):
+            provider_code = None
+        raise ResearchError(f"Research API returned HTTP {error.code}", code="api_http_error",
+                            http_status=error.code, error_code=provider_code) from error
     except (urllib.error.URLError, TimeoutError, OSError) as error:
         raise ResearchError(f"Research API connection failed ({type(error).__name__})", code="api_connection_error") from error
     if result.get("status") != "completed":
-        raise ResearchError("Research API did not complete", code="api_incomplete", api_status=result.get("status"))
+        details = result.get("incomplete_details") or {}
+        reason = details.get("reason") if isinstance(details, dict) else None
+        raise ResearchError("Research API did not complete", code="api_incomplete",
+                            api_status=result.get("status"), incomplete_reason=reason)
     output = result.get("output", [])
     if not any(o.get("type") == "web_search_call" and o.get("status") == "completed" for o in output):
         raise ResearchError("Research did not execute web search", code="no_web_search")

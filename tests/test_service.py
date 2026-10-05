@@ -1,4 +1,5 @@
 import copy
+import io
 import json
 import os
 import smtplib
@@ -114,6 +115,34 @@ class ResearchTests(unittest.TestCase):
              patch.object(provider.urllib.request, "urlopen", return_value=response):
             with self.assertRaisesRegex(ResearchError, "did not execute web search"):
                 provider.research(ROOT, CONFIG, [], MONDAY.date())
+
+    def test_large_research_request_is_bounded_and_retains_source_verification(self):
+        response = Mock()
+        response.read.return_value = json.dumps({"status": "completed", "output": [
+            {"type": "web_search_call", "status": "completed"},
+            {"type": "message", "content": [{"type": "output_text", "text": json.dumps(FIXTURE)}]},
+        ]}).encode()
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with patch.dict(os.environ, {"MIKI_OPENAI_API_KEY": "unit-test-only"}), \
+             patch.object(provider.urllib.request, "urlopen", return_value=response) as opener:
+            result = provider.research(ROOT, CONFIG, [], MONDAY.date())
+        payload = json.loads(opener.call_args.args[0].data)
+        self.assertEqual(payload["max_output_tokens"], 12000)
+        self.assertEqual(payload["reasoning"], {"effort": "low"})
+        self.assertEqual(len(result["source_checks"]), 5)
+
+    def test_http_rate_limit_diagnostic_omits_private_provider_message(self):
+        error = urllib.error.HTTPError("https://api.openai.com/v1/responses", 429, "Limited", {},
+                                      io.BytesIO(json.dumps({"error": {"code": "rate_limit_exceeded",
+                                                                      "message": "unit-test-secret"}}).encode()))
+        with patch.dict(os.environ, {"MIKI_OPENAI_API_KEY": "unit-test-only"}), \
+             patch.object(provider.urllib.request, "urlopen", side_effect=error):
+            with self.assertRaises(ResearchError) as caught:
+                provider.research(ROOT, CONFIG, [], MONDAY.date())
+        self.assertEqual(caught.exception.diagnostic,
+                         {"code": "api_http_error", "http_status": 429, "error_code": "rate_limit_exceeded"})
+        self.assertNotIn("unit-test-secret", str(caught.exception))
 
 
 class DeliveryTests(unittest.TestCase):
