@@ -226,7 +226,7 @@ def send_smtp(message, settings, on_sending):
                 connection.starttls(context=tls_context())
                 connection.ehlo()
             phase = "authenticate"
-            connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"])
+            connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"], initial_response_ok=False)
             break
         except (OSError, smtplib.SMTPException, UnicodeError) as error:
             if connection is not None:

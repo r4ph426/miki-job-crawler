@@ -380,6 +380,7 @@ class SmtpTests(unittest.TestCase):
         self.assertLess(calls.index("starttls"), calls.index("login"))
         self.assertLess(calls.index("login"), calls.index("send_message"))
         self.assertIsNotNone(smtp.starttls.call_args.kwargs["context"])
+        self.assertFalse(smtp.login.call_args.kwargs["initial_response_ok"])
         marker.assert_called_once()
         self.assertEqual(result["status"], "sent")
 
