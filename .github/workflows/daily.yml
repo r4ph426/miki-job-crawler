@@ -12,9 +12,9 @@ on:
         options: [offline-demo, live-dry-run, prepare, send]
         default: offline-demo
       runner:
-        description: "Linux runner pool; use ARM if the standard pool cannot acquire a runner"
+        description: "Hosted runner pool; alternate pools are available if acquisition fails"
         type: choice
-        options: [ubuntu-24.04, ubuntu-24.04-arm]
+        options: [ubuntu-24.04, ubuntu-24.04-arm, macos-15]
         default: ubuntu-24.04
       revision:
         description: "Optional explicit revision ID for an authorized correction (preserves the original)"

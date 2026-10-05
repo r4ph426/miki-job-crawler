@@ -93,8 +93,9 @@ is unknown. They are counted separately from confirmed reported history.
 
 If a run has no steps and reports "The job was not acquired by Runner", research
 and delivery never started. The manual workflow's `runner` input can select
-`ubuntu-24.04-arm` to try the alternate Linux pool. This standard-library Python
-service supports both architectures; CI runs on ARM. Scheduled runs use the pinned
+`ubuntu-24.04-arm` to try the alternate Linux pool, or `macos-15` for another hosted
+pool. Every production run validates the service before delivery; CI runs on ARM.
+Scheduled runs use the pinned
 `ubuntu-24.04` image. Retry only after the previous run finishes, and retain the same
 revision ID and delivery records.
 
