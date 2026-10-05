@@ -1,0 +1,10 @@
+{
+  "required_secret": "BREVO_API_KEY",
+  "operation": "read-only account authentication",
+  "status": "invalid_api_key",
+  "http_status": 401,
+  "guidance": "Brevo does not recognize this key. Replace the GitHub secret with a newly generated active Brevo API key.",
+  "checked_at": "2026-10-05T19:10:42.103715+00:00",
+  "runner": "GitHub Actions",
+  "run_id": "37361444064"
+}
