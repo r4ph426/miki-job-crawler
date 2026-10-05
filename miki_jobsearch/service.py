@@ -25,6 +25,12 @@ class StateSyncError(RuntimeError):
     pass
 
 
+class MailConfigurationError(RuntimeError):
+    def __init__(self, message, code):
+        super().__init__(message)
+        self.code = code
+
+
 class DeliveryFailure(RuntimeError):
     def __init__(self, message, ambiguous=False):
         super().__init__(message)
@@ -186,16 +192,17 @@ def mail_settings():
     required = ["GMAIL_USER", "GMAIL_APP_PASSWORD", "MAIL_TO"]
     missing = [k for k in required if not os.environ.get(k, "").strip()]
     if missing:
-        raise RuntimeError("Missing secure mail configuration: " + ", ".join(missing))
+        raise MailConfigurationError("Missing secure mail configuration: " + ", ".join(missing), "missing_mail_configuration")
     settings = {k: os.environ.get(k, "").strip() for k in required + ["MAIL_CC"]}
     # Google's display groups app passwords using spaces, sometimes nonbreaking.
     settings["GMAIL_APP_PASSWORD"] = "".join(settings["GMAIL_APP_PASSWORD"].split())
     for key in ["GMAIL_USER", "MAIL_TO", "MAIL_CC"]:
         if "\r" in settings[key] or "\n" in settings[key]:
-            raise RuntimeError("Mail addresses must not contain line breaks")
-    for address in [settings["GMAIL_USER"]] + settings["MAIL_TO"].split(",") + settings["MAIL_CC"].split(","):
-        if address.strip() and ("@" not in address or " " in address.strip()):
-            raise RuntimeError("Use plain email addresses in mail configuration")
+            raise MailConfigurationError(f"{key} must not contain line breaks", "mail_address_line_breaks")
+        addresses = [settings[key]] if key == "GMAIL_USER" else settings[key].split(",")
+        for address in addresses:
+            if address.strip() and ("@" not in address or " " in address.strip()):
+                raise MailConfigurationError(f"{key} must contain plain email addresses", "invalid_mail_addresses")
     return settings
 
 
@@ -336,7 +343,17 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         if not dry_run and record.get("status") in TERMINAL:
             return {"date": str(day), "status": "skipped", "delivery_status": record["status"],
                     "reason": "Already sent or requires manual delivery reconciliation"}
-        settings = mail_settings() if not dry_run else None
+        if not dry_run:
+            record.update(date=str(day), last_attempt_at=now.isoformat())
+            if os.environ.get("GITHUB_RUN_ID"):
+                record["last_attempt_run_id"] = os.environ["GITHUB_RUN_ID"]
+        try:
+            settings = mail_settings() if not dry_run else None
+        except MailConfigurationError as error:
+            record.update(status="configuration_failed", error=str(error), configuration_diagnostic=error.code)
+            atomic_json(path, record)
+            persist(record)
+            raise
         if dry_run or not record.get("report"):
             try:
                 raw = validate_report(copy.deepcopy(fixture)) if fixture is not None else researcher(root, config, exclusion_history, day)
@@ -356,6 +373,10 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
             record = {"date": str(day), "created_at": now.isoformat(), "status": "prepared", "subject": subject,
                       "report": report, "attempts": [], "hits": len(jobs),
                       "message_id": f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"}
+            if not dry_run:
+                record["last_attempt_at"] = now.isoformat()
+                if os.environ.get("GITHUB_RUN_ID"):
+                    record["last_attempt_run_id"] = os.environ["GITHUB_RUN_ID"]
         else:
             # Reuse the live research but apply current rendering to an unsent outbox.
             # Terminal delivery states were already blocked above.
@@ -371,6 +392,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         (path.with_suffix(".html")).write_text(body, encoding="utf-8")
         record["status"] = "prepared"
         record.pop("error", None)
+        record.pop("configuration_diagnostic", None)
         atomic_json(path, record)
         persist(record)  # If this fails, SMTP must not be called.
         def on_sending():

@@ -14,7 +14,7 @@ from unittest.mock import Mock, patch
 
 from miki_jobsearch import research as provider
 from miki_jobsearch.research import ResearchError, allowed_url, select_jobs, validate_report
-from miki_jobsearch.service import (DeliveryFailure, StateSyncError, atomic_json, due,
+from miki_jobsearch.service import (DeliveryFailure, MailConfigurationError, StateSyncError, atomic_json, due,
                                     git_persister, load_history, mail_settings, next_run, reconcile, render_report, run, send_smtp, status)
 from scripts.import_archive import convert_history
 from scripts.deployment_check import readiness
@@ -201,6 +201,24 @@ class DeliveryTests(unittest.TestCase):
             self.invoke(sender=reject)
         self.assertEqual(self.record()["status"], "failed")
         self.assertEqual(len(load_history(ROOT, self.store)), 145)
+        self.assertEqual(self.invoke()["status"], "sent")
+        self.assertEqual(self.researcher.call_count, 1)
+
+    def test_bad_mail_settings_preserve_research_and_report_current_configuration_failure(self):
+        sender = Mock(side_effect=DeliveryFailure("test pre-DATA rejection"))
+        with self.assertRaises(DeliveryFailure):
+            self.invoke(sender=sender)
+        sender.reset_mock()
+        with patch.dict(os.environ, {"MAIL_TO": "private-invalid-address"}):
+            with self.assertRaises(MailConfigurationError):
+                self.invoke(sender=sender)
+        record = self.record()
+        self.assertEqual(record["status"], "configuration_failed")
+        self.assertEqual(record["configuration_diagnostic"], "invalid_mail_addresses")
+        self.assertIn("report", record)
+        self.assertIn("last_attempt_at", record)
+        self.assertNotIn("private-invalid-address", json.dumps(record))
+        sender.assert_not_called()
         self.assertEqual(self.invoke()["status"], "sent")
         self.assertEqual(self.researcher.call_count, 1)
 

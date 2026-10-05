@@ -1,10 +1,12 @@
 import argparse
 import json
+import os
 import sys
 from datetime import datetime
 from pathlib import Path
 
-from .service import git_persister, reconcile, run, status
+from .research import ResearchError
+from .service import DeliveryFailure, MailConfigurationError, StateSyncError, git_persister, reconcile, run, status
 
 
 def main():
@@ -53,5 +55,15 @@ if __name__ == "__main__":
         sys.exit(main())
     except Exception as error:
         # Provider response bodies and credential values never belong in logs.
-        print(f"{type(error).__name__}: {error}", file=sys.stderr)
+        if isinstance(error, ResearchError):
+            detail = json.dumps(error.diagnostic)
+        elif isinstance(error, (DeliveryFailure, MailConfigurationError, StateSyncError)):
+            detail = str(error)
+        else:
+            detail = "Unexpected service failure; inspect the saved outbox and runner log."
+        message = f"{type(error).__name__}: {detail}"
+        print(message, file=sys.stderr)
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            escaped = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+            print(f"::error title=Miki service failed::{escaped}", file=sys.stderr)
         sys.exit(1)
