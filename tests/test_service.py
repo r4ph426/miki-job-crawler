@@ -15,7 +15,7 @@ from unittest.mock import Mock, patch
 from miki_jobsearch import research as provider
 from miki_jobsearch.research import ResearchError, allowed_url, select_jobs, validate_report
 from miki_jobsearch.service import (DeliveryFailure, StateSyncError, atomic_json, due,
-                                    git_persister, load_history, next_run, reconcile, render_report, run, send_smtp, status)
+                                    git_persister, load_history, mail_settings, next_run, reconcile, render_report, run, send_smtp, status)
 from scripts.import_archive import convert_history
 from scripts.deployment_check import readiness
 
@@ -204,6 +204,16 @@ class DeliveryTests(unittest.TestCase):
         self.assertEqual(self.invoke()["status"], "sent")
         self.assertEqual(self.researcher.call_count, 1)
 
+    def test_pre_data_unexpected_failure_records_type_without_private_message(self):
+        sender = Mock(side_effect=ValueError("unit-test-secret"))
+        with self.assertRaises(ValueError):
+            self.invoke(sender=sender)
+        self.assertEqual(self.record()["status"], "failed")
+        self.assertEqual(self.record()["error"], "Delivery preparation failed (ValueError)")
+        self.assertNotIn("unit-test-secret", json.dumps(self.record()))
+        self.assertEqual(self.invoke()["status"], "sent")
+        self.assertEqual(self.researcher.call_count, 1)
+
     def test_ambiguous_failure_requires_reconciliation(self):
         def unknown(message, settings, on_sending):
             on_sending()
@@ -389,6 +399,23 @@ class SmtpTests(unittest.TestCase):
 
 
 class ReportTests(unittest.TestCase):
+    def test_google_app_password_display_spaces_are_removed(self):
+        with patch.dict(os.environ, dict(MAIL_ENV, GMAIL_APP_PASSWORD="abcd efgh\u00a0ijkl mnop")):
+            self.assertEqual(mail_settings()["GMAIL_APP_PASSWORD"], "abcdefghijklmnop")
+
+    def test_rejected_jobs_cannot_appear_in_summary_or_application_action(self):
+        report = copy.deepcopy(FIXTURE)
+        report["summary"] = "4 passende Anzeigen gefunden"
+        report["next_action"] = "Heute Rejected Company priorisieren"
+        report["jobs"] = []
+        report["rejected"] = [{"title": "Rejected Role", "url": "https://example.org/job",
+                               "reason": "Supporting quotation not present in accessible detail-page text"}]
+        _, body = render_report(report, MONDAY.date(), [])
+        self.assertNotIn("4 passende Anzeigen", body)
+        self.assertNotIn("Rejected Company", body)
+        self.assertIn("0 neue, unabhängig verifizierte Treffer", body)
+        self.assertIn("1 Kandidaten konnten nicht unabhängig", body)
+
     def test_deployment_check_records_names_without_credential_values(self):
         result = readiness("send", {"MIKI_OPENAI_API_KEY": "private-value", "GMAIL_USER": "private-address"})
         self.assertEqual(result["missing_requirements"], ["GMAIL_APP_PASSWORD", "MAIL_TO"])

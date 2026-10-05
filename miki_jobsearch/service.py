@@ -122,7 +122,14 @@ def render_report(report, day, history, fixture=False):
             f"<h1>{esc(subject)}</h1>"]
     if fixture:
         body.append("<p><strong>Testdaten: keine Live-Recherche, keine E-Mail versendet.</strong></p>")
-    body.append(f"<p>{esc(report['summary'])}</p>")
+    summary = report["summary"]
+    action = report["next_action"]
+    if not jobs or report["rejected"]:
+        summary = f"{len(jobs)} neue, unabhängig verifizierte Treffer ab 55 Punkten."
+        action = (f"Heute die Anzeige {jobs[0]['title']} bei {jobs[0]['employer']} prüfen und die Bewerbung vorbereiten "
+                  f"(geschätzter Aufwand: {jobs[0]['effort_minutes']} Minuten)." if jobs else
+                  "Heute 30 Minuten für den Bewerbungsüberblick einplanen: Rückmeldungen und offene Bewerbungen im eigenen Postfach prüfen.")
+    body.append(f"<p>{esc(summary)}</p>")
     outages = [s for s in report["source_checks"] if s["status"] != "ok"]
     if outages:
         body.append("<aside style='padding:16px;background:#fff1df'><strong>Quellenausfälle: eingeschränkte Abdeckung</strong><ul>")
@@ -149,7 +156,7 @@ def render_report(report, day, history, fixture=False):
         ])
     if not jobs:
         body.append("<p>Keine neuen, unabhängig verifizierten Treffer ab 55 Punkten. Das ist keine Aussage über den gesamten Stellenmarkt.</p>")
-    body.append(f"<p><strong>Vorschlag für heute:</strong> {esc(report['next_action'])}</p>")
+    body.append(f"<p><strong>Vorschlag für heute:</strong> {esc(action)}</p>")
     if weekly:
         monday = day - timedelta(days=4)
         week_jobs = [j for j in known if str(monday) <= j["date"] <= str(day)]
@@ -181,6 +188,8 @@ def mail_settings():
     if missing:
         raise RuntimeError("Missing secure mail configuration: " + ", ".join(missing))
     settings = {k: os.environ.get(k, "").strip() for k in required + ["MAIL_CC"]}
+    # Google's display groups app passwords using spaces, sometimes nonbreaking.
+    settings["GMAIL_APP_PASSWORD"] = "".join(settings["GMAIL_APP_PASSWORD"].split())
     for key in ["GMAIL_USER", "MAIL_TO", "MAIL_CC"]:
         if "\r" in settings[key] or "\n" in settings[key]:
             raise RuntimeError("Mail addresses must not contain line breaks")
@@ -207,7 +216,7 @@ def send_smtp(message, settings, on_sending):
     try:
         connection = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=45, context=tls_context())
         connection.login(settings["GMAIL_USER"], settings["GMAIL_APP_PASSWORD"])
-    except (OSError, smtplib.SMTPException) as error:
+    except (OSError, smtplib.SMTPException, UnicodeError) as error:
         if connection is not None:
             connection.close()
         raise DeliveryFailure(f"SMTP connection/authentication failed ({type(error).__name__})") from error
@@ -330,7 +339,10 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                       "report": report, "attempts": [], "hits": len(jobs),
                       "message_id": f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"}
         else:
-            body = (store / "runs" / f"{day}.html").read_text(encoding="utf-8")
+            # Reuse the live research but apply current rendering to an unsent outbox.
+            # Terminal delivery states were already blocked above.
+            record["subject"], body = render_report(record["report"], day, history)
+            record["message_id"] = f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"
         if dry_run:
             output = output_dir or root / "out" / str(day)
             output.mkdir(parents=True, exist_ok=True)
@@ -357,6 +369,15 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                 record["attempts"][-1]["status"] = record["status"]
             atomic_json(path, record)
             persist(record)
+            raise
+        except Exception as error:
+            # Before on_sending there can be no DATA acceptance. Save only the
+            # exception type; leave a sending checkpoint intact if DATA is possible.
+            if record["status"] == "prepared":
+                record["status"] = "failed"
+                record["error"] = f"Delivery preparation failed ({type(error).__name__})"
+                atomic_json(path, record)
+                persist(record)
             raise
         record["status"] = outcome["status"]
         record["refused_count"] = outcome["refused_count"]
