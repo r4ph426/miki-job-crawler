@@ -11,6 +11,11 @@ on:
         type: choice
         options: [offline-demo, live-dry-run, prepare, send]
         default: offline-demo
+      runner:
+        description: "Linux runner pool; use ARM if the standard pool cannot acquire a runner"
+        type: choice
+        options: [ubuntu-24.04, ubuntu-24.04-arm]
+        default: ubuntu-24.04
       revision:
         description: "Optional explicit revision ID for an authorized correction (preserves the original)"
         type: string
@@ -30,7 +35,7 @@ permissions:
 jobs:
   run:
     if: github.event_name != 'schedule' || vars.SERVICE_ENABLED != 'false'
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner || 'ubuntu-24.04' }}
     timeout-minutes: 40
     permissions:
       contents: write

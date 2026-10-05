@@ -89,6 +89,15 @@ Jobs from uncertain or interrupted deliveries are reserved on later days until
 reconciliation, so a future run does not recommend the same jobs while acceptance
 is unknown. They are counted separately from confirmed reported history.
 
+## GitHub runner acquisition failures
+
+If a run has no steps and reports "The job was not acquired by Runner", research
+and delivery never started. The manual workflow's `runner` input can select
+`ubuntu-24.04-arm` to try the alternate Linux pool. This standard-library Python
+service supports both architectures; CI runs on ARM. Scheduled runs use the pinned
+`ubuntu-24.04` image. Retry only after the previous run finishes, and retain the same
+revision ID and delivery records.
+
 ## Brevo delivery failures
 
 `401` usually means an invalid API key. For `400`, `403` or `422`, check sender
