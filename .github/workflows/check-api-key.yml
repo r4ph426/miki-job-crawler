@@ -1,0 +1,38 @@
+name: Check research API key
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/check-api-key.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: miki-weekday-delivery
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test authentication and record safe outcome
+        env:
+          MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
+          RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
+          STATE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          python3 -m scripts.check_api_key
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          git add -- state/api-check.json
+          if ! git diff --cached --quiet -- state/api-check.json; then
+            git commit --only -m "Record research API key check" -- state/api-check.json
+            git push origin "HEAD:refs/heads/$STATE_BRANCH"
+          fi
+          python3 -c 'import json,sys; sys.exit(json.load(open("state/api-check.json"))["status"] != "ready")'
