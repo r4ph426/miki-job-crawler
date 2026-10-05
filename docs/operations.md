@@ -71,6 +71,15 @@ as uncertain acceptance and require reconciliation. An acknowledged send stores
 `email_provider`, `provider_message_id` and `accepted_at`; check Brevo for subsequent
 bounces or delivery events.
 
+Run **Check Brevo API key** in GitHub Actions to diagnose authentication without
+sending an email. The result in `state/brevo-key-check.json` distinguishes an SMTP
+key, a key from another provider, an invalid API key, IP-access denial and disabled
+transactional email. Account data, IP addresses and raw provider messages are discarded.
+For IP-access denial, review Brevo's Authorized IP settings: GitHub-hosted runners
+use changing outbound IP addresses. If a fixed IP is required, run the service on
+a server with a stable address; changing one allowed IP will not make the hosted
+weekday schedule reliable.
+
 Gmail's Sent folder will not contain mail submitted through Brevo. A Brevo plugin
 in a chat is not required: the unattended GitHub runner uses the API directly.
 

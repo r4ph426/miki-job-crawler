@@ -1,0 +1,45 @@
+name: Check Brevo API key
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/check-brevo-key.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: miki-weekday-delivery
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate safe credential diagnostics
+        run: python3 -m unittest discover -s tests -v
+      - name: Read-only authentication check
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          STATE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          python3 -m scripts.check_brevo_key
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          git add -- state/brevo-key-check.json
+          if ! git diff --cached --quiet -- state/brevo-key-check.json; then
+            git commit --only -m "Record safe Brevo authentication check" -- state/brevo-key-check.json
+            git push origin "HEAD:refs/heads/$STATE_BRANCH"
+          fi
+          python3 - <<'PY'
+          import json, sys
+          result = json.load(open("state/brevo-key-check.json"))
+          if result["status"] != "ready":
+              print("::error title=Brevo setup check::" + result["status"] + ": " + result["guidance"])
+              sys.exit(1)
+          PY
