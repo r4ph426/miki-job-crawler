@@ -7,7 +7,16 @@
     "GMAIL_APP_PASSWORD",
     "MAIL_TO"
   ],
-  "checked_at": "2026-10-05T16:05:50.196610+00:00",
+  "mail_format_checks": {
+    "GMAIL_USER": true,
+    "GMAIL_APP_PASSWORD": false,
+    "MAIL_TO": true,
+    "MAIL_CC": true
+  },
+  "invalid_mail_formats": [
+    "GMAIL_APP_PASSWORD"
+  ],
+  "checked_at": "2026-10-05T16:15:53.631535+00:00",
   "runner": "GitHub Actions",
-  "run_id": "37338117941"
+  "run_id": "37339457842"
 }
