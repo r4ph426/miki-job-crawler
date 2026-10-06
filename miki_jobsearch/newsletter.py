@@ -17,9 +17,8 @@ def esc(value):
     return html.escape(str(value), quote=True)
 
 
-def icon(name, blue=False):
-    color = "blue" if blue else "grey"
-    return (f'<img src="{ICON_BASE}/{name}-{color}.png" width="16" height="16" '
+def icon(name):
+    return (f'<img src="{ICON_BASE}/{name}-blue.png" width="16" height="16" '
             'alt="" role="presentation" style="display:inline-block;vertical-align:-3px;border:0;margin-right:6px">')
 
 
@@ -37,7 +36,7 @@ def label(text):
 def notice(title, text):
     return ('<div class="notice" style="margin:16px 0;padding-left:12px;border-left:2px solid '
             f'{BLUE}"><p class="signal" style="margin:0 0 4px;font-size:12px;color:{BLUE}">'
-            f'{icon("calendar-days", True)}{esc(title)}</p>{text}</div>')
+            f'{icon("calendar-days")}{esc(title)}</p>{text}</div>')
 
 
 def heading(text):
@@ -53,7 +52,7 @@ def salary_paragraphs(job):
     checked = date.fromisoformat(estimate["source_checked_on"])
     source = (f'{estimate["benchmark_role"]}, {estimate["benchmark_region"]} · '
               f'Stand {checked:%d.%m.%Y}')
-    return (paragraph(esc(f"Geschätzte Gehaltsspanne: ca. {lower}–{upper} € brutto/Jahr"), True, gap=2)
+    return (paragraph(label(esc(f"Geschätzte Gehaltsspanne: ca. {lower}–{upper} € brutto/Jahr")), True, gap=2)
             + paragraph(esc(estimate["hours_basis"]), True, gap=2)
             + paragraph(f'Vergleich: {esc(source)} · <a class="signal" href="{esc(estimate["source_url"])}" '
                         f'style="color:{BLUE};text-decoration:underline">{esc(estimate["source_name"])}</a>', True, gap=2))
@@ -128,11 +127,11 @@ def render_report(report, day, history, fixture=False, revision=None):
             paragraph(label("Dafür:") + "<br>" + esc(job["pro"])),
             paragraph(label("Dagegen:") + "<br>" + esc(job["con"]), gap=4),
             paragraph(f"Passung {job['scores']['skill']}/40 · Zugang {job['scores']['entry']}/30 · Pendeln {job['scores']['commute']}/20 · Bedingungen {job['scores']['conditions']}/10", True),
-            paragraph(icon("clock-3", True) + f"<em>Aufwand:</em> {job['effort_minutes']} Min. ({esc(job['effort_details'])})", True),
+            paragraph(icon("clock-3") + f"<em>Aufwand:</em> {job['effort_minutes']} Min. ({esc(job['effort_details'])})", True),
             paragraph("<em>Beleg:</em> " + esc(job["evidence"]), True, gap=4),
             f'<p style="margin:4px 0 0"><a class="signal" href="{esc(job["url"])}" '
             f'style="display:inline-block;padding:12px 0 8px;font-size:14px;line-height:1.35;color:{BLUE};text-decoration:underline">'
-            f'Anzeige öffnen {icon("arrow-up-right", True)}</a></p></div>',
+            f'Anzeige öffnen {icon("arrow-up-right")}</a></p></div>',
         ])
     if not jobs:
         body.append(paragraph("Keine neuen, unabhängig verifizierten Treffer ab 55 Punkten. Das ist keine Aussage über den gesamten Stellenmarkt."))

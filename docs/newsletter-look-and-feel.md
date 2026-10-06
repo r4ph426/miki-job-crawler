@@ -16,11 +16,12 @@ Gestaltung für die vom Crawler versendeten Tages- und Wochenberichte.
 - **Dafür:** und **Dagegen:** stehen kursiv und blau jeweils auf einer eigenen
   Zeile. Die schwarze Erklärung beginnt direkt auf der nächsten Zeile.
 - Minimale Lucide-Linienicons: Kalender, Ort, Pendelweg, Aufwand und Anzeigenlink.
-  Das Uhr-Icon der Aufwandsschätzung ist blau. Ort und Pendelweg sind grau.
+  Alle Icons sind Electric Blue, einschließlich Ort und Pendelweg.
 - Inhalte, Bewertungen, Quellenhinweise, Fristen, Freitagsüberblick und
   Versandhistorie bleiben vollständig erhalten. Keine Daten zur Gestaltung erfinden.
 - Fehlt das Gehalt in der Anzeige, steht eine belegte Marktspanne unter
-  **Geschätzte Gehaltsspanne** in der grauen Metadatenzeile. Brutto/Jahr,
+  **Geschätzte Gehaltsspanne**. Die Bezeichnung ist kursiv und blau, die Spanne
+  ebenfalls blau. Arbeitgeberangaben und ergänzende Metadaten bleiben grau. Brutto/Jahr,
   Stundenbasis, Vergleichsrolle, verlinkte Quelle und Prüfdatum bleiben sichtbar.
   Die Schätzung ist getrennt von Arbeitgeberangaben; siehe `salary-estimates.md`.
 
