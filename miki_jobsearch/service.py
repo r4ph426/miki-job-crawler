@@ -3,7 +3,6 @@
 import copy
 import fcntl
 import hashlib
-import html
 import json
 import os
 import re
@@ -18,6 +17,7 @@ from email.message import EmailMessage
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from .newsletter import DESIGN_VERSION, render_report
 from .research import ResearchError, canonical_url, research, select_jobs, tls_context, validate_report, verify_job
 
 BERLIN = ZoneInfo("Europe/Berlin")
@@ -119,83 +119,6 @@ def status(root, store, now=None):
         "note": "Local records only. A deployment scheduler is required for unattended operation.",
     }
 
-
-def render_report(report, day, history, fixture=False, revision=None):
-    esc = lambda value: html.escape(str(value), quote=True)
-    jobs = report["jobs"]
-    weekly = day.weekday() == 4
-    subject = (f"Wochenüberblick Stellensuche · KW {day.isocalendar().week}" if weekly
-               else f"Stellen für Miki · {day:%d.%m.%Y} · {len(jobs)} neue Treffer")
-    if revision:
-        subject = f"Aktualisierte Stellenliste für Miki · {day:%d.%m.%Y} · {len(jobs)} geprüfte Treffer"
-    body = ["<!doctype html><html lang='de'><head><meta charset='utf-8'></head>",
-            "<body style='font-family:Arial,sans-serif;max-width:720px;margin:24px auto;color:#20252b;line-height:1.55'>",
-            f"<h1>{esc(subject)}</h1>"]
-    if fixture:
-        body.append("<p><strong>Testdaten: keine Live-Recherche, keine E-Mail versendet.</strong></p>")
-    if revision:
-        body.append("<p>Aktualisierung nach erneuter Recherche und Prüfung der Originalanzeigen. Diese Liste ersetzt den früheren heutigen Bericht.</p>")
-    body.append(f"<p>Prüfstand: {day:%d.%m.%Y}. Die Anzeigen sind aktuell abrufbar; ihr Veröffentlichungsdatum ist nicht überall bekannt.</p>")
-    summary = report["summary"]
-    action = report["next_action"]
-    if not jobs or report["rejected"] or report.get("assessment_pages_checked"):
-        summary = f"{len(jobs)} neue, unabhängig verifizierte Treffer ab 55 Punkten."
-        action = (f"Heute die Anzeige {jobs[0]['title']} bei {jobs[0]['employer']} prüfen und die Bewerbung vorbereiten "
-                  f"(geschätzter Aufwand: {jobs[0]['effort_minutes']} Minuten)." if jobs else
-                  "Heute 30 Minuten für den Bewerbungsüberblick einplanen: Rückmeldungen und offene Bewerbungen im eigenen Postfach prüfen.")
-    body.append(f"<p>{esc(summary)}</p>")
-    outages = [s for s in report["source_checks"] if s["status"] != "ok"]
-    if outages:
-        body.append("<aside style='padding:16px;background:#fff1df'><strong>Quellenausfälle: eingeschränkte Abdeckung</strong><ul>")
-        body.extend(f"<li>{esc(s['group'])}: {esc(s['details'])}</li>" for s in outages)
-        body.append("</ul></aside>")
-    verification_failures = [r for r in report["rejected"] if r["reason"] not in
-                             ["Already reported or repeated within this run", "Below score threshold", "Application deadline passed", "Expired"]]
-    if verification_failures:
-        body.append(f"<p><strong>{len(verification_failures)} Kandidaten konnten nicht unabhängig geprüft werden und wurden nicht aufgenommen.</strong></p>")
-    known = history + [dict(j, date=str(day)) for j in jobs]
-    deadlines = [j for j in known if j.get("deadline") and str(day) <= j["deadline"] <= str(day + timedelta(days=5))]
-    if deadlines:
-        body.append("<aside style='padding:16px;background:#fee8e5'><strong>Fristen in den nächsten fünf Tagen</strong><ul>")
-        body.extend(f"<li>{esc(j['deadline'])}: {esc(j['title'])}, {esc(j['employer'])}; Bewerbungsstatus unbekannt</li>" for j in deadlines)
-        body.append("</ul></aside>")
-    for j in jobs:
-        body.extend([
-            f"<section style='border-top:1px solid #ddd;margin-top:24px;padding-top:16px'><h2>{esc(j['title'])}</h2>",
-            f"<p>{esc(j['employer'])} · {esc(j['district'])} · <strong>{j['score']}/100</strong></p>",
-            f"<p>{esc(j['commute'])} · {esc(j['hours'])} · {esc(j['contract'])} · {esc(j['salary'])}</p>",
-            f"<p>Passung {j['scores']['skill']}/40 · Zugang {j['scores']['entry']}/30 · Pendeln {j['scores']['commute']}/20 · Bedingungen {j['scores']['conditions']}/10</p>",
-            f"<p><strong>Dafür:</strong> {esc(j['pro'])}<br><strong>Dagegen:</strong> {esc(j['con'])}</p>",
-            f"<p><strong>Aufwand:</strong> {j['effort_minutes']} Min. ({esc(j['effort_details'])})</p>",
-            f"<blockquote style='border-left:3px solid #ddd;padding-left:12px;font-size:13px'><strong>Beleg aus der Anzeige:</strong> {esc(j['evidence'])}</blockquote>",
-            f"<p><a href='{esc(j['url'])}'>Anzeige öffnen →</a></p></section>",
-        ])
-    if not jobs:
-        body.append("<p>Keine neuen, unabhängig verifizierten Treffer ab 55 Punkten. Das ist keine Aussage über den gesamten Stellenmarkt.</p>")
-    body.append(f"<p><strong>Vorschlag für heute:</strong> {esc(action)}</p>")
-    if weekly:
-        monday = day - timedelta(days=4)
-        week_jobs = [j for j in known if str(monday) <= j["date"] <= str(day)]
-        bins = {"55–69": 0, "70–84": 0, "85–100": 0, "unter 55 (Althistorie)": 0, "unbekannt (Althistorie)": 0}
-        for j in week_jobs:
-            score = j.get("score")
-            key = ("unbekannt (Althistorie)" if score is None else "85–100" if score >= 85
-                   else "70–84" if score >= 70 else "55–69" if score >= 55 else "unter 55 (Althistorie)")
-            bins[key] += 1
-        body.append(f"<h2>Wochenüberblick</h2><p>{len(week_jobs)} gemeldete Treffer einschließlich dieses Berichts.</p><ul>")
-        body.extend(f"<li>{esc(k)} Punkte: {v}</li>" for k, v in bins.items())
-        body.append("</ul><p>Bewerbungsstatus: nicht erfasst.</p><h3>Fristen der nächsten 14 Tage</h3><ul>")
-        future = [j for j in known if j.get("deadline") and str(day) <= j["deadline"] <= str(day + timedelta(days=14))]
-        body.extend(f"<li>{esc(j['deadline'])}: {esc(j['title'])}, {esc(j['employer'])}</li>" for j in future)
-        if not future:
-            body.append("<li>Keine bestätigten Fristen in der gespeicherten Historie.</li>")
-        body.append("</ul><h3>Marktbeobachtung</h3><ul>")
-        body.extend(f"<li>Familie {k}: {esc(v)}</li>" for k, v in report["family_observations"].items())
-        body.append(f"</ul><p><strong>Wochenende:</strong> {esc(report['weekend_action'])}</p>")
-    body.append("<h3>Geprüfte Suchbegriffe</h3>")
-    body.extend(f"<p>{family}: {esc(', '.join(terms))}</p>" for family, terms in report["searches"].items())
-    body.append("<p style='font-size:12px;color:#555'>Angaben vor einer Bewerbung in der Originalanzeige prüfen. Pendelzeiten sind Schätzungen.</p></body></html>")
-    return subject, "\n".join(body)
 
 
 def plain_addresses(value, required=True, single=False):
@@ -526,6 +449,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         path.parent.mkdir(parents=True, exist_ok=True)
         (path.with_suffix(".html")).write_text(body, encoding="utf-8")
         record["status"] = "prepared"
+        record["design_version"] = DESIGN_VERSION
         if settings:
             record["email_provider"] = settings["EMAIL_PROVIDER"]
         record.pop("error", None)

@@ -12,3 +12,6 @@ The archived AGENTS.md and RUNBOOK.md described a research agent in the old serv
 they are historical source material. The current research criteria live in
 `config/research-brief.md` and `config/search.json`. Keep the CV and original archive
 out of this repository. Preserve history and run records when changing the service.
+
+For email layout and styling, follow `docs/newsletter-look-and-feel.md`. The approved
+compact Electric Blue design is implemented in `miki_jobsearch/newsletter.py`.
