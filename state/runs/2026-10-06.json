@@ -1,7 +1,7 @@
 {
   "date": "2026-10-06",
   "created_at": "2026-10-06T08:20:17.102784+00:00",
-  "status": "prepared",
+  "status": "sending",
   "subject": "Stellen für Miki · 06.10.2026 · 6 neue Treffer",
   "report": {
     "summary": "8 passende Neuzugänge (A/B/C) gefunden; Schwerpunkt heute auf ATS/Personio und einem öffentlichen Forschungsinstitut. Zwei starke B‑Treffer (Einkauf) in Adlershof, mehrere A/C‑Koordinationsrollen mit klaren Prozess‑/Schnittstellenaufgaben und teils Hybrid/Remote. Keine Dubletten zu früheren Meldungen.",
@@ -259,7 +259,12 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "started_at": "2026-10-06T08:24:36.650647+00:00",
+      "status": "sending"
+    }
+  ],
   "hits": 6,
   "message_id": "<miki-2026-10-06-91ee03825b6f2306@miki-jobsearch>",
   "last_attempt_at": "2026-10-06T08:20:17.102784+00:00",
