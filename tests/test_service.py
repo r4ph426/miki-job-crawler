@@ -5,6 +5,7 @@ import os
 import smtplib
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 import urllib.error
@@ -30,13 +31,18 @@ MAIL_ENV = {"EMAIL_PROVIDER": "gmail", "GMAIL_USER": "sender@example.org", "GMAI
 class ScheduleTests(unittest.TestCase):
     def test_dst_and_weekends(self):
         cases = [
-            ("2026-10-23T07:59:00+00:00", False),
-            ("2026-10-23T08:00:00+00:00", True),
-            ("2026-10-26T08:00:00+00:00", False),
-            ("2026-10-26T09:00:00+00:00", True),
-            ("2027-03-29T08:00:00+00:00", True),
-            ("2026-10-24T10:00:00+02:00", False),
-            ("2026-10-25T10:00:00+01:00", False),
+            ("2026-10-23T06:29:59+00:00", False),
+            ("2026-10-23T06:30:00+00:00", True),
+            ("2026-10-23T07:00:00+00:00", True),
+            ("2026-10-26T06:30:00+00:00", False),
+            ("2026-10-26T07:29:59+00:00", False),
+            ("2026-10-26T07:30:00+00:00", True),
+            ("2027-03-26T07:29:59+00:00", False),
+            ("2027-03-26T07:30:00+00:00", True),
+            ("2027-03-29T06:29:59+00:00", False),
+            ("2027-03-29T06:30:00+00:00", True),
+            ("2026-10-24T08:30:00+02:00", False),
+            ("2026-10-25T08:30:00+01:00", False),
         ]
         for clock, expected in cases:
             with self.subTest(clock=clock):
@@ -44,7 +50,35 @@ class ScheduleTests(unittest.TestCase):
 
     def test_next_weekday_across_dst(self):
         self.assertEqual(next_run(datetime.fromisoformat("2026-10-23T12:00:00+02:00"), CONFIG),
-                         "2026-10-26T10:00:00+01:00")
+                         "2026-10-26T08:30:00+01:00")
+        self.assertEqual(next_run(datetime.fromisoformat("2027-03-26T12:00:00+01:00"), CONFIG),
+                         "2027-03-29T08:30:00+02:00")
+
+    def test_next_run_before_and_at_delivery_time(self):
+        self.assertEqual(next_run(datetime.fromisoformat("2026-10-05T08:29:59+02:00"), CONFIG),
+                         "2026-10-05T08:30:00+02:00")
+        self.assertEqual(next_run(datetime.fromisoformat("2026-10-05T08:30:00+02:00"), CONFIG),
+                         "2026-10-06T08:30:00+02:00")
+
+    def test_hour_only_config_defaults_to_zero_minutes(self):
+        config = dict(CONFIG, hour=10)
+        config.pop("minute")
+        self.assertFalse(due(datetime.fromisoformat("2026-10-05T09:59:59+02:00"), config))
+        self.assertTrue(due(datetime.fromisoformat("2026-10-05T10:00:00+02:00"), config))
+        self.assertEqual(next_run(datetime.fromisoformat("2026-10-05T09:59:59+02:00"), config),
+                         "2026-10-05T10:00:00+02:00")
+
+    def test_status_and_workflow_summary_include_minutes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            data = status(ROOT, Path(directory), datetime.fromisoformat("2026-10-05T08:29:59+02:00"))
+            self.assertEqual(data["scheduled_hour"], 8)
+            self.assertEqual(data["scheduled_minute"], 30)
+            self.assertEqual(data["next_eligible_run"], "2026-10-05T08:30:00+02:00")
+            status_path = Path(directory) / "status.json"
+            status_path.write_text(json.dumps(data))
+            summary = subprocess.run([sys.executable, str(ROOT / "scripts/workflow_summary.py"), str(status_path)],
+                                     check=True, capture_output=True, text=True).stdout
+            self.assertIn("Schedule: Monday–Friday, 08:30 Europe/Berlin.", summary)
 
 
 class ResearchTests(unittest.TestCase):
@@ -253,6 +287,14 @@ class ResearchTests(unittest.TestCase):
 
 
 class DeliveryTests(unittest.TestCase):
+    def test_production_skips_before_0830_without_research_or_email(self):
+        sender = Mock()
+        result = self.invoke(now=datetime.fromisoformat("2026-10-05T08:29:59+02:00"), sender=sender)
+        self.assertEqual(result["status"], "skipped")
+        self.researcher.assert_not_called()
+        sender.assert_not_called()
+        self.assertFalse(self.store.exists())
+
     def test_prepare_then_send_revision_preserves_original_and_prevents_repeated_correction(self):
         self.invoke()
         original_path = self.store / "runs/2026-10-05.json"

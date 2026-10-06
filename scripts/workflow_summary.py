@@ -4,7 +4,7 @@ import sys
 
 data = json.load(open(sys.argv[1], encoding="utf-8"))
 print("### Miki delivery state\n")
-print(f"Schedule: Monday–Friday, {data['scheduled_hour']}:00 {data['timezone']}.\n")
+print(f"Schedule: Monday–Friday, {data['scheduled_hour']:02d}:{data.get('scheduled_minute', 0):02d} {data['timezone']}.\n")
 print(f"Stored recommendations: {data['historical_jobs']}.\n")
 print("| Date | Report | Delivery status | Hits |")
 print("| --- | --- | --- | --- |")

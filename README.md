@@ -33,7 +33,7 @@ The offline demo writes `out/YYYY-MM-DD/mail.html` and `report.json`. It uses cl
 marked test data, sends nothing, and does not update reported-job history.
 
 With `MIKI_OPENAI_API_KEY` supplied securely and outbound access configured,
-`python3 -m miki_jobsearch run --dry-run` performs live research after 10:00 Berlin
+`python3 -m miki_jobsearch run --dry-run` performs live research from 08:30 Berlin
 time on weekdays. `RESEARCH_MODEL` can override the configured `gpt-5` model.
 The GitHub runner has completed live research with `gpt-5`; a different key/model
 or environment needs its own live check.
@@ -42,7 +42,7 @@ or environment needs its own live check.
 
 Use the [deployment guide](docs/deployment.md) to configure GitHub Actions,
 credentials and recipients, validate one real delivery, and hand over from the old
-service. Scheduled runs target 10:00 Europe/Berlin, Monday–Friday, including daylight
+service. Scheduled runs target 08:30 Europe/Berlin, Monday–Friday, including daylight
 saving changes. GitHub may delay scheduled jobs; this is not a precise-time SLA.
 
 `state/runs/YYYY-MM-DD.json` records research and delivery outcomes; matching HTML

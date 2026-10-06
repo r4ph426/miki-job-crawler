@@ -2,8 +2,8 @@ name: Miki weekday job search
 
 on:
   schedule:
-    # Berlin 10:00 in summer/winter, plus a retry. Stored state prevents duplicates.
-    - cron: "0 8,9,10 * * 1-5"
+    # Berlin 08:30 in summer/winter, plus a retry. Stored state prevents duplicates.
+    - cron: "30 6,7,8 * * 1-5"
   workflow_dispatch:
     inputs:
       mode:

@@ -65,7 +65,7 @@ supports app passwords; this is not the default delivery route.
 
 1. Run **Service checks** and **Miki weekday job search → Run workflow → offline-demo**.
    These execute the actual offline test suite and generate the test email artifact.
-2. On a weekday after 10:00 Berlin, run the workflow with `live-dry-run`. Inspect the
+2. On a weekday from 08:30 Berlin, run the workflow with `live-dry-run`. Inspect the
    report artifact: source coverage, new-job evidence, scores, and recipient-independent
    email content. The provider must support the configured model, `web_search`, and
    strict structured output. No delivery or history updates occur in this mode.
@@ -73,7 +73,7 @@ supports app passwords; this is not the default delivery route.
    the same day, do not choose a day whose legacy email has already been sent.
    Refresh `data/seed-history.json` from a current legacy ledger if the old service
    has continued since the ZIP's last entries on 2 October 2026.
-4. Run `send` on the handover day after 10:00. Confirm the provider accepted the delivery,
+4. Run `send` on the handover day from 08:30. Confirm the provider accepted the delivery,
    `state/` commits reached the default branch, and the intended recipient received
    it. A `sent` run record alone does not establish inbox receipt.
 5. Retire the old automation as part of that coordinated handover. Scheduled runs
@@ -84,8 +84,10 @@ supports app passwords; this is not the default delivery route.
    notifications and inspect missing weekday records. Check Actions usage and the
    OpenAI account's limits according to your account settings.
 
-Cron fires at 08:00, 09:00 and 10:00 UTC Monday–Friday. Berlin's local-time guard
-allows runs from 10:00 onward; stored state prevents a second accepted daily email.
+Cron fires at 06:30, 07:30 and 08:30 UTC Monday–Friday. Berlin's local-time guard
+allows runs from 08:30 onward, so the first eligible slot is 06:30 UTC in summer
+and 07:30 UTC in winter. Research starts then; email follows after it completes.
+Stored state prevents a second accepted daily email.
 The later slots retry confirmed research/send failures. A crash or uncertain provider
 acceptance requires reconciliation rather than an automatic resend.
 
@@ -98,7 +100,7 @@ service. A later frontend should read the same records or migrate them to a data
 
 The command can also run from an existing checkout on a Linux server with a durable
 state directory. Use a system cron or timer with `CRON_TZ=Europe/Berlin`, invoking
-`python3 -m miki_jobsearch --state-dir /persistent/miki-state run --send` at 10:00
-Monday–Friday and optionally at 11:00 for a retry. Supply environment values through
+`python3 -m miki_jobsearch --state-dir /persistent/miki-state run --send` at 08:30
+Monday–Friday and optionally at 09:30 for a retry. Supply environment values through
 the server's secure configuration. The state volume must survive process and machine
 restarts. A process launched in a temporary cloud coding task is not such a service.

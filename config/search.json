@@ -1,6 +1,7 @@
 {
   "timezone": "Europe/Berlin",
-  "hour": 10,
+  "hour": 8,
+  "minute": 30,
   "minimum_score": 55,
   "model": "gpt-5",
   "families": {

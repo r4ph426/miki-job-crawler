@@ -90,12 +90,12 @@ def due(now, config):
     if now.tzinfo is None:
         raise ValueError("Run time must include a timezone")
     local = now.astimezone(ZoneInfo(config["timezone"]))
-    return local.weekday() < 5 and local.hour >= config["hour"]
+    return local.weekday() < 5 and (local.hour, local.minute) >= (config["hour"], config.get("minute", 0))
 
 
 def next_run(now, config):
     local = now.astimezone(ZoneInfo(config["timezone"]))
-    candidate = local.replace(hour=config["hour"], minute=0, second=0, microsecond=0)
+    candidate = local.replace(hour=config["hour"], minute=config.get("minute", 0), second=0, microsecond=0)
     if candidate <= local:
         candidate += timedelta(days=1)
     while candidate.weekday() >= 5:
@@ -113,6 +113,7 @@ def status(root, store, now=None):
     planned = now.astimezone(BERLIN).isoformat() if eligible else next_run(now, config)
     return {
         "timezone": config["timezone"], "scheduled_hour": config["hour"],
+        "scheduled_minute": config.get("minute", 0),
         "scheduled_days": "Monday–Friday", "next_eligible_run": planned,
         "historical_jobs": len(load_history(root, store)), "runs": runs,
         "reserved_jobs_awaiting_reconciliation": len(reserved_jobs(store)),
