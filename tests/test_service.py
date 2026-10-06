@@ -48,6 +48,18 @@ class ScheduleTests(unittest.TestCase):
 
 
 class ResearchTests(unittest.TestCase):
+    def test_deadline_generation_schema_allows_only_iso_date_or_empty(self):
+        import re
+        pattern = provider.report_schema()["properties"]["jobs"]["items"]["properties"]["deadline"]["pattern"]
+        for value in ["", "2026-10-30"]:
+            self.assertIsNotNone(re.fullmatch(pattern, value))
+        for value in ["unbekannt", "nicht genannt", "30.10.2026", "2026-10-30 oder später"]:
+            self.assertIsNone(re.fullmatch(pattern, value))
+        report = copy.deepcopy(FIXTURE)
+        report["jobs"][0]["deadline"] = "2026-02-30"
+        with self.assertRaises(ResearchError):
+            provider.validate_report(report)
+
     def test_outer_quotation_marks_do_not_reject_a_verbatim_source_excerpt(self):
         text = "Sie koordinieren Bestellungen und Liefertermine mit unseren Lieferanten."
         job = copy.deepcopy(FIXTURE["jobs"][0])

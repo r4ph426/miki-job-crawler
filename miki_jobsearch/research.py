@@ -69,6 +69,8 @@ def report_schema():
     strings = ["title", "employer", "url", "district", "hours", "contract", "salary",
                "commute", "pro", "con", "effort_details", "deadline", "evidence"]
     job = {k: _string() for k in strings}
+    # Enforce the advertised wire format during generation, before date parsing.
+    job["deadline"] = {"type": "string", "pattern": r"^(?:[0-9]{4}-[0-9]{2}-[0-9]{2})?$"}
     job.update({
         "family": {"type": "string", "enum": ["A", "B", "C"]},
         "source_group": {"type": "string", "enum": ["arbeitsagentur", "stepstone", "ats", "berlin", "fashion"]},
@@ -218,6 +220,8 @@ def assess_live_pages(root, config, report, day, key):
         "Where a salary range in the header conflicts with a detailed salary paragraph, use the detailed range "
         "and mention the discrepancy. Use an exact contiguous quote of 40–500 characters copied from page_text "
         "in evidence, without adding quotation marks around the copied text. "
+        "deadline must be a confirmed application deadline in YYYY-MM-DD format or the empty string; "
+        "unknown dates and a start date are not an application deadline. "
         "Do not paraphrase it, combine separated bullets, add ellipses or translate it. "
         "Every supplied URL must appear once in jobs or excluded; explain exclusions. "
         "This is a list checked as of the research date, not a claim that every listing was published that day. "
