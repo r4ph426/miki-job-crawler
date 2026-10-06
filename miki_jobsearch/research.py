@@ -217,7 +217,8 @@ def assess_live_pages(root, config, report, day, key):
         "Use the actual title and employer. Do not invent salary, address, deadlines, working hours or remote work. "
         "Where a salary range in the header conflicts with a detailed salary paragraph, use the detailed range "
         "and mention the discrepancy. Use an exact contiguous quote of 40–500 characters copied from page_text "
-        "in evidence. Do not paraphrase it, combine separated bullets, add ellipses or translate it. "
+        "in evidence, without adding quotation marks around the copied text. "
+        "Do not paraphrase it, combine separated bullets, add ellipses or translate it. "
         "Every supplied URL must appear once in jobs or excluded; explain exclusions. "
         "This is a list checked as of the research date, not a claim that every listing was published that day. "
         "Return only the structured assessment, without web search."
@@ -327,7 +328,13 @@ def verify_job(job, config):
     text, reason = fetch_job_page(job["url"], config)
     if text is None:
         return False, reason
-    if normalize_text(job["evidence"]) not in normalize_text(text):
+    evidence = job["evidence"].strip()
+    # The provider may format a verbatim excerpt as a quoted string. Remove only
+    # one matching outer pair; internal punctuation and contiguous text stay intact.
+    quote_pairs = {'"': '"', "'": "'", "„": "“", "“": "”", "«": "»", "‘": "’"}
+    if len(evidence) >= 2 and quote_pairs.get(evidence[0]) == evidence[-1]:
+        evidence = evidence[1:-1].strip()
+    if len(evidence) < 40 or normalize_text(evidence) not in normalize_text(text):
         return False, "Supporting quotation not present in accessible detail-page text"
     return True, "Live detail page and supporting quotation checked"
 

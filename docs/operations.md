@@ -39,6 +39,10 @@ plausible candidate fails independent verification, the run fails research inste
 of sending a misleading zero-result email. Genuine empty searches and exhausted
 previously reported results can still produce an honest zero-result report.
 
+The verifier accepts one matching pair of outer quotation marks added around a
+verbatim excerpt. Its interior must still contain at least 40 characters and match
+one contiguous source passage. Paraphrases and excerpts joined with ellipses fail.
+
 When the user explicitly requests a corrected email after a confirmed delivery,
 use a separate revision identifier and a reason. Never reset/delete the original
 sent record. In **Miki weekday job search**, choose mode `prepare`, revision

@@ -48,6 +48,21 @@ class ScheduleTests(unittest.TestCase):
 
 
 class ResearchTests(unittest.TestCase):
+    def test_outer_quotation_marks_do_not_reject_a_verbatim_source_excerpt(self):
+        text = "Sie koordinieren Bestellungen und Liefertermine mit unseren Lieferanten."
+        job = copy.deepcopy(FIXTURE["jobs"][0])
+        with patch.object(provider, "fetch_job_page", return_value=(text, "Live page")):
+            for opening, closing in [('"', '"'), ("„", "“"), ("“", "”"), ("«", "»")]:
+                with self.subTest(opening=opening):
+                    job["evidence"] = opening + text + closing
+                    self.assertTrue(provider.verify_job(job, CONFIG)[0])
+            job["evidence"] = '"Sie steuern den strategischen Einkauf und verhandeln alle Lieferantenverträge."'
+            self.assertFalse(provider.verify_job(job, CONFIG)[0])
+            job["evidence"] = '"Sie koordinieren Bestellungen … mit unseren Lieferanten."'
+            self.assertFalse(provider.verify_job(job, CONFIG)[0])
+            job["evidence"] = '""'
+            self.assertFalse(provider.verify_job(job, CONFIG)[0])
+
     def test_inline_markup_unicode_and_punctuation_spacing_preserve_real_quote(self):
         job = copy.deepcopy(FIXTURE["jobs"][0])
         job["url"] = "https://aeyde.jobs.personio.de/job/123"
