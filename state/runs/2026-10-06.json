@@ -1,70 +1,269 @@
 {
   "date": "2026-10-06",
-  "status": "research_failed",
-  "hits": 0,
-  "failed_at": "2026-10-06T08:13:14.057408+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "no_verified_candidates"
-  },
-  "candidate_diagnostics": [
-    {
-      "title": "Einkäufer (m/w/d) in Berlin gesucht!",
-      "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Einkäufer (m/w/d) in Berlin gesucht!",
-        "employer": "Vielfaltmenü GmbH",
-        "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
-        "district": "Tempelhof",
+  "created_at": "2026-10-06T08:20:17.102784+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 06.10.2026 · 6 neue Treffer",
+  "report": {
+    "summary": "8 passende Neuzugänge (A/B/C) gefunden; Schwerpunkt heute auf ATS/Personio und einem öffentlichen Forschungsinstitut. Zwei starke B‑Treffer (Einkauf) in Adlershof, mehrere A/C‑Koordinationsrollen mit klaren Prozess‑/Schnittstellenaufgaben und teils Hybrid/Remote. Keine Dubletten zu früheren Meldungen.",
+    "next_action": "Zwei schnelle Bewerbungen heute priorisieren: 1) Aktiv‑Schuh (Einkauf, Adlershof) wegen sehr gutem Aufgabenfit und VZ/TZ‑Option; 2) HOLY (Office Coordination, Prenzlauer Berg, 30–40 Min Aufwand inklusive CV‑Feinschliff auf Koordination/Wareneingang/Bestellabläufe). Danach IKZ prüfen (TVöD, Adlershof) und gocomo (hybrid/remote).",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "(Jr.) Office Coordinator (m/f/d)",
+        "employer": "HOLY Softdrinks GmbH",
+        "url": "https://holy.jobs.personio.de/job/2810465?language=en",
+        "district": "Prenzlauer Berg (Pankow)",
         "hours": "Vollzeit",
-        "contract": "Festanstellung",
-        "salary": "unbekannt",
-        "commute": "≈60 Min ÖPNV (Heinersdorf → Oberlandstraße 13–14, Tempelhof; konservative Schätzung)",
-        "pro": "Direkter Einkauf inkl. Lieferantenbeziehungen und Vertragsverhandlungen passt zur Erfahrung in Beschaffung/Koordination.",
-        "con": "Branchenwechsel in Gastronomie/Lebensmittel; Gehalt nicht genannt.",
-        "effort_details": "ATS (Personio): Konto/Profil, CV-Upload, Basisfragen, Motivationsfeld – ca. 55 Min.",
+        "contract": "Unbefristet (Festanstellung)",
+        "salary": "Unbekannt",
+        "commute": "ca. 25–30 Min ÖPNV von Heinersdorf nach Prenzlauer Berg (geschätzt)",
+        "pro": "Konsumgüter/Startup-Umfeld mit klaren Koordinations- und Lieferantenbezügen sowie guten Benefits.",
+        "con": "Starker Front-Desk-/Office-Fokus, wenig Bezug zu Produktkoordination/Category.",
+        "effort_details": "ATS (Personio) – Profil anlegen/anhängen, Formulare: ca. 55 Min.",
         "deadline": "",
-        "evidence": "Das sind Ihre Aufgaben: Sortimentsoptimierung: Weiterentwicklung des Food- und Nonfood-Sortiments mit Schwerpunkt Großverbrauchersortiment. Nachhaltige Beziehungen: Pflege und Ausbau von Lieferantenbeziehungen sowie Führung von Vertragsverhandlungen. Marktanalysen: Durchführung von Markt- und Wettbewerbsanalysen zur Erkennung von Trends. Systempflege: Pflege und Weiterentwicklung unseres Warenwirtschaftssystems. [...] Qualifikation: Abgeschlossene Ausbildung oder Studium im gastronomischen oder kaufmännischen Bereich. Erfahrung: Berufserfahrung im Einkauf oder Category Management, idealerweise in der Gastronomie oder im Lebensmittelhandel.",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 28,
+          "entry": 26,
+          "commute": 20,
+          "conditions": 8
+        },
+        "effort_minutes": 55,
+        "evidence": "Temple Operations & Facilities: Ensure our on-site storage remains clean and orderly, ordering food for workplace events, snacks and office supplies stocked. Coordinate HBC cleaning and day-to-day facilities upkeep. Mail, Hardware & New Hire Setup: Manage mail and deliveries, track hardware, and prepare Day 1 desks with HOLY Welcome packages and equipment, in partnership with the People team. Vendor & Supplier Coordination: Manage relationships with Rewe, JUIT, CoffeeCircle, HBC, Backfabrik,",
+        "score": 82,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+        "employer": "Aktiv-Schuh Handelsgesellschaft mbH",
+        "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013",
+        "district": "Adlershof (Treptow-Köpenick) – Zentrale",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Unbefristet (Festanstellung)",
+        "salary": "Unbekannt",
+        "commute": "ca. 55–60 Min ÖPNV von Heinersdorf nach Adlershof (geschätzt)",
+        "pro": "Einkauf/Bestellmanagement, Terminverfolgung und Schnittstellenarbeit passen gut zum Profil im Handel.",
+        "con": "Längere Pendelzeit nach Adlershof; Systemspezifik NAV von Vorteil.",
+        "effort_details": "ATS (Personio) – Formulare/Dokumente: ca. 55 Min.",
+        "deadline": "",
         "family": "A",
         "source_group": "ats",
         "scores": {
           "skill": 34,
-          "entry": 25,
-          "commute": 10,
-          "conditions": 7
-        },
-        "effort_minutes": 55
-      }
-    },
-    {
-      "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - als Elternzeitvertretung auf 12 Monate befristet",
-      "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241",
-      "reason": "Supporting quotation not present in accessible detail-page text",
-      "candidate": {
-        "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - als Elternzeitvertretung auf 12 Monate befristet",
-        "employer": "aap Implantate AG",
-        "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241",
-        "district": "",
-        "hours": "Vollzeit",
-        "contract": "Befristet (12 Monate)",
-        "salary": "unbekannt",
-        "commute": "Adresse nicht genannt (Berlin); konservative Schätzung ab Heinersdorf ≈60 Min ÖPNV.",
-        "pro": "Breites Aufgabenspektrum Order-to-Invoice inkl. Export und ERP; Nähe zu Lieferkette/Logistik-Erfahrung.",
-        "con": "Spezifische Export-/Zollpraxis gefordert; befristete Elternzeitvertretung.",
-        "effort_details": "ATS (Personio): Konto/Profil, CV-Upload, Felder zu Erfahrung/Sprachen – ca. 55 Min.",
-        "deadline": "",
-        "evidence": "Erarbeiten und Erstellen von Angeboten, deren Verfolgung und Betreuung bis zur Auftragserteilung im Inland und Export Operative Abwicklung des kompletten „Order-to-Invoice“-Prozesses [...] Erstellung und Pflege von Ausfuhrpapieren [...] Abwicklung von Exporten in Drittländer [...] Abgeschlossene kaufmännische Ausbildung [...] Erfahrung im Export / Zoll sowie bei der Erstellung von Ausfuhrbegleitdokumenten [...] Für die internationale Zusammenarbeit sind gute Englischkenntnisse in Wort und Schrift unbedingt erforderlich.",
-        "family": "B",
-        "source_group": "ats",
-        "scores": {
-          "skill": 29,
-          "entry": 23,
+          "entry": 26,
           "commute": 10,
           "conditions": 6
         },
-        "effort_minutes": 55
+        "effort_minutes": 55,
+        "evidence": "Liefertermine & Retouren: Du behältst Liefertermine und Retouren im Blick, prüfst offene Vorgänge und kümmerst dich um die entsprechende Nachverfolgung. Schnittstelle zu unseren Filialen: Du bist Ansprechpartner für unsere Filialen und unsere Logistik bei allen Fragen rund um den Einkauf. Einkaufsvorbereitung: Du wertest relevante Daten aus und bereitest die Einkaufstermine für unsere Einkäufer vor. Das bringst du mit Du hast eine abgeschlossene kaufmännische Ausbildung und",
+        "score": 76,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Office Manager, 30h/week (all genders)",
+        "employer": "Yoshi en & Edeneve (Sunday Natural Schwesterbrands)",
+        "url": "https://yoshi.jobs.personio.de/job/2702241",
+        "district": "Berlin (Grasblau – Bezirk unklar)",
+        "hours": "Teilzeit (30 Std/Woche, Mo–Fr 8–14 Uhr)",
+        "contract": "Unbefristet (Festanstellung)",
+        "salary": "Unbekannt",
+        "commute": "Unklar – zentrale Lage vermutet; konservativ ca. 35–45 Min ÖPNV (geschätzt)",
+        "pro": "Planbare 30h/Woche mit klaren Office-/Event-Koordinationsaufgaben und BVG-Zuschuss.",
+        "con": "Festes Vormittagszeitfenster und starker Onsite-Fokus.",
+        "effort_details": "ATS (Personio) – Formulare/Dokumente: ca. 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 28,
+          "entry": 24,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "welcome. So, what can you expect to work on? Working hours: Monday to Friday, 8:00-14:00 (30 hours/week). Welcome employees, candidates, suppliers and visitors, ensuring everyone has a positive experience from the moment they arrive. Manage incoming deliveries, parcels and mail, and coordinate distribution with the relevant teams. Coordinate office supply orders, monitor inventory levels and optimize ordering processes where needed. Research and communicate with suppliers to find the best",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Sales Coordinator / Vertriebsmitarbeiter (m/w/d)",
+        "employer": "Eberhardt Service Group GmbH",
+        "url": "https://es-group.jobs.personio.de/job/2454127",
+        "district": "Berlin (Bezirk unklar)",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet (Festanstellung)",
+        "salary": "Unbekannt",
+        "commute": "Unklar – Büro in Berlin; konservativ ca. 35–45 Min ÖPNV (geschätzt)",
+        "pro": "Klare Koordinationsaufgaben (Angebote/Ausschreibungen, CRM, Fristen) mit Entwicklungspfad.",
+        "con": "Starker Vertriebsfokus statt Produkt-/Supply-Schwerpunkt.",
+        "effort_details": "ATS (Personio) – Standardbewerbung: ca. 55 Min.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 26,
+          "entry": 24,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "Pipeline- und Forecast-Grundlage. Markt- & Wettbewerbsrecherche: Du recherchierst Markt-, Kunden- und Wettbewerbsinformationen – unterstützt durch KI-Tools – und bereitest sie entscheidungsreif auf. Schnittstelle & Kommunikation: Du koordinierst zwischen Vertrieb, Kalkulation und Fachabteilungen und begleitest Kundentermine sowie Verhandlungen aktiv mit. Angebots- & Ausschreibungsmanagement: Du behältst Fristen und Vergabeunterlagen im Blick und unterstützt bei der termingerechten",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Marketing Operations Coordinator (m/f/d)",
+        "employer": "Battle Royal Studios",
+        "url": "https://battleroyalstudios.jobs.personio.de/job/2816786",
+        "district": "Kreuzberg (Friedrichshain-Kreuzberg) – Reichenberger Str. 36",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet (Festanstellung)",
+        "salary": "Unbekannt",
+        "commute": "ca. 50 Min ÖPNV von Heinersdorf nach Kreuzberg (geschätzt)",
+        "pro": "Operative Marketingkoordination mit klarer Ownership über Prozesse und Content-Flows.",
+        "con": "Starker Fokus auf englisches Copywriting/Content; weniger produktspezifische Koordination.",
+        "effort_details": "ATS (Personio) – Standardbewerbung: ca. 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 26,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "repeatable, scalable realities. The Marketing Operations Coordinator owns day-to-day marketing operations, from content creation to system building, across social, website, portfolio and outreach. The Coordinator does not own brand strategy, paid media buying or creative direction, and partners closely with project, creative and leadership teams to identify and shape the studio's stories. This is a hands-on role for someone comfortable working independently and building momentum without",
+        "score": 66,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Marketing Coordinator (m/w/d) in Vollzeit",
+        "employer": "Cresco Immobilien Verwaltungs GmbH (Neon Wood / Tannhaus)",
+        "url": "https://cresco.jobs.personio.de/job/2814574",
+        "district": "Berlin West (Headquarter; Bezirk unklar)",
+        "hours": "Vollzeit",
+        "contract": "Befristet (Festanstellung befristet)",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–55 Min ÖPNV von Heinersdorf nach Berlin West (geschätzt, Adresse unklar)",
+        "pro": "Breites Marketing-Spektrum (Social, Events, Uni-Kooperationen) mit klarer Koordinationsrolle.",
+        "con": "Befristet; Reisebereitschaft und gelegentliche Kamera-Präsenz gefordert.",
+        "effort_details": "ATS (Personio) – Standardprozess: ca. 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 24,
+          "entry": 22,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "in nachfragestarken Phasen (z. B. rund um Semesterstart) Aufbau und Pflege von Kooperationen mit Universitäten, Hochschulen und Study-Abroad-Anbietern Social Media Du unterstützt bei der Betreuung unserer Social-Media-Kanäle und hilfst dabei, sie strategisch weiterzuentwickeln, inklusive neuer Kanäle, die für unsere Zielgruppe relevant werden Du unterstützt bei der Entwicklung und Pflege unseres Content-Kalenders und sorgst für eine durchdachte, regelmäßige Posting-Frequenz Du",
+        "score": 62,
+        "verification": "Live detail page and supporting quotation checked"
       }
-    }
-  ]
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination",
+        "Projektassistenz",
+        "Teamassistenz",
+        "Office Management",
+        "Marketingkoordination"
+      ],
+      "B": [
+        "Einkäufer",
+        "Sachbearbeiter Einkauf",
+        "Beschaffung",
+        "Order Management"
+      ],
+      "C": [
+        "Vertriebsinnendienst",
+        "Merchandising Koordination"
+      ]
+    },
+    "family_observations": {
+      "A": "Heute viele Koordinationsrollen über ATS (Personio) mit klaren Prozess-/Event-/Community‑Anteilen; Marketingkoordination dominiert gegenüber klassischer Projektkoordination.",
+      "B": "Zwei solide Einkaufsrollen in Adlershof (AS‑Gruppe, IKZ) mit Bestellabwicklung, Lieferterminverfolgung und SAP/ERP‑Bezug; mehrere Zeitarbeits-/ANÜ‑Einträge in der BA wurden ausgesiebt.",
+      "C": "C‑Familie heute überwiegend als Retail-/Sales‑Koordination (Maniko, Eberhardt); vereinzelt Order‑/Auftragsmanagement bei StepStone, jedoch häufig unpräzise oder älter datiert."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche/Detailseiten erreichbar; neue passende Treffer (IKZ) mit vollständigem Aufgabentext genutzt."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen erreichbar; mehrere Treffer aber heute ohne klaren Mehrwert ggü. bereits gemeldeten Stellen, daher nur zur Marktsondierung genutzt."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Boards mehrerer Arbeitgeber mit aktuellen Detailseiten (HOLY, gocomo, Cresco, Aktiv‑Schuh, Eberhardt, Maniko, Yoshi) verfügbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal erreichbar; keine neuen, besser passenden A‑/B‑/C‑Rollen als bereits gemeldete LfG‑B/SenBJF."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/FashionJobs erreichbar; heute v. a. Retail/VM‑Rollen, keine neue geeignete Produkt‑/Merch‑Koordination mit besserem Fit."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://gocomo.jobs.personio.de/job/2791274",
+        "reason": "Erfordert mind. 2 Jahre spezifische Erfahrung im Influencer-/Creator-Marketing (C2 Deutsch) – zu spezialisiert für das Profil."
+      },
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207613459-S",
+        "reason": "Start erst am 01.12.2026 (Elternzeitvertretung, befristet bis 31.07.2028) und verlangt SAP FI/MM – aktuell nicht sinnvoll."
+      }
+    ],
+    "assessment_pages_checked": 8,
+    "rejected": [
+      {
+        "title": "Retail Sales Coordinator (all genders) – Remote/Berlin",
+        "url": "https://maniko.jobs.personio.de/job/2780707",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Retail Sales Coordinator (all genders) – Remote/Berlin",
+          "employer": "Maniko Nails GmbH",
+          "url": "https://maniko.jobs.personio.de/job/2780707",
+          "district": "Berlin (Remote möglich)",
+          "hours": "Vollzeit",
+          "contract": "unbefristet",
+          "salary": "unbekannt",
+          "commute": "Remote; Präsenztage nach Absprache",
+          "pro": "Organisatorisches Rückgrat des Retail‑Teams; Prozesse/Zahlen/Partnerbetreuung.",
+          "con": "Beauty‑Retail statt Fashion/Apparel; teils englischsprachiges Umfeld.",
+          "effort_details": "ATS/Personio 55 Min.",
+          "deadline": "",
+          "evidence": "\"Als Retail Vertriebsassistenz … bist du das organisatorische Rückgrat unseres Retail‑Teams. Du sorgst dafür, dass Prozesse laufen, Zahlen stimmen und unsere Retail‑Partner optimal betreut werden …\" ([maniko.jobs.personio.de](https://maniko.jobs.personio.de/job/2780707?utm_source=openai))",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 25,
+            "commute": 20,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 6,
+  "message_id": "<miki-2026-10-06-91ee03825b6f2306@miki-jobsearch>",
+  "last_attempt_at": "2026-10-06T08:20:17.102784+00:00",
+  "last_attempt_run_id": "37435400541",
+  "design_version": "electric-blue-v1",
+  "email_provider": "brevo"
 }
