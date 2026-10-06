@@ -195,6 +195,25 @@ def response_json(payload, key, require_search=False):
         raise ResearchError("Research API returned invalid JSON", code="invalid_api_json") from error
 
 
+def source_passages(text):
+    """Offer bounded, verbatim passages without generating or combining text."""
+    passages = []
+    for offset in range(0, len(text), 500):
+        start, end = offset, min(offset + 500, len(text))
+        if start:
+            boundary = text.find(" ", start, end)
+            if boundary != -1:
+                start = boundary + 1
+        if end < len(text):
+            boundary = text.rfind(" ", start, end)
+            if boundary != -1:
+                end = boundary
+        passage = text[start:end].strip()
+        if len(passage) >= 40:
+            passages.append(passage)
+    return passages
+
+
 def assess_live_pages(root, config, report, day, key):
     """Assess actual downloaded requirements; discovery snippets cannot supply evidence."""
     pages, unavailable, seen = [], [], set()
@@ -204,13 +223,23 @@ def assess_live_pages(root, config, report, day, key):
             continue
         seen.add(url)
         text, reason = fetch_job_page(job["url"], config)
-        if text and len(text) <= 24000:
+        if text and 40 <= len(text) <= 24000:
             pages.append({"url": job["url"], "source_group": job["source_group"], "page_text": text})
         else:
             unavailable.append(job)
     if not pages:
         return report  # select_jobs records the fetch/quote failure; never promotes a snippet.
-    schema = _object({"jobs": report_schema()["properties"]["jobs"],
+    quotes = {}
+    for page in pages:
+        page["evidence_options"] = []
+        for passage in source_passages(page["page_text"]):
+            quote_id = f"q{len(quotes):04d}"
+            quotes[quote_id] = (canonical_url(page["url"]), passage)
+            page["evidence_options"].append({"id": quote_id, "text": passage})
+    job_properties = dict(report_schema()["properties"]["jobs"]["items"]["properties"])
+    del job_properties["evidence"]
+    job_properties["evidence_quote_id"] = {"type": "string", "enum": list(quotes)}
+    schema = _object({"jobs": {"type": "array", "items": _object(job_properties)},
                       "excluded": {"type": "array", "items": _object({"url": _string(), "reason": _string()})}})
     instructions = (root / "config/research-brief.md").read_text(encoding="utf-8") + "\n" + (
         "This is the assessment stage. All page_text values below were independently downloaded now. "
@@ -218,11 +247,11 @@ def assess_live_pages(root, config, report, day, key):
         "Read the complete duties AND required qualifications. Apply the hard exclusions and scoring rules. "
         "Use the actual title and employer. Do not invent salary, address, deadlines, working hours or remote work. "
         "Where a salary range in the header conflicts with a detailed salary paragraph, use the detailed range "
-        "and mention the discrepancy. Use an exact contiguous quote of 40–500 characters copied from page_text "
-        "in evidence, without adding quotation marks around the copied text. "
+        "and mention the discrepancy. In this stage, use evidence_quote_id instead of evidence. "
+        "Choose the ID of one relevant original passage from that URL's evidence_options. "
+        "The application copies its text directly; never write or combine a quotation yourself. "
         "deadline must be a confirmed application deadline in YYYY-MM-DD format or the empty string; "
         "unknown dates and a start date are not an application deadline. "
-        "Do not paraphrase it, combine separated bullets, add ellipses or translate it. "
         "Every supplied URL must appear once in jobs or excluded; explain exclusions. "
         "This is a list checked as of the research date, not a claim that every listing was published that day. "
         "Return only the structured assessment, without web search."
@@ -241,6 +270,10 @@ def assess_live_pages(root, config, report, day, key):
         url = canonical_url(job.get("url", ""))
         if url not in candidates:
             raise ResearchError("Assessment introduced an unsupplied URL", code="invalid_assessment")
+        quote = quotes.get(job.pop("evidence_quote_id", ""))
+        if quote is None or quote[0] != url:
+            raise ResearchError("Assessment selected another candidate's quotation", code="invalid_assessment")
+        job["evidence"] = quote[1]
         job["source_group"] = candidates[url]["source_group"]
         assigned.append(url)
     for excluded in result["excluded"]:

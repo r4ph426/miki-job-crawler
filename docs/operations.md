@@ -39,6 +39,12 @@ plausible candidate fails independent verification, the run fails research inste
 of sending a misleading zero-result email. Genuine empty searches and exhausted
 previously reported results can still produce an honest zero-result report.
 
+The assessment selects a passage ID from original text chunks supplied with each
+full page. The application inserts that exact source text and rejects IDs belonging
+to a different URL. This prevents the model from paraphrasing or joining excerpts.
+The complete duties and qualifications remain available for the assessment, and a
+second live-page verification still runs before a candidate can be sent.
+
 The verifier accepts one matching pair of outer quotation marks added around a
 verbatim excerpt. Its interior must still contain at least 40 characters and match
 one contiguous source passage. Paraphrases and excerpts joined with ellipses fail.

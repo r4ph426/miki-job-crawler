@@ -109,22 +109,48 @@ class ResearchTests(unittest.TestCase):
         grounded = copy.deepcopy(report["jobs"][0])
         grounded["evidence"] = "Sie koordinieren Bestellungen und Liefertermine mit unseren Lieferanten."
         text = grounded["evidence"] + " Erforderlich ist eine kaufmännische Ausbildung."
+        assessment = dict(grounded, evidence_quote_id="q0000")
+        del assessment["evidence"]
         with patch.object(provider, "fetch_job_page", return_value=(text, "Live page")), \
-             patch.object(provider, "response_json", return_value={"jobs": [grounded], "excluded": []}) as response:
+             patch.object(provider, "response_json", return_value={"jobs": [assessment], "excluded": []}) as response:
             result = provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
         payload = response.call_args.args[0]
         self.assertIn(text, payload["input"])
         self.assertNotIn("Invented sentence", payload["input"])
-        self.assertEqual(result["jobs"][0]["evidence"], grounded["evidence"])
+        self.assertEqual(result["jobs"][0]["evidence"], text)
         self.assertEqual(result["assessment_pages_checked"], 1)
         with patch.object(provider, "fetch_job_page", return_value=(text, "Live page")), \
-             patch.object(provider, "response_json", return_value={"jobs": [dict(grounded, url="https://evil.example/job")], "excluded": []}):
+             patch.object(provider, "response_json", return_value={"jobs": [dict(assessment, url="https://evil.example/job")], "excluded": []}):
             with self.assertRaises(ResearchError):
                 provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
 
+    def test_assessment_cannot_borrow_another_jobs_quote_or_invent_an_id(self):
+        report = copy.deepcopy(FIXTURE)
+        report["jobs"] = [dict(report["jobs"][0], url="https://aeyde.jobs.personio.de/job/1"),
+                          dict(report["jobs"][0], url="https://aeyde.jobs.personio.de/job/2")]
+        text = "Sie koordinieren Bestellungen und Liefertermine mit unseren Lieferanten."
+        for quote_id in ["q0001", "q9999"]:
+            job = dict(report["jobs"][0], evidence_quote_id=quote_id)
+            del job["evidence"]
+            with self.subTest(quote_id=quote_id), \
+                 patch.object(provider, "fetch_job_page", return_value=(text, "Live page")), \
+                 patch.object(provider, "response_json", return_value={"jobs": [job], "excluded": []}):
+                with self.assertRaises(ResearchError):
+                    provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
+
+    def test_long_page_evidence_options_are_bounded_original_passages(self):
+        text = ("Sie koordinieren Bestellungen und Liefertermine mit unseren Lieferanten. " * 400)[:24000]
+        passages = provider.source_passages(text)
+        self.assertTrue(passages)
+        self.assertLessEqual(len(passages), 48)
+        for passage in passages:
+            self.assertGreaterEqual(len(passage), 40)
+            self.assertLessEqual(len(passage), 500)
+            self.assertIn(passage, text)
+
     def test_grounded_assessment_must_account_for_every_fetched_candidate(self):
         report = copy.deepcopy(FIXTURE)
-        with patch.object(provider, "fetch_job_page", return_value=("Full duties and required qualifications", "Live page")), \
+        with patch.object(provider, "fetch_job_page", return_value=("Full duties and all required professional qualifications", "Live page")), \
              patch.object(provider, "response_json", return_value={"jobs": [], "excluded": []}):
             with self.assertRaises(ResearchError):
                 provider.assess_live_pages(ROOT, CONFIG, report, MONDAY.date(), "unit-test-key")
