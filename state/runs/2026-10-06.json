@@ -2,9 +2,69 @@
   "date": "2026-10-06",
   "status": "research_failed",
   "hits": 0,
-  "failed_at": "2026-10-06T08:07:09.263389+00:00",
+  "failed_at": "2026-10-06T08:13:14.057408+00:00",
   "error": "Research failed (ResearchError); see workflow log",
   "research_diagnostic": {
-    "code": "invalid_deadline"
-  }
+    "code": "no_verified_candidates"
+  },
+  "candidate_diagnostics": [
+    {
+      "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+      "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+      "reason": "Already reported or repeated within this run",
+      "candidate": {
+        "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+        "employer": "Vielfaltmenü GmbH",
+        "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+        "district": "Tempelhof",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "unbekannt",
+        "commute": "≈60 Min ÖPNV (Heinersdorf → Oberlandstraße 13–14, Tempelhof; konservative Schätzung)",
+        "pro": "Direkter Einkauf inkl. Lieferantenbeziehungen und Vertragsverhandlungen passt zur Erfahrung in Beschaffung/Koordination.",
+        "con": "Branchenwechsel in Gastronomie/Lebensmittel; Gehalt nicht genannt.",
+        "effort_details": "ATS (Personio): Konto/Profil, CV-Upload, Basisfragen, Motivationsfeld – ca. 55 Min.",
+        "deadline": "",
+        "evidence": "Das sind Ihre Aufgaben: Sortimentsoptimierung: Weiterentwicklung des Food- und Nonfood-Sortiments mit Schwerpunkt Großverbrauchersortiment. Nachhaltige Beziehungen: Pflege und Ausbau von Lieferantenbeziehungen sowie Führung von Vertragsverhandlungen. Marktanalysen: Durchführung von Markt- und Wettbewerbsanalysen zur Erkennung von Trends. Systempflege: Pflege und Weiterentwicklung unseres Warenwirtschaftssystems. [...] Qualifikation: Abgeschlossene Ausbildung oder Studium im gastronomischen oder kaufmännischen Bereich. Erfahrung: Berufserfahrung im Einkauf oder Category Management, idealerweise in der Gastronomie oder im Lebensmittelhandel.",
+        "family": "A",
+        "source_group": "ats",
+        "scores": {
+          "skill": 34,
+          "entry": 25,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55
+      }
+    },
+    {
+      "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - als Elternzeitvertretung auf 12 Monate befristet",
+      "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241",
+      "reason": "Supporting quotation not present in accessible detail-page text",
+      "candidate": {
+        "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - als Elternzeitvertretung auf 12 Monate befristet",
+        "employer": "aap Implantate AG",
+        "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241",
+        "district": "",
+        "hours": "Vollzeit",
+        "contract": "Befristet (12 Monate)",
+        "salary": "unbekannt",
+        "commute": "Adresse nicht genannt (Berlin); konservative Schätzung ab Heinersdorf ≈60 Min ÖPNV.",
+        "pro": "Breites Aufgabenspektrum Order-to-Invoice inkl. Export und ERP; Nähe zu Lieferkette/Logistik-Erfahrung.",
+        "con": "Spezifische Export-/Zollpraxis gefordert; befristete Elternzeitvertretung.",
+        "effort_details": "ATS (Personio): Konto/Profil, CV-Upload, Felder zu Erfahrung/Sprachen – ca. 55 Min.",
+        "deadline": "",
+        "evidence": "Erarbeiten und Erstellen von Angeboten, deren Verfolgung und Betreuung bis zur Auftragserteilung im Inland und Export Operative Abwicklung des kompletten „Order-to-Invoice“-Prozesses [...] Erstellung und Pflege von Ausfuhrpapieren [...] Abwicklung von Exporten in Drittländer [...] Abgeschlossene kaufmännische Ausbildung [...] Erfahrung im Export / Zoll sowie bei der Erstellung von Ausfuhrbegleitdokumenten [...] Für die internationale Zusammenarbeit sind gute Englischkenntnisse in Wort und Schrift unbedingt erforderlich.",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 29,
+          "entry": 23,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55
+      }
+    }
+  ]
 }
