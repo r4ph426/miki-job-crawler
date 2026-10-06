@@ -133,6 +133,13 @@ weekday schedule reliable.
 Gmail's Sent folder will not contain mail submitted through Brevo. A Brevo plugin
 in a chat is not required: the unattended GitHub runner uses the API directly.
 
+## Salary estimates
+
+Missing advertised pay can receive a separately labelled annual gross market
+range, with a dated source and explicit hours basis. See [salary estimates](salary-estimates.md)
+for matching, reference refreshes and limitations. This leaves prior delivery
+records and all duplicate guards intact.
+
 ## Historical data and the frontend
 
 The imported ledger is a record of recommendations, not a verified email log. One

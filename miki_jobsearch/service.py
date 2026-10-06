@@ -19,6 +19,7 @@ from zoneinfo import ZoneInfo
 
 from .newsletter import DESIGN_VERSION, render_report
 from .research import ResearchError, canonical_url, research, select_jobs, tls_context, validate_report, verify_job
+from .salaries import with_salary_estimates
 
 BERLIN = ZoneInfo("Europe/Berlin")
 TERMINAL = {"sent", "sending", "uncertain", "partial"}
@@ -412,6 +413,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                 if not jobs and verification_failures and fixture is None:
                     raise ResearchError("All plausible candidates failed independent verification; retry research instead of reporting zero jobs",
                                         code="no_verified_candidates")
+                report = with_salary_estimates(report, day, read_json(root / "config/salary-benchmarks.json", {}))
                 subject, body = render_report(report, day, history, fixture is not None, revision)
             except Exception as error:
                 if not dry_run:
@@ -439,6 +441,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         else:
             # Reuse the live research but apply current rendering to an unsent outbox.
             # Terminal delivery states were already blocked above.
+            record["report"] = with_salary_estimates(record["report"], day, read_json(root / "config/salary-benchmarks.json", {}))
             record["subject"], body = render_report(record["report"], day, history, revision=revision)
             record["message_id"] = f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"
         if dry_run:

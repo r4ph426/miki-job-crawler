@@ -62,11 +62,15 @@ Commute: ≤30 min 20; 31–45 15; 46–60 10; 61–75 5; >75 0. Without an addr
 estimate conservatively and say so. >75 min is acceptable only when skill ≥35.
 Report only total ≥55. Low salary alone is not a hard exclusion; mention it in cons.
 
-For each job include title, employer, district, hours, contract, salary (or explicitly
-unknown), commute estimate, score components, one concrete pro and one honest con,
+For each job include title, employer, district, hours, contract, salary from the
+advertisement (or explicitly "Unbekannt"), commute estimate, score components, one concrete pro and one honest con,
 application deadline if known, and effort in minutes with its breakdown. Reference
 effort: quick agency application 25; normal company 70; ATS 55; complex group portal
 90; public sector 130. Never invent missing salary, address, deadline or requirements.
+Do not put a market estimate into salary or use an estimated salary in scoring,
+pros or cons. The application separately adds sourced, clearly labelled market
+salary ranges where the advertisement omits pay. Preserve any advertised amount
+or tariff grade exactly; include explicit weekly hours in hours when available.
 
 Write German, factual and direct; no greeting, motivational language or exclamations.
 Give a one-sentence assessment and a concrete action for a zero-result day.

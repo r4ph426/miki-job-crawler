@@ -1,7 +1,9 @@
 """Approved compact newsletter, rendered without scripts or webfont dependencies."""
 
 import html
-from datetime import timedelta
+from datetime import date, timedelta
+
+from .salaries import salary_missing
 
 DESIGN_VERSION = "electric-blue-v1"
 FONT = "'Helvetica Neue',Arial,sans-serif"
@@ -40,6 +42,21 @@ def notice(title, text):
 
 def heading(text):
     return f'<h2 style="margin:0 0 8px;font-size:20px;line-height:1.2;font-weight:400">{esc(text)}</h2>'
+
+
+def salary_paragraphs(job):
+    estimate = job.get("salary_estimate") if salary_missing(job["salary"]) else None
+    if not estimate:
+        return paragraph(esc("Gehalt: " + job["salary"]), True, gap=2)
+    lower = f'{estimate["annual_min_eur"]:,}'.replace(",", ".")
+    upper = f'{estimate["annual_max_eur"]:,}'.replace(",", ".")
+    checked = date.fromisoformat(estimate["source_checked_on"])
+    source = (f'{estimate["benchmark_role"]}, {estimate["benchmark_region"]} · '
+              f'Stand {checked:%d.%m.%Y}')
+    return (paragraph(esc(f"Geschätzte Gehaltsspanne: ca. {lower}–{upper} € brutto/Jahr"), True, gap=2)
+            + paragraph(esc(estimate["hours_basis"]), True, gap=2)
+            + paragraph(f'Vergleich: {esc(source)} · <a class="signal" href="{esc(estimate["source_url"])}" '
+                        f'style="color:{BLUE};text-decoration:underline">{esc(estimate["source_name"])}</a>', True, gap=2))
 
 
 def render_report(report, day, history, fixture=False, revision=None):
@@ -105,7 +122,8 @@ def render_report(report, day, history, fixture=False, revision=None):
             f'font-weight:400;color:{BLUE};white-space:nowrap">{job["score"]}<span style="font-size:12px;letter-spacing:0">/100</span></td></tr></table>',
             paragraph(esc(job["employer"]), gap=4),
             paragraph(icon("map-pin") + esc(job["district"]), True, gap=2),
-            paragraph(esc(job["hours"] + " · " + job["contract"] + " · Gehalt: " + job["salary"]), True),
+            paragraph(esc(job["hours"] + " · " + job["contract"]), True),
+            salary_paragraphs(job),
             paragraph(icon("train-front") + esc(job["commute"]), True, gap=2),
             paragraph(label("Dafür:") + "<br>" + esc(job["pro"])),
             paragraph(label("Dagegen:") + "<br>" + esc(job["con"]), gap=4),
@@ -145,5 +163,9 @@ def render_report(report, day, history, fixture=False, revision=None):
     body.append(paragraph("Geprüfte Suchbegriffe", True, gap=0))
     body.extend(paragraph(f"{esc(family)} · {esc(', '.join(terms))}", True, gap=4) for family, terms in report["searches"].items())
     body.append(paragraph(f"Prüfstand: {day:%d.%m.%Y}. Die Anzeigen sind aktuell abrufbar; ihr Veröffentlichungsdatum ist nicht überall bekannt. Angaben vor einer Bewerbung in der Originalanzeige prüfen. Pendelzeiten und Bewerbungsaufwand sind Schätzungen.", True, gap=16))
+    if any(j.get("salary_estimate") and salary_missing(j["salary"]) for j in jobs):
+        body.append(paragraph("Geschätzte Gehaltsspannen sind gerundete Marktwerte ähnlicher Rollen in Berlin. "
+                              "Der Arbeitgeber nennt kein Gehalt; sein Angebot kann abweichen. "
+                              "Erfahrung, Branche und variable Vergütung sind nicht individuell berücksichtigt.", True, gap=8))
     body.append("</div></td></tr></table></td></tr></table></body></html>")
     return subject, "\n".join(body)

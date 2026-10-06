@@ -1,0 +1,115 @@
+{
+  "region": "Berlin",
+  "reference_weekly_hours": 40,
+  "max_age_days": 180,
+  "roles": [
+    {
+      "role": "Office Coordinator",
+      "title_patterns": ["\\boffice (?:coordinator|koordination|koordinator\\w*)\\b"],
+      "annual_min_eur": 32100,
+      "annual_max_eur": 44100,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Office-Coordinator/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Officemanager/in",
+      "title_patterns": ["\\boffice ?(?:manager\\w*|management)\\b"],
+      "annual_min_eur": 33000,
+      "annual_max_eur": 45200,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Officemanager-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Sachbearbeiter/in Einkauf",
+      "title_patterns": ["\\beinkaufssachbearbeit\\w*\\b", "\\bsachbearbeit\\w* (?:in )?(?:im |fuer |fuer den )?einkauf\\b", "\\beinkaufsassistenz\\b"],
+      "annual_min_eur": 30200,
+      "annual_max_eur": 43500,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Sachbearbeiter-in-Einkauf/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Sales Coordinator",
+      "title_patterns": ["\\bsales coordinator\\b", "\\bvertriebskoordina\\w*\\b"],
+      "annual_min_eur": 32200,
+      "annual_max_eur": 45900,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Sales-Coordinator/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Marketing Coordinator",
+      "title_patterns": ["\\bmarketing (?:operations )?(?:coordinator|koordination|koordinator\\w*)\\b", "\\bmarketingkoordina\\w*\\b"],
+      "annual_min_eur": 36000,
+      "annual_max_eur": 51100,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Marketing-Coordinator/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Projektassistent/in",
+      "title_patterns": ["\\bprojektassist\\w*\\b", "\\bproject assistant\\b"],
+      "annual_min_eur": 33400,
+      "annual_max_eur": 46200,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Projektassistent-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Projektkoordinator/in",
+      "title_patterns": ["\\bprojektkoordina\\w*\\b", "\\bproject coordinator\\b"],
+      "annual_min_eur": 40300,
+      "annual_max_eur": 57500,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Projektkoordinator-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Teamassistent/in",
+      "title_patterns": ["\\bteamassist\\w*\\b", "\\bteam assistant\\b"],
+      "annual_min_eur": 32400,
+      "annual_max_eur": 44500,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Teamassistent-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Einkäufer/in",
+      "title_patterns": ["\\beinkaeufer\\w*\\b", "\\b(?:operative[rns]? )?einkaufskoordina\\w*\\b", "\\b(?:operativer|operativen) einkauf\\b", "\\b(?:buyer|purchasing coordinator|procurement coordinator)\\b"],
+      "annual_min_eur": 37600,
+      "annual_max_eur": 54500,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Einkaeufer-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Supply Chain Coordinator",
+      "title_patterns": ["\\bsupply chain (?:coordinator|koordination|koordinator\\w*)\\b"],
+      "annual_min_eur": 38200,
+      "annual_max_eur": 51200,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Supply-Chain-Coordinator/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Vertriebsinnendienstmitarbeiter/in",
+      "title_patterns": ["\\bvertriebsinnendienst\\w*\\b"],
+      "annual_min_eur": 32500,
+      "annual_max_eur": 45800,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    },
+    {
+      "role": "Produktkoordinator/in",
+      "title_patterns": ["\\bproduct coordinator\\b", "\\bproduktkoordina\\w*\\b"],
+      "annual_min_eur": 38600,
+      "annual_max_eur": 55500,
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Produktkoordinator-in/city/Berlin.html",
+      "checked_on": "2026-10-06"
+    }
+  ]
+}

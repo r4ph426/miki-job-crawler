@@ -19,6 +19,10 @@ Gestaltung für die vom Crawler versendeten Tages- und Wochenberichte.
   Das Uhr-Icon der Aufwandsschätzung ist blau. Ort und Pendelweg sind grau.
 - Inhalte, Bewertungen, Quellenhinweise, Fristen, Freitagsüberblick und
   Versandhistorie bleiben vollständig erhalten. Keine Daten zur Gestaltung erfinden.
+- Fehlt das Gehalt in der Anzeige, steht eine belegte Marktspanne unter
+  **Geschätzte Gehaltsspanne** in der grauen Metadatenzeile. Brutto/Jahr,
+  Stundenbasis, Vergleichsrolle, verlinkte Quelle und Prüfdatum bleiben sichtbar.
+  Die Schätzung ist getrennt von Arbeitgeberangaben; siehe `salary-estimates.md`.
 
 ## E-Mail-Umsetzung
 
