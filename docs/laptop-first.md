@@ -77,6 +77,11 @@ requests; the durable claim prevents concurrent workers from sending twice.
 Configure a fine-grained GitHub token restricted to this repository with
 **Actions: read/write** as the private Site runtime secret `GITHUB_ACTIONS_TOKEN`.
 The backend alone uses it; it never appears in browser code, files, or the feed.
+For a secure handoff to Codex, run `python3 -m scripts.configure_manual_start`.
+This stores the value under `miki-jobsearch/GITHUB_ACTIONS_TOKEN` in macOS Keychain
+using a secure interactive prompt. Tell Codex only that the entry is ready; never
+send the token in chat. Codex can retrieve that dedicated entry without printing
+it and configure the native Sites runtime secret.
 After configuring a runtime secret, deploy the saved Site version again to apply
 it. Without it, the direct button is disabled and the GitHub workflow link remains
 available; choose `prepare-next` there. Owner authentication and same-origin checks
