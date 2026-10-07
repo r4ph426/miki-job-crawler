@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T17:52:23.980781+00:00",
+  "updated_at": "2026-10-07T17:52:25.065930+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "prepare": "16:00",
@@ -45,14 +45,20 @@
       "has_report": true
     }
   },
-  "lease": {
-    "actor": "manual",
-    "phase": "prepare",
-    "date": "2026-10-08",
-    "started_at": "2026-10-07T17:48:25.871331+00:00",
-    "expires_at": "2026-10-07T18:28:25.871331+00:00"
+  "lease": null,
+  "confirmations": {
+    "2026-10-08": {
+      "date": "2026-10-08",
+      "status": "ready",
+      "ready": true,
+      "hits": 0,
+      "researched_at": "2026-10-07T17:48:25.871331+00:00",
+      "delivery_time": "2026-10-08T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-07T17:52:25.063873+00:00",
+      "actor": "manual",
+      "last_result": "prepared"
+    }
   },
-  "confirmations": {},
   "laptop": {
     "status": "credentials_required"
   }

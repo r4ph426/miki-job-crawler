@@ -1,11 +1,15 @@
 {
-  "days": {},
-  "lease": {
-    "token": "a2367d110f674641b3d4e69701aa2375",
-    "actor": "manual",
-    "phase": "prepare",
-    "date": "2026-10-08",
-    "started_at": "2026-10-07T17:48:25.871331+00:00",
-    "expires_at": "2026-10-07T18:28:25.871331+00:00"
+  "days": {
+    "2026-10-08": {
+      "date": "2026-10-08",
+      "status": "ready",
+      "ready": true,
+      "hits": 0,
+      "researched_at": "2026-10-07T17:48:25.871331+00:00",
+      "delivery_time": "2026-10-08T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-07T17:52:25.063873+00:00",
+      "actor": "manual",
+      "last_result": "prepared"
+    }
   }
 }
