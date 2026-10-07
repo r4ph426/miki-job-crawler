@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T16:31:12.313035+00:00",
+  "updated_at": "2026-10-07T17:48:25.873612+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "prepare": "16:00",
@@ -36,7 +36,13 @@
       "has_report": true
     }
   },
-  "lease": null,
+  "lease": {
+    "actor": "manual",
+    "phase": "prepare",
+    "date": "2026-10-08",
+    "started_at": "2026-10-07T17:48:25.871331+00:00",
+    "expires_at": "2026-10-07T18:28:25.871331+00:00"
+  },
   "confirmations": {},
   "laptop": {
     "status": "credentials_required"
