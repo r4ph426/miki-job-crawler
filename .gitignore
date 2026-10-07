@@ -6,3 +6,6 @@ __pycache__/
 !.env.example
 out/
 *.lock
+
+# Hosted status dashboard has its own managed source repository.
+status-site/

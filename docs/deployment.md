@@ -65,7 +65,7 @@ supports app passwords; this is not the default delivery route.
 
 1. Run **Service checks** and **Miki weekday job search → Run workflow → offline-demo**.
    These execute the actual offline test suite and generate the test email artifact.
-2. On a weekday from 08:15 Berlin, run the workflow with `live-dry-run`. Inspect the
+2. On a weekday from 08:30 Berlin, run the workflow with `live-dry-run`. Inspect the
    report artifact: source coverage, new-job evidence, scores, and recipient-independent
    email content. The provider must support the configured model, `web_search`, and
    strict structured output. No delivery or history updates occur in this mode.
@@ -73,7 +73,7 @@ supports app passwords; this is not the default delivery route.
    the same day, do not choose a day whose legacy email has already been sent.
    Refresh `data/seed-history.json` from a current legacy ledger if the old service
    has continued since the ZIP's last entries on 2 October 2026.
-4. Run `send` on the handover day from 08:15. Confirm the provider accepted the delivery,
+4. Run `send` on the handover day from 08:30. Confirm the provider accepted the delivery,
    `state/` commits reached the default branch, and the intended recipient received
    it. A `sent` run record alone does not establish inbox receipt.
 5. Retire the old automation as part of that coordinated handover. Scheduled runs
@@ -84,11 +84,13 @@ supports app passwords; this is not the default delivery route.
    notifications and inspect missing weekday records. Check Actions usage and the
    OpenAI account's limits according to your account settings.
 
-Cron fires at 06:15, 07:15 and 08:15 UTC Monday–Friday. Berlin's local-time guard
-allows runs from 08:15 onward, so the first eligible slot is 06:15 UTC in summer
-and 07:15 UTC in winter. Research starts then; email follows after it completes.
-Stored state prevents a second accepted daily email.
-The later slots retry confirmed research/send failures. A crash or uncertain provider
+The active workflow uses the [laptop-first schedule](laptop-first.md). Cron fires
+at 06:30 and 07:30 UTC for prepared-only 08:30 Berlin delivery across DST, and at
+07:45, 08:45, 09:45 and 10:45 UTC for fallback/retries. The local-time coordinator
+never starts cloud research before 09:45 Berlin. A missing report at 08:30 waits
+for the local 09:30 attempt. An active shared lease defers the cloud fallback.
+GitHub can delay or miss events; scheduled slots are eligibility targets.
+Stored state prevents a second accepted daily email. A crash or uncertain provider
 acceptance requires reconciliation rather than an automatic resend.
 
 All runs share a non-cancelling concurrency group. Outputs are uploaded even if
@@ -100,7 +102,7 @@ service. A later frontend should read the same records or migrate them to a data
 
 The command can also run from an existing checkout on a Linux server with a durable
 state directory. Use a system cron or timer with `CRON_TZ=Europe/Berlin`, invoking
-`python3 -m miki_jobsearch --state-dir /persistent/miki-state run --send` at 08:15
-Monday–Friday and optionally at 09:15 for a retry. Supply environment values through
+`python3 -m miki_jobsearch --state-dir /persistent/miki-state run --send` at 08:30
+Monday–Friday and optionally at 09:30 for a retry. Supply environment values through
 the server's secure configuration. The state volume must survive process and machine
 restarts. A process launched in a temporary cloud coding task is not such a service.

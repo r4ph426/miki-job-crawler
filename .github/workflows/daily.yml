@@ -2,14 +2,16 @@ name: Miki weekday job search
 
 on:
   schedule:
-    # Berlin 08:15 in summer/winter, plus a retry. Stored state prevents duplicates.
-    - cron: "15 6,7,8 * * 1-5"
+    # 08:30 prepared-only delivery (both DST offsets), then laptop-first fallback.
+    # No cloud research before 09:45 Berlin. GitHub can delay scheduled events.
+    - cron: "30 6,7 * * 1-5"
+    - cron: "45 7,8,9,10 * * 1-5"
   workflow_dispatch:
     inputs:
       mode:
         description: "Offline demo, live research without email, or production delivery"
         type: choice
-        options: [offline-demo, live-dry-run, prepare, send]
+        options: [offline-demo, live-dry-run, prepare, prepare-next, send]
         default: offline-demo
       runner:
         description: "Hosted runner pool; alternate pools are available if acquisition fails"
@@ -50,9 +52,9 @@ jobs:
       - name: Validate the service
         run: python3 -m unittest discover -s tests -v
       - name: Check and record production credential readiness
-        if: github.event_name != 'workflow_dispatch' || inputs.mode != 'offline-demo'
+        if: github.event_name == 'workflow_dispatch' && inputs.mode != 'offline-demo' && inputs.mode != 'prepare-next'
         env:
-          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
+          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'hybrid' || inputs.mode }}
           REPORT_REVISION: ${{ inputs.revision }}
           REVISION_REASON: ${{ inputs.revision_reason }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
@@ -75,7 +77,7 @@ jobs:
           fi
       - name: Run research and optional delivery
         env:
-          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'send' || inputs.mode }}
+          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'hybrid' || inputs.mode }}
           REPORT_REVISION: ${{ inputs.revision }}
           REVISION_REASON: ${{ inputs.revision_reason }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
@@ -97,6 +99,9 @@ jobs:
             revision_args=(--revision "$REPORT_REVISION" --revision-reason "$REVISION_REASON")
           fi
           case "$RUN_MODE" in
+            hybrid)
+              python3 -m miki_jobsearch.hybrid --actor github
+              ;;
             offline-demo)
               python3 -m miki_jobsearch run --fixture tests/fixtures/report.json --dry-run
               ;;
@@ -105,6 +110,9 @@ jobs:
               ;;
             send)
               python3 -m miki_jobsearch run --send --persist-git "${revision_args[@]}"
+              ;;
+            prepare-next)
+              python3 -m miki_jobsearch.hybrid --actor github --manual-prepare
               ;;
             prepare)
               python3 -m miki_jobsearch run --prepare --persist-git "${revision_args[@]}"

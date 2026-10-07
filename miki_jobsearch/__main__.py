@@ -26,6 +26,8 @@ def main():
     delivery.add_argument("--send", action="store_true", help="Enable real delivery (default: dry run)")
     delivery.add_argument("--dry-run", action="store_true")
     delivery.add_argument("--prepare", action="store_true", help="Prepare and persist live research for review, without sending")
+    execute.add_argument("--delivery-date", help="Prepare for the next calendar weekday from 16:00 Berlin")
+    execute.add_argument("--require-prepared", action="store_true", help="Send only a stored live report; never start research")
     execute.add_argument("--fixture", type=Path, help="Offline demo data; never compatible with --send")
     execute.add_argument("--output-dir", type=Path)
     execute.add_argument("--persist-git", action="store_true", help="Push outbox transitions; for the Actions runner")
@@ -48,7 +50,8 @@ def main():
         persist = git_persister(root, store) if args.persist_git else None
         result = run(root, store, now=now, dry_run=not (args.send or args.prepare), fixture=fixture,
                      output_dir=args.output_dir, persist=persist, prepare=args.prepare,
-                     revision=args.revision, revision_reason=args.revision_reason)
+                     revision=args.revision, revision_reason=args.revision_reason,
+                     delivery_date=args.delivery_date, require_prepared=args.require_prepared)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if result.get("status") == "partial" or result.get("delivery_status") in {"sending", "uncertain", "partial"}:
         return 1

@@ -1,0 +1,44 @@
+{
+  "updated_at": "2026-10-07T16:31:12.313035+00:00",
+  "timezone": "Europe/Berlin",
+  "schedule": {
+    "prepare": "16:00",
+    "send": "08:30",
+    "local_retry": "09:30",
+    "github_fallback": "09:45"
+  },
+  "records": {
+    "2026-10-05": {
+      "date": "2026-10-05",
+      "status": "sent",
+      "hits": 0,
+      "researched_at": null,
+      "created_at": "2026-10-05T14:53:05.185229+00:00",
+      "accepted_at": "2026-10-05T19:24:31.816745+00:00",
+      "has_report": true
+    },
+    "2026-10-06": {
+      "date": "2026-10-06",
+      "status": "sent",
+      "hits": 6,
+      "researched_at": null,
+      "created_at": "2026-10-06T08:20:17.102784+00:00",
+      "accepted_at": "2026-10-06T08:24:38.434637+00:00",
+      "has_report": true
+    },
+    "2026-10-07": {
+      "date": "2026-10-07",
+      "status": "sent",
+      "hits": 9,
+      "researched_at": null,
+      "created_at": "2026-10-07T13:46:57.610923+00:00",
+      "accepted_at": "2026-10-07T13:51:00.266992+00:00",
+      "has_report": true
+    }
+  },
+  "lease": null,
+  "confirmations": {},
+  "laptop": {
+    "status": "credentials_required"
+  }
+}

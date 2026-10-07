@@ -299,6 +299,8 @@ def git_persister(root, store):
     if command("check-ref-format", "--branch", branch).returncode:
         raise StateSyncError("Invalid state branch")
     def persist(record):
+        from .status_feed import write_feed
+        write_feed(root, store)
         steps = [("add", "--", "state")]
         for args in steps:
             if command(*args).returncode:
@@ -360,7 +362,8 @@ def reconcile(store, day, result, note, persist=None, revision=None):
 
 def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         researcher=research, verifier=verify_job, sender=send_mail, persist=None,
-        prepare=False, revision=None, revision_reason=None):
+        prepare=False, revision=None, revision_reason=None, delivery_date=None,
+        require_prepared=False, allow_early_prepare=False):
     now = now or datetime.now(timezone.utc)
     config = read_json(root / "config/search.json", {})
     if (not dry_run or prepare) and fixture is not None:
@@ -369,8 +372,14 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         raise ValueError("Preparation writes durable live state; do not combine it with dry-run")
     if revision and not (revision_reason and revision_reason.strip()):
         raise ValueError("An explicit reason is required for a revised report")
-    day = now.astimezone(ZoneInfo(config["timezone"])).date()
-    if not due(now, config) and fixture is None:
+    local = now.astimezone(ZoneInfo(config["timezone"]))
+    research_day = local.date()
+    day = date.fromisoformat(delivery_date) if delivery_date else research_day
+    if delivery_date and (not prepare or day.weekday() >= 5
+                          or not research_day < day <= research_day + timedelta(days=3)
+                          or (not allow_early_prepare and (day != research_day + timedelta(days=1) or local.hour < 16))):
+        raise ValueError("Advance preparation requires the next calendar weekday from 16:00 Berlin")
+    if not delivery_date and not due(now, config) and fixture is None:
         return {"date": str(day), "status": "skipped", "reason": "Outside weekday Berlin delivery window"}
     if not dry_run and persist is None:
         # Local server mode must use a durable mounted directory, documented separately.
@@ -383,6 +392,8 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         if not dry_run and record.get("status") in TERMINAL:
             return {"date": str(day), "status": "skipped", "delivery_status": record["status"],
                     "reason": "Already sent or requires manual delivery reconciliation"}
+        if require_prepared and (not record.get("report") or record.get("fixture")):
+            return {"date": str(day), "status": "skipped", "reason": "No prepared live report"}
         if revision:
             original = read_json(record_path(store, str(day)), {})
             if original.get("status") != "sent":
@@ -404,10 +415,13 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
             raise
         if dry_run or prepare or not record.get("report"):
             try:
-                raw = validate_report(copy.deepcopy(fixture)) if fixture is not None else researcher(root, config, exclusion_history, day)
+                raw = validate_report(copy.deepcopy(fixture)) if fixture is not None else researcher(root, config, exclusion_history, research_day)
                 verifier_fn = (lambda job, config: (True, "Fixture only; not live verified")) if fixture is not None else verifier
                 jobs, rejected = select_jobs(raw, config, exclusion_history, day, verifier_fn)
                 report = dict(raw, jobs=jobs, rejected=rejected)
+                if delivery_date:
+                    report["summary"] = (f"Recherche vom {research_day.strftime('%d.%m.%Y')} für den Versand "
+                                         f"am {day.strftime('%d.%m.%Y')}. " + report["summary"])
                 verification_failures = [j for j in rejected if j["reason"] not in {
                     "Already reported or repeated within this run", "Below score threshold", "Application deadline passed", "Expired"}]
                 if not jobs and verification_failures and fixture is None:
@@ -429,7 +443,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                     persist(failure)
                 raise
             record = {"date": str(day), "created_at": now.isoformat(), "status": "prepared", "subject": subject,
-                      "report": report, "attempts": [], "hits": len(jobs),
+                      "report": report, "attempts": [], "hits": len(jobs), "researched_at": now.isoformat(),
                       "message_id": f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"}
             if revision:
                 record.update(revision=revision, revision_reason=revision_reason,
