@@ -1,4 +1,4 @@
-"""Laptop-first research with a Git compare-and-swap lease and durable outbox."""
+"""GitHub advance preparation, readiness checks and durable prepared-only delivery."""
 import argparse
 import json
 import os
@@ -16,23 +16,23 @@ LEASE_MINUTES = 40
 
 
 def plan(now, actor):
+    """Automatic delivery only; preparation/checks have explicit workflow tasks."""
     local = now.astimezone(BERLIN)
-    minute = local.hour * 60 + local.minute
-    tomorrow = local.date() + timedelta(days=1)
-    if actor == "laptop" and minute >= 16 * 60 and tomorrow.weekday() < 5:
-        return "prepare", tomorrow.isoformat()
-    if local.weekday() >= 5:
-        return None, local.date().isoformat()
-    if actor == "laptop":
-        if 9 * 60 + 30 <= minute < 10 * 60 + 10:
-            return "fallback", local.date().isoformat()
-        if 8 * 60 + 30 <= minute < 9 * 60 + 30:
-            return "deliver", local.date().isoformat()
-    elif minute >= 9 * 60 + 45:
-        return "fallback", local.date().isoformat()
-    elif minute >= 8 * 60 + 30:
+    if actor == "github" and local.weekday() < 5 and (local.hour, local.minute) >= (8, 30):
         return "deliver", local.date().isoformat()
     return None, local.date().isoformat()
+
+
+def scheduled_target(now, task):
+    local = now.astimezone(BERLIN)
+    tomorrow = local.date() + timedelta(days=1)
+    if tomorrow.weekday() >= 5:
+        return None
+    if task == "prepare-next" and 9 <= local.hour < 16:
+        return tomorrow.isoformat()
+    if task == "readiness-check" and local.hour >= 16:
+        return tomorrow.isoformat()
+    return None
 
 
 def readiness(root, day):
@@ -107,7 +107,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run):
     if phase == "prepare" and readiness(root, day)["ready"]:
         return readiness(root, day)
     if phase == "deliver" and not record.get("report"):
-        return {"status": "not_ready", "date": day, "reason": "Wait for local 09:30 retry"}
+        return {"status": "not_ready", "date": day, "reason": "No ready report; manual preparation required"}
     token = claim(root, now, actor, phase, day)
     if token is None:
         return {"status": "deferred", "date": day, "reason": "Another worker holds the lease"}
@@ -121,7 +121,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run):
         result = runner(root, root / "state", now=now, dry_run=False, persist=persist,
                         prepare=phase == "prepare", delivery_date=day if phase == "prepare" else None,
                         require_prepared=phase == "deliver",
-                        allow_early_prepare=actor == "manual")
+                        allow_early_prepare=phase == "prepare")
     except StateSyncError:
         # The remote may have advanced or ownership expired. Leave the lease and
         # sending checkpoint for inspection; never merge and blindly retry.
@@ -138,6 +138,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--actor", choices=["laptop", "github"], required=True)
     parser.add_argument("--manual-prepare", action="store_true", help="Explicitly prepare the next weekday without sending")
+    parser.add_argument("--task", choices=["deliver", "prepare-next", "readiness-check"], default="deliver")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     os.environ["STATE_BRANCH"] = "main"
@@ -147,6 +148,16 @@ def main():
         while target.weekday() >= 5:
             target += timedelta(days=1)
         result = execute(root, "manual", now=now, phase="prepare", day=target.isoformat())
+    elif args.task in {"prepare-next", "readiness-check"}:
+        now = datetime.now(timezone.utc)
+        target = scheduled_target(now, args.task)
+        if target is None:
+            result = {"status": "skipped", "reason": "Outside scheduled task window"}
+        elif args.task == "prepare-next":
+            result = execute(root, "github", now=now, phase="prepare", day=target)
+        else:
+            from .alerts import check_readiness
+            result = check_readiness(root, target, now=now)
     else:
         result = execute(root, args.actor)
     print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -1,21 +1,24 @@
-# Laptop-first operation
+# Advance research on GitHub
 
-All times use Europe/Berlin. The service still sends Monday–Friday.
+All times use Europe/Berlin, including daylight-saving changes.
 
-- Previous calendar day, 16:00: the logged-in Mac prepares the next day's report.
-  This includes Sunday for Monday. Friday/Saturday have no advance preparation.
-- After upload: the Mac fetches remote state again and confirms readiness locally.
-- From 17:00: one independent remote readback confirms the evening report.
-- 08:30: the Mac and GitHub may send a prepared report. No cloud research occurs
-  at this stage if preparation was missed.
-- 09:30: a missing report is researched and sent on the Mac.
-- From 09:45: GitHub researches/sends if the Mac has not claimed a live attempt.
-  An active 40-minute lease defers cloud work; subsequent slots retry.
+- Previous calendar day, 09:00: GitHub prepares the next weekday report.
+  Scheduled research runs Sunday–Thursday, including Sunday for Monday.
+- 16:00: GitHub checks for a completed, saved live report. If missing, a warning
+  email goes only to the operator configured in `MAIL_ALERT_TO`. A Codex heartbeat
+  checks the same remote state and notifies this chat when action is needed.
+- Manual recovery: choose `prepare-next` in `daily.yml` or use the configured
+  mobile button. Preparation does not send the job email immediately.
+- Next day, 08:30: GitHub sends the prepared report Monday–Friday. Missing reports
+  wait for manual preparation; delivery retries never start research.
 
-GitHub schedules can be late or absent. The laptop must be awake, online, and logged
-in. The 60-second launchd tick catches eligible missed slots after wake; it cannot
-wake a powered-off laptop. Local research has a 35-minute process timeout.
-GitHub retains its 40-minute job timeout. No precise inbox-time guarantee is made.
+The former laptop 16:00 research, 17:00 check and 09:30 recovery are disabled.
+The macOS launch agent was unloaded; its plist, logs and history are preserved.
+The local coordinator also has no automatic work slots. No laptop credentials
+are required for the GitHub process. The Codex notification requires the local
+computer and app to be running; the GitHub warning email is independent of them.
+GitHub schedules can be late or absent, so these times are targets rather than
+an exact start or inbox-time guarantee.
 
 ## Shared state and duplicate protection
 
@@ -33,30 +36,6 @@ remain in `state/runs/` and `state/history.json`.
 Advance preparation uses the actual research date for source research and the
 future delivery date for deadlines and email heading. The email labels the earlier
 research date. Sources may change between preparation and sending.
-
-## Mac setup
-
-Use Python 3.11+ (the desktop app's bundled Python is currently usable). Run from
-the repository with the selected interpreter:
-
-```sh
-python3 -m scripts.configure_laptop_keychain
-python3 -m scripts.laptop_scheduler --check-credentials
-python3 -m scripts.install_laptop_scheduler --install
-python3 -m scripts.laptop_scheduler --status
-```
-
-The interactive `security` tool asks for each value without putting it in files,
-command arguments, or chat. Dedicated Keychain services are
-`miki-jobsearch/MIKI_OPENAI_API_KEY`, `miki-jobsearch/BREVO_API_KEY`,
-`miki-jobsearch/MAIL_FROM`, `miki-jobsearch/MAIL_TO`, and optional
-`miki-jobsearch/MAIL_CC`. Git pushes use the existing macOS Git credential helper.
-Verify repository write access independently; a public read alone is insufficient.
-
-The installer writes `~/Library/LaunchAgents/de.miki.jobsearch.plist` and loads the
-per-user agent. Logs and credential-free local status live in `out/laptop-scheduler/`.
-The plist contains no secrets. The laptop does not execute untrusted pull requests
-or act as a GitHub self-hosted runner.
 
 ## Mobile status and manual start
 

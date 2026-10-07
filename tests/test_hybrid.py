@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-from miki_jobsearch.hybrid import claim, execute, plan, readiness
+from miki_jobsearch.hybrid import claim, execute, plan, readiness, scheduled_target
 from miki_jobsearch.service import StateSyncError, atomic_json, run
 from miki_jobsearch.status_feed import write_feed
 
@@ -16,21 +16,43 @@ FIXTURE = json.loads((ROOT / 'tests/fixtures/report.json').read_text())
 
 
 class HybridTests(unittest.TestCase):
-    def test_calendar_previous_day_including_sunday_and_dst(self):
+    def test_prepared_only_delivery_and_no_automatic_laptop_research(self):
+        for clock, actor, phase in [
+            ('2026-10-07T08:29:59+02:00','github',None),
+            ('2026-10-07T08:30:00+02:00','github','deliver'),
+            ('2026-10-07T09:45:00+02:00','github','deliver'),
+            ('2026-10-07T16:00:00+02:00','laptop',None),
+            ('2026-10-07T09:30:00+02:00','laptop',None),
+            ('2026-10-11T16:00:00+02:00','laptop',None),
+            ('2026-10-26T07:29:59+00:00','github',None),
+            ('2026-10-26T07:30:00+00:00','github','deliver'),
+        ]:
+            self.assertEqual(plan(datetime.fromisoformat(clock),actor)[0],phase)
+
+    def test_morning_and_deadline_windows_across_dst_and_weekends(self):
         cases = [
-            ('2026-10-07T15:59:00+02:00','laptop',None,'2026-10-07'),
-            ('2026-10-07T16:00:00+02:00','laptop','prepare','2026-10-08'),
-            ('2026-10-09T16:00:00+02:00','laptop',None,'2026-10-09'),
-            ('2026-10-11T16:00:00+02:00','laptop','prepare','2026-10-12'),
-            ('2026-10-26T07:29:59+00:00','github',None,'2026-10-26'),
-            ('2026-10-26T07:30:00+00:00','github','deliver','2026-10-26'),
-            ('2026-10-07T09:30:00+02:00','laptop','fallback','2026-10-07'),
-            ('2026-10-07T09:44:59+02:00','github','deliver','2026-10-07'),
-            ('2026-10-07T09:45:00+02:00','github','fallback','2026-10-07'),
-            ('2026-10-07T10:10:00+02:00','laptop',None,'2026-10-07'),
+            ('2026-10-07T08:59:59+02:00','prepare-next',None),
+            ('2026-10-07T09:00:00+02:00','prepare-next','2026-10-08'),
+            ('2026-10-07T15:59:59+02:00','prepare-next','2026-10-08'),
+            ('2026-10-07T16:00:00+02:00','prepare-next',None),
+            ('2026-10-07T15:59:59+02:00','readiness-check',None),
+            ('2026-10-07T16:00:00+02:00','readiness-check','2026-10-08'),
+            ('2026-10-09T09:00:00+02:00','prepare-next',None),
+            ('2026-10-11T09:00:00+02:00','prepare-next','2026-10-12'),
+            ('2026-10-25T07:00:00+00:00','prepare-next',None),
+            ('2026-10-25T08:00:00+00:00','prepare-next','2026-10-26'),
         ]
-        for clock,actor,phase,day in cases:
-            self.assertEqual(plan(datetime.fromisoformat(clock),actor),(phase,day))
+        for clock,task,expected in cases:
+            self.assertEqual(scheduled_target(datetime.fromisoformat(clock),task),expected)
+
+    def test_morning_preparation_excludes_jobs_in_todays_queued_report(self):
+        with tempfile.TemporaryDirectory() as folder:
+            store=Path(folder)
+            atomic_json(store/'runs/2026-10-07.json',{'date':'2026-10-07','status':'prepared','report':copy.deepcopy(FIXTURE)})
+            result=run(ROOT,store,now=datetime.fromisoformat('2026-10-07T09:00:00+02:00'),
+                       dry_run=False,prepare=True,delivery_date='2026-10-08',allow_early_prepare=True,
+                       researcher=lambda *a:copy.deepcopy(FIXTURE),verifier=lambda *a:(True,'verified'))
+            self.assertEqual(result['hits'],0)
 
     def test_evening_preparation_records_delivery_day_but_researches_actual_day(self):
         with tempfile.TemporaryDirectory() as folder:

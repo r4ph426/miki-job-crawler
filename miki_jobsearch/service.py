@@ -387,6 +387,14 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
     with run_lock(store):
         history = load_history(root, store)
         exclusion_history = history + reserved_jobs(store)
+        if delivery_date:
+            # Today's mail may still be queued when tomorrow's research starts.
+            # Reserve previously prepared earlier reports to avoid repeating jobs.
+            for previous in (store / "runs").glob("*.json"):
+                pending = read_json(previous, {})
+                if (pending.get("date", "9999") < str(day)
+                        and pending.get("status") in {"prepared", "failed", "configuration_failed"}):
+                    exclusion_history.extend(pending.get("report", {}).get("jobs", []))
         path = record_path(store, str(day), revision)
         record = read_json(path, {})
         if not dry_run and record.get("status") in TERMINAL:
@@ -444,6 +452,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                 raise
             record = {"date": str(day), "created_at": now.isoformat(), "status": "prepared", "subject": subject,
                       "report": report, "attempts": [], "hits": len(jobs), "researched_at": now.isoformat(),
+                      "prepared_at": datetime.now(timezone.utc).isoformat(),
                       "message_id": f"<miki-{day}-{hashlib.sha256(body.encode()).hexdigest()[:16]}@miki-jobsearch>"}
             if revision:
                 record.update(revision=revision, revision_reason=revision_reason,

@@ -2,10 +2,8 @@ name: Miki weekday job search
 
 on:
   schedule:
-    # 08:30 prepared-only delivery (both DST offsets), then laptop-first fallback.
-    # No cloud research before 09:45 Berlin. GitHub can delay scheduled events.
-    - cron: "30 6,7 * * 1-5"
-    - cron: "45 7,8,9,10 * * 1-5"
+    # Prepared-only 08:30 delivery across DST, plus retry. Never starts research.
+    - cron: "30 6,7,8 * * 1-5"
   workflow_dispatch:
     inputs:
       mode:

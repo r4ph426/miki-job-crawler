@@ -84,14 +84,20 @@ supports app passwords; this is not the default delivery route.
    notifications and inspect missing weekday records. Check Actions usage and the
    OpenAI account's limits according to your account settings.
 
-The active workflow uses the [laptop-first schedule](laptop-first.md). Cron fires
-at 06:30 and 07:30 UTC for prepared-only 08:30 Berlin delivery across DST, and at
-07:45, 08:45, 09:45 and 10:45 UTC for fallback/retries. The local-time coordinator
-never starts cloud research before 09:45 Berlin. A missing report at 08:30 waits
-for the local 09:30 attempt. An active shared lease defers the cloud fallback.
-GitHub can delay or miss events; scheduled slots are eligibility targets.
-Stored state prevents a second accepted daily email. A crash or uncertain provider
-acceptance requires reconciliation rather than an automatic resend.
+The active workflow uses the [advance research schedule](laptop-first.md).
+`preparation.yml` researches the next calendar weekday from 09:00 Berlin on
+Sunday–Thursday, and checks readiness from 16:00. Missing reports trigger a
+warning to `MAIL_ALERT_TO` only, with no job recipients or CC. Configure that
+address in private GitHub Actions variables or secrets. Stored alert states prevent
+duplicate warnings after accepted or uncertain submission. The Codex heartbeat
+independently checks remote readiness and requires an available local app.
+
+`daily.yml` sends prepared reports from 08:30 Berlin Monday–Friday. UTC slots cover
+summer/winter time and retries; local-time guards control eligibility. Neither the
+laptop nor the delivery workflow automatically researches a missing report.
+Use manual `daily.yml` mode `prepare-next` to recover. GitHub may delay or miss
+scheduled events. Stored state prevents a second accepted daily email. A crash or
+uncertain provider acceptance requires reconciliation rather than an automatic resend.
 
 All runs share a non-cancelling concurrency group. Outputs are uploaded even if
 delivery fails. Artifacts retain reports for 30 days; committed state is the durable
