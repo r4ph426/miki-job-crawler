@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-07T17:52:25.065930+00:00",
+  "updated_at": "2026-10-07T18:14:39.898818+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
-    "prepare": "16:00",
-    "send": "08:30",
-    "local_retry": "09:30",
-    "github_fallback": "09:45"
+    "mode": "github_previous_day",
+    "prepare": "09:00",
+    "check": "16:00",
+    "send": "08:30"
   },
   "records": {
     "2026-10-05": {
@@ -13,6 +13,7 @@
       "status": "sent",
       "hits": 0,
       "researched_at": null,
+      "prepared_at": null,
       "created_at": "2026-10-05T14:53:05.185229+00:00",
       "accepted_at": "2026-10-05T19:24:31.816745+00:00",
       "has_report": true
@@ -22,6 +23,7 @@
       "status": "sent",
       "hits": 6,
       "researched_at": null,
+      "prepared_at": null,
       "created_at": "2026-10-06T08:20:17.102784+00:00",
       "accepted_at": "2026-10-06T08:24:38.434637+00:00",
       "has_report": true
@@ -31,6 +33,7 @@
       "status": "sent",
       "hits": 9,
       "researched_at": null,
+      "prepared_at": null,
       "created_at": "2026-10-07T13:46:57.610923+00:00",
       "accepted_at": "2026-10-07T13:51:00.266992+00:00",
       "has_report": true
@@ -40,6 +43,7 @@
       "status": "prepared",
       "hits": 0,
       "researched_at": "2026-10-07T17:48:25.871331+00:00",
+      "prepared_at": null,
       "created_at": "2026-10-07T17:48:25.871331+00:00",
       "accepted_at": null,
       "has_report": true
@@ -60,6 +64,7 @@
     }
   },
   "laptop": {
-    "status": "credentials_required"
-  }
+    "status": "disabled"
+  },
+  "alerts": {}
 }
