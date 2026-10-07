@@ -1,0 +1,275 @@
+{
+  "date": "2026-10-08",
+  "created_at": "2026-10-07T17:48:25.871331+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 08.10.2026 · 0 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 07.10.2026 für den Versand am 08.10.2026. 7 passende Neu-Treffer (überwiegend ATS/Personio) mit Fokus auf Auftragssteuerung, Einkauf/Order Management und kaufmännische Projektassistenz. Direkte Produkt-/Fashion-Schnittstellen heute dünn; stärkster Match fachlich: Auftragssteuerung/Disposition (ARKTIS) und Sachbearbeitung Einkauf (Aktiv‑Schuh ist bereits gemeldet; heutige Shortlist daher Zertificon + APC als Order-/Rechnungsfluss).",
+    "next_action": "Heute zwei Bewerbungen priorisieren: (1) ARKTIS – Auftragssteuerung/Disposition (Motivationsbezug: End-to-end Auftragsfluss, Schnittstelle Einkauf/Logistik/Vertrieb). (2) Zertificon – Kaufm. Sachbearbeitung (Order-to-Invoice, CRM/ERP, ÖPNV‑Ticket). Parallel kurze Rückfrage an TBO (Teilzeit-Stundenzahl ≥30h?) und Kemmler Kemmler (VZ/TZ-Wunsch 30–35h möglich?).",
+    "weekend_action": "",
+    "jobs": [],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Teamassistenz Berlin site:karriereportal-stellen.berlin.de",
+        "Office Management Berlin site:personio.de",
+        "Marketingkoordination Berlin site:stepstone.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:stepstone.de",
+        "Sachbearbeiter Einkauf Berlin site:arbeitsagentur.de",
+        "Supply Chain / Order Management Berlin site:personio.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:stepstone.de",
+        "Merchandising Koordination Berlin site:fashionjobs.com"
+      ]
+    },
+    "family_observations": {
+      "A": "Heute viele Office-Manager‑Rollen (Start-up/Agentur), teils TZ/befristet; für Miki als Brücke einsetzbar, aber fachlich hinter Einkauf/Produktkoordination zurück.",
+      "B": "Direkte Einkaufstreffer heute überwiegend älter oder via Personaldienstleister; stärkster Fit über Auftrags-/Dispositionsrollen mit ERP/Terminsteuerung.",
+      "C": "Ordner-/Auftrags- und Innendienstrollen gut vertreten; Merchandising-/Product‑Coordination in Berlin weiterhin selten und oft retail-nah."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Themensuche Einkauf/Projektassistenz geprüft; heute kein zusätzlicher, klar besserer Direkt‑Treffer als in der Historie."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen für Auftragsabwicklung/Sachbearbeiter Einkauf/Vertriebsinnendienst geprüft; viele ältere/PDL‑Listings, keine klaren neuen Top‑Matches."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Mehrere aktuelle Personio‑Anzeigen (ARKTIS, Zertificon, APC, PBVI, Kemmler, TBO, Eberhardt) geöffnet und verifiziert."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal gescannt; keine neue, passende Projektassistenz mit klarer Frist/Adresse heute."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited geprüft; überwiegend Retail/VM; keine passende Product-/Merch‑Koordination heute."
+      }
+    ],
+    "assessment_exclusions": [],
+    "assessment_pages_checked": 7,
+    "rejected": [
+      {
+        "title": "Auftragssteuerung / Disposition & Logistik (m/w/d)",
+        "url": "https://arktis-gmbh.jobs.personio.de/job/2723231",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Auftragssteuerung / Disposition & Logistik (m/w/d)",
+          "employer": "ARKTIS Group (ARKTIS IT solutions GmbH)",
+          "url": "https://arktis-gmbh.jobs.personio.de/job/2723231",
+          "district": "Berlin (unbekannt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 45 Min ab Berlin‑Heinersdorf (ohne genaue Adresse, konservativ geschätzt)",
+          "pro": "Stark passend: Auftragssteuerung und Koordination zwischen Lager, Einkauf und Vertrieb.",
+          "con": "Anteil an operativer Logistik (Kommissionierung/Verpackung) könnte wenig attraktiv sein.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 34,
+            "entry": 26,
+            "commute": 15,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Auftragssteuerung / Disposition & Logistik (m/w/d) | Jobs bei Karriere bei der ARKTIS Group Zum Hauptinhalt springen Zurück zu allen Stellen Auftragssteuerung / Disposition & Logistik (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Ihre Aufgaben Planung, Steuerung und Überwachung von Kundenaufträgen und Auslieferungen Sicherstellung, dass Aufträge termingerecht kommissioniert und an unsere Kunden versendet werden Koordination der Warenströme zwischen Lager, Einkauf und Vertrieb"
+        }
+      },
+      {
+        "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+        "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+          "employer": "Zertificon Solutions GmbH",
+          "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+          "district": "Neukölln",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 50–55 Min ab Berlin‑Heinersdorf (Neukölln)",
+          "pro": "Klarer Fokus auf Auftragsabwicklung bis Rechnungsstellung; gute Benefits inkl. Deutschlandticket.",
+          "con": "Branchenfokus IT-Security; kein Produkt-/Lieferkettenbezug.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "dem Softwarekauf passiert – von der Auftragsabwicklung bis zum Onboarding. Du unterstützt außerdem bei der E-Mail-Zertifikatsverwaltung für unsere Kunden. Von der Auftragsbestätigung bis zur Rechnungsstellung: Du bearbeitest Kundenaufträge und sorgst dafür, dass nach dem Verkauf alles reibungslos läuft Erstelle und versende Dokumente wie Verträge, Auftragsbestätigungen und Rechnungen Bearbeite Rechnungen für digitale Zertifikate von unseren Trustcenter-Partnern Für Kunden, Partner und"
+        }
+      },
+      {
+        "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
+        "url": "https://apc-ag.jobs.personio.de/job/2780473",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
+          "employer": "APC AG",
+          "url": "https://apc-ag.jobs.personio.de/job/2780473",
+          "district": "Berlin (unbekannt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "2.500 - 3.500 € pro Monat",
+          "commute": "ca. 60 Min ab Berlin‑Heinersdorf (ohne genaue Adresse, konservativ geschätzt)",
+          "pro": "Breites kaufmännisches Aufgabenfeld inkl. Auftragsbearbeitung und Rechnungswesen.",
+          "con": "Vergütung eher niedrig; Branche außerhalb der bevorzugten Konsumgüter/Fashion.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 22,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "(MS Office, Outlook, Internet) Viel Spaß und Freude am Kontakt mit Menschen - persönlich oder telefonisch Deine Aufgaben Telefonische und schriftliche Korrespondenz mit unserem Außendienst und unseren Geschäftspartnern Auftragsbearbeitung, Erstellung und Kontrolle von Rechnungen und Verwaltung der Arbeitszeiten von den Außendienstmitarbeitern (w/m/d) der Niederlassung Allgemein anfallende, administrative Tätigkeiten und Büroorganisation Über uns DU suchst beruflich nach etwas Neuem"
+        }
+      },
+      {
+        "title": "Kaufmännische Sachbearbeitung / Projektassistenz (m/w/d) – Gerne auch Quereinstieg",
+        "url": "https://pbvi.jobs.personio.de/job/2607804",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Kaufmännische Sachbearbeitung / Projektassistenz (m/w/d) – Gerne auch Quereinstieg",
+          "employer": "PBVI GmbH",
+          "url": "https://pbvi.jobs.personio.de/job/2607804",
+          "district": "Berlin (unbekannt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 45 Min ab Berlin‑Heinersdorf (ohne genaue Adresse, konservativ geschätzt)",
+          "pro": "Quereinstieg freundlich; Aufgaben in Angebotserstellung, Fakturierung und Reporting.",
+          "con": "Baubranche statt Produkt-/Fashionumfeld.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 20,
+            "entry": 24,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "& Ausschreibungen: Du hilfst bei der Vorauswahl von Ausschreibungen und unterstützt das Team beim Erstellen von Angeboten. Projektbetreuung: Du betreust unsere Projekte aus organisatorischer Sicht und kommunizierst mit Kund:innen und Auftraggebenden. Rechnungsstellung: Du übernimmst die zeitnahe Fakturierung (Abrechnung) unserer erbrachten Planungsleistungen unter Zuarbeit der Fachbereiche. Reporting: Du stellst vorhandene Kennzahlen aus den Bereichen zusammen und übergibst diese an die"
+        }
+      },
+      {
+        "title": "Office Manager (m/d/w)",
+        "url": "https://kemmler-kemmler-gmbh.jobs.personio.de/job/2648028",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/d/w)",
+          "employer": "KEMMLER KEMMLER GmbH (Kreativagentur)",
+          "url": "https://kemmler-kemmler-gmbh.jobs.personio.de/job/2648028",
+          "district": "Berlin (unbekannt)",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "Befristet (12 Monate), Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 40 Min ab Berlin‑Heinersdorf (ohne genaue Adresse, konservativ geschätzt)",
+          "pro": "Agenturumfeld mit Fokus auf Fashion- und Lifestylemarken passt zum Hintergrund.",
+          "con": "Befristung auf 12 Monate.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 18,
+            "entry": 24,
+            "commute": 15,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "Wäscherei und Wartungsfirmen Unterstützung bei der Organisation von Meetings, Workshops und Company Events Mitverantwortung für ein ordentliches, einladendes und gut organisiertes Office-Umfeld Unterstützung bei Bestellungen, Transportlogistik, Fuhrparkmanagement und Reisebuchungen WAS DU MITBRINGST. Eine abgeschlossene kaufmännische Ausbildung oder mehrjährige Erfahrung in einer vergleichbaren Position Ausgeprägte Organisationsfähigkeit sowie eine zuverlässige und strukturierte Arbeitsweise"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d)",
+        "url": "https://es-group.jobs.personio.de/job/2693408",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d)",
+          "employer": "Eberhardt Service Group GmbH",
+          "url": "https://es-group.jobs.personio.de/job/2693408",
+          "district": "Berlin (unbekannt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 60 Min ab Berlin‑Heinersdorf (ohne genaue Adresse, konservativ geschätzt)",
+          "pro": "Umfassendes Office‑Management mit Prozess- und Buchhaltungsschnittstellen.",
+          "con": "Sehr hohe Deutschanforderung (C2) und weniger Branchenfit.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 18,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager (m/w/d) | Jobs bei Eberhardt Service Group GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Deine Aufgaben Du bist die zentrale Anlaufstelle für unsere Büroorganisation und sorgst für einen reibungslosen Ablauf im Tagesgeschäft. Bearbeitung der eingehenden und ausgehenden Post sowie E-Mails und Telefonate. Verwaltung und Bestellung von Büro- und Verbrauchsmaterialien. Koordination"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d)",
+        "url": "https://tbo.jobs.personio.de/job/134391?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d)",
+          "employer": "TBO Interactive GmbH & Co. KG",
+          "url": "https://tbo.jobs.personio.de/job/134391?language=de",
+          "district": "Berlin (unbekannt)",
+          "hours": "Teilzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 40 Min ab Berlin‑Heinersdorf (ohne genaue Adresse, konservativ geschätzt)",
+          "pro": "Breites Office‑Spektrum inkl. Travelmanagement und vorbereitender Buchführung.",
+          "con": "Teilzeit; Umfang nicht ausgewiesen (Risiko <30 Std./Woche).",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil prüfen, Unterlagen anpassen, Fragen beantworten, Uploads.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 18,
+            "entry": 22,
+            "commute": 15,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager (m/w/d) | Jobs bei TBO Interactive GmbH & Co. KG Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager (m/w/d) Berlin Teilzeit Festanstellung Auf diese Stelle bewerben Deine Aufgaben Einkauf und Bestellungen sowie Annahme und Verwaltung aller Rechnungen Telefonzentrale und Empfang Steuerung und Verwaltung externer Dienstleister (Eigentümer, Vermieter, Vertragspartner etc.) Recherchieren, Buchen & Abrechnen von Geschäftsreisen Organisation von Team Events"
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 0,
+  "researched_at": "2026-10-07T17:48:25.871331+00:00",
+  "message_id": "<miki-2026-10-08-72f2d90c747a149f@miki-jobsearch>",
+  "last_attempt_at": "2026-10-07T17:48:25.871331+00:00",
+  "last_attempt_run_id": "37661887694",
+  "design_version": "electric-blue-v1"
+}
