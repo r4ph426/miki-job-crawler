@@ -128,3 +128,35 @@ class HybridTests(unittest.TestCase):
             self.assertTrue(payload['records']['2026-10-08']['has_report'])
             self.assertNotIn('private',json.dumps(payload))
             self.assertTrue(readiness(root,'2026-10-08')['ready'])
+
+    def test_manual_refresh_preserves_old_report_and_restores_it_after_failure(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);day='2026-10-08';now=datetime.now(timezone.utc)
+            path=root/'state/runs'/f'{day}.json'
+            previous={'date':day,'status':'prepared','report':{'jobs':[]},'subject':'Old report'}
+            atomic_json(path,previous);path.with_suffix('.html').write_text('Old HTML')
+            atomic_json(root/'state/coordinator.json',{'lease':{'token':'token','expires_at':(now+timedelta(minutes=40)).isoformat()}})
+            def fails(*args,**kwargs):
+                atomic_json(path,{'date':day,'status':'failed'})
+                raise RuntimeError('research failed')
+            with patch('miki_jobsearch.hybrid.claim',return_value='token'),patch('miki_jobsearch.hybrid.complete'),patch('miki_jobsearch.hybrid.git_persister',return_value=Mock()):
+                with self.assertRaises(RuntimeError):
+                    execute(root,'manual',phase='prepare',day=day,now=now,runner=fails,refresh=True)
+            self.assertEqual(json.loads(path.read_text()),previous)
+            self.assertEqual(path.with_suffix('.html').read_text(),'Old HTML')
+            self.assertEqual(len(list((root/'state/preparation-history').glob('*.json'))),2)
+
+    def test_ready_report_is_researched_again_only_on_explicit_manual_refresh(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);day='2026-10-08';now=datetime.now(timezone.utc)
+            atomic_json(root/'state/runs'/f'{day}.json',{'date':day,'status':'prepared','report':{'jobs':[]}})
+            atomic_json(root/'state/coordinator.json',{'lease':{'token':'token','expires_at':(now+timedelta(minutes=40)).isoformat()}})
+            runner=Mock(return_value={'status':'prepared'})
+            with patch('miki_jobsearch.hybrid.claim',return_value='token'),patch('miki_jobsearch.hybrid.complete'),patch('miki_jobsearch.hybrid.git_persister',return_value=Mock()):
+                execute(root,'manual',phase='prepare',day=day,runner=runner)
+                runner.assert_not_called()
+                execute(root,'manual',phase='prepare',day=day,runner=runner,refresh=True)
+                runner.assert_called_once()
+                self.assertTrue(runner.call_args.kwargs['prepare'])
+                with self.assertRaises(ValueError):
+                    execute(root,'github',phase='prepare',day=day,refresh=True)

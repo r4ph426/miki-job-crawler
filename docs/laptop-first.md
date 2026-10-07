@@ -49,7 +49,9 @@ The saved timestamp is shown. Only committed remote readiness counts as ready.
 
 The manual button dispatches `daily.yml` with `mode=prepare-next`. It explicitly
 prepares the next weekday, including Friday for Monday, without sending an email.
-Shared leases and existing prepared/terminal records still apply. A dispatch
+An explicit manual start re-researches an already prepared report. Its prior JSON/HTML
+version is preserved in `state/preparation-history/`; failed refreshes restore the
+previous ready report. Shared leases and terminal delivery states still apply. A dispatch
 acknowledgement is not research completion. Active workflows disable repeated
 requests; the durable claim prevents concurrent workers from sending twice.
 

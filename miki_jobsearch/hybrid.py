@@ -95,7 +95,7 @@ def complete(root, token, day, result):
     checkpoint(root, f"Confirm Miki readiness {day}")
 
 
-def execute(root, actor, now=None, phase=None, day=None, runner=run):
+def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=False):
     now = now or datetime.now(timezone.utc)
     planned, planned_day = plan(now, actor)
     phase, day = phase or planned, day or planned_day
@@ -104,7 +104,9 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run):
     record = read_json(root / "state/runs" / f"{day}.json", {})
     if record.get("status") in TERMINAL:
         return {"status": "skipped", "delivery_status": record["status"], "date": day}
-    if phase == "prepare" and readiness(root, day)["ready"]:
+    if refresh and (actor != "manual" or phase != "prepare"):
+        raise ValueError("Refresh is only available for explicit manual preparation")
+    if phase == "prepare" and readiness(root, day)["ready"] and not refresh:
         return readiness(root, day)
     if phase == "deliver" and not record.get("report"):
         return {"status": "not_ready", "date": day, "reason": "No ready report; manual preparation required"}
@@ -117,6 +119,16 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run):
         if lease.get("token") != token or datetime.now(timezone.utc) >= datetime.fromisoformat(lease["expires_at"]):
             raise StateSyncError("Worker lease expired; no delivery attempted")
         save(record)
+    backup = None
+    path = root / "state/runs" / f"{day}.json"
+    html_path = path.with_suffix(".html")
+    if refresh and record.get("report"):
+        backup = (record, html_path.read_bytes() if html_path.exists() else None)
+        archive = root / "state/preparation-history" / f"{day}--{now.strftime('%Y%m%dT%H%M%S%fZ')}"
+        atomic_json(archive.with_suffix(".json"), record)
+        if backup[1] is not None:
+            archive.with_suffix(".html").write_bytes(backup[1])
+        persist(record)
     try:
         result = runner(root, root / "state", now=now, dry_run=False, persist=persist,
                         prepare=phase == "prepare", delivery_date=day if phase == "prepare" else None,
@@ -127,6 +139,13 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run):
         # sending checkpoint for inspection; never merge and blindly retry.
         raise
     except Exception:
+        if backup:
+            failed = read_json(path, {})
+            atomic_json(archive.with_name(archive.name + "--failed").with_suffix(".json"), failed)
+            atomic_json(path, backup[0])
+            if backup[1] is not None:
+                html_path.write_bytes(backup[1])
+            persist(backup[0])
         complete(root, token, day, {"status": "failed"})
         raise
     complete(root, token, day, result)
@@ -138,6 +157,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--actor", choices=["laptop", "github"], required=True)
     parser.add_argument("--manual-prepare", action="store_true", help="Explicitly prepare the next weekday without sending")
+    parser.add_argument("--refresh", action="store_true", help="Re-research a prepared report; preserve its previous version")
     parser.add_argument("--task", choices=["deliver", "prepare-next", "readiness-check"], default="deliver")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
@@ -147,7 +167,7 @@ def main():
         target = now.astimezone(BERLIN).date() + timedelta(days=1)
         while target.weekday() >= 5:
             target += timedelta(days=1)
-        result = execute(root, "manual", now=now, phase="prepare", day=target.isoformat())
+        result = execute(root, "manual", now=now, phase="prepare", day=target.isoformat(), refresh=args.refresh)
     elif args.task in {"prepare-next", "readiness-check"}:
         now = datetime.now(timezone.utc)
         target = scheduled_target(now, args.task)

@@ -110,7 +110,7 @@ jobs:
               python3 -m miki_jobsearch run --send --persist-git "${revision_args[@]}"
               ;;
             prepare-next)
-              python3 -m miki_jobsearch.hybrid --actor github --manual-prepare
+              python3 -m miki_jobsearch.hybrid --actor github --manual-prepare --refresh
               ;;
             prepare)
               python3 -m miki_jobsearch run --prepare --persist-git "${revision_args[@]}"
