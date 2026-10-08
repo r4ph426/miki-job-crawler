@@ -1,11 +1,12 @@
 {
-  "updated_at": "2026-10-08T07:46:22.516595+00:00",
+  "updated_at": "2026-10-08T07:51:12.011228+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "github_previous_day",
     "prepare": "09:00",
     "check": "16:00",
-    "send": "08:30"
+    "send": "08:30",
+    "delivery_check": "10:00"
   },
   "records": {
     "2026-10-05": {
@@ -66,5 +67,6 @@
   "laptop": {
     "status": "disabled"
   },
+  "delivery_alerts": {},
   "alerts": {}
 }

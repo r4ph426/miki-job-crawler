@@ -12,6 +12,13 @@ All times use Europe/Berlin, including daylight-saving changes.
 - Next day, 08:30: GitHub sends the prepared report Monday–Friday. Missing reports
   wait for manual preparation; delivery retries never start research.
 
+- Versandtag, ab 10:00: `delivery-watchdog.yml` prüft vollständige Anbieter-Akzeptanz
+  (`sent` mit `accepted_at`). Bei fehlendem/unklarem Versand warnt es ausschließlich
+  `MAIL_ALERT_TO`. Warnungen sind pro Tag getrennt vom Vorabend gespeichert und
+  werden nach akzeptierter oder unklarer Warnzustellung nicht blind wiederholt.
+  Eine separate Codex-Prüfung meldet denselben Zustand in diesem Chat, wenn die App läuft.
+  Die Prüfung sendet oder recherchiert keine Stellenmail.
+
 The former laptop 16:00 research, 17:00 check and 09:30 recovery are disabled.
 The macOS launch agent was unloaded; its plist, logs and history are preserved.
 The local coordinator also has no automatic work slots. No laptop credentials

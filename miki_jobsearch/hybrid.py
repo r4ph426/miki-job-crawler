@@ -25,6 +25,8 @@ def plan(now, actor):
 
 def scheduled_target(now, task):
     local = now.astimezone(BERLIN)
+    if task == "delivery-check":
+        return local.date().isoformat() if local.weekday() < 5 and local.hour >= 10 else None
     tomorrow = local.date() + timedelta(days=1)
     if tomorrow.weekday() >= 5:
         return None
@@ -158,7 +160,7 @@ def main():
     parser.add_argument("--actor", choices=["laptop", "github"], required=True)
     parser.add_argument("--manual-prepare", action="store_true", help="Explicitly prepare the next weekday without sending")
     parser.add_argument("--refresh", action="store_true", help="Re-research a prepared report; preserve its previous version")
-    parser.add_argument("--task", choices=["deliver", "prepare-next", "readiness-check"], default="deliver")
+    parser.add_argument("--task", choices=["deliver", "prepare-next", "readiness-check", "delivery-check"], default="deliver")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     os.environ["STATE_BRANCH"] = "main"
@@ -168,7 +170,7 @@ def main():
         while target.weekday() >= 5:
             target += timedelta(days=1)
         result = execute(root, "manual", now=now, phase="prepare", day=target.isoformat(), refresh=args.refresh)
-    elif args.task in {"prepare-next", "readiness-check"}:
+    elif args.task in {"prepare-next", "readiness-check", "delivery-check"}:
         now = datetime.now(timezone.utc)
         target = scheduled_target(now, args.task)
         if target is None:
@@ -176,8 +178,9 @@ def main():
         elif args.task == "prepare-next":
             result = execute(root, "github", now=now, phase="prepare", day=target)
         else:
-            from .alerts import check_readiness
-            result = check_readiness(root, target, now=now)
+            from .alerts import check_delivery, check_readiness
+            check = check_delivery if args.task == "delivery-check" else check_readiness
+            result = check(root, target, now=now)
     else:
         result = execute(root, args.actor)
     print(json.dumps(result, ensure_ascii=False, indent=2))

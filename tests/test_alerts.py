@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
 
-from miki_jobsearch.alerts import check_readiness
+from miki_jobsearch.alerts import check_delivery, check_readiness
 from miki_jobsearch.service import DeliveryFailure, MailConfigurationError, atomic_json
 
 
@@ -57,3 +57,36 @@ class AlertTests(unittest.TestCase):
         sender.assert_not_called()
         record=json.loads((self.root/'state/alerts'/f'{self.day}.json').read_text())
         self.assertEqual(record['status'],'configuration_failed')
+
+    def test_confirmed_delivery_is_quiet_without_warning_credentials(self):
+        atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':'sent','accepted_at':self.now.isoformat()})
+        sender=Mock()
+        with patch.dict(os.environ,{},clear=True):
+            self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'delivered')
+        sender.assert_not_called()
+
+    def test_prepared_report_does_not_count_as_delivery_and_warning_is_once(self):
+        atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':'prepared','report':{'jobs':[]}})
+        def sender(message,settings,on_sending):
+            self.assertEqual(message['To'],'operator@example.org')
+            self.assertIsNone(message['Cc'])
+            self.assertIn('10 Uhr',message['Subject'])
+            self.assertNotIn('prepare-next',message.get_body(preferencelist=('plain',)).get_content())
+            on_sending();return {'status':'sent'}
+        self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'warning_sent')
+        self.assertTrue((self.root/'state/delivery-alerts'/f'{self.day}.json').exists())
+        other=Mock();check_delivery(self.root,self.day,sender=other);other.assert_not_called()
+
+    def test_partial_uncertain_and_unconfirmed_sent_are_not_success(self):
+        for status in ('partial','uncertain','sent'):
+            atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':status})
+            def sender(message,settings,on_sending):
+                on_sending();return {'status':'sent'}
+            result=check_delivery(self.root,self.day,sender=sender)
+            self.assertEqual(result['status'],'warning_sent' if status=='partial' else 'already_alerted')
+
+    def test_delivery_warning_does_not_suppress_evening_warning(self):
+        atomic_json(self.root/'state/alerts'/f'{self.day}.json',{'status':'sent'})
+        sender=Mock(return_value={'status':'sent'})
+        self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'warning_sent')
+        sender.assert_called_once()

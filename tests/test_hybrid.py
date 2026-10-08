@@ -160,3 +160,13 @@ class HybridTests(unittest.TestCase):
                 self.assertTrue(runner.call_args.kwargs['prepare'])
                 with self.assertRaises(ValueError):
                     execute(root,'github',phase='prepare',day=day,refresh=True)
+
+    def test_delivery_warning_targets_today_from_ten_on_weekdays_across_dst(self):
+        for clock,expected in [
+            ('2026-10-08T09:59:59+02:00',None),
+            ('2026-10-08T10:00:00+02:00','2026-10-08'),
+            ('2026-10-09T10:00:00+02:00','2026-10-09'),
+            ('2026-10-10T10:00:00+02:00',None),
+            ('2026-10-26T08:59:59+00:00',None),
+            ('2026-10-26T09:00:00+00:00','2026-10-26')]:
+            self.assertEqual(scheduled_target(datetime.fromisoformat(clock),'delivery-check'),expected)
