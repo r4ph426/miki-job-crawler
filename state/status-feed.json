@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T07:46:20.071383+00:00",
+  "updated_at": "2026-10-08T07:46:21.038533+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "github_previous_day",
@@ -40,7 +40,7 @@
     },
     "2026-10-08": {
       "date": "2026-10-08",
-      "status": "prepared",
+      "status": "sending",
       "hits": 0,
       "researched_at": "2026-10-07T17:48:25.871331+00:00",
       "prepared_at": null,

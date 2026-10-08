@@ -1,7 +1,7 @@
 {
   "date": "2026-10-08",
   "created_at": "2026-10-07T17:48:25.871331+00:00",
-  "status": "prepared",
+  "status": "sending",
   "subject": "Stellen für Miki · 08.10.2026 · 0 neue Treffer",
   "report": {
     "summary": "Recherche vom 07.10.2026 für den Versand am 08.10.2026. 7 passende Neu-Treffer (überwiegend ATS/Personio) mit Fokus auf Auftragssteuerung, Einkauf/Order Management und kaufmännische Projektassistenz. Direkte Produkt-/Fashion-Schnittstellen heute dünn; stärkster Match fachlich: Auftragssteuerung/Disposition (ARKTIS) und Sachbearbeitung Einkauf (Aktiv‑Schuh ist bereits gemeldet; heutige Shortlist daher Zertificon + APC als Order-/Rechnungsfluss).",
@@ -265,7 +265,12 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "started_at": "2026-10-08T07:46:21.036067+00:00",
+      "status": "sending"
+    }
+  ],
   "hits": 0,
   "researched_at": "2026-10-07T17:48:25.871331+00:00",
   "message_id": "<miki-2026-10-08-72f2d90c747a149f@miki-jobsearch>",
