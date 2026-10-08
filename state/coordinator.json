@@ -10,14 +10,17 @@
       "checked_at": "2026-10-07T17:52:25.063873+00:00",
       "actor": "manual",
       "last_result": "prepared"
+    },
+    "2026-10-09": {
+      "date": "2026-10-09",
+      "status": "ready",
+      "ready": true,
+      "hits": 2,
+      "researched_at": "2026-10-08T19:39:14.689787+00:00",
+      "delivery_time": "2026-10-09T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-08T19:42:59.206241+00:00",
+      "actor": "manual",
+      "last_result": "prepared"
     }
-  },
-  "lease": {
-    "token": "77383fe9d053433faedbfbddaa9588d0",
-    "actor": "manual",
-    "phase": "prepare",
-    "date": "2026-10-09",
-    "started_at": "2026-10-08T19:39:14.689787+00:00",
-    "expires_at": "2026-10-08T20:19:14.689787+00:00"
   }
 }
