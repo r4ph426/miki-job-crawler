@@ -269,7 +269,8 @@
   "hits": 0,
   "researched_at": "2026-10-07T17:48:25.871331+00:00",
   "message_id": "<miki-2026-10-08-72f2d90c747a149f@miki-jobsearch>",
-  "last_attempt_at": "2026-10-07T17:48:25.871331+00:00",
-  "last_attempt_run_id": "37661887694",
-  "design_version": "electric-blue-v1"
+  "last_attempt_at": "2026-10-08T07:46:20.066596+00:00",
+  "last_attempt_run_id": "37745479664",
+  "design_version": "electric-blue-v1",
+  "email_provider": "brevo"
 }
