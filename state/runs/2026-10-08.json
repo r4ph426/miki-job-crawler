@@ -1,7 +1,7 @@
 {
   "date": "2026-10-08",
   "created_at": "2026-10-07T17:48:25.871331+00:00",
-  "status": "sending",
+  "status": "sent",
   "subject": "Stellen für Miki · 08.10.2026 · 0 neue Treffer",
   "report": {
     "summary": "Recherche vom 07.10.2026 für den Versand am 08.10.2026. 7 passende Neu-Treffer (überwiegend ATS/Personio) mit Fokus auf Auftragssteuerung, Einkauf/Order Management und kaufmännische Projektassistenz. Direkte Produkt-/Fashion-Schnittstellen heute dünn; stärkster Match fachlich: Auftragssteuerung/Disposition (ARKTIS) und Sachbearbeitung Einkauf (Aktiv‑Schuh ist bereits gemeldet; heutige Shortlist daher Zertificon + APC als Order-/Rechnungsfluss).",
@@ -268,7 +268,7 @@
   "attempts": [
     {
       "started_at": "2026-10-08T07:46:21.036067+00:00",
-      "status": "sending"
+      "status": "sent"
     }
   ],
   "hits": 0,
@@ -277,5 +277,8 @@
   "last_attempt_at": "2026-10-08T07:46:20.066596+00:00",
   "last_attempt_run_id": "37745479664",
   "design_version": "electric-blue-v1",
-  "email_provider": "brevo"
+  "email_provider": "brevo",
+  "refused_count": 0,
+  "provider_message_id": "<202610080746.79025075599@smtp-relay.mailin.fr>",
+  "accepted_at": "2026-10-08T07:46:22.511125+00:00"
 }
