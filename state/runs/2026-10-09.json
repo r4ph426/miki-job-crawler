@@ -1,0 +1,265 @@
+{
+  "date": "2026-10-09",
+  "created_at": "2026-10-08T19:39:14.689787+00:00",
+  "status": "prepared",
+  "subject": "Wochenüberblick Stellensuche · KW 41",
+  "report": {
+    "summary": "Recherche vom 08.10.2026 für den Versand am 09.10.2026. 8 passende neue Anzeigen gefunden und verifiziert (Stichtag 2026-10-08). Schwerpunkte heute: Einkauf/Supply Chain (B) und Office-/Teamassistenz (A); ein C‑Treffer im Vertriebsinnendienst. Keine Dubletten zu bereits gemeldeten Stellen.",
+    "next_action": "Heute zwei Kurzprofile versenden: 1) Aktiv‑Schuh Sachbearbeitung Einkauf (Adlershof) und 2) ProBioGen Demand Planner (Weißensee). Parallel LfG‑B Teamassistenz prüfen (Teilzeitumfang vorab telefonisch klären) und bei positivem Fit bewerben.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Sachbearbeiter Vertriebsinnendienst (w/m/d)",
+        "employer": "Fernsteuergeraete Kurt Oelsch GmbH (FSG)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003553301-S",
+        "district": "Neukölln",
+        "hours": "Vollzeit, 39 Std./Woche",
+        "contract": "Unbekannt",
+        "salary": "Unbekannt",
+        "commute": "ÖPNV ca. 50–60 Min. ab Berlin‑Heinersdorf (Schätzung)",
+        "pro": "Kaufmännische Auftrags- und Angebotserstellung mit Schnittstellen passt zur koordinativen Erfahrung.",
+        "con": "Starker Vertriebsfokus, weniger Produkt-/Sortimentsverantwortung.",
+        "effort_details": "Schnelle Bewerbung per E‑Mail/Portal laut Anzeige: ca. 25 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 28,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 8
+        },
+        "effort_minutes": 25,
+        "evidence": "so vielfältig wie unsere Produkte selbst. Neben unseren Standardprodukten gehören vor allem kundenspezifische Lösungen zum FSG-Produktportfolio. Werden Sie Teil der FSG-Sensorwelt! Für unseren Standort Berlin suchen wir Verstärkung für unser Vertriebsteam. Wir bieten Einen zukunftssicheren Arbeitsplatz mit einer 39-Stunden-Woche und 30 Tage bezahltem Urlaub Respektvolles Betriebsklima mit kurzen Entscheidungswegen und betrieblicher Altersvorsorge Urlaubs- und Sonderzahlungen,",
+        "score": 70,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 31000,
+          "annual_max_eur": 45000,
+          "hours_basis": "39 Std./Woche; anteilig auf Basis von 40 Std.",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Teamassistenz (m/w/d) in Teilzeit",
+        "employer": "Landesbetrieb für Gebäudebewirtschaftung Berlin - Betriebsteil B (LfG‑B)",
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-mwd-in-Teilzeit-de-j70274.html",
+        "district": "Unbekannt (Berlin)",
+        "hours": "Teilzeit",
+        "contract": "Unbefristet",
+        "salary": "TV‑L E6",
+        "commute": "Einsatzort in Berlin, genaue Adresse fehlt – konservativ 45–60 Min. ÖPNV ab Berlin‑Heinersdorf (Schätzung)",
+        "pro": "Stabile ÖD‑Rahmenbedingungen mit TV‑L, Onboarding und Zusatzleistungen.",
+        "con": "Teilzeitumfang unklar; stärker allgemeine Admin‑Tätigkeiten.",
+        "effort_details": "Öffentlicher Dienst (Berliner Karriereportal) – komplexe Unterlagenprüfung/Uploads: ca. 130 Min.",
+        "deadline": "2026-10-27",
+        "family": "B",
+        "source_group": "berlin",
+        "scores": {
+          "skill": 26,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 8
+        },
+        "effort_minutes": 130,
+        "evidence": "Zusammenarbeit mit externen Dienstleistern Besoldungs-/Entgeltgruppe: E6 Teilzeit Besetzbar ab: 01.11.2026 Befristet bis: Unbefristet Ihr Profil Eine erfolgreich abgeschlossene kaufmännische Ausbildung zum/zur Kaufmann/Kauffrau für Bürokommunikation oder Büromanagement oder vergleichbarer Abschluss (z.B. Sekretariat) und langjähre Berufserfahrung (ab 3 Jahre) Organisationsfähigkeit, Kommunikationsfähigkeit Finanzielle Anreize Sie erhalten eine betriebliche Altersversorgung über die VBL",
+        "score": 68,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de",
+        "Teamassistenz Berlin site:arbeitsagentur.de",
+        "Office Management Berlin site:stepstone.de",
+        "Marketing Coordinator Berlin site:personio.de"
+      ],
+      "B": [
+        "Einkauf Berlin site:arbeitsagentur.de",
+        "Sachbearbeiter Einkauf Berlin site:stepstone.de",
+        "Supply Chain Berlin site:lever.co / greenhouse.io (Ergebnis: keine verwertbaren Treffer)"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de",
+        "Product Coordinator Berlin site:fashionunited.de (keine passende Anzeige heute)"
+      ]
+    },
+    "family_observations": {
+      "A": "ÖD listet mehrere neue/aktualisierte Assistenzrollen mit TV‑L E6 und klaren Fristen; privatwirtschaftlich dominieren Personio‑basierte Office‑Manager‑Profile mit Fokus Empfang/Büroorganisation.",
+      "B": "Lebensmittel-/Gastronomie‑Einkauf (Vielfaltmenü) und filialnaher Handel (Aktiv‑Schuh) sind aktiv; Demand‑/Materialplanung im Biotech (ProBioGen) bietet starkes fachliches Match nahe NOOS/Dispo.",
+      "C": "Wenige neue Koordinationsrollen in Mode; stabiler Zulauf im klassischen Vertriebsinnendienst (BA)."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere neue/aktualisierte Detailseiten verifiziert (u. a. FSG; LfG‑B Parallelhinweis)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen aktuell, aber heute keine neuen belastbaren Detailseiten für Shortlist."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio und rexx‑systems erreichbar; mehrere neue Detailseiten verifiziert."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal liefert vollständige Ausschreibungstexte inkl. Fristen/EG."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited erreichbar; heute keine passenden Koordinationsrollen für Shortlist."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-fuer-den-Fachbereich-Objektmanagement-mwd-de-j69380.html",
+        "reason": "Nur für bereits beim Land Berlin Beschäftigte ausgeschrieben („Es kommen ausschließlich Dienstkräfte in Frage, die bereits beim Land Berlin beschäftigt sind.“)."
+      },
+      {
+        "url": "https://probiogen-portal.rexx-systems.com/Demand-Planner-mfd-eng-j502.html",
+        "reason": "Mehrjährige Erfahrung in Produktions-/Materialplanung gefordert; dies überschreitet die spezialisierte Berufserfahrung, die vorliegt (harte Ausschlussregel)."
+      }
+    ],
+    "assessment_pages_checked": 7,
+    "rejected": [
+      {
+        "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+        "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+          "employer": "Vielfaltmenü GmbH",
+          "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+          "district": "Tempelhof-Schöneberg (Tempelhof)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 50–55 Min. ab Berlin‑Heinersdorf (Schätzung)",
+          "pro": "Kernaufgaben im Einkauf inkl. Lieferantenmanagement und Vertragsverhandlungen passen gut zu Koordinationserfahrung mit MOQ/Lead Times.",
+          "con": "Branchenschwerpunkt Gastronomie/Lebensmittel, kein Mode-/Lifestyle‑Fokus.",
+          "effort_details": "ATS (Personio) – Standardformular, Profil, Unterlagen: ca. 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 33,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "und Ressourcenschonung prägen unseren Einkauf. Wir sind Expertin der Schulverpflegung, im Eventcatering sowie in der Versorgung von Kliniken und Betriebskantinen. Das sind Ihre Aufgaben: Sortimentsoptimierung: Weiterentwicklung des Food- und Nonfood-Sortiments mit Schwerpunkt Großverbrauchersortiment. Nachhaltige Beziehungen: Pflege und Ausbau von Lieferantenbeziehungen sowie Führung von Vertragsverhandlungen. Marktanalysen: Durchführung von Markt- und Wettbewerbsanalysen zur Erkennung von"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+        "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+          "employer": "Aktiv-Schuh Handelsgesellschaft mbH",
+          "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013",
+          "district": "Treptow-Köpenick (Adlershof)",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 55–60 Min. ab Berlin‑Heinersdorf (Schätzung)",
+          "pro": "Mode-/Schuhbranche mit Bestellmanagement und Stammdatenpflege deckt Reorder-/NOOS-Erfahrung gut ab.",
+          "con": "Stärker operativer Inneneinkauf, wenig strategische Verantwortung.",
+          "effort_details": "ATS (Personio) – Standardformular, Profil, Unterlagen: ca. 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 35,
+            "entry": 27,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Liefertermine & Retouren: Du behältst Liefertermine und Retouren im Blick, prüfst offene Vorgänge und kümmerst dich um die entsprechende Nachverfolgung. Schnittstelle zu unseren Filialen: Du bist Ansprechpartner für unsere Filialen und unsere Logistik bei allen Fragen rund um den Einkauf. Einkaufsvorbereitung: Du wertest relevante Daten aus und bereitest die Einkaufstermine für unsere Einkäufer vor. Das bringst du mit Du hast eine abgeschlossene kaufmännische Ausbildung und"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d)",
+        "url": "https://es-group.jobs.personio.de/job/2693408?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d)",
+          "employer": "Eberhardt Service Group GmbH",
+          "url": "https://es-group.jobs.personio.de/job/2693408?language=de",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Adresse nicht genannt – konservativ 45–60 Min. ÖPNV ab Berlin‑Heinersdorf (Schätzung)",
+          "pro": "Breites Organisations- und Koordinationsspektrum passt zur langjährigen Schnittstellenarbeit.",
+          "con": "Starker Office-Management-Fokus, wenig Produkt-/Einkaufsbezug.",
+          "effort_details": "ATS (Personio) – Standardformular, Profil, Unterlagen: ca. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 28,
+            "entry": 20,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "kaufmännische Ausbildung, vorzugsweise in Hotellerie / Gastronomie / Bürokauffrau / Restaurantfachfrau / Hotelkaufmann / Hotelfachmann und hast mehrjährige Erfahrung im Office Management oder in einer vergleichbaren Position. Du bist ein Organisationstalent mit strukturierter, lösungsorientierter Arbeitsweise und hast einen hohen Qualitätsanspruch an dich selbst Du denkst in Prozessen, planst vorausschauend und optimierst Abläufe, ohne dabei den Blick für Details zu verlieren. Du kannst"
+        }
+      },
+      {
+        "title": "Office Manager (m/d/w)",
+        "url": "https://kemmler-kemmler-gmbh.jobs.personio.de/job/2648028",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/d/w)",
+          "employer": "KEMMLER KEMMLER GmbH (Kreativagentur)",
+          "url": "https://kemmler-kemmler-gmbh.jobs.personio.de/job/2648028",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "befristet 12 Monate (Start 01.12.2026)",
+          "salary": "Unbekannt",
+          "commute": "ca. 45–60 Min ÖPNV ab Heinersdorf (konservativ)",
+          "pro": "Klares, strukturiertes Office‑Setup in Fashion/Lifestyle‑nahem Umfeld.",
+          "con": "Befristung auf 12 Monate.",
+          "effort_details": "ATS (Personio) 55 Min: Profil 10, Antworten 15, CV‑Anpassung 20, Kurztext 10.",
+          "deadline": "",
+          "evidence": "„Start: ab 01.12.26 | Art: Vollzeit, befristet (12 Monate)… Hauptverantwortung für die Organisation der Büroabläufe… Bestellung von Office Supplies… Koordination… externer Dienstleister:innen…“ ([kemmler-kemmler-gmbh.jobs.personio.de](https://kemmler-kemmler-gmbh.jobs.personio.de/job/2648028))",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 22,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 5
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 2,
+  "researched_at": "2026-10-08T19:39:14.689787+00:00",
+  "prepared_at": "2026-10-08T19:42:57.840304+00:00",
+  "message_id": "<miki-2026-10-09-2a57548c113b7c7e@miki-jobsearch>",
+  "last_attempt_at": "2026-10-08T19:39:14.689787+00:00",
+  "last_attempt_run_id": "37833524133",
+  "design_version": "electric-blue-v1"
+}
