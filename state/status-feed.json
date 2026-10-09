@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:36:33.041196+00:00",
+  "updated_at": "2026-10-09T10:21:26.156640+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -7,7 +7,10 @@
     "prepare_retry": "13:00",
     "check": "16:00",
     "send": "08:30",
-    "delivery_check": "08:40"
+    "provider_poll": "08:37",
+    "delivery_check": "08:40",
+    "prepare_days": "Sunday–Thursday",
+    "send_days": "Monday–Friday"
   },
   "records": {
     "2026-10-05": {
@@ -23,10 +26,12 @@
       "schedule_verified_at": null,
       "provider_status": null,
       "provider_checked_at": null,
+      "expected_recipients": null,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
-      "has_report": true
+      "has_report": true,
+      "has_mail": true
     },
     "2026-10-06": {
       "date": "2026-10-06",
@@ -41,10 +46,12 @@
       "schedule_verified_at": null,
       "provider_status": null,
       "provider_checked_at": null,
+      "expected_recipients": null,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
-      "has_report": true
+      "has_report": true,
+      "has_mail": true
     },
     "2026-10-07": {
       "date": "2026-10-07",
@@ -59,10 +66,12 @@
       "schedule_verified_at": null,
       "provider_status": null,
       "provider_checked_at": null,
+      "expected_recipients": null,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
-      "has_report": true
+      "has_report": true,
+      "has_mail": true
     },
     "2026-10-08": {
       "date": "2026-10-08",
@@ -77,10 +86,12 @@
       "schedule_verified_at": null,
       "provider_status": null,
       "provider_checked_at": null,
+      "expected_recipients": null,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
-      "has_report": true
+      "has_report": true,
+      "has_mail": true
     },
     "2026-10-09": {
       "date": "2026-10-09",
@@ -95,10 +106,12 @@
       "schedule_verified_at": null,
       "provider_status": null,
       "provider_checked_at": null,
+      "expected_recipients": null,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
-      "has_report": true
+      "has_report": true,
+      "has_mail": true
     },
     "2026-10-12": {
       "date": "2026-10-12",
@@ -113,10 +126,12 @@
       "schedule_verified_at": null,
       "provider_status": null,
       "provider_checked_at": null,
+      "expected_recipients": 2,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
-      "has_report": true
+      "has_report": true,
+      "has_mail": true
     }
   },
   "lease": null,

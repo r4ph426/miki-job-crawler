@@ -126,6 +126,16 @@ class HybridTests(unittest.TestCase):
                 'report':{'summary':'private','jobs':[{'email':'private@example.org'}]},'MAIL_TO':'private@example.org'})
             payload=write_feed(root,store)
             self.assertTrue(payload['records']['2026-10-08']['has_report'])
+            self.assertFalse(payload['records']['2026-10-08']['has_mail'])
+            self.assertEqual(payload['schedule']['provider_poll'], '08:37')
+            atomic_json(store/'runs/2026-10-09.json',{'date':'2026-10-09','status':'scheduled',
+                'expected_recipients':2,'sent_recipient_count':1,'provider_batch_id':'not exposed',
+                'report':{'jobs':[]}})
+            (store/'runs/2026-10-09.html').write_text('<p>Saved live mail</p>')
+            payload=write_feed(root,store)
+            self.assertTrue(payload['records']['2026-10-09']['has_mail'])
+            self.assertEqual(payload['records']['2026-10-09']['expected_recipients'],2)
+            self.assertNotIn('provider_batch_id',json.dumps(payload))
             self.assertNotIn('private',json.dumps(payload))
             self.assertFalse(readiness(root,'2026-10-08')['ready'])
 
