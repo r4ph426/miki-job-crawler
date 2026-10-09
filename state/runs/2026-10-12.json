@@ -1,0 +1,248 @@
+{
+  "date": "2026-10-12",
+  "created_at": "2026-10-09T09:32:16.336738+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 12.10.2026 · 3 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 09.10.2026 für den Versand am 12.10.2026. 7 passende, verifizierte Optionen (B/C‑Schwerpunkt), davon 2 mit Gehaltsangabe. Ein öffentlicher Arbeitgeber mit Frist 2026-10-09. Keine Quellenstörung; Fashion-Quellen boten heute keine neuen geeigneten Rollen. Gesamtbild: solide Auswahl im Auftrags-/Einkaufsumfeld, wenig echte A‑Treffer mit gutem Fit.",
+    "next_action": "Heute bis 12:00 Uhr: 1) SenWGP (Frist 2026-10-09) priorisieren. 2) FACTUREE und KALO parallel in ATS vorbereiten. 3) ABiTEP prüfen (Export/Zoll-Passagen im CV adressieren oder streichen). 4) Bei The Platform Group Rückfrage zur Office‑Location und optionaler Samstagsarbeit.",
+    "weekend_action": "60–90 Min: Lebenslaufvariante „Einkauf/Order Management“ aktualisieren (Export/Zoll, Stammdaten/ERP, Lieferantenkoordination hervorheben), plus ATS‑Texte für FACTUREE und KALO feinschleifen; kurze Pendelcheck-Liste (ÖPNV) für Kreuzberg, Wedding, Tempelhof erstellen.",
+    "jobs": [
+      {
+        "title": "Vertriebsinnendienst Mitarbeiter (m/w/d)",
+        "employer": "The Platform Group AG (Cocoli/MöbelFirst)",
+        "url": "https://tpg.jobs.personio.de/job/2624479?language=de",
+        "district": "Berlin (bezirk nicht genannt)",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ÖPNV ca. 45–55 Min. von Berlin‑Heinersdorf (konservative Schätzung)",
+        "pro": "End‑to‑End‑Steuerung vom Verkauf bis Nachlieferung inkl. Logistikkoordination und Reklamationsmanagement.",
+        "con": "Teilweise Samstagsarbeit möglich.",
+        "effort_details": "ATS (Personio): Profil/Upload, Standardfragen – ca. 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 32,
+          "entry": 26,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "der Ware bei Händlern sowie Prüfung der Produktqualität Auswahl, Koordination und Steuerung von Logistikdienstleistern Organisation, Avisierung und Überwachung der Lieferprozesse Sicherstellung der Liefertreue sowie End-to-End-Prozesskontrolle vom Verkauf bis zur Nachlieferung Laufende Kundenbetreuung inkl. Stammkundenmanagement, After-Sales-Service und Bewertungsmanagement Bearbeitung komplexer Reklamationen sowie aktive Vermeidung von Retouren Rechnungsprüfung sowie Controlling der",
+        "score": 75,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) – Elternzeitvertretung (12 Monate)",
+        "employer": "aap Implantate AG",
+        "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241?language=de",
+        "district": "Berlin (bezirk nicht genannt)",
+        "hours": "Vollzeit",
+        "contract": "Befristet (12 Monate)",
+        "salary": "Unbekannt",
+        "commute": "ÖPNV ca. 50–60 Min. von Berlin‑Heinersdorf (konservative Schätzung, genaue Adresse fehlt)",
+        "pro": "Kompletter Order‑to‑Invoice‑Prozess inkl. Terminabstimmung und enger Bereichskooperation.",
+        "con": "Befristung auf 12 Monate und klare Export-/Zollanforderungen.",
+        "effort_details": "ATS (Personio): Profil/Upload, Standardfragen – ca. 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 33,
+          "entry": 22,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "und Export Operative Abwicklung des kompletten „Order-to-Invoice\"-Prozesses (Auftragseingang und Auftragserfassung; Lieferterminabstimmung mit unserer Produktionsstätte bis zur Rechnungserstellung) Erstellung und Pflege von Ausfuhrpapieren Auftragsbetreuung, -verfolgung, Auftrags- und Terminabstimmung mit Kunden Betreuung unserer Kunden im Innendienst mittels ERP-System Rechnungsstellung und Mahnwesen Direkter Kundenkontakt für das In- und Ausland Abwicklung von Exporten in Drittländer",
+        "score": 71,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+        "employer": "ABiTEP GmbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003675434-S",
+        "district": "Treptow-Köpenick (12526)",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "44.000 € – 49.400 € / Jahr",
+        "commute": "ÖPNV ca. 65–75 Min. von Berlin‑Heinersdorf (Schätzung, Adresse 12526 Berlin)",
+        "pro": "Breites Aufgabenspektrum von Angebot bis Versand inkl. Schnittstelle zu Einkauf/Produktion/Logistik.",
+        "con": "Explizit geforderte Export- und Zollkenntnisse könnten nachzuweisen sein.",
+        "effort_details": "BA-Portal: kurzer Prozess, Unterlagen per Formular/E-Mail – ca. 25 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 34,
+          "entry": 18,
+          "commute": 5,
+          "conditions": 8
+        },
+        "effort_minutes": 25,
+        "evidence": "Auftragsabwicklung End-to-End und trägst maßgeblich zur Kundenzufriedenheit und zur Umsatzrealisierung/-steigerung bei. Deine Aufgaben End-to-End Auftragsbearbeitung: Selbstständige Abwicklung von der Angebotserstellung über die Auftragsannahme bis hin zu Versand, Logistik und Rechnungslegung. Internationaler Export & Zoll: Eigenständige Prüfung und Abwicklung zollrechtlicher Bestimmungen, Beschaffung aller erforderlichen Exportdokumente sowie Koordination internationaler Speditionen und",
+        "score": 65,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination Berlin",
+        "Projektassistenz Berlin",
+        "Teamassistenz Berlin",
+        "Office Management Berlin"
+      ],
+      "B": [
+        "Einkäufer Berlin",
+        "Supply Chain Berlin",
+        "Beschaffung Berlin"
+      ],
+      "C": [
+        "Product Coordinator Berlin",
+        "Vertriebsinnendienst Berlin",
+        "Merchandising Koordination Berlin"
+      ]
+    },
+    "family_observations": {
+      "A": "Wenig hochwertige A‑Rollen neu sichtbar; viele Sekretariats-/Assistenzrollen laufen weiter über Personaldienstleister oder befristet. Öffentliche Arbeitgeber liefern die klarsten A‑ähnlichen Zuschnitte (Team/Sachbearbeitung) mit festen Fristen.",
+      "B": "Konstante Nachfrage im operativen/technischen Einkauf und in der Disposition; mehrere ATS‑Neuzugänge mit klaren Prozess-/Lieferantenaufgaben (FACTUREE, ARKTIS). Gehälter werden teils wieder genannt (FACTUREE, Teufel – letzterer bereits gemeldet).",
+      "C": "Innenvertrieb/Order‑Management bleibt ergiebig; mehrere Berliner ATS‑Boards listen neue Auftrags- und VI‑Rollen (KALO, The Platform Group, aap). Export/Zoll taucht häufig als Muss auf – vor Bewerbung Passung prüfen."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Direktaufrufe der Detailseiten (ABiTEP; Permacon geprüft, aber nicht shortlist‑tauglich wegen Pendelzeit)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Kategorien/Listen geprüft; heute keine zusätzlichen, passgenauen Detailanzeigen gegenüber Bestand."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio mehrfach (FACTUREE, KALO, ARKTIS, aap, The Platform Group) – alle Seiten erreichbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal erreichbar; SenWGP‑Anzeige mit Frist 2026-10-09 verifiziert."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited erreichbar; heute keine neuen passenden Berlin‑Rollen mit gutem Fit."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Sachbearbeitung-mwd-fuer-Gebaeudeunterhalt-und-Beschaffung-de-j69694.html",
+        "reason": "Formale Voraussetzungen verlangen einschlägigen Abschluss (z. B. Fachwirt Facility Management, Immobilienkaufmann/-frau) bzw. Verwaltungslehrgang I und Berufserfahrung im Facility Management; Profil passt nicht zu Miki."
+      },
+      {
+        "url": "https://facturee.jobs.personio.de/job/1536989?language=de",
+        "reason": "Starker Technikfokus mit geforderter Bildung in Produktion/Ingenieurwesen/technischem Einkauf sowie Interpretation technischer Zeichnungen; damit außerhalb des Zielprofils (Ausschluss technik-/ingenieurspflichtiger Profile)."
+      }
+    ],
+    "assessment_pages_checked": 6,
+    "rejected": [
+      {
+        "title": "Auftragssteuerung / Disposition & Logistik (m/w/d)",
+        "url": "https://arktis-gmbh.jobs.personio.de/job/2723231",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Auftragssteuerung / Disposition & Logistik (m/w/d)",
+          "employer": "ARKTIS IT solutions GmbH (ARKTIS Group)",
+          "url": "https://arktis-gmbh.jobs.personio.de/job/2723231",
+          "district": "Berlin (bezirk nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 50–60 Min. von Berlin‑Heinersdorf (konservative Schätzung, keine genaue Adresse im Inserat)",
+          "pro": "Starker Fit zu Planung/Steuerung von Aufträgen und Koordination zwischen Lager, Einkauf und Vertrieb.",
+          "con": "Gehalt nicht angegeben.",
+          "effort_details": "ATS (Personio): Profil/Upload, Standardfragen – ca. 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 32,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Auftragssteuerung / Disposition & Logistik (m/w/d) | Jobs bei Karriere bei der ARKTIS Group Zum Hauptinhalt springen Zurück zu allen Stellen Auftragssteuerung / Disposition & Logistik (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Ihre Aufgaben Planung, Steuerung und Überwachung von Kundenaufträgen und Auslieferungen Sicherstellung, dass Aufträge termingerecht kommissioniert und an unsere Kunden versendet werden Koordination der Warenströme zwischen Lager, Einkauf und Vertrieb"
+        }
+      },
+      {
+        "title": "Mitarbeiter:in für die Auftragsverarbeitung (w/m/d)",
+        "url": "https://kalo-vor-ort.jobs.personio.de/job/2490466",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Mitarbeiter:in für die Auftragsverarbeitung (w/m/d)",
+          "employer": "KALO vor Ort GmbH",
+          "url": "https://kalo-vor-ort.jobs.personio.de/job/2490466",
+          "district": "Tempelhof (Lorenzweg 5, 12099)",
+          "hours": "Vollzeit (flexibles Teilzeitmodell möglich)",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "ca. 55–60 Min ÖPNV ab Heinersdorf (geschätzt)",
+          "pro": "Kern: vollständige Auftragsabwicklung, Steuerung Servicepartner, Prozesscontrolling.",
+          "con": "Standort Tempelhof → lange Pendelzeit.",
+          "effort_details": "ATS (Personio), ca. 55 Min.",
+          "deadline": "",
+          "evidence": "\"…Mitarbeiter:in für die Auftragsverarbeitung… Du organisierst die vollständige Auftragsabwicklung… verantwortest ein professionelles Auftrags‑ und Prozesscontrolling… Niederlassung Berlin, Lorenzweg 5, 12099 Berlin.\"",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 3,
+  "researched_at": "2026-10-09T09:32:16.336738+00:00",
+  "prepared_at": "2026-10-09T09:36:29.134659+00:00",
+  "message_id": "<miki-2026-10-12-19319ced5c3f7ad7@miki-jobsearch>",
+  "last_attempt_at": "2026-10-09T09:32:16.336738+00:00",
+  "last_attempt_run_id": "37911887723",
+  "design_version": "electric-blue-v1"
+}
