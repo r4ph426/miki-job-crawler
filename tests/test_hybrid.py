@@ -161,12 +161,12 @@ class HybridTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     execute(root,'github',phase='prepare',day=day,refresh=True)
 
-    def test_delivery_warning_targets_today_from_0840_across_dst(self):
+    def test_delivery_poll_targets_today_from_0837_across_dst(self):
         for clock,expected in [
-            ('2026-10-08T08:39:59+02:00',None),
-            ('2026-10-08T08:40:00+02:00','2026-10-08'),
-            ('2026-10-09T08:40:00+02:00','2026-10-09'),
-            ('2026-10-10T08:40:00+02:00',None),
-            ('2026-10-26T07:39:59+00:00',None),
-            ('2026-10-26T07:40:00+00:00','2026-10-26')]:
+            ('2026-10-08T08:36:59+02:00',None),
+            ('2026-10-08T08:37:00+02:00','2026-10-08'),
+            ('2026-10-09T08:37:00+02:00','2026-10-09'),
+            ('2026-10-10T08:37:00+02:00',None),
+            ('2026-10-26T07:36:59+00:00',None),
+            ('2026-10-26T07:37:00+00:00','2026-10-26')]:
             self.assertEqual(scheduled_target(datetime.fromisoformat(clock),'delivery-check'),expected)

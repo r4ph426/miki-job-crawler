@@ -13,21 +13,38 @@ All times use Europe/Berlin, including daylight-saving changes.
 - Next weekday, 08:30: Brevo releases the saved email from its own queue. No morning
   GitHub or laptop execution is required. Allow up to five minutes provider delay;
   inbox arrival is a separate step.
-- 08:40: the GitHub backup polls send/delivery events for the exact message and all
-  configured recipients. Unconfirmed acceptance triggers one operator warning per
+- From 08:37: the GitHub backup polls send/delivery events for the exact message and all
+  configured recipients. From 08:40, unconfirmed acceptance triggers one operator warning per
   day, stored separately from the readiness warning. It never sends the jobs again.
-- A separate Codex heartbeat can notify when the local app is available. This is
-  not an always-on external monitor. Verify cloud/external monitoring separately.
+- Independent cloud checks are enabled on the private status Site at 16:00
+  Sunday–Thursday and 08:40 Monday–Friday. They inspect fresh remote records of
+  provider confirmation, warn the user only when action is needed, and never
+  submit, cancel or replace emails. They do not call Brevo directly. Verify their
+  first unattended executions separately.
 - Manual recovery: choose `prepare-next` in `daily.yml` or the mobile button. It
   prepares and queues the next weekday; it does not send the job email immediately.
 
 The former laptop 16:00 research, 17:00 check and 09:30 recovery are disabled.
 The macOS launch agent was unloaded; its plist, logs and history are preserved.
 The local coordinator also has no automatic work slots. No laptop credentials
-are required for the GitHub process. The Codex notification requires the local
-computer and app to be running; the GitHub warning email is independent of them.
+are required for the GitHub process. The cloud checks do not require the local
+computer or app; the old local 10:00 heartbeat is paused.
 GitHub schedules can be late or absent, so these times are targets rather than
 an exact start or inbox-time guarantee.
+
+## Initial scheduling incident, 9 October 2026
+
+The report for Monday 12 October contains three verified jobs. Its first queue
+request reached Brevo, but the response parser rejected the acknowledgement and
+did not retain its identifiers. The record remains `schedule_uncertain`: the queue
+is not confirmed and another POST is blocked. A 404 lookup using the local custom
+message ID is not evidence that Brevo rejected the request.
+
+The parser now accepts both documented acknowledgement formats. Future requests
+save a UUID batch identifier before transmission, permitting read-only lookup
+after interruption. The initial Monday request predates that protection; after
+its scheduled time, recovery requires exact sent-content and recipient-event
+evidence as described in [Operations](operations.md).
 
 ## Shared state and duplicate protection
 

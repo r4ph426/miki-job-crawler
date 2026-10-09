@@ -19,15 +19,24 @@ green offline check, skipped job, or running process as evidence of live deliver
 | `partial` | SMTP accepted for some recipients but rejected others. No resend to all recipients. Investigate and complete delivery separately. |
 | `sent` | Provider accepted the submission for all configured recipients; inbox receipt is not yet proven. Same-date production runs skip. |
 
-Scheduled sends store `scheduled_at` and `schedule_accepted_at` separately from
-`accepted_at`. From 08:40, exact-message events for every configured To/CC recipient
+Scheduled sends store a UUID `provider_batch_id` durably before the POST, then
+retain either acknowledgement format (`messageId` or `messageIds`). They store
+`scheduled_at` and `schedule_accepted_at` separately from `accepted_at`.
+From 08:37, exact-message events for every configured To/CC recipient
 are required to set `sent` and add jobs to delivered history. A processed queue alone
 does not confirm send acceptance. `delivered_at` requires delivery events for everyone
 and indicates receiving-server acceptance, not human reading or inbox placement.
 Queued/unclear jobs remain reserved against repetition in later reports.
 
+Warnings start at 08:40. Missing acknowledgement identifiers never authorize another
+POST. A saved batch ID permits read-only queue lookup. After the scheduled time,
+the service can recover missing message IDs only when it finds one unique sent
+message for each recipient with the exact subject and saved HTML, followed by
+matching provider events. Provider content rewriting can prevent this strict
+match; that requires manual provider-log reconciliation, not an automatic retry.
+
 Do not delete a scheduled run or refresh its body locally. First inspect Brevo's
-queue using the saved `provider_message_id`; cancellation requires a confirmed
+queue using the saved message identifiers or `provider_batch_id`; cancellation requires a confirmed
 204 response from `DELETE /v3/smtp/email/{identifier}`. Preserve that evidence in
 the run record before an operator makes an unsent report retryable. The service
 never automatically cancels or replaces a queued message.

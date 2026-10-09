@@ -5,7 +5,7 @@ from email.message import EmailMessage
 
 from .hybrid import check_provider, claim, complete, readiness
 from .scheduled_mail import ProviderStatusError
-from .service import (DeliveryFailure, MailConfigurationError, StateSyncError, TERMINAL,
+from .service import (BERLIN, DeliveryFailure, MailConfigurationError, StateSyncError, TERMINAL,
                       atomic_json, git_persister, mail_settings, read_json, send_mail)
 
 STATUS_URL = 'https://miki-crawler-status.raphael-regli.chatgpt.site'
@@ -24,7 +24,7 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
     now = now or datetime.now(timezone.utc)
     store = root / 'state'
     delivery = read_json(store / 'runs' / f'{day}.json', {})
-    if delivery.get('status') == 'scheduled':
+    if delivery.get('status') in {'scheduled', 'scheduling', 'schedule_uncertain'}:
         try:
             refreshed = check_provider(root, day, now=now)
             if refreshed.get('status') == 'deferred':
@@ -43,6 +43,9 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
         quiet_status = 'ready'
     if checked['ready']:
         return dict(checked, status=quiet_status)
+    local = now.astimezone(BERLIN)
+    if kind == 'delivery' and (local.hour, local.minute) < (8, 40):
+        return dict(checked, status='awaiting_provider_confirmation')
     path = store / ('delivery-alerts' if kind == 'delivery' else 'alerts') / f'{day}.json'
     existing = read_json(path, {})
     if existing.get('status') in TERMINAL:

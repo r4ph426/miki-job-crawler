@@ -2,8 +2,8 @@ name: Miki delivery watchdog
 
 on:
   schedule:
-    # Provider polling from 08:40 Berlin across DST, plus retries. Never resends.
-    - cron: "40,50 6,7,8 * * 1-5"
+    # Provider polling from 08:37; warnings from 08:40 across DST. Never resends.
+    - cron: "37,40,50 6,7,8 * * 1-5"
   workflow_dispatch:
 
 concurrency:

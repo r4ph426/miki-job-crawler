@@ -25,7 +25,7 @@ def plan(now, actor):
 def scheduled_target(now, task):
     local = now.astimezone(BERLIN)
     if task == "delivery-check":
-        return local.date().isoformat() if local.weekday() < 5 and (local.hour, local.minute) >= (8, 40) else None
+        return local.date().isoformat() if local.weekday() < 5 and (local.hour, local.minute) >= (8, 37) else None
     tomorrow = local.date() + timedelta(days=1)
     if tomorrow.weekday() >= 5:
         return None

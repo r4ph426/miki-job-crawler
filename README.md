@@ -47,8 +47,10 @@ research at 09:00 on the previous calendar day (Sunday–Thursday), retries from
 and immediate scheduling of the completed email at Brevo. The 16:00 readiness check
 requires a verified Brevo queue entry for the next weekday at 08:30 Europe/Berlin.
 Brevo sends without a morning GitHub trigger; allow its documented five-minute
-dispatch delay. The 08:40 GitHub watchdog polls actual recipient events and warns
-the operator when send acceptance is unconfirmed. GitHub checks remain best-effort.
+dispatch delay. The GitHub watchdog polls actual recipient events from 08:37 and
+warns the operator from 08:40 when send acceptance is unconfirmed. Independent
+cloud checks inspect remote readiness at 16:00 and send confirmation at 08:40;
+they do not require the laptop. GitHub checks remain best-effort.
 
 `state/runs/YYYY-MM-DD.json` records research and delivery outcomes; matching HTML
 and `state/history.json` persist with Git commits before and after email delivery.

@@ -179,7 +179,7 @@ class NoMailRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def send_brevo(message, settings, on_sending, scheduled_at=None):
+def send_brevo(message, settings, on_sending, scheduled_at=None, batch_id=None):
     """Save a durable marker before POST; never retry an uncertain acceptance."""
     payload = {
         "sender": {"email": settings["MAIL_FROM"], "name": "Stellen für Miki"},
@@ -194,6 +194,8 @@ def send_brevo(message, settings, on_sending, scheduled_at=None):
         payload["cc"] = [{"email": address.strip()} for address in settings["MAIL_CC"].split(",")]
     if scheduled_at is not None:
         payload["scheduledAt"] = scheduled_at
+        if batch_id is not None:
+            payload["batchId"] = batch_id
     # Additional provider deduplication; durable local/Git state remains the guard.
     payload["headers"]["Idempotency-Key"] = hashlib.sha256(
         json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
@@ -225,7 +227,7 @@ def send_brevo(message, settings, on_sending, scheduled_at=None):
     try:
         data = json.loads(raw) if len(raw) <= 16000 else None
         provider_id = data.get("messageId") if isinstance(data, dict) else None
-        provider_ids = data.get("messageIds", [provider_id]) if isinstance(data, dict) else []
+        provider_ids = (data.get("messageIds") or [provider_id]) if isinstance(data, dict) else []
         if (code != 201 or not isinstance(provider_ids, list) or not 1 <= len(provider_ids) <= 100
                 or any(not isinstance(value, str) or not re.fullmatch(
                     r"<?[A-Za-z0-9_.+\-]{1,160}@[A-Za-z0-9.-]{1,90}>?", value) for value in provider_ids)
@@ -235,7 +237,7 @@ def send_brevo(message, settings, on_sending, scheduled_at=None):
         raise DeliveryFailure("Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
                               ambiguous=True) from None
     outcome = {"status": "scheduled" if scheduled_at is not None else "sent",
-               "refused_count": 0, "provider_message_id": provider_id or provider_ids[0]}
+               "refused_count": 0, "provider_message_id": provider_ids[0]}
     if scheduled_at is not None:
         outcome["provider_message_ids"] = provider_ids
     return outcome

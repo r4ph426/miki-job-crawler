@@ -90,3 +90,9 @@ class AlertTests(unittest.TestCase):
         sender=Mock(return_value={'status':'sent'})
         self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'warning_sent')
         sender.assert_called_once()
+
+    def test_provider_poll_before_0840_does_not_send_warning(self):
+        sender=Mock()
+        result=check_delivery(self.root,self.day,now=datetime.fromisoformat('2026-10-08T08:37:00+02:00'),sender=sender)
+        self.assertEqual(result['status'],'awaiting_provider_confirmation')
+        sender.assert_not_called()

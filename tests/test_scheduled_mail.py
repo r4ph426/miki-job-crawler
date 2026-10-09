@@ -3,6 +3,7 @@ import json
 import os
 import tempfile
 import unittest
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import Mock, patch
@@ -35,10 +36,12 @@ class ScheduledMailTests(unittest.TestCase):
         self.sender = Mock(side_effect=self.send)
         self.getter = Mock(return_value={"status": "queued", "scheduledAt": "2026-10-12T06:30:00Z"})
 
-    def send(self, message, settings, on_scheduling, scheduled_at):
+    def send(self, message, settings, on_scheduling, scheduled_at, batch_id):
         on_scheduling()
         self.assertEqual(read_json(self.path, {})["status"], "scheduling")
         self.assertEqual(scheduled_at, "2026-10-12T06:30:00Z")
+        self.assertEqual(uuid.UUID(batch_id).version, 4)
+        self.assertEqual(read_json(self.path, {})["provider_batch_id"], batch_id)
         return {"status": "scheduled", "provider_message_id": PROVIDER_ID}
 
     def schedule(self, **kwargs):
@@ -151,6 +154,60 @@ class ScheduledMailTests(unittest.TestCase):
             with self.assertRaises(ProviderStatusError):
                 refresh_status(self.root, self.store, DAY, now=NOW, getter=getter)
         getter.assert_not_called()
+
+    def test_batch_id_recovers_uncertain_acknowledgement_without_posting_again(self):
+        self.schedule(); record = read_json(self.path, {})
+        record.update(status="schedule_uncertain")
+        for key in ("provider_message_ids", "provider_message_id", "schedule_verified_at", "schedule_accepted_at"):
+            record.pop(key, None)
+        atomic_json(self.path, record)
+        getter = Mock(return_value={"count": 1, "batches": [self.getter.return_value]})
+        result = refresh_status(self.root, self.store, DAY, now=NOW, getter=getter)
+        self.assertEqual(result["status"], "scheduled")
+        self.assertIn(record["provider_batch_id"], getter.call_args.args[0])
+        self.sender.assert_called_once()
+        self.assertTrue(readiness(self.root, DAY)["ready"])
+        self.assertNotIn("accepted_at", read_json(self.path, {}))
+
+    def test_multiple_scheduled_ids_all_require_queue_confirmation(self):
+        self.schedule(); record = read_json(self.path, {})
+        record["provider_message_ids"] = [PROVIDER_ID, "<other@smtp-relay.mailin.fr>"]
+        getter = Mock(side_effect=[self.getter.return_value,
+                                  {"status": "inProgress", "scheduledAt": record["scheduled_at"]}])
+        self.assertEqual(queue_status(record, ENV, getter), "inProgress")
+        self.assertEqual(getter.call_count, 2)
+
+    def test_missing_id_recovery_requires_unique_exact_sent_body_and_recipient_events(self):
+        self.schedule(); record = read_json(self.path, {})
+        record.update(status="schedule_uncertain")
+        record.pop("provider_message_id"); record.pop("provider_message_ids")
+        atomic_json(self.path, record)
+        now = datetime.fromisoformat("2026-10-12T08:40:00+02:00")
+        def getter(path, settings):
+            if path.startswith("smtp/statistics/events?"):
+                return {"events": [{"email": address, "messageId": PROVIDER_ID, "event": "delivered",
+                                    "date": "2026-10-12T06:33:00Z"} for address in ("miki@example.org", "cc@example.org")]}
+            if path.startswith("smtp/emails?"):
+                import urllib.parse
+                address = urllib.parse.parse_qs(path.split("?", 1)[1])["email"][0]
+                return {"transactionalEmails": [{"email": address, "subject": record["subject"], "uuid": address,
+                         "messageId": PROVIDER_ID, "date": "2026-10-12T06:32:00Z"}]}
+            import urllib.parse
+            address = urllib.parse.unquote(path.removeprefix("smtp/emails/"))
+            return {"email": address, "subject": record["subject"], "body": "<p>Electric Blue</p>"}
+        result = refresh_status(self.root, self.store, DAY, now=now, getter=getter)
+        self.assertEqual(result["status"], "sent")
+        self.assertTrue(read_json(self.path, {})["schedule_recovered_at"])
+        self.sender.assert_called_once()
+        record.update(status="schedule_uncertain")
+        atomic_json(self.path, record)
+        def wrong_body(path, settings):
+            response = getter(path, settings)
+            if "body" in response: response["body"] = "Different email with the same subject"
+            return response
+        with self.assertRaises(ProviderStatusError):
+            refresh_status(self.root, self.store, DAY, now=now, getter=wrong_body)
+        self.assertEqual(read_json(self.path, {})["status"], "schedule_uncertain")
 
     def test_refresh_never_restores_report_over_an_uncertain_queue_marker(self):
         atomic_json(self.root / "state/coordinator.json", {"lease": {"token": "token",

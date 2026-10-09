@@ -91,18 +91,23 @@ Sunday–Thursday, retries from 13:00, and queues the completed HTML at Brevo us
 Missing or unconfirmed queue entries trigger a
 warning to `MAIL_ALERT_TO` only, with no job recipients or CC. Configure that
 address in private GitHub Actions variables or secrets. Stored alert states prevent
-duplicate warnings after accepted or uncertain submission. The Codex heartbeat
-independently checks remote readiness and requires an available local app.
+duplicate warnings after accepted or uncertain submission. Two independent cloud
+schedules are enabled on the private status Site: Sunday–Thursday at 16:00 checks
+next-day readiness; Monday–Friday at 08:40 checks send confirmation. They read fresh
+remote records containing the provider evidence, rather than calling Brevo directly.
+They notify the user only when action is needed and never submit or cancel emails.
+Their first unattended executions still require verification. The old local 10:00
+heartbeat is paused.
 
 `daily.yml` now has manual operations only. Brevo owns the scheduled 08:30 weekday
 send, independent of GitHub and the laptop at that time. The documented provider
 dispatch delay is up to five minutes; inbox timing is separate. `delivery-watchdog.yml`
-polls exact-message recipient events from 08:40 Berlin, across summer/winter time,
-and warns only the operator if send acceptance is unconfirmed. It never resends.
+polls exact-message recipient events from 08:37 Berlin, across summer/winter time,
+and warns only the operator from 08:40 if send acceptance is unconfirmed. It never resends.
 Use manual `daily.yml` mode `prepare-next` to prepare and queue a missing report.
 An already queued report cannot be refreshed before confirmed cancellation at Brevo.
-GitHub preparation/check triggers remain best-effort. An independent monitor must
-be verified separately; a GitHub watchdog is not independent of GitHub scheduling.
+GitHub preparation/check triggers remain best-effort. Verify the cloud checks'
+first executions separately; a GitHub watchdog is not independent of GitHub scheduling.
 
 All runs share a non-cancelling concurrency group. Outputs are uploaded even if
 delivery fails. Artifacts retain reports for 30 days; committed state is the durable
