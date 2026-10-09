@@ -1,12 +1,13 @@
 {
-  "updated_at": "2026-10-09T08:59:33.200602+00:00",
+  "updated_at": "2026-10-09T09:32:16.339811+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
-    "mode": "github_previous_day",
+    "mode": "brevo_scheduled",
     "prepare": "09:00",
+    "prepare_retry": "13:00",
     "check": "16:00",
     "send": "08:30",
-    "delivery_check": "10:00"
+    "delivery_check": "08:40"
   },
   "records": {
     "2026-10-05": {
@@ -17,6 +18,14 @@
       "prepared_at": null,
       "created_at": "2026-10-05T14:53:05.185229+00:00",
       "accepted_at": "2026-10-05T19:24:31.816745+00:00",
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
       "has_report": true
     },
     "2026-10-06": {
@@ -27,6 +36,14 @@
       "prepared_at": null,
       "created_at": "2026-10-06T08:20:17.102784+00:00",
       "accepted_at": "2026-10-06T08:24:38.434637+00:00",
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
       "has_report": true
     },
     "2026-10-07": {
@@ -37,6 +54,14 @@
       "prepared_at": null,
       "created_at": "2026-10-07T13:46:57.610923+00:00",
       "accepted_at": "2026-10-07T13:51:00.266992+00:00",
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
       "has_report": true
     },
     "2026-10-08": {
@@ -47,6 +72,14 @@
       "prepared_at": null,
       "created_at": "2026-10-07T17:48:25.871331+00:00",
       "accepted_at": "2026-10-08T07:46:22.511125+00:00",
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
       "has_report": true
     },
     "2026-10-09": {
@@ -57,10 +90,24 @@
       "prepared_at": "2026-10-08T19:42:57.840304+00:00",
       "created_at": "2026-10-08T19:39:14.689787+00:00",
       "accepted_at": "2026-10-09T08:59:33.194659+00:00",
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
       "has_report": true
     }
   },
-  "lease": null,
+  "lease": {
+    "actor": "manual",
+    "phase": "prepare",
+    "date": "2026-10-12",
+    "started_at": "2026-10-09T09:32:16.336738+00:00",
+    "expires_at": "2026-10-09T10:12:16.336738+00:00"
+  },
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",

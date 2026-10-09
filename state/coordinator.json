@@ -22,5 +22,13 @@
       "actor": "manual",
       "last_result": "prepared"
     }
+  },
+  "lease": {
+    "token": "c8cf515b8cc549c0af233289d72be0bb",
+    "actor": "manual",
+    "phase": "prepare",
+    "date": "2026-10-12",
+    "started_at": "2026-10-09T09:32:16.336738+00:00",
+    "expires_at": "2026-10-09T10:12:16.336738+00:00"
   }
 }
