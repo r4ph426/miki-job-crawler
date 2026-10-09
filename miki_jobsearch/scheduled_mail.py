@@ -65,7 +65,13 @@ def instant(value):
 
 
 def queue_status(record, settings, getter=provider_get):
-    identifier = urllib.parse.quote(record["provider_message_id"], safe="")
+    states = [single_queue_status(record, identifier, settings, getter) for identifier in
+              record.get("provider_message_ids", [record["provider_message_id"]])]
+    return "queued" if all(state == "queued" for state in states) else states[0] if len(set(states)) == 1 else "inProgress"
+
+
+def single_queue_status(record, identifier, settings, getter):
+    identifier = urllib.parse.quote("<" + identifier.strip("<>") + ">", safe="")
     response = getter("smtp/emailStatus/" + identifier, settings)
     candidates = response.get("batches", [response])
     if not isinstance(candidates, list):
@@ -124,6 +130,7 @@ def schedule_report(root, store, day, now=None, persist=None, sender=send_brevo,
             save()
             raise
         record.update(status="scheduled", provider_message_id=outcome["provider_message_id"],
+                      provider_message_ids=outcome.get("provider_message_ids", [outcome["provider_message_id"]]),
                       schedule_accepted_at=datetime.now(timezone.utc).isoformat())
         record.pop("accepted_at", None)
         record.pop("error", None)
@@ -165,17 +172,20 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
                     record["schedule_verified_at"] = now.isoformat()
             else:
                 # A processed queue entry alone does not prove that recipients were sent mail.
-                query = urllib.parse.urlencode({"messageId": record["provider_message_id"], "limit": 100, "sort": "desc"})
-                response = getter("smtp/statistics/events?" + query, settings)
-                events = response.get("events")
-                if not isinstance(events, list):
-                    raise ProviderStatusError("Brevo delivery events unavailable")
+                identifiers = record.get("provider_message_ids", [record["provider_message_id"]])
+                events = []
+                for identifier in identifiers:
+                    query = urllib.parse.urlencode({"messageId": "<" + identifier.strip("<>") + ">", "limit": 100, "sort": "desc"})
+                    response = getter("smtp/statistics/events?" + query, settings)
+                    if not isinstance(response.get("events"), list):
+                        raise ProviderStatusError("Brevo delivery events unavailable")
+                    events.extend(response["events"])
                 accepted, delivered, times = set(), set(), []
                 expected = recipients(settings)
                 for event in events:
                     if not isinstance(event, dict):
                         continue
-                    if str(event.get("messageId", "")).strip("<>") != record["provider_message_id"].strip("<>"):
+                    if str(event.get("messageId", "")).strip("<>") not in {identifier.strip("<>") for identifier in identifiers}:
                         continue
                     address = str(event.get("email", "")).lower().strip()
                     if address not in expected:

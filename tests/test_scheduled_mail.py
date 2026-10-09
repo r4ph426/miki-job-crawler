@@ -79,6 +79,14 @@ class ScheduledMailTests(unittest.TestCase):
                                 persist=Mock(side_effect=StateSyncError("remote down")))
         opener.open.assert_not_called()
 
+    def test_scheduled_api_acknowledgement_can_return_message_ids_list(self):
+        opener = Mock(); opener.open.return_value = acknowledgement({"messageIds": [PROVIDER_ID.strip("<>")]})
+        with patch("miki_jobsearch.service.urllib.request.build_opener", return_value=opener):
+            result = schedule_report(self.root, self.store, DAY, now=NOW, getter=self.getter)
+        self.assertEqual(result["status"], "scheduled")
+        self.assertEqual(read_json(self.path, {})["provider_message_ids"], [PROVIDER_ID.strip("<>")])
+        self.assertIn("%3Cscheduled-test%40smtp-relay.mailin.fr%3E", self.getter.call_args.args[0])
+
     def test_restart_or_immediate_send_cannot_duplicate_queued_mail(self):
         self.schedule()
         self.assertEqual(self.schedule()["delivery_status"], "scheduled")

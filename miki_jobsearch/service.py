@@ -225,13 +225,20 @@ def send_brevo(message, settings, on_sending, scheduled_at=None):
     try:
         data = json.loads(raw) if len(raw) <= 16000 else None
         provider_id = data.get("messageId") if isinstance(data, dict) else None
-        if code != 201 or not isinstance(provider_id, str) or not re.fullmatch(r"<?[A-Za-z0-9_.+\-]{1,160}@[A-Za-z0-9.-]{1,90}>?", provider_id):
+        provider_ids = data.get("messageIds", [provider_id]) if isinstance(data, dict) else []
+        if (code != 201 or not isinstance(provider_ids, list) or not 1 <= len(provider_ids) <= 100
+                or any(not isinstance(value, str) or not re.fullmatch(
+                    r"<?[A-Za-z0-9_.+\-]{1,160}@[A-Za-z0-9.-]{1,90}>?", value) for value in provider_ids)
+                or (scheduled_at is None and not isinstance(provider_id, str))):
             raise ValueError("Missing acknowledgement")
     except (ValueError, UnicodeError):
         raise DeliveryFailure("Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
                               ambiguous=True) from None
-    return {"status": "scheduled" if scheduled_at is not None else "sent",
-            "refused_count": 0, "provider_message_id": provider_id}
+    outcome = {"status": "scheduled" if scheduled_at is not None else "sent",
+               "refused_count": 0, "provider_message_id": provider_id or provider_ids[0]}
+    if scheduled_at is not None:
+        outcome["provider_message_ids"] = provider_ids
+    return outcome
 
 
 def send_mail(message, settings, on_sending):

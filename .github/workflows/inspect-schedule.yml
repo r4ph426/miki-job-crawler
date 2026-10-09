@@ -1,0 +1,39 @@
+name: Inspect scheduled Brevo email (read only)
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: "Existing report date YYYY-MM-DD; GET requests only"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: miki-weekday-service
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Read-only inspection
+        env:
+          INSPECT_DAY: ${{ inputs.day }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          MAIL_FROM: ${{ secrets.MAIL_FROM || vars.MAIL_FROM || secrets.GMAIL_USER || vars.GMAIL_USER }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
+        run: |
+          set -euo pipefail
+          python3 -m scripts.inspect_scheduled_mail "$INSPECT_DAY"
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          git add -- "state/schedule-inspection-$INSPECT_DAY.json"
+          git commit --only -m "Inspect Miki scheduled queue $INSPECT_DAY" -- "state/schedule-inspection-$INSPECT_DAY.json"
+          git push origin HEAD:refs/heads/main
