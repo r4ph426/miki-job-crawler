@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T09:36:31.856494+00:00",
+  "updated_at": "2026-10-09T09:36:33.041196+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -119,13 +119,7 @@
       "has_report": true
     }
   },
-  "lease": {
-    "actor": "manual",
-    "phase": "prepare",
-    "date": "2026-10-12",
-    "started_at": "2026-10-09T09:32:16.336738+00:00",
-    "expires_at": "2026-10-09T10:12:16.336738+00:00"
-  },
+  "lease": null,
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",
@@ -148,6 +142,18 @@
       "checked_at": "2026-10-08T19:42:59.206241+00:00",
       "actor": "manual",
       "last_result": "prepared"
+    },
+    "2026-10-12": {
+      "date": "2026-10-12",
+      "status": "not_ready",
+      "ready": false,
+      "delivery_status": "schedule_uncertain",
+      "hits": 3,
+      "researched_at": "2026-10-09T09:32:16.336738+00:00",
+      "delivery_time": "2026-10-12T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-09T09:36:33.038107+00:00",
+      "actor": "manual",
+      "last_result": "failed"
     }
   },
   "laptop": {

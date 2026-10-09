@@ -21,14 +21,18 @@
       "checked_at": "2026-10-08T19:42:59.206241+00:00",
       "actor": "manual",
       "last_result": "prepared"
+    },
+    "2026-10-12": {
+      "date": "2026-10-12",
+      "status": "not_ready",
+      "ready": false,
+      "delivery_status": "schedule_uncertain",
+      "hits": 3,
+      "researched_at": "2026-10-09T09:32:16.336738+00:00",
+      "delivery_time": "2026-10-12T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-09T09:36:33.038107+00:00",
+      "actor": "manual",
+      "last_result": "failed"
     }
-  },
-  "lease": {
-    "token": "c8cf515b8cc549c0af233289d72be0bb",
-    "actor": "manual",
-    "phase": "prepare",
-    "date": "2026-10-12",
-    "started_at": "2026-10-09T09:32:16.336738+00:00",
-    "expires_at": "2026-10-09T10:12:16.336738+00:00"
   }
 }
