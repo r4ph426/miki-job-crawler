@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "created_at": "2026-10-08T19:39:14.689787+00:00",
-  "status": "prepared",
+  "status": "sending",
   "subject": "Wochenüberblick Stellensuche · KW 41",
   "report": {
     "summary": "Recherche vom 08.10.2026 für den Versand am 09.10.2026. 8 passende neue Anzeigen gefunden und verifiziert (Stichtag 2026-10-08). Schwerpunkte heute: Einkauf/Supply Chain (B) und Office-/Teamassistenz (A); ein C‑Treffer im Vertriebsinnendienst. Keine Dubletten zu bereits gemeldeten Stellen.",
@@ -254,7 +254,12 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "started_at": "2026-10-09T08:59:31.651941+00:00",
+      "status": "sending"
+    }
+  ],
   "hits": 2,
   "researched_at": "2026-10-08T19:39:14.689787+00:00",
   "prepared_at": "2026-10-08T19:42:57.840304+00:00",
