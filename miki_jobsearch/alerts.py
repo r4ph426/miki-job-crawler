@@ -3,7 +3,8 @@ import os
 from datetime import datetime, timezone
 from email.message import EmailMessage
 
-from .hybrid import claim, complete, readiness
+from .hybrid import check_provider, claim, complete, readiness
+from .scheduled_mail import ProviderStatusError
 from .service import (DeliveryFailure, MailConfigurationError, StateSyncError, TERMINAL,
                       atomic_json, git_persister, mail_settings, read_json, send_mail)
 
@@ -22,6 +23,15 @@ def check_delivery(root, day, now=None, sender=send_mail):
 def _check_warning(root, day, kind, now=None, sender=send_mail):
     now = now or datetime.now(timezone.utc)
     store = root / 'state'
+    delivery = read_json(store / 'runs' / f'{day}.json', {})
+    if delivery.get('status') == 'scheduled':
+        try:
+            refreshed = check_provider(root, day, now=now)
+            if refreshed.get('status') == 'deferred':
+                return dict(refreshed, ready=False)
+        except (ProviderStatusError, MailConfigurationError):
+            # An unverified provider status requires a warning, never a second send.
+            pass
     if kind == 'delivery':
         delivery = read_json(store / 'runs' / f'{day}.json', {})
         delivered = (delivery.get('date') == day and delivery.get('status') == 'sent'
@@ -58,24 +68,25 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
         message['From'], message['To'] = settings['MAIL_FROM'], settings['MAIL_TO']
         message['Message-ID'] = record['message_id']
         if kind == 'delivery':
-            message['Subject'] = f'Miki: Versand für {day} ab 10 Uhr nicht bestätigt'
-            text = (f'Für die Stellenmail vom {day} ist ab 10:00 Uhr Berliner Zeit kein vollständiger '
+            message['Subject'] = f'Miki: Versand für {day} ab 08:40 Uhr nicht bestätigt'
+            text = (f'Für die Stellenmail vom {day} ist ab 08:40 Uhr Berliner Zeit kein vollständiger '
                     'Versand durch den Mailanbieter bestätigt. Der Versandstatus fehlt, ist fehlgeschlagen '
                     'oder noch unklar.\n\nBitte Status und GitHub-Läufe prüfen. Bei sending, uncertain oder '
                     'partial zuerst den Anbieterstatus abgleichen; nicht blind erneut senden.\n\n'
                     f'Status: {STATUS_URL}\nWorkflow: {WORKFLOW_URL}\n')
-            html = (f'<p>Der Versand der Stellenmail vom <strong>{day}</strong> ist ab 10:00 Uhr '
+            html = (f'<p>Der Versand der Stellenmail vom <strong>{day}</strong> ist ab 08:40 Uhr '
                     'Berliner Zeit noch nicht vollständig bestätigt.</p><p>Bitte Status und GitHub-Läufe '
                     'prüfen. Bei unklarem oder teilweisem Versand zuerst den Anbieterstatus abgleichen.</p>')
         else:
             message['Subject'] = f'Miki: Bericht für {day} noch nicht bereit'
-            text = (f'Für den Versand am {day} um 08:30 Uhr Berliner Zeit liegt noch kein fertiger Bericht vor.\n\n'
+            text = (f'Für den Versand am {day} um 08:30 Uhr Berliner Zeit ist noch kein fertiger Bericht bei Brevo bestätigt eingeplant.\n\n'
                     'Bitte die Recherche manuell starten: Im GitHub-Workflow den Modus prepare-next wählen. '
-                    'Das bereitet den nächsten Versandtag vor und versendet jetzt keine Stellenmail.\n\n'
+                    'Das bereitet den nächsten Versandtag vor und plant die fertige E-Mail bei Brevo ein. '
+                    'Bei scheduling, scheduled oder schedule_uncertain zuerst Brevo prüfen; nicht blind erneut senden.\n\n'
                     f'Status: {STATUS_URL}\nWorkflow: {WORKFLOW_URL}\n')
-            html = (f'<p>Für den Versand am <strong>{day} um 08:30 Uhr</strong> liegt noch kein fertiger '
-                    'Bericht vor.</p><p>Bitte im GitHub-Workflow <strong>prepare-next</strong> manuell starten. '
-                    'Dabei wird jetzt keine Stellenmail versendet.</p>')
+            html = (f'<p>Für den Versand am <strong>{day} um 08:30 Uhr</strong> ist noch kein fertiger '
+                    'Bericht bei Brevo bestätigt eingeplant.</p><p>Bitte zuerst den Brevo-Status prüfen und '
+                    'einen fehlenden Bericht im GitHub-Workflow <strong>prepare-next</strong> vorbereiten.</p>')
         message.set_content(text)
         message.add_alternative(html + f'<p><a href="{STATUS_URL}">Status prüfen</a> · '
                                 f'<a href="{WORKFLOW_URL}">GitHub-Läufe öffnen</a></p>', subtype='html')

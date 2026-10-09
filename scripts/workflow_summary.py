@@ -12,4 +12,4 @@ for record in data["runs"][:10]:
     print(f"| {record['date']} | {record.get('revision', 'daily')} | {record['status']} | {record.get('hits', 0)} |")
 if not data["runs"]:
     print("| — | — | No production runs recorded | — |")
-print("\n`sent` means the email provider accepted the message, not that it arrived in the inbox. Brevo delivery/bounce details are in its transactional logs.")
+print("\n`scheduled` means queued for the stored future time, not sent. `sent` means the email provider accepted the message, not that it arrived in the inbox. Brevo delivery/bounce details are in its transactional logs.")

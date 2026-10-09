@@ -25,7 +25,7 @@ class AlertTests(unittest.TestCase):
         self.env.start();self.addCleanup(self.env.stop)
 
     def test_ready_report_is_silent_even_without_warning_credentials(self):
-        atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':'prepared','report':{'jobs':[]}})
+        atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':'sent','accepted_at':self.now.isoformat(),'report':{'jobs':[]}})
         sender=Mock()
         with patch.dict(os.environ,{},clear=True):
             self.assertEqual(check_readiness(self.root,self.day,sender=sender)['status'],'ready')
@@ -70,7 +70,7 @@ class AlertTests(unittest.TestCase):
         def sender(message,settings,on_sending):
             self.assertEqual(message['To'],'operator@example.org')
             self.assertIsNone(message['Cc'])
-            self.assertIn('10 Uhr',message['Subject'])
+            self.assertIn('08:40 Uhr',message['Subject'])
             self.assertNotIn('prepare-next',message.get_body(preferencelist=('plain',)).get_content())
             on_sending();return {'status':'sent'}
         self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'warning_sent')

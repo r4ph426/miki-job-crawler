@@ -2,22 +2,24 @@
 
 All times use Europe/Berlin, including daylight-saving changes.
 
-- Previous calendar day, 09:00: GitHub prepares the next weekday report.
-  Scheduled research runs Sunday–Thursday, including Sunday for Monday.
-- 16:00: GitHub checks for a completed, saved live report. If missing, a warning
-  email goes only to the operator configured in `MAIL_ALERT_TO`. A Codex heartbeat
-  checks the same remote state and notifies this chat when action is needed.
-- Manual recovery: choose `prepare-next` in `daily.yml` or use the configured
-  mobile button. Preparation does not send the job email immediately.
-- Next day, 08:30: GitHub sends the prepared report Monday–Friday. Missing reports
-  wait for manual preparation; delivery retries never start research.
-
-- Versandtag, ab 10:00: `delivery-watchdog.yml` prüft vollständige Anbieter-Akzeptanz
-  (`sent` mit `accepted_at`). Bei fehlendem/unklarem Versand warnt es ausschließlich
-  `MAIL_ALERT_TO`. Warnungen sind pro Tag getrennt vom Vorabend gespeichert und
-  werden nach akzeptierter oder unklarer Warnzustellung nicht blind wiederholt.
-  Eine separate Codex-Prüfung meldet denselben Zustand in diesem Chat, wenn die App läuft.
-  Die Prüfung sendet oder recherchiert keine Stellenmail.
+- Previous calendar day, 09:00: GitHub researches the next weekday report.
+  Runs are Sunday–Thursday, including Sunday for Monday. A retry runs from 13:00.
+- As soon as research and source verification finish: save the approved Electric
+  Blue HTML, push the durable queue marker, and send the complete email to Brevo
+  with `scheduledAt` for the following weekday at 08:30. Verify the queue by GET.
+- 16:00: the GitHub backup checks that the report is actually queued for the correct
+  time. An HTML report alone is insufficient. Missing/unknown readiness warns only
+  the operator configured in `MAIL_ALERT_TO`.
+- Next weekday, 08:30: Brevo releases the saved email from its own queue. No morning
+  GitHub or laptop execution is required. Allow up to five minutes provider delay;
+  inbox arrival is a separate step.
+- 08:40: the GitHub backup polls send/delivery events for the exact message and all
+  configured recipients. Unconfirmed acceptance triggers one operator warning per
+  day, stored separately from the readiness warning. It never sends the jobs again.
+- A separate Codex heartbeat can notify when the local app is available. This is
+  not an always-on external monitor. Verify cloud/external monitoring separately.
+- Manual recovery: choose `prepare-next` in `daily.yml` or the mobile button. It
+  prepares and queues the next weekday; it does not send the job email immediately.
 
 The former laptop 16:00 research, 17:00 check and 09:30 recovery are disabled.
 The macOS launch agent was unloaded; its plist, logs and history are preserved.
@@ -35,7 +37,8 @@ Git push before work. Competing pushes fail closed. Each outbox mutation is push
 before provider submission. A worker whose lease expired stops before sending.
 Never force-push/rebase a failed delivery-state write to resolve a conflict.
 
-`sent`, `sending`, `uncertain`, and `partial` are terminal for automatic attempts.
+`sent`, `sending`, `uncertain`, `partial`, `scheduling`, `scheduled`, and
+`schedule_uncertain` block new automatic submissions.
 Unknown acceptance still requires provider-log reconciliation. A failed claim or
 network outage cannot silently authorize a second send. Reports and run history
 remain in `state/runs/` and `state/history.json`.
@@ -55,10 +58,12 @@ A failed fetch displays unknown status, never cached readiness as confirmed curr
 The saved timestamp is shown. Only committed remote readiness counts as ready.
 
 The manual button dispatches `daily.yml` with `mode=prepare-next`. It explicitly
-prepares the next weekday, including Friday for Monday, without sending an email.
+prepares the next weekday, including Friday for Monday, and queues it at Brevo.
 An explicit manual start re-researches an already prepared report. Its prior JSON/HTML
 version is preserved in `state/preparation-history/`; failed refreshes restore the
-previous ready report. Shared leases and terminal delivery states still apply. A dispatch
+previous saved report. Once the provider may have accepted a queue request, the
+queue guard takes precedence and a refresh never restores the old unscheduled state.
+Already queued reports require confirmed cancellation before a refresh. Shared leases and terminal delivery states still apply. A dispatch
 acknowledgement is not research completion. Active workflows disable repeated
 requests; the durable claim prevents concurrent workers from sending twice.
 

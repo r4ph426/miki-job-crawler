@@ -19,13 +19,13 @@ class HybridTests(unittest.TestCase):
     def test_prepared_only_delivery_and_no_automatic_laptop_research(self):
         for clock, actor, phase in [
             ('2026-10-07T08:29:59+02:00','github',None),
-            ('2026-10-07T08:30:00+02:00','github','deliver'),
-            ('2026-10-07T09:45:00+02:00','github','deliver'),
+            ('2026-10-07T08:30:00+02:00','github',None),
+            ('2026-10-07T09:45:00+02:00','github',None),
             ('2026-10-07T16:00:00+02:00','laptop',None),
             ('2026-10-07T09:30:00+02:00','laptop',None),
             ('2026-10-11T16:00:00+02:00','laptop',None),
             ('2026-10-26T07:29:59+00:00','github',None),
-            ('2026-10-26T07:30:00+00:00','github','deliver'),
+            ('2026-10-26T07:30:00+00:00','github',None),
         ]:
             self.assertEqual(plan(datetime.fromisoformat(clock),actor)[0],phase)
 
@@ -127,7 +127,7 @@ class HybridTests(unittest.TestCase):
             payload=write_feed(root,store)
             self.assertTrue(payload['records']['2026-10-08']['has_report'])
             self.assertNotIn('private',json.dumps(payload))
-            self.assertTrue(readiness(root,'2026-10-08')['ready'])
+            self.assertFalse(readiness(root,'2026-10-08')['ready'])
 
     def test_manual_refresh_preserves_old_report_and_restores_it_after_failure(self):
         with tempfile.TemporaryDirectory() as folder:
@@ -151,22 +151,22 @@ class HybridTests(unittest.TestCase):
             root=Path(folder);day='2026-10-08';now=datetime.now(timezone.utc)
             atomic_json(root/'state/runs'/f'{day}.json',{'date':day,'status':'prepared','report':{'jobs':[]}})
             atomic_json(root/'state/coordinator.json',{'lease':{'token':'token','expires_at':(now+timedelta(minutes=40)).isoformat()}})
-            runner=Mock(return_value={'status':'prepared'})
+            runner=Mock(return_value={'status':'prepared'});scheduler=Mock(return_value={'status':'scheduled'})
             with patch('miki_jobsearch.hybrid.claim',return_value='token'),patch('miki_jobsearch.hybrid.complete'),patch('miki_jobsearch.hybrid.git_persister',return_value=Mock()):
-                execute(root,'manual',phase='prepare',day=day,runner=runner)
+                execute(root,'manual',phase='prepare',day=day,runner=runner,scheduler=scheduler)
                 runner.assert_not_called()
-                execute(root,'manual',phase='prepare',day=day,runner=runner,refresh=True)
+                execute(root,'manual',phase='prepare',day=day,runner=runner,refresh=True,scheduler=scheduler)
                 runner.assert_called_once()
                 self.assertTrue(runner.call_args.kwargs['prepare'])
                 with self.assertRaises(ValueError):
                     execute(root,'github',phase='prepare',day=day,refresh=True)
 
-    def test_delivery_warning_targets_today_from_ten_on_weekdays_across_dst(self):
+    def test_delivery_warning_targets_today_from_0840_across_dst(self):
         for clock,expected in [
-            ('2026-10-08T09:59:59+02:00',None),
-            ('2026-10-08T10:00:00+02:00','2026-10-08'),
-            ('2026-10-09T10:00:00+02:00','2026-10-09'),
-            ('2026-10-10T10:00:00+02:00',None),
-            ('2026-10-26T08:59:59+00:00',None),
-            ('2026-10-26T09:00:00+00:00','2026-10-26')]:
+            ('2026-10-08T08:39:59+02:00',None),
+            ('2026-10-08T08:40:00+02:00','2026-10-08'),
+            ('2026-10-09T08:40:00+02:00','2026-10-09'),
+            ('2026-10-10T08:40:00+02:00',None),
+            ('2026-10-26T07:39:59+00:00',None),
+            ('2026-10-26T07:40:00+00:00','2026-10-26')]:
             self.assertEqual(scheduled_target(datetime.fromisoformat(clock),'delivery-check'),expected)

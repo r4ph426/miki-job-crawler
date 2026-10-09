@@ -22,7 +22,7 @@ from .research import ResearchError, canonical_url, research, select_jobs, tls_c
 from .salaries import with_salary_estimates
 
 BERLIN = ZoneInfo("Europe/Berlin")
-TERMINAL = {"sent", "sending", "uncertain", "partial"}
+TERMINAL = {"sent", "sending", "uncertain", "partial", "scheduling", "scheduled", "schedule_uncertain"}
 
 
 class StateSyncError(RuntimeError):
@@ -81,7 +81,7 @@ def reserved_jobs(store):
     reserved = []
     for path in (store / "runs").glob("*.json"):
         record = read_json(path, {})
-        if record.get("status") in {"sending", "uncertain"}:
+        if record.get("status") in {"sending", "uncertain", "scheduling", "scheduled", "schedule_uncertain"}:
             reserved.extend(dict(job, date=record["date"], origin="Reserved pending delivery reconciliation")
                             for job in record.get("report", {}).get("jobs", []))
     return reserved
@@ -179,7 +179,7 @@ class NoMailRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def send_brevo(message, settings, on_sending):
+def send_brevo(message, settings, on_sending, scheduled_at=None):
     """Save a durable marker before POST; never retry an uncertain acceptance."""
     payload = {
         "sender": {"email": settings["MAIL_FROM"], "name": "Stellen für Miki"},
@@ -192,6 +192,8 @@ def send_brevo(message, settings, on_sending):
     }
     if settings["MAIL_CC"]:
         payload["cc"] = [{"email": address.strip()} for address in settings["MAIL_CC"].split(",")]
+    if scheduled_at is not None:
+        payload["scheduledAt"] = scheduled_at
     # Additional provider deduplication; durable local/Git state remains the guard.
     payload["headers"]["Idempotency-Key"] = hashlib.sha256(
         json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
@@ -228,7 +230,8 @@ def send_brevo(message, settings, on_sending):
     except (ValueError, UnicodeError):
         raise DeliveryFailure("Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
                               ambiguous=True) from None
-    return {"status": "sent", "refused_count": 0, "provider_message_id": provider_id}
+    return {"status": "scheduled" if scheduled_at is not None else "sent",
+            "refused_count": 0, "provider_message_id": provider_id}
 
 
 def send_mail(message, settings, on_sending):

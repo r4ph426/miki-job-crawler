@@ -3,8 +3,9 @@ name: Miki advance research and readiness check
 on:
   schedule:
     # Sunday–Thursday prepares the next calendar weekday. Both Berlin DST offsets.
-    - cron: "0 7,8 * * 0-4"
-    # Independent readiness check from 16:00 Berlin, plus a retry.
+    - cron: "0 7,8,11,12 * * 0-4"
+    # 09:00 preparation and 13:00 retries; local guards cover both DST offsets.
+    # GitHub readiness backup from 16:00 Berlin, plus a retry.
     - cron: "0,30 14,15,16 * * 0-4"
   workflow_dispatch:
     inputs:
@@ -38,7 +39,7 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Prepare tomorrow or check readiness
         env:
-          TASK: ${{ inputs.task || (contains(github.event.schedule, '7,8') && 'prepare-next' || 'readiness-check') }}
+          TASK: ${{ inputs.task || (contains(github.event.schedule, '7,8,11,12') && 'prepare-next' || 'readiness-check') }}
           STATE_BRANCH: ${{ github.event.repository.default_branch }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
@@ -48,6 +49,8 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_ALERT_TO: ${{ secrets.MAIL_ALERT_TO || vars.MAIL_ALERT_TO }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
         run: |
           set -euo pipefail
           git config user.name "miki-jobsearch-bot"

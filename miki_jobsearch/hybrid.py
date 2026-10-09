@@ -11,22 +11,21 @@ from .status_feed import write_feed
 
 from .service import (BERLIN, TERMINAL, StateSyncError, atomic_json, git_persister,
                       read_json, run)
+from .scheduled_mail import refresh_status, schedule_report
 
 LEASE_MINUTES = 40
 
 
 def plan(now, actor):
-    """Automatic delivery only; preparation/checks have explicit workflow tasks."""
+    """No automatic immediate send. Brevo owns the morning scheduled delivery."""
     local = now.astimezone(BERLIN)
-    if actor == "github" and local.weekday() < 5 and (local.hour, local.minute) >= (8, 30):
-        return "deliver", local.date().isoformat()
     return None, local.date().isoformat()
 
 
 def scheduled_target(now, task):
     local = now.astimezone(BERLIN)
     if task == "delivery-check":
-        return local.date().isoformat() if local.weekday() < 5 and local.hour >= 10 else None
+        return local.date().isoformat() if local.weekday() < 5 and (local.hour, local.minute) >= (8, 40) else None
     tomorrow = local.date() + timedelta(days=1)
     if tomorrow.weekday() >= 5:
         return None
@@ -39,11 +38,12 @@ def scheduled_target(now, task):
 
 def readiness(root, day):
     record = read_json(root / "state/runs" / f"{day}.json", {})
-    if record.get("status") in TERMINAL:
-        return {"date": day, "status": record["status"], "ready": record["status"] == "sent"}
-    ready = (record.get("status") == "prepared" and record.get("date") == day
-             and bool(record.get("report")) and not record.get("fixture"))
+    ready = (record.get("date") == day and not record.get("fixture") and
+             ((record.get("status") == "sent" and bool(record.get("accepted_at"))) or
+              (record.get("status") == "scheduled" and record.get("provider_status") == "queued"
+               and bool(record.get("schedule_verified_at")) and bool(record.get("report")))))
     return {"date": day, "status": "ready" if ready else "not_ready", "ready": ready,
+            "delivery_status": record.get("status", "missing"),
             "hits": record.get("hits", 0), "researched_at": record.get("researched_at"),
             "delivery_time": f"{day}T08:30:00 Europe/Berlin"}
 
@@ -97,19 +97,46 @@ def complete(root, token, day, result):
     checkpoint(root, f"Confirm Miki readiness {day}")
 
 
-def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=False):
+def check_provider(root, day, now=None):
+    now = now or datetime.now(timezone.utc)
+    token = claim(root, now, "github", "provider-check", day)
+    if token is None:
+        return {"date": day, "status": "deferred", "reason": "Another worker is active"}
+    save = git_persister(root, root / "state")
+    def persist(record):
+        lease = read_json(root / "state/coordinator.json", {}).get("lease", {})
+        if lease.get("token") != token or datetime.now(timezone.utc) >= datetime.fromisoformat(lease["expires_at"]):
+            raise StateSyncError("Provider check lease expired")
+        save(record)
+    try:
+        result = refresh_status(root, root / "state", day, now=now, persist=persist)
+    except StateSyncError:
+        raise
+    except Exception:
+        complete(root, token, day, {"status": "provider_check_failed"})
+        raise
+    complete(root, token, day, result)
+    return result
+
+
+def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=False,
+            scheduler=schedule_report):
     now = now or datetime.now(timezone.utc)
     planned, planned_day = plan(now, actor)
     phase, day = phase or planned, day or planned_day
     if not phase:
         return {"status": "skipped", "reason": "Outside hybrid schedule"}
     record = read_json(root / "state/runs" / f"{day}.json", {})
+    if refresh and record.get("status") in {"scheduled", "scheduling", "schedule_uncertain"}:
+        raise ValueError("Already scheduled at Brevo; verify cancellation before replacing the report")
+    if phase == "prepare" and record.get("status") == "scheduled":
+        return check_provider(root, day, now=now)
     if record.get("status") in TERMINAL:
         return {"status": "skipped", "delivery_status": record["status"], "date": day}
     if refresh and (actor != "manual" or phase != "prepare"):
         raise ValueError("Refresh is only available for explicit manual preparation")
-    if phase == "prepare" and readiness(root, day)["ready"] and not refresh:
-        return readiness(root, day)
+    reuse_prepared = (phase == "prepare" and bool(record.get("report")) and not record.get("fixture")
+                      and record.get("status") in {"prepared", "schedule_failed"} and not refresh)
     if phase == "deliver" and not record.get("report"):
         return {"status": "not_ready", "date": day, "reason": "No ready report; manual preparation required"}
     token = claim(root, now, actor, phase, day)
@@ -132,16 +159,19 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
             archive.with_suffix(".html").write_bytes(backup[1])
         persist(record)
     try:
-        result = runner(root, root / "state", now=now, dry_run=False, persist=persist,
-                        prepare=phase == "prepare", delivery_date=day if phase == "prepare" else None,
-                        require_prepared=phase == "deliver",
-                        allow_early_prepare=phase == "prepare")
+        if not reuse_prepared:
+            result = runner(root, root / "state", now=now, dry_run=False, persist=persist,
+                            prepare=phase == "prepare", delivery_date=day if phase == "prepare" else None,
+                            require_prepared=phase == "deliver",
+                            allow_early_prepare=phase == "prepare")
+        if phase == "prepare":
+            result = scheduler(root, root / "state", day, now=now, persist=persist)
     except StateSyncError:
         # The remote may have advanced or ownership expired. Leave the lease and
         # sending checkpoint for inspection; never merge and blindly retry.
         raise
     except Exception:
-        if backup:
+        if backup and read_json(path, {}).get("status") not in TERMINAL:
             failed = read_json(path, {})
             atomic_json(archive.with_name(archive.name + "--failed").with_suffix(".json"), failed)
             atomic_json(path, backup[0])
@@ -158,7 +188,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--actor", choices=["laptop", "github"], required=True)
-    parser.add_argument("--manual-prepare", action="store_true", help="Explicitly prepare the next weekday without sending")
+    parser.add_argument("--manual-prepare", action="store_true", help="Prepare and queue the next weekday at Brevo")
     parser.add_argument("--refresh", action="store_true", help="Re-research a prepared report; preserve its previous version")
     parser.add_argument("--task", choices=["deliver", "prepare-next", "readiness-check", "delivery-check"], default="deliver")
     args = parser.parse_args()
@@ -184,7 +214,7 @@ def main():
     else:
         result = execute(root, args.actor)
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    if result.get("delivery_status") in {"sending", "uncertain", "partial"}:
+    if result.get("delivery_status") in {"sending", "uncertain", "partial", "scheduling", "schedule_uncertain"}:
         return 1
     return 0
 

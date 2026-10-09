@@ -43,15 +43,18 @@ or environment needs its own live check.
 Use the [deployment guide](docs/deployment.md) to configure GitHub Actions,
 credentials and recipients, validate one real delivery, and hand over from the old
 service. The [advance research operating guide](docs/laptop-first.md) describes GitHub
-research at 09:00 on the previous calendar day, a 16:00 readiness check with an
-operator warning, and prepared-only delivery at 08:30 Europe/Berlin, Monday–Friday.
-Missing reports require manual preparation. GitHub may delay scheduled jobs;
-this is not a precise-time SLA.
+research at 09:00 on the previous calendar day (Sunday–Thursday), retries from 13:00,
+and immediate scheduling of the completed email at Brevo. The 16:00 readiness check
+requires a verified Brevo queue entry for the next weekday at 08:30 Europe/Berlin.
+Brevo sends without a morning GitHub trigger; allow its documented five-minute
+dispatch delay. The 08:40 GitHub watchdog polls actual recipient events and warns
+the operator when send acceptance is unconfirmed. GitHub checks remain best-effort.
 
 `state/runs/YYYY-MM-DD.json` records research and delivery outcomes; matching HTML
 and `state/history.json` persist with Git commits before and after email delivery.
 These commits are essential to the next runner's duplicate guard. A successful
-provider response means accepted for delivery, not proven inbox receipt. Brevo's
+scheduled provider response means queued, not sent. Actual send events produce
+`sent` and `accepted_at`; inbox receipt remains separate. Brevo's
 transactional logs show delivery and bounce events.
 
 An explicitly requested correction can prepare a fresh crawl under a separate

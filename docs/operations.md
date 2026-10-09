@@ -9,11 +9,28 @@ green offline check, skipped job, or running process as evidence of live deliver
 | `research_failed` | API/coverage/validation failed. No email or reported-job history update. Fix the cause; the next slot can retry. |
 | `configuration_failed` | Required mail settings missing/invalid. Fix the named secure setting; any saved research is retained. |
 | `prepared` | Saved report; not yet accepted by the provider. A retry reuses this report. |
+| `scheduling` | Durable marker before the future Brevo POST. After interruption, inspect the queue before retrying. |
+| `schedule_failed` | Explicitly rejected queue request. Fix the cause; automatic preparation retries reuse the report. |
+| `schedule_uncertain` | Queue acceptance is unknown. No automatic send or refresh; inspect Brevo first. |
+| `scheduled` | Brevo accepted a future email. `schedule_verified_at` plus `provider_status=queued` proves the expected queue entry. This is not a sent email. |
 | `failed` | Provider explicitly rejected delivery, or preparation failed before submission. Fix credentials/service; retry reuses the report. |
 | `sending` | Durable checkpoint before the API POST or SMTP DATA. After a crash, acceptance is unknown; reconcile. |
 | `uncertain` | Submission outcome unknown; inspect provider logs. No automatic resend. |
 | `partial` | SMTP accepted for some recipients but rejected others. No resend to all recipients. Investigate and complete delivery separately. |
 | `sent` | Provider accepted the submission for all configured recipients; inbox receipt is not yet proven. Same-date production runs skip. |
+
+Scheduled sends store `scheduled_at` and `schedule_accepted_at` separately from
+`accepted_at`. From 08:40, exact-message events for every configured To/CC recipient
+are required to set `sent` and add jobs to delivered history. A processed queue alone
+does not confirm send acceptance. `delivered_at` requires delivery events for everyone
+and indicates receiving-server acceptance, not human reading or inbox placement.
+Queued/unclear jobs remain reserved against repetition in later reports.
+
+Do not delete a scheduled run or refresh its body locally. First inspect Brevo's
+queue using the saved `provider_message_id`; cancellation requires a confirmed
+204 response from `DELETE /v3/smtp/email/{identifier}`. Preserve that evidence in
+the run record before an operator makes an unsent report retryable. The service
+never automatically cancels or replaces a queued message.
 
 Research and detail-page fetches preserve TLS verification. In a managed cloud
 environment the HTTP client uses `REQUESTS_CA_BUNDLE`/`SSL_CERT_FILE` when supplied.

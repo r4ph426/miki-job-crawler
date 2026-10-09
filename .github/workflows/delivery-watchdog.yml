@@ -2,8 +2,8 @@ name: Miki delivery watchdog
 
 on:
   schedule:
-    # Weekdays from 10:00 Berlin across DST, plus retries. Warning only.
-    - cron: "0,15 8,9,10 * * 1-5"
+    # Provider polling from 08:40 Berlin across DST, plus retries. Never resends.
+    - cron: "40,50 6,7,8 * * 1-5"
   workflow_dispatch:
 
 concurrency:
@@ -37,6 +37,8 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER || vars.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           MAIL_ALERT_TO: ${{ secrets.MAIL_ALERT_TO || vars.MAIL_ALERT_TO }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
         run: |
           set -euo pipefail
           git config user.name "miki-jobsearch-bot"
