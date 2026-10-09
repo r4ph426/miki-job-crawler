@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T08:59:31.655126+00:00",
+  "updated_at": "2026-10-09T08:59:33.200602+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "github_previous_day",
@@ -51,12 +51,12 @@
     },
     "2026-10-09": {
       "date": "2026-10-09",
-      "status": "sending",
+      "status": "sent",
       "hits": 2,
       "researched_at": "2026-10-08T19:39:14.689787+00:00",
       "prepared_at": "2026-10-08T19:42:57.840304+00:00",
       "created_at": "2026-10-08T19:39:14.689787+00:00",
-      "accepted_at": null,
+      "accepted_at": "2026-10-09T08:59:33.194659+00:00",
       "has_report": true
     }
   },
