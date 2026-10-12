@@ -46,5 +46,13 @@
       "actor": "manual",
       "last_result": "failed"
     }
+  },
+  "lease": {
+    "token": "c5716db6fc0a4762b17331a8a87b999f",
+    "actor": "github",
+    "phase": "provider-check",
+    "date": "2026-10-13",
+    "started_at": "2026-10-12T21:58:52.771728+00:00",
+    "expires_at": "2026-10-12T22:38:52.771728+00:00"
   }
 }
