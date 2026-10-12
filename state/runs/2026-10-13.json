@@ -244,5 +244,7 @@
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
   "expected_recipients": 2,
   "provider_batch_id": "0eb5e22c-b1eb-4405-9a20-6f60566f6801",
-  "error": "Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying"
+  "error": "Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
+  "provider_checked_at": "2026-10-12T21:58:52.771728+00:00",
+  "provider_check_error": "Brevo status unavailable (HTTP 404)"
 }
