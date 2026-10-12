@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-13",
+  "created_at": "2026-10-12T14:13:26.928981+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 13.10.2026 · 3 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 12.10.2026 für den Versand am 13.10.2026. 7 neue, plausibel passende Anzeigen gefunden (A/B/C abgedeckt). Schwerpunkt heute: ATS-Neuzugänge im Vertriebsinnendienst und Einkauf; eine A‑Projektassistenz über StepStone. Keine Dubletten zu den bereits gemeldeten Leads. Zitatbelege aus Live-Detailseiten vorhanden. Pendelzeiten mangels Adressen konservativ geschätzt.",
+    "next_action": "Zwei schnelle ATS-Bewerbungen priorisieren: 1) Tentamus Einkaufsmanager DACH (starkes B‑Match). 2) AZBA Vertriebsinnendienst (C, klare Auftragsabwicklung). Danach telefonische Kurzabklärung bei O’Donnell (Arbeitsort bis Umzug 05/2027) und Kalorimeta (tatsächlicher Standort/Hybrid).",
+    "weekend_action": "—",
+    "jobs": [
+      {
+        "title": "Einkaufsmanager DACH (m/w/d) in Vollzeit",
+        "employer": "Tentamus Group GmbH",
+        "url": "https://tentamus.jobs.personio.de/job/2792160?language=de",
+        "district": "Pankow (Weißensee)",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung (unbefristet)",
+        "salary": "Unbekannt",
+        "commute": "ÖPNV ca. 15–20 Minuten von Berlin-Heinersdorf",
+        "pro": "Starke Schnittstellen- und Lieferantenmanagement-Rolle mit Rahmenvertragsverhandlungen und Prozessoptimierung – hoher Fit zu Supplier-/MOQ-/Leadtime-Erfahrung.",
+        "con": "Explizit mind. 3 Jahre Einkaufserfahrung gefordert; Einkaufstitel bisher nicht ausgewiesen, Argumentation über verwandte Praxis nötig.",
+        "effort_details": "ATS (Personio): Aufgaben/Anforderungen prüfen 10 Min, CV auf Einkauf/Projekte fokussieren 25 Min, Kurztext 5 Min, Formular 15 Min = 55 Min.",
+        "deadline": "",
+        "family": "A",
+        "source_group": "ats",
+        "scores": {
+          "skill": 35,
+          "entry": 22,
+          "commute": 20,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "relevanter KPIs und Erstellung regelmäßiger Reports für das Management Koordination und Begleitung von Optimierungs- und Digitalisierungsprojekten im Einkauf, beispielsweise bei der Einführung von E-Procurement- oder SRM-Systemen Ihr Profil Erfolgreich abgeschlossenes Studium in Betriebswirtschaft, Finanzwirtschaft oder eine abgeschlossene kaufmännische Ausbildung mit einschlägiger Berufserfahrung Mindestens drei Jahre relevante Berufserfahrung im Einkauf, Kenntnisse der TIC-Branche sind",
+        "score": 84,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Vertriebsmitarbeiter Innendienst (w/m/d)",
+        "employer": "O'Donnell Moonshine",
+        "url": "https://odonnell-moonshine.jobs.personio.de/job/2817278",
+        "district": "Friedrichshain-Kreuzberg (Kreuzberg) – Umzug 2027 nach Pankow/Weißensee angekündigt",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Fixgehalt 3.000–3.300 € brutto/Monat im ersten Jahr; zusätzlich 13. Gehalt (KPIs) und 14. Gehalt (Erfolgsprämie)",
+        "commute": "ÖPNV ca. 40 Minuten nach Kreuzberg; künftig nach Weißensee vorauss. 20–25 Minuten",
+        "pro": "Klare Vergütung mit 13. und 14. Gehalt sowie gute Benefits; Innendienst-B2B mit enger Schnittstellenarbeit.",
+        "con": "Starker Fokus auf aktive Telefonakquise/Neukundengewinnung – vertriebsintensiver als klassische Koordinationsrollen.",
+        "effort_details": "ATS (Personio): Profil prüfen 10 Min, CV/Schwerpunkte auf Sales-Innendienst zuschneiden 20 Min, Kurztext 5 Min, Formular 20 Min = 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 26,
+          "entry": 28,
+          "commute": 15,
+          "conditions": 8
+        },
+        "effort_minutes": 55,
+        "evidence": "beherrschst die deutsche Sprache absolut sicher in Wort und Schrift und findest schnell den passenden Ton im Gespräch mit Ansprechpartnern im Handel Du arbeitest selbstständig, behältst auch an vollgepackten Tagen den Überblick und suchst lösungsorientiert nach Wegen zum Ziel Du bringst gerne frische Ideen ein, gestaltest unsere Marke aktiv mit und hast Spaß am gemeinsamen Erfolg in einem dynamischen Team Bei uns erwartet dich im ersten Jahr ein Fixgehalt zwischen 3.000 € und 3.300 € brutto",
+        "score": 77,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "kaufmännischer Mitarbeiter (m/w/d) im Vertriebsinnendienst - Umweltdienstleistungen",
+        "employer": "AZBA – Analytisches Zentrum Berlin-Adlershof GmbH",
+        "url": "https://azba.jobs.personio.de/job/1986364",
+        "district": "Treptow-Köpenick (Adlershof)",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ÖPNV ca. 50 Minuten von Berlin-Heinersdorf (konservativ geschätzt)",
+        "pro": "Breites Aufgabenpaket von Angebotserstellung bis Auftragsabwicklung in einer klaren Schnittstellenrolle – gute Passung zu koordinativem Profil.",
+        "con": "Keine Gehaltsangabe, Benefits genannt aber Vergütung bleibt unklar.",
+        "effort_details": "ATS (Personio): Profil prüfen 10 Min, Lebenslauf anpassen 20 Min, Motivationsbezug kurz 5 Min, Formular/Felder 20 Min = 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 28,
+          "entry": 26,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "zwischen Abteilungsleiter, Probenehmer, Kunden und internen Fachabteilungen Unterstützung bei der Lösung von Problemen Auftragsabwicklung: Erstellung und Bearbeitung von von Angeboten und Aufträgen, ggf. Nachverfolgung von Angeboten Überwachung des gesamten Auftragsprozesses von der Bestellung bis zur Ausführung Koordination mit anderen Abteilungen zur Sicherstellung einer reibungslosen Abwicklung Datenmanagement: Erstellung von Reports & Statistiken Teamarbeit: enge Zusammenarbeit mit",
+        "score": 70,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination Berlin",
+        "Projektassistenz Berlin",
+        "Teamassistenz Berlin",
+        "Office Management Berlin",
+        "Marketingkoordination Berlin"
+      ],
+      "B": [
+        "Einkäufer Berlin",
+        "Sachbearbeiter Einkauf Berlin",
+        "Supply Chain Berlin",
+        "Beschaffung Berlin",
+        "Lieferantenmanagement Berlin"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin",
+        "Product Coordinator Berlin",
+        "Merchandising Koordination Berlin"
+      ]
+    },
+    "family_observations": {
+      "A": "Wenige neue, fachlich passenden A‑Rollen ohne Bau-/Technikfokus; nutzbare Option heute: Prognos (breites Assistenzprofil, befristet).",
+      "B": "ATS‑Neuzugang Tentamus mit DACH‑Einkaufskoordinierung; weitere B‑Anzeigen im BA‑Portal, aber oft Personaldienstleister/technischer Einkauf.",
+      "C": "Mehrere solide Personio‑Leads (AZBA, O’Donnell, Comelit, BAUER, KALO) mit klaren Auftrags‑/Innendienstaufgaben und niedriger Einstiegshürde."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Listen durchsucht (Einkauf, Vertriebsinnendienst, Sachbearbeitung). Mehrere Detailseiten liefern 410 (abgelaufen) – daher heute keine BA‑Detailkandidaten gemeldet. Beispiele siehe Listenansicht (z.B. WISAG/PohlCon/JOP) mit Zeitstempeln."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Suche nach Projektassistenz/Auftragsbearbeitung/Vertriebsinnendienst/Lieferantenmanagement. Detailkandidat: Prognos (Projektassistenz)."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Mind. 6 neue/aktuelle Personio‑Anzeigen gesichtet (AZBA, O’Donnell, Comelit, BAUER, Kalorimeta, Tentamus)."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal geprüft; relevante A‑/Assistenz‑Ausschreibungen heute überwiegend bereits gemeldet (z.B. LfG‑B, SenBJF Frist 2026‑10‑12). Keine neue, passende Detailanzeige mit offener Frist hinzugekommen."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/FashionJobs geprüft; keine neuen, passenden Berlin‑Rollen in Merchandising-/Product‑Coordination. Aeyde/Wardow bereits früher gemeldet; heute keine neuen passenden Mode‑Koordinationsanzeigen."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://comelitgroup.jobs.personio.de/job/2540527",
+        "reason": "Standort ist Comelit DE mit deutscher Niederlassung in Grevenbroich; kein Berlin-Bezug im Inserat und nur optional „mobiles Arbeiten“ – nicht als Berliner/Umkreis-Stelle verifizierbar."
+      },
+      {
+        "url": "https://bauer-elektroanlagen.jobs.personio.de/job/2644194?language=de",
+        "reason": "Erfordert abgeschlossene technische Ausbildung (idealerweise Meister/Techniker) in Elektrotechnik/Versorgungstechnik/MSR sowie Erfahrung in Projektierung/Kalkulation von GA – fällt unter harte Ausschlüsse (technische/ingenieurnahe Pflichtqualifikation)."
+      }
+    ],
+    "assessment_pages_checked": 5,
+    "rejected": [
+      {
+        "title": "Mitarbeiter:in Vertriebsinnendienst B2B (w/m/d) – Region Berlin/Brandenburg",
+        "url": "https://kalorimeta.jobs.personio.de/job/2571341",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Mitarbeiter:in Vertriebsinnendienst B2B (w/m/d) – Region Berlin/Brandenburg",
+          "employer": "Kalorimeta GmbH (KALO)",
+          "url": "https://kalorimeta.jobs.personio.de/job/2571341",
+          "district": "Unbekannt (Region)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Regionaler Einsatz mit Berliner Team; Bürostandort nicht genannt – konservativ 45–60 Min.",
+          "pro": "Klarer B2B‑Innendienst mit Angebotserstellung und Vertragsanlage; strukturierte Prozesse.",
+          "con": "Wohnungswirtschaft-spezifische Tools/Prozesse zu lernen.",
+          "effort_details": "ATS (Personio) 55 Min: 15 Screening, 20 CV‑Anpassung (Angebote/Verträge, CRM), 20 Formular.",
+          "deadline": "",
+          "evidence": "„Du übernimmst die Vorbereitung und die Erstellung von Kundenangeboten sowie Verträgen in Zusammenarbeit mit dem Area Sales Manager:in.“",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      },
+      {
+        "title": "Projektassistenz (d/m/w) – Bereich Sozial- und Gesellschaftspolitik (2 Jahre)",
+        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Projektassistenz (d/m/w) – Bereich Sozial- und Gesellschaftspolitik (2 Jahre)",
+          "employer": "Prognos AG",
+          "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit (40 h/Woche)",
+          "contract": "Befristet 2 Jahre",
+          "salary": "Unbekannt",
+          "commute": "Adresse nicht genannt; konservativ 45–60 Min.",
+          "pro": "Klassische A‑Projektassistenz in einer renommierten Beratung; klare Organisations-/Koordinationsrolle.",
+          "con": "Themenschwerpunkt Sozial-/Gesellschaftspolitik fachfremd; befristet.",
+          "effort_details": "StepStone/AG 70 Min: 15 Recherche, 30 Anschreiben (Projektkoordination/Organisation), 25 Formular/Upload.",
+          "deadline": "",
+          "evidence": "„Sie arbeiten in einem engagierten Team und unterstützen die Projektleitung sowie das fachliche Projektteam bei der strukturierten Organisation und administrativen Begleitung der Geschäftsstelle.“",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 22,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 3,
+  "researched_at": "2026-10-12T14:13:26.928981+00:00",
+  "prepared_at": "2026-10-12T14:17:17.717125+00:00",
+  "message_id": "<miki-2026-10-13-f1be1079d2de7d72@miki-jobsearch>",
+  "last_attempt_at": "2026-10-12T14:13:26.928981+00:00",
+  "last_attempt_run_id": "38261315141",
+  "design_version": "electric-blue-v1"
+}
