@@ -245,6 +245,6 @@
   "expected_recipients": 2,
   "provider_batch_id": "0eb5e22c-b1eb-4405-9a20-6f60566f6801",
   "error": "Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
-  "provider_checked_at": "2026-10-12T21:58:52.771728+00:00",
-  "provider_check_error": "Brevo status unavailable (HTTP 404)"
+  "provider_checked_at": "2026-10-13T14:33:02.027868+00:00",
+  "provider_check_error": "No unique exact-content sent message for every recipient; inspect Brevo"
 }
