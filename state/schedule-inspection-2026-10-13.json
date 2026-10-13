@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-13",
+  "operation": "GET-only scheduled queue inspection",
+  "matches": [
+    {
+      "provider_message_id": "<202610121417.66211209980@smtp-relay.mailin.fr>",
+      "provider_status": "processed",
+      "scheduled_at": "2026-10-13T06:30:00Z"
+    }
+  ],
+  "checks": [
+    {
+      "operation": "recipient email list",
+      "count": 8
+    },
+    {
+      "operation": "recipient email list",
+      "count": 13
+    },
+    {
+      "operation": "queue lookup",
+      "error": "Brevo status unavailable (HTTP 404)"
+    }
+  ]
+}
