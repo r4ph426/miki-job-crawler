@@ -58,5 +58,13 @@
       "actor": "github",
       "last_result": "warning_sent"
     }
+  },
+  "lease": {
+    "token": "265b72ae17db4d078c9b1b6821c2a850",
+    "actor": "manual",
+    "phase": "prepare",
+    "date": "2026-10-15",
+    "started_at": "2026-10-14T09:52:59.487250+00:00",
+    "expires_at": "2026-10-14T10:32:59.487250+00:00"
   }
 }

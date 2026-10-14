@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T06:53:46.174340+00:00",
+  "updated_at": "2026-10-14T09:52:59.490456+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -174,7 +174,13 @@
       "has_mail": true
     }
   },
-  "lease": null,
+  "lease": {
+    "actor": "manual",
+    "phase": "prepare",
+    "date": "2026-10-15",
+    "started_at": "2026-10-14T09:52:59.487250+00:00",
+    "expires_at": "2026-10-14T10:32:59.487250+00:00"
+  },
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",
