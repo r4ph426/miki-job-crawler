@@ -1,7 +1,8 @@
 {
   "date": "2026-10-15",
   "kind": "readiness_warning",
-  "status": "prepared",
+  "status": "sending",
   "checked_at": "2026-10-14T18:19:01.945765+00:00",
-  "message_id": "<miki-readiness-2026-10-15@miki-jobsearch>"
+  "message_id": "<miki-readiness-2026-10-15@miki-jobsearch>",
+  "started_at": "2026-10-14T18:19:09.023265+00:00"
 }
