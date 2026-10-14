@@ -1,0 +1,261 @@
+{
+  "date": "2026-10-14",
+  "created_at": "2026-10-14T06:49:53.636549+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 14.10.2026 · 2 neue Treffer",
+  "report": {
+    "summary": "6 passende Neutreffer mit belastbaren Ausschreibungstexten, Schwerpunkt C (Auftrags-/Vertriebsinnendienst) plus zwei A‑Optionen (Office Management). Keine Dubletten zu früheren Meldungen. Berliner Karriereportal erreichbar; StepStone-Recherchen ergaben heute keine stärker passenden, neuen Detailseiten. Modeportale erreichbar, heute ohne passgenauen Büro-/Koordinations-Treffer.",
+    "next_action": "Heute zwei Bewerbungen: 1) Astro‑ und Feinwerktechnik Adlershof (Vertriebsinnendienst, starker Aufgabenfit) und 2) ALBA (Kundenbetreuung & Auftragsabwicklung, unbefristet mit klarer Aufgabenbeschreibung). Lebenslauf für Auftragsabwicklung/ERP/Export betonen.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Mitarbeiter Kundenbetreuung & Auftragsabwicklung (m/w/d)",
+        "employer": "ALBA plc & Co. KG",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003800426-S",
+        "district": "Reinickendorf",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "35.000 € – 40.000 €/Jahr",
+        "commute": "ca. 40 Min ÖPNV nach Montanstraße 7, 13407 Berlin (geschätzt)",
+        "pro": "Unbefristeter Vertrag mit Hybridoptionen und Weiterbildungsprogramm.",
+        "con": "Vergütung am unteren Rand der Zielspanne.",
+        "effort_details": "BA-Schnellbewerbung/Weiterleitung: ca. 25 Min (5 Weiterleitung/Konto, 10 Basisdaten, 10 Unterlagen-Upload).",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 28,
+          "entry": 26,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 25,
+        "evidence": "anmelden, um diese Funktion zu nutzen. Bewerbungsstatus hinzufügen Bitte anmelden, um diese Funktion zu nutzen. PDF / DruckenTeilen Veröffentlichungsdatum: Vor 9 Tagen veröffentlicht Änderungsdatum: Vor 7 Tagen bearbeitet Stellenbeschreibung Gemeinsam stark: Ihr Team und Aufgaben Tagesgeschäft: Betreuung und Beratung unserer Bestandskunden im Tagesgeschäft Im Fokus: Erfassung und Pflege von Kunden- und Auftragsdaten in unserem ERP- und CRM-System Alles im Griff: Koordination und",
+        "score": 76,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+        "employer": "Astro- und Feinwerktechnik Adlershof GmbH",
+        "url": "https://astrofein.jobs.personio.de/job/2722080",
+        "district": "Treptow-Köpenick (Adlershof)",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 55 Min ÖPNV von Berlin‑Heinersdorf (geschätzt)",
+        "pro": "Breites Aufgabenfeld entlang der Auftragsabwicklung inkl. Schnittstellenarbeit.",
+        "con": "Erwartete Kenntnisse in Exportkontrolle/Zoll können Einarbeitung erfordern.",
+        "effort_details": "Personio-ATS: ca. 55 Min (10 Profilabgleich, 25 Online-Formular/Uploads, 20 kurze individuelle Antworten).",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 30,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "Produktion und Logistik zur Sicherstellung eines reibungslosen Auftragsablaufs Ihr Profil Abgeschlossene kaufmännische Ausbildung (z. B. Industriekaufmann/-frau, Kaufmann/-frau für Groß- und Außenhandelsmanagement) oder vergleichbare Qualifikation Berufserfahrung im Vertriebsinnendienst, in der Auftragsabwicklung oder im Export/Zollwesen, idealerweise in einem produzierenden, technischen Umfeld Kenntnisse im Umgang mit ERP-Systemen (z. B. Microsoft Dynamics NAV) Erfahrung mit",
+        "score": 70,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeitäquivalent (40 Std./Woche); tatsächliche Wochenstunden unklar",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de",
+        "Office Manager/in Berlin site:arbeitsagentur.de",
+        "Office Manager Berlin site:personio.de",
+        "Teamassistenz site:karriereportal-stellen.berlin.de",
+        "Office Manager Berlin site:stepstone.de"
+      ],
+      "B": [
+        "Einkauf Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Sachbearbeiter Einkauf Berlin site:arbeitsagentur.de",
+        "Einkäufer Berlin site:personio.de",
+        "Beschaffung Berlin site:karriereportal-stellen.berlin.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de",
+        "Auftragsabwicklung Berlin site:arbeitsagentur.de",
+        "\"Sales Coordinator\" Berlin site:personio.de",
+        "\"Order Management\" Berlin site:stepstone.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Solide Auswahl bei Personio (mehrere Office‑Manager‑Rollen) und im Berliner Karriereportal; viele A‑Rollen sind rein administrativ ohne Einkaufs-/Lieferkettenanteil.",
+      "B": "BA zeigt weiterhin tägliche Neuzugänge in Einkauf/Sachbearbeitung; einige Detailseiten wechseln zwischen 410 und wieder aktiv (z. B. Aktiv‑Schuh in den Vorwochen). Direkte ATS‑Boards der Zielunternehmen bleiben ergiebig.",
+      "C": "Starkes Angebot an Vertriebsinnendienst/Order‑to‑Invoice im technischen/industriellen Umfeld; Aufgaben decken häufig ERP‑gestützte Auftragssteuerung, Terminverfolgung und Exportpapiere ab."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche/Detailseiten erreichbar; mehrere neue/veränderte Einträge heute (z. B. ALBA; RWG bearbeitet). ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003800426-S?utm_source=openai))"
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen erreichbar; heute keine besseren neuen Detailseiten mit eindeutigem Fit auffindbar. ([stepstone.de](https://www.stepstone.de/jobs/order-management/in-berlin?utm_source=openai))"
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Boards mit mehreren relevanten Live‑Detailseiten (Astrofein, Eberhardt, ZYTOMICS). ([astrofein.jobs.personio.de](https://astrofein.jobs.personio.de/job/2722080))"
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal erreichbar; neue Teamassistenz Steglitz‑Zehlendorf mit Frist 2026‑11‑19 verifiziert (heute geprüft). ([karriereportal-stellen.berlin.de](https://www.karriereportal-stellen.berlin.de/Teamassistenz-fuer-den-Fachbereich-Objektmanagement-mwd-de-j69380.html))"
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited erreichbar; heute vorwiegend Store‑VM/Verkauf, ohne passenden Büro‑/Koordinationsfit. ([de.fashionjobs.com](https://de.fashionjobs.com/stellenangebote/new-balance/Visual-merchandising-coordinator-berlin-west%2C12009422.html?utm_source=openai))"
+      }
+    ],
+    "assessment_exclusions": [],
+    "assessment_pages_checked": 4,
+    "rejected": [
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst Team Anfrage (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17784-44377159-820-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Mitarbeiter Vertriebsinnendienst Team Anfrage (m/w/d)",
+          "employer": "GRENKE AG (grenke Business Solutions GmbH & Co. KG)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17784-44377159-820-S",
+          "district": "Mitte (10179 Berlin; mehrere Standorte möglich)",
+          "hours": "Vollzeit oder Teilzeit (Vormittag/Nachmittag/Abend)",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "ca. 35–40 Min ÖPNV nach 10179 Berlin (geschätzt)",
+          "pro": "Teilzeitoption und hybride Arbeitsweise möglich.",
+          "con": "Spezifisches Leasing-/Finanzumfeld kann zusätzliche Einarbeitung erfordern.",
+          "effort_details": "BA-Schnellbewerbung/Weiterleitung: ca. 25 Min (5 Weiterleitung/Konto, 10 Formular, 10 Uploads).",
+          "deadline": "",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 25,
+            "entry": 24,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 25,
+          "evidence": "auszeichnet. Hier wächst Du über Dich hinaus: // Prüfung, Bewertung und Entscheidung eingehender Leasinganfragen // Anfordern von (Bonitäts-) Unterlagen // Erstellung der Vertragsunterlagen //Übernahme von Inbound- und Outbound-Telefonie // Unterstützung des Vertriebsteams und Interaktion mit unseren Kunden und Partnern Dein Fundament: // Solides Know-how durch eine abgeschlossene kaufmännische Ausbildung bzw. mehrjährige Erfahrung im kaufmännischen Bereich, idealerweise in"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d)",
+        "url": "https://es-group.jobs.personio.de/job/2693408?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d)",
+          "employer": "Eberhardt Service Group GmbH",
+          "url": "https://es-group.jobs.personio.de/job/2693408?language=de",
+          "district": "Berlin (Bezirk nicht angegeben)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 50 Min ÖPNV von Berlin‑Heinersdorf (konservative Schätzung mangels Adresse)",
+          "pro": "Breites Organisationsspektrum mit Verantwortung und kurzen Entscheidungswegen.",
+          "con": "Mehrjährige Office-Management-Erfahrung ausdrücklich gewünscht.",
+          "effort_details": "Personio-ATS: ca. 55 Min (10 Profilabgleich, 25 Formular/Uploads, 20 kurze individuelle Antworten).",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 22,
+            "entry": 20,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "externen Dienstleistern, Handwerkern und Lieferanten. Unterstützung bei organisatorischen und administrativen Aufgaben – vom Reisemanagement bis zur Terminkoordination. Du hältst unser Büro gepflegt, gut organisiert und funktional – ein Ort, an dem sich alle wohlfühlen und effizient arbeiten können. Du unterstützt die vorbereitende Buchhaltung Mitarbeit bei kleineren Projekten und internen Prozessen, z. B. im Bereich Nachhaltigkeit oder Digitalisierung. Dein Profil Du hast eine"
+        }
+      },
+      {
+        "title": "Kaufmännischer Mitarbeiter – Vertriebsinnendienst (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1002511886-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Kaufmännischer Mitarbeiter – Vertriebsinnendienst (m/w/d)",
+          "employer": "RWG I/ Schicht Baustoffaufbereitung, Logistik + Entsorgung GmbH (Heidelberg Materials)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1002511886-S",
+          "district": "Spandau (Wiesendamm 32, 13597)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet (laut Anzeige)",
+          "salary": "Unbekannt",
+          "commute": "ca. 70–75 Min ÖPNV ab Heinersdorf (geschätzt)",
+          "pro": "Breites Aufgabenpaket inkl. Auftragsabwicklung und Angebotskalkulation.",
+          "con": "Lange Pendelzeit.",
+          "effort_details": "E‑Mail‑Bewerbung laut Anzeige; CV/Anschreiben mit Beispielen zu Dispo/Bestellabwicklung.",
+          "deadline": "",
+          "evidence": "„Auftragsabwicklung im Bereich Baustoffhandel … Vorbereitende Kalkulation der Angebote … Markt‑ und Sortimentsbeobachtung … abgeschlossene kaufmännische Ausbildung oder relevante Berufserfahrung wünschenswert.“ ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1002511886-S))",
+          "family": "C",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 28,
+            "entry": 26,
+            "commute": 5,
+            "conditions": 8
+          },
+          "effort_minutes": 60
+        }
+      },
+      {
+        "title": "Office Manager / Specialist Office Management (m/w/d)",
+        "url": "https://zytomics.jobs.personio.de/job/2697519",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Specialist Office Management (m/w/d)",
+          "employer": "ZYTOMICS",
+          "url": "https://zytomics.jobs.personio.de/job/2697519",
+          "district": "Unbekannt (Berlin, Adresse nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung (laut Anzeige)",
+          "salary": "Unbekannt",
+          "commute": "Konservativ 31–45 Min ÖPNV (geschätzt)",
+          "pro": "Verantwortung für Standortverwaltung/Büroorganisation in Berlin, Schnittstelle GF.",
+          "con": "Keine Gehalts-/Stundenangabe; reines Office‑Setting.",
+          "effort_details": "ATS‑Bewerbung (Personio); Office‑Referenzen + Prozesskoordination hervorheben.",
+          "deadline": "",
+          "evidence": "„Du bist verantwortlich für die Standortverwaltung, die Büroorganisation sowie die Unterstützung der Geschäftsleitung in Berlin … organisierst und koordinierst Meetings … kümmerst dich … um unseren Fuhrpark, koordinierst Dienstleister …“ ([zytomics.jobs.personio.de](https://zytomics.jobs.personio.de/job/2697519?utm_source=openai))",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 20,
+            "entry": 26,
+            "commute": 15,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 2,
+  "researched_at": "2026-10-14T06:49:53.636549+00:00",
+  "prepared_at": "2026-10-14T06:53:43.618517+00:00",
+  "message_id": "<miki-2026-10-14-ca9e393f152c895a@miki-jobsearch>",
+  "last_attempt_at": "2026-10-14T06:49:53.636549+00:00",
+  "last_attempt_run_id": "38524507988",
+  "design_version": "electric-blue-v1",
+  "email_provider": "brevo"
+}
