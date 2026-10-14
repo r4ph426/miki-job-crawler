@@ -1,0 +1,298 @@
+{
+  "date": "2026-10-15",
+  "created_at": "2026-10-14T09:52:59.487250+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 15.10.2026 · 2 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 14.10.2026 für den Versand am 15.10.2026. 9 passende Neufunde (ATS/BA/StepStone/Fashion) am 2026-10-14 mit starker Deckung in Auftrags-/Order-Management, Einkaufsnähe und produktionsseitiger Koordination; zwei Rollen explizit mode-/lifestylenah (Aeyde) und mehrere mit klarer Auftragsabwicklung. Keine Dubletten zur Historie.",
+    "next_action": "Zuerst Aeyde (Production & Supply Chain Coordinator) und Zertificon (kaufm. Sachbearbeitung, Auftragsabwicklung) angehen: Lebenslauf leicht auf Produktions-/Orderflow, Liefertermine, Stammdaten/ERP und NOOS/Lead-Times zuschneiden; danach 1KOMMA5° (Zentraler Auftragsmanager) und REMM (Office Manager, Backfabrik) versenden. Vor Absenden bei Aeyde die fehlende Italienisch-Anforderung kritisch prüfen.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Zentraler Auftragsmanager (m/w/d) - 1KOMMA5° Handwerk - Berlin",
+        "employer": "1KOMMA5°",
+        "url": "https://1komma5grad.jobs.personio.de/job/2654776",
+        "district": "Unbekannt",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "Konservativ geschätzt 46–60 Min. ÖPNV ab Berlin-Heinersdorf (genaue Adresse nicht angegeben)",
+        "pro": "Koordination von Auftragsabwicklung, Materialanlieferung und Logistik entspricht der bisherigen Schnittstellenarbeit.",
+        "con": "Technisches SHK-Umfeld; einschlägige Branchenerfahrung ist von Vorteil.",
+        "effort_details": "ATS (Personio): Profil/Fragen, Unterlagen hochladen, Bewerbung senden.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 30,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "anbieten zu können. Hast du Lust, die Energierevolution mit uns anzugehen? Dann bewirb dich jetzt und werde Teil unserer Mission! Deine Position Zentrale Ansprechperson und lösungsorientiertes Bindeglied zwischen Montage-Teams, Vertrieb und Kund*innen Verantwortung für einen reibungslosen Ablauf in der Auftragsabwicklung – von der Planung bis zur finalen Umsetzung Koordination des Projektfortschritts, der Materialanlieferung und der gesamten Logistik Planung und Terminierung von Montagen",
+        "score": 70,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Production & Supply Chain Coordinator - Italian speaking (f/m/d)",
+        "employer": "Aeyde GmbH",
+        "url": "https://aeyde.jobs.personio.de/job/2756726?language=de",
+        "district": "Unbekannt (zentrale Lage vermutet)",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "Konservativ geschätzt 46–60 Min. ÖPNV ab Berlin-Heinersdorf (genaue Adresse nicht angegeben)",
+        "pro": "Starke Passung zu Produktions-/Supply-Chain-Aufgaben inkl. Stammdaten/ERP/PLM und Lieferantensteuerung.",
+        "con": "Italienisch als Arbeitssprache gefordert – nicht im Profil vorhanden.",
+        "effort_details": "ATS (Personio): Profil prüfen/erstellen, CV/Anschreiben, Fragen; ggf. Dokumente hochladen.",
+        "deadline": "",
+        "family": "A",
+        "source_group": "fashion",
+        "scores": {
+          "skill": 38,
+          "entry": 14,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "supply chain data across reporting systems. Identify opportunities to improve operational processes, reporting accuracy, and supply chain efficiency. What you will bring: Bachelor's degree in Supply Chain Management, Business Administration, Fashion Management, or related field. 2–3 years of experience in fashion production, ideally in shoe production working with Italian manufacturers. Familiarity with ERP/PLM systems and strong proficiency in Excel and/or Google Sheets. Strong analytical",
+        "score": 69,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 38000,
+          "annual_max_eur": 52000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Supply Chain Coordinator",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Supply-Chain-Coordinator/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 38200,
+          "reference_annual_max_eur": 51200,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin",
+        "Teamassistenz Berlin",
+        "Office Management Berlin",
+        "Marketingkoordination Berlin"
+      ],
+      "B": [
+        "Einkäufer Berlin",
+        "Sachbearbeiter Einkauf Berlin",
+        "Supply Chain Berlin",
+        "Beschaffung Berlin",
+        "Order Management Berlin",
+        "Lieferantenmanagement Berlin"
+      ],
+      "C": [
+        "Product Coordinator Berlin",
+        "Vertriebsinnendienst Berlin",
+        "Merchandising Koordination Berlin"
+      ]
+    },
+    "family_observations": {
+      "A": "ATS liefert heute die meisten relevanten Assistenz-/Office-Rollen mit flexibler Stundenzahl; BA bot wenige neue, belastbare A-Detailseiten.",
+      "B": "Stärkster Fit über Order-/Auftragsmanagement (1KOMMA5°) und fachliche Einkäufer-Rolle im Kfz-Umfeld (Autohaus Royal); klassische Industrieeinkaufsposten waren heute oft unpräzise oder Dubletten.",
+      "C": "Vertriebsinnendienst-Varianten (BIOTRONIK via StepStone, GRENKE via BA) und ein starker mode-/produktnaher Koordinator bei Aeyde decken Mikis Koordinationsprofil gut ab; Italienisch bleibt der Knackpunkt bei Aeyde."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mindestens eine verifizierte Detailseite (GRENKE). Ein weiteres BA-Ergebnis (WIEDEMANN) war 410=abgelaufen."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "BIOTRONIK-Detailseite mit voll auslesbarem Anzeigentext verifiziert."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio-Quellen breit verfügbar (Aeyde, 1KOMMA5°, Zertificon, ucm, REMM, Eberhardt, Autohaus Royal)."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "LfG‑B Teamassistenz weiterhin mit Frist 2026-10-27 sichtbar; heute keine neue, passende Beschaffungsrolle mit offener Frist."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "Aeyde mit produktions-/supply-chain-naher Koordination aktiv; sonst überwiegend Praktika/Vertrieb auf FashionUnited."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://backfabrik.jobs.personio.de/job/2773117",
+        "reason": "Mindestens 7 Jahre Erfahrung im Office Management/Hotellerie/Event-Management explizit gefordert; diese spezifische Anforderung wird nicht erfüllt."
+      },
+      {
+        "url": "https://autohaus-royal.jobs.personio.de/job/2471486",
+        "reason": "Zwingend geforderte Branchenkenntnisse im Fahrzeugeinkauf; fachfremdes Profil ohne Automotive-Einkauf."
+      }
+    ],
+    "assessment_pages_checked": 8,
+    "rejected": [
+      {
+        "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+        "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+          "employer": "Zertificon Solutions GmbH",
+          "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+          "district": "Neukölln",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "Ca. 50–60 Min. ÖPNV ab Berlin-Heinersdorf nach Neukölln (Schätzung)",
+          "pro": "Strukturierte Auftragsabwicklung von der Bestätigung bis zur Rechnungsstellung mit ERP/CRM-Bezug passt zum Profil.",
+          "con": "Mindestens 3 Jahre Erfahrung in Sachbearbeitung explizit gefordert; bisheriger Schwerpunkt eher Koordination.",
+          "effort_details": "ATS (Personio): Registrierung/Upload, Formularfragen, Versand.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 28,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "dem Softwarekauf passiert – von der Auftragsabwicklung bis zum Onboarding. Du unterstützt außerdem bei der E-Mail-Zertifikatsverwaltung für unsere Kunden. Von der Auftragsbestätigung bis zur Rechnungsstellung: Du bearbeitest Kundenaufträge und sorgst dafür, dass nach dem Verkauf alles reibungslos läuft Erstelle und versende Dokumente wie Verträge, Auftragsbestätigungen und Rechnungen Bearbeite Rechnungen für digitale Zertifikate von unseren Trustcenter-Partnern Für Kunden, Partner und"
+        }
+      },
+      {
+        "title": "Office Manager:in - VZ/TZ",
+        "url": "https://ucm.jobs.personio.de/job/2757520?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager:in - VZ/TZ",
+          "employer": "ucm",
+          "url": "https://ucm.jobs.personio.de/job/2757520?language=de",
+          "district": "Unbekannt",
+          "hours": "Voll- oder Teilzeit (20–40 Std./Woche)",
+          "contract": "Unbefristet",
+          "salary": "38.000–45.000 € Fixgehalt (40 Std.)",
+          "commute": "Konservativ geschätzt 46–60 Min. ÖPNV ab Berlin-Heinersdorf (genaue Adresse nicht angegeben)",
+          "pro": "Breites Office-&-Hospitality-Aufgabenspektrum mit Gestaltungsspielraum und Entwicklungspfad.",
+          "con": "Vergütung im Text 38–45k; Header weist 38–50k aus (Diskrepanz).",
+          "effort_details": "ATS (Personio): Profil anlegen, Unterlagen hochladen, Fragen beantworten.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 20,
+            "commute": 10,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "Plus, aber kein Muss Sehr gutes Deutsch und gutes Englisch Warum ucm: Exposure auf Augenhöhe: Du arbeitest direkt mit Geschäftsführung und People Team zusammen und gestaltest, wie sich ucm für Mitarbeitende und Gäste anfühlt Karriere mit Perspektive: Schneller Impact und ein klarer Entwicklungspfad – mit optionalen Modulen in People & Culture Operations oder Company Administration Wettbewerbsfähiges Package: 38k–45k€ Fixgehalt (bezogen auf 40 Stunden, je nach Erfahrung und Verantwortung) –"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d)",
+        "url": "https://es-group.jobs.personio.de/job/2693408?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d)",
+          "employer": "Eberhardt Service Group GmbH",
+          "url": "https://es-group.jobs.personio.de/job/2693408?language=de",
+          "district": "Unbekannt",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "Konservativ geschätzt 46–60 Min. ÖPNV ab Berlin-Heinersdorf (genaue Adresse nicht angegeben)",
+          "pro": "Kernaufgaben in Büroorganisation, Dienstleisterkoordination und vorbereitender Buchhaltung sind anschlussfähig.",
+          "con": "Mehrjährige Office-Management-Erfahrung gefordert; bisheriger Schwerpunkt war Produkt-/Business-Koordination.",
+          "effort_details": "ATS (Personio): Registrierung, CV/Anschreiben, Formular und Versand.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 20,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager (m/w/d) | Jobs bei Eberhardt Service Group GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Deine Aufgaben Du bist die zentrale Anlaufstelle für unsere Büroorganisation und sorgst für einen reibungslosen Ablauf im Tagesgeschäft. Bearbeitung der eingehenden und ausgehenden Post sowie E-Mails und Telefonate. Verwaltung und Bestellung von Büro- und Verbrauchsmaterialien. Koordination"
+        }
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst Team Anfrage (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17784-44377159-820-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Mitarbeiter Vertriebsinnendienst Team Anfrage (m/w/d)",
+          "employer": "GRENKE AG (grenke Business Solutions GmbH & Co. KG)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17784-44377159-820-S",
+          "district": "Mitte (10179)",
+          "hours": "Vollzeit, Teilzeit (Vormittag/Nachmittag/Abend)",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "Ca. 35–45 Min. ÖPNV ab Berlin-Heinersdorf nach 10179 Berlin (Schätzung)",
+          "pro": "Klare kaufmännische Aufgaben von Antragsprüfung bis Vertragsunterlagen in einer Hub-Struktur.",
+          "con": "Exakte Berliner Einsatzadresse in der Hub-Struktur nicht eindeutig; hybride Details allgemein gehalten.",
+          "effort_details": "Schnellbewerbung über BA: Profil/Nachricht, ggf. Weiterleitung an Arbeitgeber.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 27,
+            "entry": 24,
+            "commute": 15,
+            "conditions": 6
+          },
+          "effort_minutes": 25,
+          "evidence": "auszeichnet. Hier wächst Du über Dich hinaus: // Prüfung, Bewertung und Entscheidung eingehender Leasinganfragen // Anfordern von (Bonitäts-) Unterlagen // Erstellung der Vertragsunterlagen //Übernahme von Inbound- und Outbound-Telefonie // Unterstützung des Vertriebsteams und Interaktion mit unseren Kunden und Partnern Dein Fundament: // Solides Know-how durch eine abgeschlossene kaufmännische Ausbildung bzw. mehrjährige Erfahrung im kaufmännischen Bereich, idealerweise in"
+        }
+      },
+      {
+        "title": "Sachbearbeitung im Vertriebsinnendienst Retoure / externe Geräte (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeitung im Vertriebsinnendienst Retoure / externe Geräte (m/w/d)",
+          "employer": "BIOTRONIK Corporate Services SE",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html",
+          "district": "Berlin (Bezirk nicht genannt)",
+          "hours": "Vollzeit; Teilzeit möglich",
+          "contract": "Befristet (Elternzeitvertretung)",
+          "salary": "Unbekannt",
+          "commute": "45–60 Min ÖPNV (konservativ mangels Adresse)",
+          "pro": "Auftragsbearbeitung/Retourenprozess mit Schnittstellenarbeit.",
+          "con": "Befristung; Medizintechnik-spezifische Prozesse.",
+          "effort_details": "Normaler Unternehmensprozess 70 Min: Profil 10, CV 30, Anschreiben 15, Portal 15",
+          "deadline": "",
+          "evidence": "\"Der Bereich Retouren/ Externe Geräte im deutschen Vertriebsinnendienst ist verantwortlich für die kaufmännische Bearbeitung der Retouren und der Auftragsbearbeitung für die Externen Geräte.\"",
+          "family": "C",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 30,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 2,
+  "researched_at": "2026-10-14T09:52:59.487250+00:00",
+  "prepared_at": "2026-10-14T09:56:57.195711+00:00",
+  "message_id": "<miki-2026-10-15-936242db919cdcb6@miki-jobsearch>",
+  "last_attempt_at": "2026-10-14T09:52:59.487250+00:00",
+  "last_attempt_run_id": "38545571525",
+  "design_version": "electric-blue-v1"
+}
