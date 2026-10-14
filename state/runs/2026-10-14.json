@@ -1,7 +1,7 @@
 {
   "date": "2026-10-14",
   "created_at": "2026-10-14T06:49:53.636549+00:00",
-  "status": "sending",
+  "status": "sent",
   "subject": "Stellen für Miki · 14.10.2026 · 2 neue Treffer",
   "report": {
     "summary": "6 passende Neutreffer mit belastbaren Ausschreibungstexten, Schwerpunkt C (Auftrags-/Vertriebsinnendienst) plus zwei A‑Optionen (Office Management). Keine Dubletten zu früheren Meldungen. Berliner Karriereportal erreichbar; StepStone-Recherchen ergaben heute keine stärker passenden, neuen Detailseiten. Modeportale erreichbar, heute ohne passgenauen Büro-/Koordinations-Treffer.",
@@ -252,7 +252,7 @@
   "attempts": [
     {
       "started_at": "2026-10-14T06:53:44.825216+00:00",
-      "status": "sending"
+      "status": "sent"
     }
   ],
   "hits": 2,
@@ -262,5 +262,8 @@
   "last_attempt_at": "2026-10-14T06:49:53.636549+00:00",
   "last_attempt_run_id": "38524507988",
   "design_version": "electric-blue-v1",
-  "email_provider": "brevo"
+  "email_provider": "brevo",
+  "refused_count": 0,
+  "provider_message_id": "<202610140653.14841405378@smtp-relay.mailin.fr>",
+  "accepted_at": "2026-10-14T06:53:46.168849+00:00"
 }
