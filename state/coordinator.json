@@ -82,5 +82,13 @@
       "actor": "github",
       "last_result": "failed"
     }
+  },
+  "lease": {
+    "token": "27c582dd36d64d308d376c087e195338",
+    "actor": "github",
+    "phase": "readiness-check",
+    "date": "2026-10-16",
+    "started_at": "2026-10-15T18:01:27.283106+00:00",
+    "expires_at": "2026-10-15T18:41:27.283106+00:00"
   }
 }
