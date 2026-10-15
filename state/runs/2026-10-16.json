@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-16",
+  "status": "research_failed",
+  "hits": 0,
+  "failed_at": "2026-10-15T12:17:08.076568+00:00",
+  "error": "Research failed (ResearchError); see workflow log",
+  "research_diagnostic": {
+    "code": "no_verified_candidates"
+  },
+  "candidate_diagnostics": [
+    {
+      "title": "Zentraler Auftragsmanager (m/w/d) - 1KOMMA5° Handwerk - Berlin",
+      "url": "https://1komma5grad.jobs.personio.de/job/2654776",
+      "reason": "Already reported or repeated within this run",
+      "candidate": {
+        "title": "Zentraler Auftragsmanager (m/w/d) - 1KOMMA5° Handwerk - Berlin",
+        "employer": "1KOMMA5°",
+        "url": "https://1komma5grad.jobs.personio.de/job/2654776",
+        "district": "Unbekannt",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 31–45 Min. ÖPNV ab Berlin-Heinersdorf (Schätzung, keine genaue Adresse)",
+        "pro": "Breite Schnittstellenrolle mit Verantwortung für Auftragsabwicklung, Terminierung und Logistik.",
+        "con": "Technisches SHK-Umfeld; Einarbeitung in branchenspezifische Themen nötig.",
+        "effort_details": "ATS (Personio) ca. 55 Min: Profil anlegen/aktualisieren, Lebenslauf hochladen, Formularfragen beantworten, Kurzanschreiben prüfen.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 30,
+          "entry": 24,
+          "commute": 15,
+          "conditions": 8
+        },
+        "effort_minutes": 55,
+        "evidence": "anbieten zu können. Hast du Lust, die Energierevolution mit uns anzugehen? Dann bewirb dich jetzt und werde Teil unserer Mission! Deine Position Zentrale Ansprechperson und lösungsorientiertes Bindeglied zwischen Montage-Teams, Vertrieb und Kund*innen Verantwortung für einen reibungslosen Ablauf in der Auftragsabwicklung – von der Planung bis zur finalen Umsetzung Koordination des Projektfortschritts, der Materialanlieferung und der gesamten Logistik Planung und Terminierung von Montagen"
+      }
+    },
+    {
+      "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
+      "url": "https://apc-ag.jobs.personio.de/job/2780473",
+      "reason": "Already reported or repeated within this run",
+      "candidate": {
+        "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
+        "employer": "APC AG",
+        "url": "https://apc-ag.jobs.personio.de/job/2780473",
+        "district": "Unbekannt",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "2.500 - 3.500 € pro Monat",
+        "commute": "ca. 46–60 Min. ÖPNV ab Berlin-Heinersdorf (Schätzung, keine genaue Adresse)",
+        "pro": "Klare kaufmännische Aufgaben inkl. Auftragsbearbeitung und Rechnungsstellung, passende Schnittstellenkompetenz.",
+        "con": "Vergütung vergleichsweise niedrig angegeben.",
+        "effort_details": "ATS (Personio) ca. 55 Min: Basisdaten, Lebenslauf-Upload, Formularfelder, optionales Anschreiben.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 26,
+          "entry": 26,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "(MS Office, Outlook, Internet) Viel Spaß und Freude am Kontakt mit Menschen - persönlich oder telefonisch Deine Aufgaben Telefonische und schriftliche Korrespondenz mit unserem Außendienst und unseren Geschäftspartnern Auftragsbearbeitung, Erstellung und Kontrolle von Rechnungen und Verwaltung der Arbeitszeiten von den Außendienstmitarbeitern (w/m/d) der Niederlassung Allgemein anfallende, administrative Tätigkeiten und Büroorganisation Über uns DU suchst beruflich nach etwas Neuem"
+      }
+    },
+    {
+      "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+      "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+      "reason": "Already reported or repeated within this run",
+      "candidate": {
+        "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+        "employer": "Zertificon Solutions GmbH",
+        "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+        "district": "Neukölln",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 46–60 Min. ÖPNV ab Berlin-Heinersdorf (Schätzung)",
+        "pro": "End-to-End-Auftragsabwicklung nach dem Verkauf mit CRM-Bezug, klare Prozesse und Benefits (z. B. Deutschlandticket).",
+        "con": "Brancheneinstieg in B2B-Software notwendig, neue Tools/Produkte einarbeiten.",
+        "effort_details": "ATS (Personio) ca. 55 Min: Konto/Profil, Lebenslauf-Upload, Formularangaben, ggf. kurze Motivationsfragen.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 27,
+          "entry": 26,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "dem Softwarekauf passiert – von der Auftragsabwicklung bis zum Onboarding. Du unterstützt außerdem bei der E-Mail-Zertifikatsverwaltung für unsere Kunden. Von der Auftragsbestätigung bis zur Rechnungsstellung: Du bearbeitest Kundenaufträge und sorgst dafür, dass nach dem Verkauf alles reibungslos läuft Erstelle und versende Dokumente wie Verträge, Auftragsbestätigungen und Rechnungen Bearbeite Rechnungen für digitale Zertifikate von unseren Trustcenter-Partnern Für Kunden, Partner und"
+      }
+    },
+    {
+      "title": "Projektassistenz (w/m/d) – Referat „Bundespolizei (BPOL)“",
+      "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-w-m-d-Berlin-Bundesamt-fuer-Bauwesen-und-Raumordnung-BBR--14593254-inline.html",
+      "reason": "Detail page unavailable (TimeoutError)",
+      "candidate": {
+        "title": "Projektassistenz (w/m/d) – Referat „Bundespolizei (BPOL)“",
+        "employer": "Bundesamt für Bauwesen und Raumordnung (BBR)",
+        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-w-m-d-Berlin-Bundesamt-fuer-Bauwesen-und-Raumordnung-BBR--14593254-inline.html",
+        "district": "Berlin (Dienstort Berlin)",
+        "hours": "39h, Teilzeit möglich",
+        "contract": "Unbefristet (TVöD E7)",
+        "salary": "TVöD EG 7",
+        "commute": "ca. 35–45 Min ÖPNV ab Heinersdorf (Schätzung, Bundestandorte zentral)",
+        "pro": "Stetiges Umfeld, klare Prozesse (TVöD), administratives Projektumfeld.",
+        "con": "Stärker administrativ, weniger produkt-/lieferkettennah.",
+        "effort_details": "ÖD‑Portal 130 Min: Ausschreibung lesen 20, Nachweise/Zeugnisse 40, CV/Anschreiben formal 50, Upload/Formulare 20.",
+        "deadline": "2026-11-02",
+        "evidence": "„…Projektmanagementaufgaben für die Bauprojekte der Bundespolizei (BPOL)… Projektassistenz (w/m/d) … E 7 TVöD … 39h … Aufgaben liegen in der Durchführung von Baumaßnahmen des Bundes…“",
+        "family": "A",
+        "source_group": "stepstone",
+        "scores": {
+          "skill": 24,
+          "entry": 27,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 130
+      }
+    },
+    {
+      "title": "Projektassistenz (d/m/w) – Sozial- und Gesellschaftspolitik (2 Jahre)",
+      "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
+      "reason": "Detail page unavailable (TimeoutError)",
+      "candidate": {
+        "title": "Projektassistenz (d/m/w) – Sozial- und Gesellschaftspolitik (2 Jahre)",
+        "employer": "Prognos AG",
+        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
+        "district": "Berlin-Charlottenburg (Goethestraße 85)",
+        "hours": "Vollzeit (40h)",
+        "contract": "Befristet 24 Monate",
+        "salary": "Unbekannt",
+        "commute": "ca. 50–55 Min ÖPNV ab Heinersdorf",
+        "pro": "Kaufmännisch‑organisatorische Projektarbeit in etabliertem Forschungsumfeld.",
+        "con": "Befristung auf 2 Jahre; Arbeitsort westliche City (längere Pendelzeit).",
+        "effort_details": "StepStone/Unternehmensportal 70 Min: CV abstimmen 30, Anschreiben 30, Uploads 10.",
+        "deadline": "",
+        "evidence": "„Sie unterstützen die Projektleitung… bei der Organisation des laufenden Geschäftsstellenbetriebs… erstellen und pflegen Protokolle sowie Termin‑, Aufgaben‑ und Fristenübersichten… strukturieren und pflegen die digitale Projektablage… Voraussetzungen: Bachelor BWL/Verwaltung o. kaufm. Ausbildung; erste Erfahrung in Projektassistenz/Teamassistenz…“",
+        "family": "A",
+        "source_group": "stepstone",
+        "scores": {
+          "skill": 24,
+          "entry": 26,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 70
+      }
+    },
+    {
+      "title": "Kaufmännische Sachbearbeitung / Projektassistenz (m/w/d) – gern Quereinstieg",
+      "url": "https://pbvi.jobs.personio.de/job/2607804",
+      "reason": "Already reported or repeated within this run",
+      "candidate": {
+        "title": "Kaufmännische Sachbearbeitung / Projektassistenz (m/w/d) – gern Quereinstieg",
+        "employer": "PBVI GmbH (Bauplanung/Bauüberwachung/Vermessung)",
+        "url": "https://pbvi.jobs.personio.de/job/2607804",
+        "district": "Berlin (Bezirk nicht genannt)",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet (nicht genannt)",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–60 Min ÖPNV ab Heinersdorf (Schätzung)",
+        "pro": "Breiter Projektassistenz‑Zuschnitt inkl. Angebots-/Rechnungsunterstützung.",
+        "con": "Branche Bau; erste Branchenkenntnisse erwünscht.",
+        "effort_details": "ATS (Personio) 55 Min: Profil 10, CV 25, Fragen/Upload 20.",
+        "deadline": "",
+        "evidence": "„Du unterstützt unsere Planungsteams bei vielen kaufmännischen und organisatorischen Aufgaben… Du hilfst bei der Vorauswahl von Ausschreibungen und unterstützt beim Erstellen von Angeboten… Du übernimmst die zeitnahe Fakturierung…“",
+        "family": "A",
+        "source_group": "ats",
+        "scores": {
+          "skill": 24,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55
+      }
+    }
+  ]
+}
