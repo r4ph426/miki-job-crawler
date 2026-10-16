@@ -1,7 +1,7 @@
 {
   "date": "2026-10-16",
   "created_at": "2026-10-16T06:51:33.162346+00:00",
-  "status": "sending",
+  "status": "sent",
   "subject": "Wochenüberblick Stellensuche · KW 42",
   "report": {
     "summary": "8 passende Anzeigen gefunden (Berlin, geprüft am 2026-10-16, 08:30 Uhr). Schwerpunkte heute: mehrere neue Vertriebsinnendienst-/Beschaffungsrollen im Großhandel sowie frische Koordinationsrollen (öffentlich/NGO).",
@@ -258,7 +258,7 @@
   "attempts": [
     {
       "started_at": "2026-10-16T06:55:18.330651+00:00",
-      "status": "sending"
+      "status": "sent"
     }
   ],
   "hits": 2,
@@ -268,5 +268,8 @@
   "last_attempt_at": "2026-10-16T06:51:33.162346+00:00",
   "last_attempt_run_id": "38863582736",
   "design_version": "electric-blue-v1",
-  "email_provider": "brevo"
+  "email_provider": "brevo",
+  "refused_count": 0,
+  "provider_message_id": "<202610160655.99358152432@smtp-relay.mailin.fr>",
+  "accepted_at": "2026-10-16T06:55:20.042603+00:00"
 }
