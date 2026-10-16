@@ -4,11 +4,11 @@ compatibility_date = "2026-10-16"
 workers_dev = false
 
 [triggers]
-crons = ["*/5 * * * *"]
+crons = []
 
 [vars]
-# Activated after the repository-scoped credential was installed securely.
-ENABLED = "true"
+# Paused at the user request after repeated GitHub failure notifications. Re-enable only explicitly.
+ENABLED = "false"
 
 [observability]
 enabled = true
