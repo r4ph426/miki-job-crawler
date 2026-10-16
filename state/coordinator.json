@@ -81,14 +81,19 @@
       "checked_at": "2026-10-16T07:59:32.568488+00:00",
       "actor": "github",
       "last_result": "provider_check_failed"
+    },
+    "2026-10-19": {
+      "date": "2026-10-19",
+      "status": "not_ready",
+      "ready": false,
+      "delivery_status": "prepared",
+      "hits": 1,
+      "researched_at": "2026-10-16T07:59:33.655599+00:00",
+      "delivery_time": "2026-10-19T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-16T08:08:42.705705+00:00",
+      "actor": "reconciliation",
+      "last_result": "prepared",
+      "reconciled_run_id": "38870688350"
     }
-  },
-  "lease": {
-    "token": "7959ba5d8c82440782f08d9c11b89612",
-    "actor": "github",
-    "phase": "research",
-    "date": "2026-10-19",
-    "started_at": "2026-10-16T07:59:33.655599+00:00",
-    "expires_at": "2026-10-16T08:39:33.655599+00:00"
   }
 }
