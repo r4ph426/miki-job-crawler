@@ -77,8 +77,11 @@ def queue_status(record, settings, getter=provider_get):
 
 
 def single_queue_status(record, identifier, settings, getter):
-    identifier = urllib.parse.quote("<" + identifier.strip("<>") + ">" if "@" in identifier else identifier, safe="")
-    response = getter("smtp/emailStatus/" + identifier, settings)
+    message_id = "@" in identifier
+    identifier = urllib.parse.quote("<" + identifier.strip("<>") + ">" if message_id else identifier, safe="")
+    query = "" if message_id else "?" + urllib.parse.urlencode({
+        "startDate": record.get("created_at", record["date"])[:10], "endDate": record["date"]})
+    response = getter("smtp/emailStatus/" + identifier + query, settings)
     candidates = response.get("batches", [response])
     if not isinstance(candidates, list):
         raise ProviderStatusError("Brevo queue status has an unexpected shape")
