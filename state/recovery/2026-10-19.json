@@ -7,7 +7,12 @@
       "status": "prepared",
       "finished_at": "2026-10-16T08:03:12.050813+00:00",
       "reconciled_run_id": "38870688350"
+    },
+    {
+      "phase": "prepare",
+      "started_at": "2026-10-16T08:09:16.867559+00:00",
+      "status": "running"
     }
   ],
-  "status": "prepared"
+  "status": "running"
 }
