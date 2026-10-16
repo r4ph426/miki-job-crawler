@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-19",
+  "created_at": "2026-10-16T07:59:33.655599+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 19.10.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 16.10.2026 für den Versand am 19.10.2026. 6 passende Neufunde mit belastbaren Anzeigen am 16.10.2026. Mix aus Einkauf/Supply Chain (starkes Skill‑Match) plus eine öffentliche Teamassistenz (sicheres Einstiegsprofil) und eine Modekoordination (fachlich passend, Sprachhürde).",
+    "next_action": "Heute zwei schnelle ATS‑Bewerbungen abschicken: 1) Tentamus Einkaufsmanager DACH (starkes Skill‑Match, kurzer Weg), 2) Packmatic Junior Buying Manager (klare Lieferantenverantwortung). Parallel: BIOTRONIK-Anzeige kurz anrufen (Arbeitsort bestätigen) und Entscheidung treffen.",
+    "weekend_action": "Max. 90 Min: 1) Zwei Kurzabsätze für Anschreiben-Module schreiben (a) Lieferantenverhandlung/NOOS-Replenishment, (b) Muster- & Datenpflege/PLM→ERP; 2) Pendelzeiten für Weißensee, Neukölln, Hellersdorf final nach ÖPNV taktisch prüfen und ins Tracking übernehmen.",
+    "jobs": [
+      {
+        "title": "Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung",
+        "employer": "Terra Naturkost Handels GmbH",
+        "url": "https://terra-naturkost-handels-kg.jobs.personio.de/job/2813911",
+        "district": "Berlin-Neukölln",
+        "hours": "Vollzeit; Mo–Fr, ca. alle 4 Wochen Samstagsdienst (mit Ausgleich)",
+        "contract": "Befristet (Elternzeitvertretung, laut Text 1 Jahr) – Hinweis: Anzeige führt zugleich „Festanstellung“; Widerspruch in der Ausschreibung.",
+        "salary": "Unbekannt",
+        "commute": "ca. 50–60 Min ab Berlin-Heinersdorf (ÖPNV, konservativ geschätzt mangels genauer Adresse im Inserat)",
+        "pro": "Kernaufgaben Disposition/Einkauf mit täglichem Lieferantenkontakt und Stammdatenpflege.",
+        "con": "Befristung als Elternzeitvertretung und gelegentlicher Samstagsdienst.",
+        "effort_details": "Personio-ATS: Konto/Upload 15, Formularfelder 15, Anschreiben 15, Lebenslauf 5, Rückfragen/Datenschutz 5 = 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 34,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung | Jobs bei Terra Naturkost Handels GmbH Zum Hauptinhalt springen Zurück zu allen Stellen Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Das erwartet dich bei uns Du bist erste/r Ansprechpartner/in für unsere Lieferanten Du disponierst täglich und stellst damit unsere Warenverfügbarkeit sicher Du vergleichst Produkte und Lieferanten hinsichtlich Qualitäten und",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:stepstone.de",
+        "Teamassistenz site:karriereportal-stellen.berlin.de",
+        "Office Management Berlin site:jobs.personio.de",
+        "Marketingkoordination Berlin site:arbeitsagentur.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:jobs.personio.de",
+        "Sachbearbeiter Einkauf site:arbeitsagentur.de",
+        "Beschaffung Berlin site:stepstone.de",
+        "Supply Chain Berlin site:jobs.personio.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:stepstone.de",
+        "Product Coordinator Berlin site:jobs.personio.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Öffentliche Assistenzrollen (TV‑L) sind weiter präsent; heute frische Teamassistenz E6 mit Frist 05.11. — sicherer Einstieg, aber Sozial‑Fokus und Publikumskontakt.",
+      "B": "Breites Angebot über ATS (Personio/Lever): zwei starke Optionen mit Lieferantensteuerung (Tentamus, Terra) plus Junior‑Buying im Tech‑Einkauf (Packmatic). Reisebereitschafts- und Befristungsklauseln genau prüfen.",
+      "C": "Mode‑seitig weiterhin koordinative Rollen mit starkem Operations‑Anteil (Aeyde); im Industrieteil solide Vertriebsinnendienst‑Profile (BIOTRONIK) mit SAP‑Focus, oft befristet."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche/Detailaufrufe zu Vertriebsinnendienst (BIOTRONIK) funktionierten; mehrere generische Suchseiten ohne Nutzwert gefiltert."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Detailseite BIOTRONIK mit vollständigem Aufgabentext erreichbar."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Mehrere Personio/Lever‑Seiten (Aeyde, Tentamus, Terra, Packmatic) erreichbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal mit neuer Teamassistenz (E6) inkl. Frist und Gehalt erreichbar."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs.com erreichbar; FashionUnited (Berlin‑Seite) via Tool nicht abrufbar, daher nicht gewertet."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://aeyde.jobs.personio.de/job/2756726?language=de",
+        "reason": "Erfordert Italienisch (idealerweise muttersprachlich) und 2–3 Jahre Erfahrung in Schuhproduktion mit italienischen Herstellern; Sprachvorgabe ist eine harte Voraussetzung, die nicht vorliegt."
+      },
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-Psychosoziale-Dienste-Erziehungs-und-Familie-de-j70353.html",
+        "reason": "Sachbearbeitung/Teamassistenz im psychosozialen Bereich mit gefordertem spezifischen Verwaltungsabschluss (z. B. Verwaltungsfachangestellte*r bzw. Verwaltungslehrgang I); fachlich nicht passend zum Profil und außerhalb der gesuchten Familien B/A."
+      }
+    ],
+    "assessment_pages_checked": 5,
+    "rejected": [
+      {
+        "title": "Junior Buying Manager (w/m/d)",
+        "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Junior Buying Manager (w/m/d)",
+          "employer": "Packmatic GmbH",
+          "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+          "district": "Berlin-Pankow (Prenzlauer Berg)",
+          "hours": "Vollzeit (Hybrid laut Anzeige)",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "ca. 25–30 Min ab Berlin-Heinersdorf mit Tram/Bus",
+          "pro": "Passende Lieferantenverhandlungen und Schnittstellenarbeit zu Sales/CS; nahe Lage in Prenzlauer Berg.",
+          "con": "Junior-Level und keine Gehaltsangabe.",
+          "effort_details": "ATS (Lever): Profil anlegen/anhängen 20, Fragen/Checkboxen 10, Anschreiben 15, Lebenslauf prüfen 5, Schlussprüfung/Absenden 5 = 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 34,
+            "entry": 26,
+            "commute": 20,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Kontaktaufnahmen zur Erweiterung unseres Partnernetzwerks. Was du mitbringst Abgeschlossenes Studium (Bachelor oder Master), bevorzugt mit betriebswirtschaftlichem oder technischem Schwerpunkt. Erste Berufserfahrung im Einkauf, Supply Chain, oder Partnership Management – ob durch ein Praktikum oder bis zu zwei Jahre in einer Festanstellung, idealerweise in einem industriellen oder handelsbezogenen Umfeld. Du hattest bereits erste Berührungspunkte mit Lieferanten und -kommunikation gesammelt."
+        }
+      },
+      {
+        "title": "Einkaufsmanager DACH (m/w/d) in Vollzeit",
+        "url": "https://tentamus.jobs.personio.de/job/2792160",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Einkaufsmanager DACH (m/w/d) in Vollzeit",
+          "employer": "Tentamus Group GmbH",
+          "url": "https://tentamus.jobs.personio.de/job/2792160",
+          "district": "Berlin-Pankow (Weißensee, An der Industriebahn 26, 13088)",
+          "hours": "Vollzeit, Gleitzeit; Home-Office nach Absprache",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 10–15 Min ab Berlin-Heinersdorf (Tram/Bus)",
+          "pro": "Sehr gute Passung zu Einkauf/ Lieferantenmanagement; nahe Lage und flexible Arbeitszeiten.",
+          "con": "Reisebereitschaft in der DACH-Region gefordert.",
+          "effort_details": "Personio-ATS: Konto/Upload 15, Formularfelder 15, Anschreiben 15, Lebenslauf 5, Rückfragen/Datenschutz 5 = 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 36,
+            "entry": 25,
+            "commute": 20,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "relevanter KPIs und Erstellung regelmäßiger Reports für das Management Koordination und Begleitung von Optimierungs- und Digitalisierungsprojekten im Einkauf, beispielsweise bei der Einführung von E-Procurement- oder SRM-Systemen Ihr Profil Erfolgreich abgeschlossenes Studium in Betriebswirtschaft, Finanzwirtschaft oder eine abgeschlossene kaufmännische Ausbildung mit einschlägiger Berufserfahrung Mindestens drei Jahre relevante Berufserfahrung im Einkauf, Kenntnisse der TIC-Branche sind"
+        }
+      },
+      {
+        "title": "Sachbearbeitung im Vertriebsinnendienst Retoure / externe Geräte (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeitung im Vertriebsinnendienst Retoure / externe Geräte (m/w/d)",
+          "employer": "BIOTRONIK Corporate Services SE",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html",
+          "district": "Unbekannt (Arbeitsort in Berlin, genaue Adresse nicht in Anzeige)",
+          "hours": "Befristeter Vertrag, Teilzeit oder Vollzeit",
+          "contract": "Befristet (Dauer nicht genannt)",
+          "salary": "Unbekannt",
+          "commute": "ca. 60–75 Min ÖPNV — konservativ, vor Bewerbung klären",
+          "pro": "SAP‑gestützte Auftragsabwicklung in etabliertem Konzernumfeld.",
+          "con": "Arbeitsort in Berlin nicht präzisiert; Pendelzeit und Befristung klären.",
+          "effort_details": "Unternehmensbewerbung über Portal 70 Min: Recherche 10, Formular 30, Anschreiben 20, Uploads 10.",
+          "deadline": "",
+          "evidence": "„Der Bereich Retouren/ Externe Geräte im deutschen Vertriebsinnendienst ist verantwortlich für die kaufmännische Bearbeitung der Retouren und der Auftragsbearbeitung für die Externen Geräte. * Gesamte Auftragsbearbeitung … mit SAP R/3 (Module SD und MM) * Abgeschlossene kaufmännische Ausbildung … möglichst in der Auftragsbearbeitung.“ ([stepstone.de](https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html?utm_source=openai))",
+          "family": "C",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 28,
+            "entry": 24,
+            "commute": 5,
+            "conditions": 7
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-10-16T07:59:33.655599+00:00",
+  "prepared_at": "2026-10-16T08:03:10.769479+00:00",
+  "message_id": "<miki-2026-10-19-dab9bda695828a87@miki-jobsearch>",
+  "last_attempt_at": "2026-10-16T07:59:33.655599+00:00",
+  "last_attempt_run_id": "38870688350",
+  "design_version": "electric-blue-v1"
+}
