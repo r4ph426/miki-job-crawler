@@ -90,6 +90,16 @@ class ScheduledMailTests(unittest.TestCase):
         self.assertEqual(read_json(self.path, {})["provider_message_ids"], [PROVIDER_ID.strip("<>")])
         self.assertIn("%3Cscheduled-test%40smtp-relay.mailin.fr%3E", self.getter.call_args.args[0])
 
+    def test_live_scheduled_202_ack_keeps_identifier_and_verifies_queue(self):
+        opener = Mock(); opener.open.return_value = acknowledgement({"messageId": PROVIDER_ID}, status=202)
+        with patch("miki_jobsearch.service.urllib.request.build_opener", return_value=opener):
+            result = schedule_report(self.root, self.store, DAY, now=NOW, getter=self.getter)
+        record = read_json(self.path, {})
+        self.assertEqual(result["status"], "scheduled")
+        self.assertEqual(record["provider_message_id"], PROVIDER_ID)
+        self.assertTrue(record["schedule_verified_at"])
+        self.assertNotIn("accepted_at", record)
+
     def test_restart_or_immediate_send_cannot_duplicate_queued_mail(self):
         self.schedule()
         self.assertEqual(self.schedule()["delivery_status"], "scheduled")
@@ -177,6 +187,37 @@ class ScheduledMailTests(unittest.TestCase):
                                   {"status": "inProgress", "scheduledAt": record["scheduled_at"]}])
         self.assertEqual(queue_status(record, ENV, getter), "inProgress")
         self.assertEqual(getter.call_count, 2)
+
+    def test_future_lost_id_recovery_requires_exact_content_and_queue_time_for_all_recipients(self):
+        self.schedule()
+        record = read_json(self.path, {})
+        record.update(status="schedule_uncertain")
+        record.pop("provider_message_id"); record.pop("provider_message_ids")
+        atomic_json(self.path, record)
+        def getter(path, settings):
+            import urllib.parse
+            if path.startswith("smtp/emails?"):
+                address = urllib.parse.parse_qs(path.split("?", 1)[1])["email"][0]
+                return {"transactionalEmails": [{"email": address, "subject": record["subject"], "uuid": address,
+                                                "messageId": PROVIDER_ID}]}
+            if path.startswith("smtp/emails/"):
+                address = urllib.parse.unquote(path.removeprefix("smtp/emails/"))
+                return {"email": address, "subject": record["subject"], "body": "<p>Electric Blue</p>"}
+            if record["provider_batch_id"] in path:
+                raise ProviderStatusError("404")
+            return self.getter.return_value
+        result = refresh_status(self.root, self.store, DAY, now=NOW, getter=getter)
+        self.assertEqual(result["status"], "scheduled")
+        self.sender.assert_called_once()
+        self.assertEqual(read_json(self.path, {})["provider_message_id"], PROVIDER_ID)
+        atomic_json(self.path, record)
+        def mismatch(path, settings):
+            result = getter(path, settings)
+            if "body" in result: result["body"] = "different report"
+            return result
+        with self.assertRaises(ProviderStatusError):
+            refresh_status(self.root, self.store, DAY, now=NOW, getter=mismatch)
+        self.assertEqual(read_json(self.path, {})["status"], "schedule_uncertain")
 
     def test_missing_id_recovery_requires_unique_exact_sent_body_and_recipient_events(self):
         self.schedule(); record = read_json(self.path, {})

@@ -223,6 +223,35 @@ def event_start(record):
                    (attempts[-1].get("started_at") if attempts else None) or record["created_at"])
 
 
+def recover_queued_identifiers(record, body, settings, getter):
+    """Discover a lost queue ID, but only bind unique exact saved content for all recipients."""
+    identifiers = set()
+    for address in recipients(settings):
+        query = urllib.parse.urlencode({"email": address, "limit": 100, "sort": "desc"})
+        response = getter("smtp/emails?" + query, settings)
+        emails = response.get("transactionalEmails")
+        if not isinstance(emails, list):
+            raise ProviderStatusError("Queue identifier recovery unavailable")
+        candidates = set()
+        for email in emails:
+            if not isinstance(email, dict) or email.get("subject") != record["subject"]:
+                continue
+            identifier = email.get("messageId", "")
+            if (str(email.get("email", "")).lower() != address or not isinstance(identifier, str)
+                    or not re.fullmatch(r"<?[A-Za-z0-9_.+\-]{1,160}@[A-Za-z0-9.-]{1,90}>?", identifier)
+                    or not isinstance(email.get("uuid"), str)):
+                continue
+            details = getter("smtp/emails/" + urllib.parse.quote(email["uuid"], safe=""), settings)
+            if (details.get("subject") == record["subject"] and str(details.get("email", "")).lower() == address
+                    and isinstance(details.get("body"), str) and details["body"].strip() == body.strip()
+                    and single_queue_status(record, identifier, settings, getter) == "queued"):
+                candidates.add(identifier)
+        if len(candidates) != 1:
+            raise ProviderStatusError("No unique exact-content queued message for every recipient; do not resubmit")
+        identifiers.update(candidates)
+    return sorted(identifiers)
+
+
 def refresh_status(root, store, day, now=None, persist=None, getter=provider_get):
     """Read-only at Brevo. Never POST, cancel or replace a queued message."""
     now = now or datetime.now(timezone.utc)
@@ -242,7 +271,15 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
         record["provider_checked_at"] = now.isoformat()
         try:
             if record.get("scheduled_at") and now < instant(record["scheduled_at"]):
-                record["provider_status"] = queue_status(record, settings, getter)
+                try:
+                    record["provider_status"] = queue_status(record, settings, getter)
+                except ProviderStatusError:
+                    if message_identifiers(record):
+                        raise
+                    identifiers = recover_queued_identifiers(record, path.with_suffix(".html").read_text(encoding="utf-8"),
+                                                             settings, getter)
+                    record.update(provider_message_ids=identifiers, provider_message_id=identifiers[0],
+                                  schedule_recovered_at=now.isoformat(), provider_status="queued")
                 if record["provider_status"] == "queued":
                     record["schedule_verified_at"] = now.isoformat()
                     record["status"] = "scheduled"

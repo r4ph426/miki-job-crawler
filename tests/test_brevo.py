@@ -148,7 +148,7 @@ class BrevoDeliveryTests(unittest.TestCase):
 
     def test_invalid_success_never_marks_sent(self):
         responses = [acknowledgement({}, 201), acknowledgement({"messageId": "private-key"}),
-                     acknowledgement(status=200), acknowledgement(["unexpected-list"])]
+                     acknowledgement(status=200), acknowledgement(status=202), acknowledgement(["unexpected-list"])]
         broken = acknowledgement()
         broken.read.return_value = b"invalid-json"
         responses.append(broken)

@@ -230,7 +230,10 @@ def send_brevo(message, settings, on_sending, scheduled_at=None, batch_id=None):
         data = json.loads(raw) if len(raw) <= 16000 else None
         provider_id = data.get("messageId") if isinstance(data, dict) else None
         provider_ids = (data.get("messageIds") or [provider_id]) if isinstance(data, dict) else []
-        if (code != 201 or not isinstance(provider_ids, list) or not 1 <= len(provider_ids) <= 100
+        # Brevo's live scheduled endpoint returns 202 Accepted (observed in production),
+        # whereas immediate delivery uses 201. Neither proves recipient delivery.
+        if (code not in ({201, 202} if scheduled_at is not None else {201})
+                or not isinstance(provider_ids, list) or not 1 <= len(provider_ids) <= 100
                 or any(not isinstance(value, str) or not re.fullmatch(
                     r"<?[A-Za-z0-9_.+\-]{1,160}@[A-Za-z0-9.-]{1,90}>?", value) for value in provider_ids)
                 or (scheduled_at is None and not isinstance(provider_id, str))):

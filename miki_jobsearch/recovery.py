@@ -139,7 +139,8 @@ def main():
             check_readiness(root, result["date"], now=now)
     return int(any(r.get("status") in {"research_failed", "configuration_failed", "failed", "schedule_failed",
                                       "retry_budget_exhausted", "provider_unconfirmed", "delivery_problem",
-                                      "manual_review_required"} or (r.get("status") == "awaiting_delivery"
+                                      "manual_review_required", "schedule_uncertain", "scheduling", "sending",
+                                      "uncertain", "partial"} or (r.get("status") == "awaiting_delivery"
                                       and (local.hour, local.minute) >= (8, 45)) for r in results))
 
 
