@@ -1,186 +1,267 @@
 {
   "date": "2026-10-16",
-  "status": "research_failed",
-  "hits": 0,
-  "failed_at": "2026-10-15T12:17:08.076568+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "no_verified_candidates"
+  "created_at": "2026-10-16T06:51:33.162346+00:00",
+  "status": "prepared",
+  "subject": "Wochenüberblick Stellensuche · KW 42",
+  "report": {
+    "summary": "8 passende Anzeigen gefunden (Berlin, geprüft am 2026-10-16, 08:30 Uhr). Schwerpunkte heute: mehrere neue Vertriebsinnendienst-/Beschaffungsrollen im Großhandel sowie frische Koordinationsrollen (öffentlich/NGO).",
+    "next_action": "Priorisieren: 1) Packmatic – Junior Buying Manager (ATS, Berlin-Prenzlauer Berg). 2) JOP Handels – Vertriebsinnendienst (Tempelhof). 3) BVG – Koordinator Operative Exzellenz. 4) IB – Projektkoordination Kältehilfe (Teilzeitfenster prüfen). Danach Battle Royal Studios (Marketingkoordination).",
+    "weekend_action": "60–90 Min: Zwei maßgeschneiderte Lebenslaufvarianten (Beschaffung/Koordination) aktualisieren; kurze Telefonleitfäden für BVG/IB (Arbeitszeitmodelle) und JOP (Gehalt/Standort) vorbereiten; Portfolio-Beispiele für NOOS/Order-Flows in Stichpunkten sammeln.",
+    "jobs": [
+      {
+        "title": "Junior Buying Manager (w/m/d)",
+        "employer": "Packmatic GmbH",
+        "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+        "district": "Prenzlauer Berg",
+        "hours": "Vollzeit",
+        "contract": "Unbekannt",
+        "salary": "Unbekannt",
+        "commute": "ca. 15–25 Min. ÖPNV von Berlin-Heinersdorf nach Prenzlauer Berg (Büro angegeben)",
+        "pro": "Starker Fit: Lieferantenverhandlungen, Einkaufskonditionen und enge Abstimmung über Teams hinweg.",
+        "con": "Als Junior-Rolle (0–2 Jahre) voraussichtlich niedrigeres Level/Gehalt als bisherige Erfahrung.",
+        "effort_details": "Lever-ATS: Konto/Profil, Fragen, Uploads; ca. 55 Min.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 36,
+          "entry": 28,
+          "commute": 20,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "und du wirst von einem klaren Wachstums- und Entwicklungspfad profitieren. Was dich bei uns erwartet Du verhandelst mit Lieferanten aus unserem Partnernetzwerk und stellst sicher, dass Kundenanfragen zu optimalen Konditionen eingekauft werden. Du identifizierst Lücken im Lieferantennetzwerk und trägst aktiv zur Weiterentwicklung und Akquise neuer Lieferanten bei. Du arbeitest eng mit dem Packaging-Team an Kundenprojekten zusammen und unterstützt bei der technischen und kaufmännischen",
+        "score": 91,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Mitarbeiter (m/w/d) Vertriebsinnendienst - Schwerpunkt Bodenbeläge",
+        "employer": "JOP Handels-GmbH & Co. KG",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003679715-S",
+        "district": "Tempelhof",
+        "hours": "Vollzeit, Mo–Fr",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 55–60 Min. ÖPNV von Berlin-Heinersdorf nach Berlin-Tempelhof (Industriestraße 15)",
+        "pro": "Auftragsbearbeitung, Bestellung und Einkauf passen zur Koordinations- und Beschaffungserfahrung.",
+        "con": "Branchenspezifische Produktkenntnisse im Bereich Bodenbeläge ausdrücklich gewünscht.",
+        "effort_details": "ATS-Weiterleitung (HRlab) mit Standard-Profilanlage und Uploads; ca. 55 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 32,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "Betriebsfeiern 30 Urlaubstage/Kalenderjahr Geregelte Einarbeitung attraktive Arbeitszeiten (Montag-Freitag) Eine vielseitige und abwechslungsreiche Tätigkeit Flache Hierarchien und schnelle Entscheidungsfindungen Bike Leasing Corporate Benefits 🧾Ihre Aufgaben: Umfassende persönliche und telefonische Beratung der Großhandelskunden Angebotserstellung und -bearbeitung Aktiver Verkauf Erfassung der Kundenaufträge Bestellung und Einkauf Bearbeitung von Reklamationen 🎯Womit Sie uns",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination Berlin site:arbeitsagentur.de",
+        "Teamassistenz Berlin site:karriereportal-stellen.berlin.de",
+        "Office Manager Berlin site:arbeitsagentur.de",
+        "Marketingkoordination Berlin site:personio.de",
+        "Projektkoordination NGO Berlin site:personio.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:lever.co",
+        "Sachbearbeiter Einkauf Berlin site:arbeitsagentur.de",
+        "Supply Chain Berlin site:personio.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de",
+        "Product Coordinator/Assistant Merchandise Planner Berlin site:fashionjobs.com"
+      ]
+    },
+    "family_observations": {
+      "A": "Öffentliche Hand listet weiter viele Koordinations-/Assistenzrollen, aber häufig mit Teilzeit oder befristet. NGO-/Kulturrollen mit klaren Fristen; Englischanteil hoch.",
+      "B": "Großhandel/Industrie fahren Einstellungen im operativen Einkauf/Innenvertrieb fort; klare Tendenz zu hybriden Modellen und ERP‑Kenntnissen, Gehaltsangaben bleiben selten.",
+      "C": "Vertriebsinnendienst in Berlin weiterhin breit vertreten, teils mit Einkauf/Order‑Anteil; im Fashion‑E‑Com sind Junior‑Planning/Analyst‑Rollen sichtbar, BI/Excel wird durchgehend gefordert."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Neue Detailseiten u. a. WIEDEMANN, JOP, BVG, IB geöffnet."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Heute vor allem Kategorieseiten ohne neue, klare Detailtreffer; keine belastbare neue Einzelanzeige genutzt."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Lever (Packmatic) und Personio (Battle Royal Studios, Amnesty) mit live‑Detailseiten geprüft."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal-Stellen Berlin kontrolliert; keine neue, besser passende Assistenz/Einkauf-Rolle als bereits gemeldet LfG-TA; Fristenübersicht gesichtet."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs.com mit aktueller Zalando‑Anzeige (Assistant Merchandise Planner) genutzt; FashionUnited lieferte v. a. Retail/VM."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://battleroyalstudios.jobs.personio.de/job/2816786?language=en",
+        "reason": "Fachfremd (Marketing Operations/Content); Anforderungen fokussieren auf Social/Content/Copywriting und Marketing-Systeme, keine passende Beschaffungs-/Produktkoordination."
+      },
+      {
+        "url": "https://amnesty-international-deutschland.jobs.personio.de/job/2823530",
+        "reason": "Spezialisierte Rolle in Menschenrechts-/Bildungsarbeit mit expliziter Erfahrung in politischer/Menschenrechtsbildung und Drittmittelakquise; fachlich nicht passend zu Einkauf/Produktkoordination; zudem nur 28,5 Std./Woche."
+      }
+    ],
+    "assessment_pages_checked": 4,
+    "rejected": [
+      {
+        "title": "Mitarbeiter im Vertriebsinnendienst (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003679254-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Mitarbeiter im Vertriebsinnendienst (m/w/d)",
+          "employer": "WIEDEMANN Burg GmbH",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003679254-S",
+          "district": "Berlin (mehrere Niederlassungen, u. a. Tempelhof/Reinickendorf/Mahlsdorf)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "Schätzung 30–60 Min. je nach Einsatzniederlassung (konservativ)",
+          "pro": "Großhandel Gebäudetechnik; Mix aus Beratung, Auftragsbearbeitung und Einkauf passt zum Profil.",
+          "con": "Einsatzstandort nicht fix; Gehaltsband fehlt.",
+          "effort_details": "BA-Formular 25 Min, Telefonrückfrage Standort+Gehalt 10 Min.",
+          "deadline": "",
+          "evidence": "„Für unsere Niederlassungen in Burg (bei Magdeburg), Berlin-Tempelhof, Berlin-Reinickendorf, Berlin-Mahlsdorf, Brandenburg/Havel, Potsdam und Wildau suchen wir einen Mitarbeiter im Vertriebsinnendienst (m/w/d).“ ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003679254-S?utm_source=openai))",
+          "family": "C",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 28,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 35
+        }
+      },
+      {
+        "title": "Koordinatorin / Koordinator Operative Exzellenz (w/m/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/16485-970799124-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Koordinatorin / Koordinator Operative Exzellenz (w/m/d)",
+          "employer": "Berliner Verkehrsbetriebe (BVG) – AöR",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/16485-970799124-S",
+          "district": "Berlin (BVG, Geschäftseinheit Operative Systemsteuerung)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet (TV‑N Berlin, Einstufung nach Berufserfahrung)",
+          "salary": "Unbekannt (TV‑N Berlin)",
+          "commute": "ca. 35–45 Min. (konservativ)",
+          "pro": "Methodenorientierte Koordinationsrolle (Lean/Kaizen) mit klarer Schnittstellenarbeit.",
+          "con": "ÖPNV-Tarif, formale Prozesse; Lean-Erfahrung sollte im CV konkret benannt werden.",
+          "effort_details": "BVG-Portal 90 Min (komplex), Projektauswahl im CV 20 Min.",
+          "deadline": "",
+          "evidence": "„Mit Lean-Methoden wie 5S, Kaizen oder Poka Yoke begleitest du Fachbereiche dabei, Arbeitsabläufe nachhaltig weiterzuentwickeln …“ ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/16485-970799124-S?utm_source=openai))",
+          "family": "A",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 27,
+            "entry": 23,
+            "commute": 15,
+            "conditions": 6
+          },
+          "effort_minutes": 110
+        }
+      },
+      {
+        "title": "Projektkoordination für Schöneberger Kältehilfe (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003693600-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Projektkoordination für Schöneberger Kältehilfe (m/w/d)",
+          "employer": "Internationaler Bund (IB) Berlin-Brandenburg gGmbH",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003693600-S",
+          "district": "Berlin-Schöneberg (Kurfürstenkiez)",
+          "hours": "Teilzeit 20–39 Std. (Abend-/Nachtdienste)",
+          "contract": "Befristet bis 30.04.2027",
+          "salary": "Unbekannt",
+          "commute": "ca. 40–50 Min.",
+          "pro": "Klare Koordinationsaufgaben, flache Hierarchien; Teilzeitkorridor deckt 30–39 h ab.",
+          "con": "Überwiegend Spät-/Nachtdienste; sozialer Kontext abseits Kernbranche.",
+          "effort_details": "BA-Formular 25 Min, Klärung Dienstzeiten per Telefon 10 Min.",
+          "deadline": "",
+          "evidence": "„Für die Kältehilfe in Berlin‑Schöneberg suchen wir ab sofort eine*n Projektkoordinator*in … Unsere Kältehilfe … ist … von 18:00–8:00 Uhr geöffnet …“ ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003693600-S?utm_source=openai))",
+          "family": "A",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 24,
+            "entry": 25,
+            "commute": 15,
+            "conditions": 4
+          },
+          "effort_minutes": 35
+        }
+      },
+      {
+        "title": "Assistant Merchandise Planner (All Genders)",
+        "url": "https://de.fashionjobs.com/stellenangebote/zalando/Assistant-merchandise-planner%2C12160340.html",
+        "reason": "Detail page unavailable: HTTP 403",
+        "candidate": {
+          "title": "Assistant Merchandise Planner (All Genders)",
+          "employer": "Zalando SE",
+          "url": "https://de.fashionjobs.com/stellenangebote/zalando/Assistant-merchandise-planner%2C12160340.html",
+          "district": "Berlin-Friedrichshain (Valeska‑Gert‑Str. – HQ Umfeld)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 35–45 Min.",
+          "pro": "Einstiegsnahe Merchandising-/Planungsrolle mit starkem Zahlenfokus; Nähe zu Mikis NOOS-/Forecasting-Erfahrung.",
+          "con": "Anzeige Englisch; E‑Com‑Tools und BI werden vorausgesetzt.",
+          "effort_details": "Direktbewerbung Zalando 70–90 Min (Profilfragen).",
+          "deadline": "",
+          "evidence": "„As an Assistant Merchandise Planner, you are responsible for providing analytical insights … to make decisions which improve the assortment …“ ([de.fashionjobs.com](https://de.fashionjobs.com/stellenangebote/zalando/Assistant-merchandise-planner%2C12160340.html?utm_source=openai))",
+          "family": "C",
+          "source_group": "fashion",
+          "scores": {
+            "skill": 30,
+            "entry": 22,
+            "commute": 15,
+            "conditions": 5
+          },
+          "effort_minutes": 80
+        }
+      }
+    ]
   },
-  "candidate_diagnostics": [
-    {
-      "title": "Zentraler Auftragsmanager (m/w/d) - 1KOMMA5° Handwerk - Berlin",
-      "url": "https://1komma5grad.jobs.personio.de/job/2654776",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Zentraler Auftragsmanager (m/w/d) - 1KOMMA5° Handwerk - Berlin",
-        "employer": "1KOMMA5°",
-        "url": "https://1komma5grad.jobs.personio.de/job/2654776",
-        "district": "Unbekannt",
-        "hours": "Vollzeit",
-        "contract": "Festanstellung",
-        "salary": "Unbekannt",
-        "commute": "ca. 31–45 Min. ÖPNV ab Berlin-Heinersdorf (Schätzung, keine genaue Adresse)",
-        "pro": "Breite Schnittstellenrolle mit Verantwortung für Auftragsabwicklung, Terminierung und Logistik.",
-        "con": "Technisches SHK-Umfeld; Einarbeitung in branchenspezifische Themen nötig.",
-        "effort_details": "ATS (Personio) ca. 55 Min: Profil anlegen/aktualisieren, Lebenslauf hochladen, Formularfragen beantworten, Kurzanschreiben prüfen.",
-        "deadline": "",
-        "family": "B",
-        "source_group": "ats",
-        "scores": {
-          "skill": 30,
-          "entry": 24,
-          "commute": 15,
-          "conditions": 8
-        },
-        "effort_minutes": 55,
-        "evidence": "anbieten zu können. Hast du Lust, die Energierevolution mit uns anzugehen? Dann bewirb dich jetzt und werde Teil unserer Mission! Deine Position Zentrale Ansprechperson und lösungsorientiertes Bindeglied zwischen Montage-Teams, Vertrieb und Kund*innen Verantwortung für einen reibungslosen Ablauf in der Auftragsabwicklung – von der Planung bis zur finalen Umsetzung Koordination des Projektfortschritts, der Materialanlieferung und der gesamten Logistik Planung und Terminierung von Montagen"
-      }
-    },
-    {
-      "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
-      "url": "https://apc-ag.jobs.personio.de/job/2780473",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
-        "employer": "APC AG",
-        "url": "https://apc-ag.jobs.personio.de/job/2780473",
-        "district": "Unbekannt",
-        "hours": "Vollzeit",
-        "contract": "Festanstellung",
-        "salary": "2.500 - 3.500 € pro Monat",
-        "commute": "ca. 46–60 Min. ÖPNV ab Berlin-Heinersdorf (Schätzung, keine genaue Adresse)",
-        "pro": "Klare kaufmännische Aufgaben inkl. Auftragsbearbeitung und Rechnungsstellung, passende Schnittstellenkompetenz.",
-        "con": "Vergütung vergleichsweise niedrig angegeben.",
-        "effort_details": "ATS (Personio) ca. 55 Min: Basisdaten, Lebenslauf-Upload, Formularfelder, optionales Anschreiben.",
-        "deadline": "",
-        "family": "B",
-        "source_group": "ats",
-        "scores": {
-          "skill": 26,
-          "entry": 26,
-          "commute": 10,
-          "conditions": 6
-        },
-        "effort_minutes": 55,
-        "evidence": "(MS Office, Outlook, Internet) Viel Spaß und Freude am Kontakt mit Menschen - persönlich oder telefonisch Deine Aufgaben Telefonische und schriftliche Korrespondenz mit unserem Außendienst und unseren Geschäftspartnern Auftragsbearbeitung, Erstellung und Kontrolle von Rechnungen und Verwaltung der Arbeitszeiten von den Außendienstmitarbeitern (w/m/d) der Niederlassung Allgemein anfallende, administrative Tätigkeiten und Büroorganisation Über uns DU suchst beruflich nach etwas Neuem"
-      }
-    },
-    {
-      "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
-      "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
-        "employer": "Zertificon Solutions GmbH",
-        "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
-        "district": "Neukölln",
-        "hours": "Vollzeit",
-        "contract": "Festanstellung",
-        "salary": "Unbekannt",
-        "commute": "ca. 46–60 Min. ÖPNV ab Berlin-Heinersdorf (Schätzung)",
-        "pro": "End-to-End-Auftragsabwicklung nach dem Verkauf mit CRM-Bezug, klare Prozesse und Benefits (z. B. Deutschlandticket).",
-        "con": "Brancheneinstieg in B2B-Software notwendig, neue Tools/Produkte einarbeiten.",
-        "effort_details": "ATS (Personio) ca. 55 Min: Konto/Profil, Lebenslauf-Upload, Formularangaben, ggf. kurze Motivationsfragen.",
-        "deadline": "",
-        "family": "B",
-        "source_group": "ats",
-        "scores": {
-          "skill": 27,
-          "entry": 26,
-          "commute": 10,
-          "conditions": 7
-        },
-        "effort_minutes": 55,
-        "evidence": "dem Softwarekauf passiert – von der Auftragsabwicklung bis zum Onboarding. Du unterstützt außerdem bei der E-Mail-Zertifikatsverwaltung für unsere Kunden. Von der Auftragsbestätigung bis zur Rechnungsstellung: Du bearbeitest Kundenaufträge und sorgst dafür, dass nach dem Verkauf alles reibungslos läuft Erstelle und versende Dokumente wie Verträge, Auftragsbestätigungen und Rechnungen Bearbeite Rechnungen für digitale Zertifikate von unseren Trustcenter-Partnern Für Kunden, Partner und"
-      }
-    },
-    {
-      "title": "Projektassistenz (w/m/d) – Referat „Bundespolizei (BPOL)“",
-      "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-w-m-d-Berlin-Bundesamt-fuer-Bauwesen-und-Raumordnung-BBR--14593254-inline.html",
-      "reason": "Detail page unavailable (TimeoutError)",
-      "candidate": {
-        "title": "Projektassistenz (w/m/d) – Referat „Bundespolizei (BPOL)“",
-        "employer": "Bundesamt für Bauwesen und Raumordnung (BBR)",
-        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-w-m-d-Berlin-Bundesamt-fuer-Bauwesen-und-Raumordnung-BBR--14593254-inline.html",
-        "district": "Berlin (Dienstort Berlin)",
-        "hours": "39h, Teilzeit möglich",
-        "contract": "Unbefristet (TVöD E7)",
-        "salary": "TVöD EG 7",
-        "commute": "ca. 35–45 Min ÖPNV ab Heinersdorf (Schätzung, Bundestandorte zentral)",
-        "pro": "Stetiges Umfeld, klare Prozesse (TVöD), administratives Projektumfeld.",
-        "con": "Stärker administrativ, weniger produkt-/lieferkettennah.",
-        "effort_details": "ÖD‑Portal 130 Min: Ausschreibung lesen 20, Nachweise/Zeugnisse 40, CV/Anschreiben formal 50, Upload/Formulare 20.",
-        "deadline": "2026-11-02",
-        "evidence": "„…Projektmanagementaufgaben für die Bauprojekte der Bundespolizei (BPOL)… Projektassistenz (w/m/d) … E 7 TVöD … 39h … Aufgaben liegen in der Durchführung von Baumaßnahmen des Bundes…“",
-        "family": "A",
-        "source_group": "stepstone",
-        "scores": {
-          "skill": 24,
-          "entry": 27,
-          "commute": 15,
-          "conditions": 7
-        },
-        "effort_minutes": 130
-      }
-    },
-    {
-      "title": "Projektassistenz (d/m/w) – Sozial- und Gesellschaftspolitik (2 Jahre)",
-      "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
-      "reason": "Detail page unavailable (TimeoutError)",
-      "candidate": {
-        "title": "Projektassistenz (d/m/w) – Sozial- und Gesellschaftspolitik (2 Jahre)",
-        "employer": "Prognos AG",
-        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
-        "district": "Berlin-Charlottenburg (Goethestraße 85)",
-        "hours": "Vollzeit (40h)",
-        "contract": "Befristet 24 Monate",
-        "salary": "Unbekannt",
-        "commute": "ca. 50–55 Min ÖPNV ab Heinersdorf",
-        "pro": "Kaufmännisch‑organisatorische Projektarbeit in etabliertem Forschungsumfeld.",
-        "con": "Befristung auf 2 Jahre; Arbeitsort westliche City (längere Pendelzeit).",
-        "effort_details": "StepStone/Unternehmensportal 70 Min: CV abstimmen 30, Anschreiben 30, Uploads 10.",
-        "deadline": "",
-        "evidence": "„Sie unterstützen die Projektleitung… bei der Organisation des laufenden Geschäftsstellenbetriebs… erstellen und pflegen Protokolle sowie Termin‑, Aufgaben‑ und Fristenübersichten… strukturieren und pflegen die digitale Projektablage… Voraussetzungen: Bachelor BWL/Verwaltung o. kaufm. Ausbildung; erste Erfahrung in Projektassistenz/Teamassistenz…“",
-        "family": "A",
-        "source_group": "stepstone",
-        "scores": {
-          "skill": 24,
-          "entry": 26,
-          "commute": 10,
-          "conditions": 6
-        },
-        "effort_minutes": 70
-      }
-    },
-    {
-      "title": "Kaufmännische Sachbearbeitung / Projektassistenz (m/w/d) – gern Quereinstieg",
-      "url": "https://pbvi.jobs.personio.de/job/2607804",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Kaufmännische Sachbearbeitung / Projektassistenz (m/w/d) – gern Quereinstieg",
-        "employer": "PBVI GmbH (Bauplanung/Bauüberwachung/Vermessung)",
-        "url": "https://pbvi.jobs.personio.de/job/2607804",
-        "district": "Berlin (Bezirk nicht genannt)",
-        "hours": "Vollzeit",
-        "contract": "Unbefristet (nicht genannt)",
-        "salary": "Unbekannt",
-        "commute": "ca. 45–60 Min ÖPNV ab Heinersdorf (Schätzung)",
-        "pro": "Breiter Projektassistenz‑Zuschnitt inkl. Angebots-/Rechnungsunterstützung.",
-        "con": "Branche Bau; erste Branchenkenntnisse erwünscht.",
-        "effort_details": "ATS (Personio) 55 Min: Profil 10, CV 25, Fragen/Upload 20.",
-        "deadline": "",
-        "evidence": "„Du unterstützt unsere Planungsteams bei vielen kaufmännischen und organisatorischen Aufgaben… Du hilfst bei der Vorauswahl von Ausschreibungen und unterstützt beim Erstellen von Angeboten… Du übernimmst die zeitnahe Fakturierung…“",
-        "family": "A",
-        "source_group": "ats",
-        "scores": {
-          "skill": 24,
-          "entry": 24,
-          "commute": 10,
-          "conditions": 6
-        },
-        "effort_minutes": 55
-      }
-    }
-  ]
+  "attempts": [],
+  "hits": 2,
+  "researched_at": "2026-10-16T06:51:33.162346+00:00",
+  "prepared_at": "2026-10-16T06:55:17.058914+00:00",
+  "message_id": "<miki-2026-10-16-ef73bcb208a814f2@miki-jobsearch>",
+  "last_attempt_at": "2026-10-16T06:51:33.162346+00:00",
+  "last_attempt_run_id": "38863582736",
+  "design_version": "electric-blue-v1",
+  "email_provider": "brevo"
 }
