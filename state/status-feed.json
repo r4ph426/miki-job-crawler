@@ -1,15 +1,16 @@
 {
-  "updated_at": "2026-10-16T06:55:20.049189+00:00",
+  "updated_at": "2026-10-16T07:59:29.850303+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
     "prepare": "09:00",
     "prepare_retry": "13:00",
-    "check": "16:00",
+    "check": "after recovery",
     "send": "08:30",
     "provider_poll": "08:37",
-    "delivery_check": "08:40",
-    "prepare_days": "Sunday–Thursday",
+    "delivery_check": "08:45",
+    "prepare_days": "daily; next weekday within 72h",
+    "recovery": "every 30 minutes; morning every 20 minutes",
     "send_days": "Monday–Friday"
   },
   "records": {
@@ -30,6 +31,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -50,6 +53,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -70,6 +75,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -90,6 +97,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -110,6 +119,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -130,6 +141,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -150,6 +163,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -170,6 +185,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -190,6 +207,8 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     },
@@ -210,11 +229,19 @@
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
       "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
       "has_report": true,
       "has_mail": true
     }
   },
-  "lease": null,
+  "lease": {
+    "actor": "github",
+    "phase": "provider-check",
+    "date": "2026-10-16",
+    "started_at": "2026-10-16T07:59:29.846755+00:00",
+    "expires_at": "2026-10-16T08:39:29.846755+00:00"
+  },
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",
@@ -302,6 +329,7 @@
   "laptop": {
     "status": "disabled"
   },
+  "recovery": {},
   "delivery_alerts": {
     "2026-10-12": {
       "status": "sent",
