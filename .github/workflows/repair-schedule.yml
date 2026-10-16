@@ -1,0 +1,53 @@
+name: Repair one scheduled email after confirmed cancellation
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: Existing report date YYYY-MM-DD
+        required: true
+        type: string
+      expected_batch:
+        description: Exact existing Brevo batch UUID; a replacement requires HTTP 204 cancellation
+        required: true
+        type: string
+concurrency:
+  group: miki-weekday-service
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate cancellation barriers
+        run: python3 -m unittest tests.test_repair_schedule -v
+      - name: Cancel exactly the existing batch then replace only on confirmed cancellation
+        env:
+          REPAIR_DAY: ${{ inputs.day }}
+          EXPECTED_BATCH: ${{ inputs.expected_batch }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          EMAIL_PROVIDER: brevo
+          MAIL_FROM: ${{ secrets.MAIL_FROM || vars.MAIL_FROM || secrets.GMAIL_USER || vars.GMAIL_USER }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
+        run: |
+          set -euo pipefail
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          python3 -m miki_jobsearch.repair_schedule "$REPAIR_DAY" "$EXPECTED_BATCH"
+      - name: Preserve safe repair receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: miki-schedule-repair-${{ github.run_id }}
+          path: |
+            state/runs/
+            state/schedule-history/
+          retention-days: 30
