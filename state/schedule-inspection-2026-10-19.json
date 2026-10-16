@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-19",
+  "operation": "GET-only scheduled queue inspection",
+  "matches": [],
+  "checks": [
+    {
+      "operation": "recipient email list",
+      "count": 21
+    },
+    {
+      "operation": "recipient email list",
+      "count": 11
+    },
+    {
+      "operation": "queue lookup",
+      "error": "Brevo status unavailable (HTTP 404)"
+    }
+  ]
+}
