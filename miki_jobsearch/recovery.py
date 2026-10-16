@@ -11,7 +11,7 @@ from .research import ResearchError
 from .scheduled_mail import ProviderStatusError, send_time
 from .service import BERLIN, DeliveryFailure, MailConfigurationError, StateSyncError, read_json
 
-MAX_ATTEMPTS_PER_PHASE_PER_DAY = 4
+MAX_ATTEMPTS_PER_PHASE_PER_WINDOW = 3
 RETRY_SECONDS = 60
 PROVIDER_STATES = {"sent", "scheduled", "scheduling", "schedule_uncertain", "sending", "uncertain", "partial"}
 RETRY_STATES = {"missing", "research_failed", "configuration_failed", "failed", "prepared", "schedule_failed"}
@@ -38,9 +38,11 @@ def targets(now):
 
 def retry_allowed(record, phase, now):
     attempts = [a for a in record.get("attempts", []) if a.get("phase") == phase]
-    today = now.astimezone(BERLIN).date()
-    todays = [a for a in attempts if datetime.fromisoformat(a["started_at"]).astimezone(BERLIN).date() == today]
-    if len(todays) >= MAX_ATTEMPTS_PER_PHASE_PER_DAY:
+    def window(when):
+        local = when.astimezone(BERLIN)
+        return local.date(), "morning" if local.hour < 9 else "day" if local.hour < 16 else "evening"
+    current = [a for a in attempts if window(datetime.fromisoformat(a["started_at"])) == window(now)]
+    if len(current) >= MAX_ATTEMPTS_PER_PHASE_PER_WINDOW:
         return False, "retry_budget_exhausted"
     if attempts and now - datetime.fromisoformat(attempts[-1]["started_at"]) < timedelta(seconds=RETRY_SECONDS):
         return False, "retry_cooldown"
@@ -60,7 +62,7 @@ def recover_day(root, day, clock=utcnow, executor=execute, provider=check_provid
             try:
                 result = provider(root, day, now=now)
             except (ProviderStatusError, MailConfigurationError):
-                return {"date": day, "status": "provider_unconfirmed", "retryable": True}
+                return {"date": day, "status": "provider_unconfirmed", "retryable": now >= send_time(day)}
             current = read_json(path, {})
             if current.get("delivered_at"):
                 return {"date": day, "status": "delivered"}

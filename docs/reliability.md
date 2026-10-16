@@ -32,9 +32,9 @@ preparation window or select a task from the original cron string.
 
 Every automatic research/queue/send attempt is persisted in
 `state/recovery/YYYY-MM-DD.json` **before** the action, under the existing shared
-Git lease. Four attempts per phase per Berlin calendar day and at least 60 seconds
-between starts prevent runaway spend. The morning gets a new budget after the
-previous evening's failures. A single invocation makes up to three repair cycles,
+Git lease. Three attempts per phase in each Berlin time window (morning before 09:00,
+daytime 09:00–16:00, evening from 16:00) and at least 60 seconds between starts
+prevent runaway spend. Daytime failures cannot consume evening or morning retries. A single invocation makes up to three repair cycles,
 with a 60-second pause. Failed candidate URLs are supplied to renewed research so
 it explores a different shortlist without weakening source verification.
 

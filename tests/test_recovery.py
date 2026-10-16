@@ -129,6 +129,14 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(recover_day(self.root, DAY, clock=lambda: self.now, executor=runner)["status"], "retry_budget_exhausted")
         runner.assert_not_called()
 
+    def test_exhausted_daytime_budget_cannot_consume_evening_or_morning_retries(self):
+        day = self.now.replace(hour=10)
+        ledger = {"attempts": [{"phase":"research", "started_at": (day - timedelta(minutes=i)).isoformat()}
+                               for i in range(3)]}
+        self.assertEqual(retry_allowed(ledger, "research", day + timedelta(hours=1))[1], "retry_budget_exhausted")
+        self.assertTrue(retry_allowed(ledger, "research", day.replace(hour=16))[0])
+        self.assertTrue(retry_allowed(ledger, "research", day.replace(hour=6) + timedelta(days=1))[0])
+
     def test_attempt_is_durable_before_research_and_failed_attempt_is_retained(self):
         atomic_json(self.root / "state/coordinator.json", {"lease": {"token": "token", "expires_at": "2099-01-01T00:00:00+00:00"}})
         saves = []

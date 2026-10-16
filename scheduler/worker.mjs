@@ -44,7 +44,7 @@ export async function wake(env, now = new Date(), request = fetch) {
   let feed;
   try {
     const response = await request(`https://raw.githubusercontent.com/${REPO}/main/state/status-feed.json`,
-      { signal: AbortSignal.timeout(15000), redirect: 'error', headers: { 'Cache-Control': 'no-cache' } });
+      { signal: AbortSignal.timeout(15000), redirect: 'manual', headers: { 'Cache-Control': 'no-cache' } });
     if (response.ok) feed = await response.json();
   } catch { /* A missing/unavailable feed must wake recovery, not silently suppress it. */ }
   if (!needsWake(feed, now)) return { status: 'healthy' };
@@ -52,7 +52,7 @@ export async function wake(env, now = new Date(), request = fetch) {
     'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'miki-independent-scheduler' };
   // Never fill GitHub's shared pending slot while an earlier repair is active.
   const running = await request(`${API}/actions/workflows/${WORKFLOW}/runs?branch=main&per_page=10`,
-    { headers, signal: AbortSignal.timeout(15000), redirect: 'error' });
+    { headers, signal: AbortSignal.timeout(15000), redirect: 'manual' });
   if (!running.ok) throw new Error(`workflow_status_http_${running.status}`);
   const runs = (await running.json()).workflow_runs;
   if (!Array.isArray(runs)) throw new Error('workflow_status_invalid');
@@ -62,7 +62,7 @@ export async function wake(env, now = new Date(), request = fetch) {
   const response = await request(`${API}/actions/workflows/${WORKFLOW}/dispatches`, {
     method: 'POST', headers: { ...headers, 'Content-Type': 'application/json' },
     body: JSON.stringify({ ref: 'main', inputs: { task: 'recover' } }),
-    signal: AbortSignal.timeout(15000), redirect: 'error',
+    signal: AbortSignal.timeout(15000), redirect: 'manual',
   });
   if (response.status !== 204) throw new Error(`workflow_dispatch_http_${response.status}`);
   return { status: 'dispatched', at: now.toISOString() };

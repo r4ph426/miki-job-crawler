@@ -35,7 +35,8 @@ test('only fixed recovery workflow receives token; no mail content or credential
   assert.equal(calls[0][1].headers.Authorization, undefined);
   assert.equal(calls[2][0], 'https://api.github.com/repos/r4ph426/miki-job-crawler/actions/workflows/preparation.yml/dispatches');
   assert.deepEqual(JSON.parse(calls[2][1].body), { ref: 'main', inputs: { task: 'recover' } });
-  assert.equal(calls.every(([, options]) => options.redirect === 'error'), true);
+  // Workers supports manual/follow only. Manual still prevents forwarding credentials on redirects.
+  assert.equal(calls.every(([, options]) => options.redirect === 'manual'), true);
 });
 test('active run suppresses repeated dispatch', async () => {
   let count = 0;
