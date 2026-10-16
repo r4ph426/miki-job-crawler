@@ -1,7 +1,7 @@
 {
   "date": "2026-10-19",
   "created_at": "2026-10-16T07:59:33.655599+00:00",
-  "status": "scheduling",
+  "status": "schedule_uncertain",
   "subject": "Stellen für Miki · 19.10.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 16.10.2026 für den Versand am 19.10.2026. 6 passende Neufunde mit belastbaren Anzeigen am 16.10.2026. Mix aus Einkauf/Supply Chain (starkes Skill‑Match) plus eine öffentliche Teamassistenz (sicheres Einstiegsprofil) und eine Modekoordination (fachlich passend, Sprachhürde).",
@@ -188,7 +188,7 @@
   },
   "attempts": [
     {
-      "status": "scheduling",
+      "status": "schedule_uncertain",
       "started_at": "2026-10-16T08:09:16.867559+00:00"
     }
   ],
@@ -203,5 +203,12 @@
   "email_provider": "brevo",
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
   "expected_recipients": 2,
-  "provider_batch_id": "7f5ab5de-1363-459e-82ce-9e1fd965099e"
+  "provider_batch_id": "7f5ab5de-1363-459e-82ce-9e1fd965099e",
+  "error": "Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
+  "provider_diagnostic": {
+    "http_status": 202,
+    "message_id_present": true,
+    "message_ids_present": false,
+    "json_object": true
+  }
 }
