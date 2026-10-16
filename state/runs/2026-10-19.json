@@ -210,5 +210,7 @@
     "message_id_present": true,
     "message_ids_present": false,
     "json_object": true
-  }
+  },
+  "provider_checked_at": "2026-10-16T08:16:14.816413+00:00",
+  "provider_check_error": "No unique exact-content queued message for every recipient; do not resubmit"
 }
