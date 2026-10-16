@@ -271,5 +271,14 @@
   "email_provider": "brevo",
   "refused_count": 0,
   "provider_message_id": "<202610160655.99358152432@smtp-relay.mailin.fr>",
-  "accepted_at": "2026-10-16T06:55:20.042603+00:00"
+  "accepted_at": "2026-10-16T06:55:20.042603+00:00",
+  "provider_checked_at": "2026-10-16T08:09:13.245295+00:00",
+  "sent_recipient_count": 2,
+  "delivered_recipient_count": 2,
+  "failed_recipient_count": 0,
+  "delivery_problem": false,
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_status": "delivered",
+  "delivered_at": "2026-10-16T06:55:21+00:00"
 }
