@@ -70,4 +70,4 @@ candidates, attempts, and delivery status; the frontend is the next development 
 The service now reconciles actual delivery state, retries failed preparation in the
 evening and morning, and verifies exact-message recipient events. See
 [reliability and independent scheduler setup](docs/reliability.md). The Cloudflare
-wakeup worker is shipped disabled until authenticated and verified.
+wakeup worker is activated with a protected, repository-scoped Actions credential.

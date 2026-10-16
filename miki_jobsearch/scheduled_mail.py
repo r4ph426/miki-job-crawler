@@ -233,18 +233,11 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
         if record.get("status") not in {"scheduled", "sent", "scheduling", "schedule_uncertain", "sending", "uncertain", "partial"}:
             return {"date": day, "status": record.get("status", "missing")}
         settings = mail_settings()
-        if (not record.get("recipient_set_id") and record.get("status") == "sent"
-                and record.get("accepted_at") and not record.get("fixture")
-                and message_identifiers(record) and settings["EMAIL_PROVIDER"] == "brevo"):
-            # Older immediate sends lack a recipient fingerprint. Migrate only
-            # after exact saved-body proof for every currently configured recipient.
-            recovered = recover_sent_identifiers(record, path.with_suffix(".html").read_text(encoding="utf-8"),
-                                                 settings, now, getter)
-            if {value.strip("<>") for value in recovered} != {value.strip("<>") for value in message_identifiers(record)}:
-                raise ProviderStatusError("Legacy send identifiers did not match exact-content proof")
-            record.update(recipient_set_id=recipient_identity(settings), expected_recipients=len(recipients(settings)))
-        if (settings["EMAIL_PROVIDER"] != "brevo"
-                or not hmac.compare_digest(record.get("recipient_set_id", ""), recipient_identity(settings))):
+        legacy_send = (not record.get("recipient_set_id") and record.get("status") == "sent"
+                       and bool(record.get("accepted_at")) and not record.get("fixture")
+                       and bool(message_identifiers(record)) and not record.get("scheduled_at"))
+        if (settings["EMAIL_PROVIDER"] != "brevo" or (not legacy_send
+                and not hmac.compare_digest(record.get("recipient_set_id", ""), recipient_identity(settings)))):
             raise ProviderStatusError("Recipient configuration or API key changed; reconcile provider logs")
         record["provider_checked_at"] = now.isoformat()
         try:
@@ -297,12 +290,18 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
                 record.update(sent_recipient_count=len(accepted), delivered_recipient_count=len(delivered),
                               failed_recipient_count=len(problems), delivery_problem=bool(problems))
                 if accepted == expected:
+                    if legacy_send:
+                        # A persisted provider acknowledgement plus exact-message
+                        # events for every current recipient safely binds older sends.
+                        record.update(recipient_set_id=recipient_identity(settings), expected_recipients=len(expected))
                     record.update(status="sent", provider_status="sent")
                     record.setdefault("accepted_at", max(times).isoformat())
                     record_delivered_jobs(store, record)
                 if delivered == expected:
                     record["delivered_at"] = max(delivered_times).isoformat()
                     record["provider_status"] = "delivered"
+                if legacy_send and accepted != expected:
+                    raise ProviderStatusError("Legacy send lacks exact-message proof for every recipient")
             record.pop("provider_check_error", None)
         except ProviderStatusError as error:
             record["provider_check_error"] = str(error)

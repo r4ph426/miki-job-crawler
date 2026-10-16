@@ -57,14 +57,11 @@ def git(root, *args):
 
 
 def checkpoint(root, message):
-    write_feed(root, root / "state")
-    paths = ["state/coordinator.json", "state/status-feed.json", "state/laptop-health.json"]
-    if (root / "state/recovery").exists():
-        paths.append("state/recovery")
-    git(root, "add", "--", *paths)
-    git(root, "commit", "--only", "-m", message, "--", *paths)
-    # Non-fast-forward is a failed claim. Never rebase stale outbox state.
-    git(root, "push", "origin", "HEAD:refs/heads/main")
+    # Coordination and mail state use one persistence transaction. In particular,
+    # completing a recovery must not leave its ledger outside a partial commit.
+    # The persister handles no-op commits and still rejects non-fast-forward pushes.
+    save = git_persister(root, root / "state")
+    save({"date": datetime.now(timezone.utc).astimezone(BERLIN).date().isoformat(), "status": message})
 
 
 def claim(root, now, actor, phase, day):

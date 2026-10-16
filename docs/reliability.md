@@ -57,16 +57,18 @@ on `main`. It requires no research or mail credentials. It skips healthy reports
 and already-running repair workflows. An unavailable/stale feed causes a wakeup;
 an HTTP error is a failed invocation, not a successful health check.
 
-The worker is **disabled by default and is not active just because this source is
-published**. Install it in an existing Cloudflare Workers account, then activate:
+The worker was activated in the existing Cloudflare account on 16 October 2026,
+after explicit authorization to transfer the repository-scoped Actions credential.
+A fresh installation still needs its own authentication and protected secret:
 
 1. Authenticate Wrangler using the user's existing Cloudflare account.
-2. Deploy with `wrangler deploy --config scheduler/wrangler.toml` (disabled).
+2. For a fresh installation, first set `ENABLED=false` and deploy with
+   `wrangler deploy --config scheduler/wrangler.toml`.
 3. Put a fine-grained token for `r4ph426/miki-job-crawler`, Actions read/write only,
    into `GITHUB_ACTIONS_TOKEN` with `wrangler secret put`. Use a protected prompt or
    transfer directly from Keychain; never print it or save it in a source file.
-4. Set `ENABLED=true` and redeploy, preserving the secret. The cron is every
-   15 minutes (UTC); target-date decisions use Europe/Berlin in code.
+4. Keep `ENABLED=true` and redeploy, preserving the secret. The cron is every
+   five minutes (UTC); target-date decisions use Europe/Berlin in code.
 5. Verify a **scheduled** worker invocation, the resulting GitHub dispatch, the
    report's verified Brevo queue and subsequently each recipient's delivery event.
    A local unit test, accepted deployment or manual dispatch does not prove that

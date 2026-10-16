@@ -260,6 +260,27 @@ class ScheduledMailTests(unittest.TestCase):
         self.assertFalse(result["delivery_problem"])
         self.assertTrue(result["delivered_at"])
 
+    def test_legacy_immediate_send_requires_exact_message_events_for_every_recipient(self):
+        self.schedule()
+        record = read_json(self.path, {})
+        record.pop("scheduled_at")
+        record.pop("recipient_set_id")
+        record.update(status="sent", accepted_at="2026-10-12T06:30:01Z",
+                      attempts=[{"status":"sent", "started_at":"2026-10-12T06:30:00Z"}])
+        atomic_json(self.path, record)
+        events = [{"email":"miki@example.org", "messageId":PROVIDER_ID,
+                   "event":"delivered", "date":"2026-10-12T06:31:00Z"}]
+        getter = Mock(return_value={"events":events})
+        now = datetime.fromisoformat("2026-10-12T08:40:00+02:00")
+        with self.assertRaises(ProviderStatusError):
+            refresh_status(self.root, self.store, DAY, now=now, getter=getter)
+        self.assertNotIn("recipient_set_id", read_json(self.path, {}))
+        events.append(dict(events[0], email="cc@example.org"))
+        refresh_status(self.root, self.store, DAY, now=now, getter=getter)
+        result = read_json(self.path, {})
+        self.assertTrue(result["recipient_set_id"])
+        self.assertTrue(result["delivered_at"])
+
 
 if __name__ == "__main__":
     unittest.main()

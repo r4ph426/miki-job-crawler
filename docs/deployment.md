@@ -91,9 +91,10 @@ accepted by Brevo. They poll recipient delivery before claiming success. Notific
 are a last resort after repair attempts. Use preparation workflow input `recover`
 for a safe manual wakeup. `daily.yml` remains available for explicit operations.
 
-The independent Cloudflare scheduler is supplied in `scheduler/`; it requires
-separate authentication, secret installation, activation and an observed scheduled
-invocation. Until then, wakeups still depend on best-effort GitHub cron. See the
+The independent Cloudflare scheduler in `scheduler/` is activated in the existing
+Cloudflare account. Fresh installations require authentication, protected secret
+installation and verification of a real scheduled invocation. GitHub cron remains
+a backup. See the
 activation/verification steps and remaining failure boundaries in [reliability](reliability.md).
 
 All runs share a non-cancelling concurrency group. Outputs are uploaded even if

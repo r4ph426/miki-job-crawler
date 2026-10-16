@@ -1,6 +1,7 @@
 import copy
 import json
 import os
+import subprocess
 import tempfile
 import unittest
 from datetime import datetime, timedelta
@@ -162,6 +163,34 @@ class RecoveryTests(unittest.TestCase):
             config = researcher.call_args.args[1]
             self.assertEqual(config["previous_candidate_urls"], ["https://failed.example/job"])
             self.assertIn("Never weaken", config["recovery_instruction"])
+
+    def test_real_git_transactions_release_lease_and_persist_finished_recovery(self):
+        remote = self.root / "remote.git"
+        checkout = self.root / "checkout"
+        checkout.mkdir()
+        def git(*args):
+            return subprocess.run(["git", *args], cwd=checkout, capture_output=True, text=True, check=True).stdout.strip()
+        subprocess.run(["git", "init", "--bare", str(remote)], capture_output=True, check=True)
+        git("init", "-b", "main")
+        git("config", "user.name", "test")
+        git("config", "user.email", "test@example.org")
+        (checkout / "initial").write_text("initial")
+        git("add", ".")
+        git("commit", "-m", "initial")
+        git("remote", "add", "origin", str(remote))
+        git("push", "-u", "origin", "main")
+        def runner(root, store, **kwargs):
+            record = {"date": DAY, "status": "prepared", "report": {"jobs": []}, "hits": 0}
+            atomic_json(store / "runs" / f"{DAY}.json", record)
+            kwargs["persist"](record)
+            return {"status": "prepared"}
+        with patch.dict(os.environ, {"STATE_BRANCH": "main"}):
+            execute(checkout, "github", now=self.now, phase="research", day=DAY, runner=runner, recovery=True)
+            from miki_jobsearch.hybrid import checkpoint
+            checkpoint(checkout, "repeat checkpoint")  # Safe even when state is unchanged.
+        self.assertNotIn("lease", read_json(checkout / "state/coordinator.json", {}))
+        self.assertEqual(json.loads(git("show", "origin/main:state/recovery/" + DAY + ".json"))["status"], "prepared")
+        self.assertEqual(json.loads(git("show", "origin/main:state/status-feed.json"))["lease"], None)
 
 
 if __name__ == "__main__":

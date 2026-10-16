@@ -4,11 +4,11 @@ compatibility_date = "2026-10-16"
 workers_dev = false
 
 [triggers]
-crons = ["*/15 * * * *"]
+crons = ["*/5 * * * *"]
 
 [vars]
-# Enable only after GITHUB_ACTIONS_TOKEN has been installed and dispatch verified.
-ENABLED = "false"
+# Activated after the repository-scoped credential was installed securely.
+ENABLED = "true"
 
 [observability]
 enabled = true
