@@ -94,5 +94,13 @@
       "actor": "github",
       "last_result": "provider_check_failed"
     }
+  },
+  "lease": {
+    "token": "8242c15760024dd0a41d882729d87686",
+    "actor": "manual",
+    "phase": "repair-schedule",
+    "date": "2026-10-19",
+    "started_at": "2026-10-16T08:39:44.655512+00:00",
+    "expires_at": "2026-10-16T09:19:44.655512+00:00"
   }
 }
