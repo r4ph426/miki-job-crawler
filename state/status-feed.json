@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T09:45:27.959631+00:00",
+  "updated_at": "2026-10-16T09:50:18.562793+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -257,7 +257,13 @@
       "has_mail": true
     }
   },
-  "lease": null,
+  "lease": {
+    "actor": "github",
+    "phase": "provider-check",
+    "date": "2026-10-19",
+    "started_at": "2026-10-16T09:50:18.557441+00:00",
+    "expires_at": "2026-10-16T10:30:18.557441+00:00"
+  },
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",
