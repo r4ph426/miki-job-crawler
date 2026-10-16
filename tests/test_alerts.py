@@ -70,7 +70,7 @@ class AlertTests(unittest.TestCase):
         def sender(message,settings,on_sending):
             self.assertEqual(message['To'],'operator@example.org')
             self.assertIsNone(message['Cc'])
-            self.assertIn('08:40 Uhr',message['Subject'])
+            self.assertIn('Zustellung',message['Subject'])
             self.assertNotIn('prepare-next',message.get_body(preferencelist=('plain',)).get_content())
             on_sending();return {'status':'sent'}
         self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'warning_sent')
@@ -90,6 +90,13 @@ class AlertTests(unittest.TestCase):
         sender=Mock(return_value={'status':'sent'})
         self.assertEqual(check_delivery(self.root,self.day,sender=sender)['status'],'warning_sent')
         sender.assert_called_once()
+
+    def test_provider_acceptance_without_delivery_is_no_longer_a_success(self):
+        atomic_json(self.root/'state/runs'/f'{self.day}.json', {'date': self.day, 'status': 'sent',
+                    'accepted_at': self.now.isoformat(), 'recipient_set_id': 'test-identity'})
+        with patch('miki_jobsearch.alerts.check_provider', return_value={'status': 'sent'}):
+            result = check_delivery(self.root, self.day, now=self.now, sender=Mock(return_value={'status':'sent'}))
+        self.assertEqual(result['status'], 'warning_sent')
 
     def test_provider_poll_before_0840_does_not_send_warning(self):
         sender=Mock()

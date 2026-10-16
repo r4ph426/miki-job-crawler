@@ -42,15 +42,13 @@ or environment needs its own live check.
 
 Use the [deployment guide](docs/deployment.md) to configure GitHub Actions,
 credentials and recipients, validate one real delivery, and hand over from the old
-service. The [advance research operating guide](docs/laptop-first.md) describes GitHub
-research at 09:00 on the previous calendar day (Sunday–Thursday), retries from 13:00,
-and immediate scheduling of the completed email at Brevo. The 16:00 readiness check
-requires a verified Brevo queue entry for the next weekday at 08:30 Europe/Berlin.
-Brevo sends without a morning GitHub trigger; allow its documented five-minute
-dispatch delay. The GitHub watchdog polls actual recipient events from 08:37 and
-warns the operator from 08:40 when send acceptance is unconfirmed. Independent
-cloud checks inspect remote readiness at 16:00 and send confirmation at 08:40;
-they do not require the laptop. GitHub checks remain best-effort.
+service. The [recovery controller](docs/reliability.md) prepares the next weekday
+from 09:00, retries failures in the evening, and repairs missing reports from 06:00.
+It queues completed reports at Brevo for 08:30 Berlin; if the deadline passes before
+an unsubmitted report is ready, it sends that saved report immediately. Ambiguous
+provider acceptance is reconciled, never blindly resent. Recipient delivery is
+polled separately. The independent Cloudflare wakeup worker needs activation;
+GitHub cron remains the backup.
 
 `state/runs/YYYY-MM-DD.json` records research and delivery outcomes; matching HTML
 and `state/history.json` persist with Git commits before and after email delivery.
@@ -66,3 +64,10 @@ email and its duplicate guard. See the correction workflow in the operations gui
 See [operations](docs/operations.md) for failures, reconciliation and the future
 overview frontend. Run records already expose dates, hits, source checks, excluded
 candidates, attempts, and delivery status; the frontend is the next development step.
+
+## Automatic recovery
+
+The service now reconciles actual delivery state, retries failed preparation in the
+evening and morning, and verifies exact-message recipient events. See
+[reliability and independent scheduler setup](docs/reliability.md). The Cloudflare
+wakeup worker is shipped disabled until authenticated and verified.

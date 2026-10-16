@@ -1,3 +1,6 @@
+> Historical design. The active controller is documented in [reliability](reliability.md).
+> Laptop scheduling is disabled; do not use the old windows below to assess current recovery.
+
 # Advance research on GitHub
 
 All times use Europe/Berlin, including daylight-saving changes.

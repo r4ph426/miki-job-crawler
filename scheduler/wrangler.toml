@@ -1,0 +1,14 @@
+name = "miki-delivery-scheduler"
+main = "worker.mjs"
+compatibility_date = "2026-10-16"
+workers_dev = false
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[vars]
+# Enable only after GITHUB_ACTIONS_TOKEN has been installed and dispatch verified.
+ENABLED = "false"
+
+[observability]
+enabled = true

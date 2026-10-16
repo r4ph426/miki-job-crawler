@@ -24,7 +24,9 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
     now = now or datetime.now(timezone.utc)
     store = root / 'state'
     delivery = read_json(store / 'runs' / f'{day}.json', {})
-    if delivery.get('status') in {'scheduled', 'scheduling', 'schedule_uncertain'}:
+    if (delivery.get('scheduled_at') or delivery.get('recipient_set_id')) and (
+            delivery.get('status') in {'scheduled', 'scheduling', 'schedule_uncertain', 'sending', 'uncertain', 'partial'} or (
+                delivery.get('status') == 'sent' and not delivery.get('delivered_at'))):
         try:
             refreshed = check_provider(root, day, now=now)
             if refreshed.get('status') == 'deferred':
@@ -36,6 +38,8 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
         delivery = read_json(store / 'runs' / f'{day}.json', {})
         delivered = (delivery.get('date') == day and delivery.get('status') == 'sent'
                      and bool(delivery.get('accepted_at')) and not delivery.get('fixture'))
+        if delivery.get('recipient_set_id'):
+            delivered = delivered and bool(delivery.get('delivered_at')) and not delivery.get('delivery_problem')
         checked = {'date': day, 'ready': delivered, 'checked_at': now.isoformat()}
         quiet_status = 'delivered'
     else:
@@ -71,9 +75,9 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
         message['From'], message['To'] = settings['MAIL_FROM'], settings['MAIL_TO']
         message['Message-ID'] = record['message_id']
         if kind == 'delivery':
-            message['Subject'] = f'Miki: Versand für {day} ab 08:40 Uhr nicht bestätigt'
+            message['Subject'] = f'Miki: Zustellung für {day} braucht Aufmerksamkeit'
             text = (f'Für die Stellenmail vom {day} ist ab 08:40 Uhr Berliner Zeit kein vollständiger '
-                    'Versand durch den Mailanbieter bestätigt. Der Versandstatus fehlt, ist fehlgeschlagen '
+                    'Zustellung an alle Empfänger bestätigt. Der Versandstatus fehlt, ist fehlgeschlagen '
                     'oder noch unklar.\n\nBitte Status und GitHub-Läufe prüfen. Bei sending, uncertain oder '
                     'partial zuerst den Anbieterstatus abgleichen; nicht blind erneut senden.\n\n'
                     f'Status: {STATUS_URL}\nWorkflow: {WORKFLOW_URL}\n')
@@ -83,8 +87,9 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
         else:
             message['Subject'] = f'Miki: Bericht für {day} noch nicht bereit'
             text = (f'Für den Versand am {day} um 08:30 Uhr Berliner Zeit ist noch kein fertiger Bericht bei Brevo bestätigt eingeplant.\n\n'
-                    'Bitte die Recherche manuell starten: Im GitHub-Workflow den Modus prepare-next wählen. '
-                    'Das bereitet den nächsten Versandtag vor und plant die fertige E-Mail bei Brevo ein. '
+                    'Der automatische Wiederanlauf hat die Vorbereitung noch nicht abschließen können. '
+                    'Im Workflow Miki advance research and readiness check den Modus recover wählen; '
+                    'dieser prüft den aktuellen Zustand und holt nur gefahrlos wiederholbare Schritte nach. '
                     'Bei scheduling, scheduled oder schedule_uncertain zuerst Brevo prüfen; nicht blind erneut senden.\n\n'
                     f'Status: {STATUS_URL}\nWorkflow: {WORKFLOW_URL}\n')
             html = (f'<p>Für den Versand am <strong>{day} um 08:30 Uhr</strong> ist noch kein fertiger '

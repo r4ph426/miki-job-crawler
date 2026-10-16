@@ -36,9 +36,10 @@ class MailConfigurationError(RuntimeError):
 
 
 class DeliveryFailure(RuntimeError):
-    def __init__(self, message, ambiguous=False):
+    def __init__(self, message, ambiguous=False, diagnostic=None):
         super().__init__(message)
         self.ambiguous = ambiguous
+        self.diagnostic = diagnostic or {}
 
 
 def atomic_json(path, value):
@@ -224,6 +225,7 @@ def send_brevo(message, settings, on_sending, scheduled_at=None, batch_id=None):
     except (OSError, urllib.error.URLError) as error:
         raise DeliveryFailure("Brevo acceptance is uncertain (connection interrupted); inspect transactional logs before retrying",
                               ambiguous=True) from error
+    data = None
     try:
         data = json.loads(raw) if len(raw) <= 16000 else None
         provider_id = data.get("messageId") if isinstance(data, dict) else None
@@ -235,7 +237,10 @@ def send_brevo(message, settings, on_sending, scheduled_at=None, batch_id=None):
             raise ValueError("Missing acknowledgement")
     except (ValueError, UnicodeError):
         raise DeliveryFailure("Brevo acceptance is uncertain (invalid acknowledgement); inspect transactional logs before retrying",
-                              ambiguous=True) from None
+                              ambiguous=True, diagnostic={"http_status": code,
+                                  "message_id_present": isinstance(data, dict) and "messageId" in data,
+                                  "message_ids_present": isinstance(data, dict) and "messageIds" in data,
+                                  "json_object": isinstance(data, dict)}) from None
     outcome = {"status": "scheduled" if scheduled_at is not None else "sent",
                "refused_count": 0, "provider_message_id": provider_ids[0]}
     if scheduled_at is not None:
@@ -388,7 +393,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
     research_day = local.date()
     day = date.fromisoformat(delivery_date) if delivery_date else research_day
     if delivery_date and (not prepare or day.weekday() >= 5
-                          or not research_day < day <= research_day + timedelta(days=3)
+                          or not research_day <= day <= research_day + timedelta(days=3)
                           or (not allow_early_prepare and (day != research_day + timedelta(days=1) or local.hour < 16))):
         raise ValueError("Advance preparation requires the next calendar weekday from 16:00 Berlin")
     if not delivery_date and not due(now, config) and fixture is None:
@@ -422,6 +427,11 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
                    for r in [read_json(p, {}) for p in (store / "runs").glob(f"{day}--*.json")]):
                 raise ValueError("Reconcile existing revised deliveries before preparing another")
             config = dict(config, previous_candidate_urls=[j["url"] for j in original.get("report", {}).get("rejected", [])])
+        elif record.get("status") == "research_failed":
+            # A retry must broaden discovery instead of returning the same failed shortlist.
+            config = dict(config, previous_candidate_urls=[j["url"] for j in record.get("candidate_diagnostics", [])],
+                          recovery_instruction="Search different employers and primary employer/ATS pages. "
+                          "Do not repeat the failed shortlist. Never weaken quotation verification.")
         if not dry_run:
             record.update(date=str(day), last_attempt_at=now.isoformat())
             if os.environ.get("GITHUB_RUN_ID"):
@@ -500,6 +510,10 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         if revision and not record["report"]["jobs"]:
             raise ResearchError("Refusing to send an empty revised report", code="no_verified_candidates")
         def on_sending():
+            if settings["EMAIL_PROVIDER"] == "brevo":
+                from .scheduled_mail import recipient_identity, recipients
+                record.update(email_provider="brevo", recipient_set_id=recipient_identity(settings),
+                              expected_recipients=len(recipients(settings)))
             record["status"] = "sending"
             record["attempts"].append({"started_at": datetime.now(timezone.utc).isoformat(), "status": "sending"})
             atomic_json(path, record)

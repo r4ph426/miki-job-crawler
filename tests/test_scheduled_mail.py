@@ -103,7 +103,8 @@ class ScheduledMailTests(unittest.TestCase):
             def failed(message, settings, marker, **kwargs):
                 marker(); raise DeliveryFailure("safe failure", ambiguous=ambiguous)
             with self.assertRaises(DeliveryFailure):
-                schedule_report(self.root, self.store, DAY, now=NOW, sender=failed)
+                schedule_report(self.root, self.store, DAY, now=NOW, sender=failed,
+                                getter=Mock(side_effect=ProviderStatusError("unavailable")))
             self.assertEqual(read_json(self.path, {})["status"], expected)
             result = self.schedule()
             self.assertEqual(result["status"], "skipped" if ambiguous else "scheduled")
@@ -221,6 +222,43 @@ class ScheduledMailTests(unittest.TestCase):
                 execute(self.root, "manual", phase="prepare", day=DAY, now=NOW,
                         refresh=True, runner=Mock(), scheduler=uncertain)
         self.assertEqual(read_json(self.path, {})["status"], "schedule_uncertain")
+
+    def test_nonstandard_post_ack_is_recovered_from_batch_without_second_post(self):
+        def ambiguous(message, settings, marker, **kwargs):
+            marker()
+            raise DeliveryFailure("invalid acknowledgement", ambiguous=True)
+        sender = Mock(side_effect=ambiguous)
+        result = schedule_report(self.root, self.store, DAY, now=NOW, sender=sender, getter=self.getter)
+        self.assertEqual(result["status"], "scheduled")
+        record = read_json(self.path, {})
+        self.assertTrue(record["schedule_verified_at"])
+        self.assertNotIn("accepted_at", record)
+        self.assertNotIn("provider_message_id", record)
+        sender.assert_called_once()
+
+    def test_immediate_send_can_be_confirmed_for_all_recipients_and_detect_bounces(self):
+        self.schedule()
+        record = read_json(self.path, {})
+        record.pop("scheduled_at")
+        record.update(status="sent", accepted_at="2026-10-12T06:30:01Z",
+                      attempts=[{"status": "sent", "started_at": "2026-10-12T06:30:00Z"}])
+        atomic_json(self.path, record)
+        events = [{"email": address, "messageId": PROVIDER_ID, "event": "requests", "date": "2026-10-12T06:30:01Z"}
+                  for address in ("miki@example.org", "cc@example.org")]
+        events.append({"email": "cc@example.org", "messageId": PROVIDER_ID, "event": "hardBounce", "date": "2026-10-12T06:31:00Z"})
+        getter = Mock(return_value={"events": events})
+        now = datetime.fromisoformat("2026-10-12T08:40:00+02:00")
+        refresh_status(self.root, self.store, DAY, now=now, getter=getter)
+        result = read_json(self.path, {})
+        self.assertTrue(result["delivery_problem"])
+        self.assertEqual(result["sent_recipient_count"], 2)
+        self.assertNotIn("delivered_at", result)
+        events.extend({"email": address, "messageId": PROVIDER_ID, "event": "delivered", "date": "2026-10-12T06:39:00Z"}
+                      for address in ("miki@example.org", "cc@example.org"))
+        refresh_status(self.root, self.store, DAY, now=now, getter=getter)
+        result = read_json(self.path, {})
+        self.assertFalse(result["delivery_problem"])
+        self.assertTrue(result["delivered_at"])
 
 
 if __name__ == "__main__":

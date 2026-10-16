@@ -11,5 +11,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 -m unittest discover -s tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --test scheduler/worker.test.mjs
       - name: Generate an offline email report
         run: python3 -m miki_jobsearch run --dry-run --fixture tests/fixtures/report.json

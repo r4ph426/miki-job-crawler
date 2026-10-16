@@ -133,8 +133,25 @@ def schedule_report(root, store, day, now=None, persist=None, sender=send_brevo,
         except DeliveryFailure as error:
             record["status"] = "schedule_uncertain" if error.ambiguous else "schedule_failed"
             record["error"] = str(error)
+            if error.diagnostic:
+                record["provider_diagnostic"] = error.diagnostic
             record["attempts"][-1]["status"] = record["status"]
             save()
+            if error.ambiguous:
+                # A nonstandard/lost POST acknowledgement is not grounds for a
+                # second POST. Our pre-persisted batch UUID can independently prove queue acceptance.
+                try:
+                    if queue_status(record, settings, getter) == "queued":
+                        record.update(status="scheduled", provider_status="queued",
+                                      schedule_accepted_at=datetime.now(timezone.utc).isoformat(),
+                                      schedule_verified_at=datetime.now(timezone.utc).isoformat())
+                        record.pop("error", None)
+                        record["attempts"][-1]["status"] = "scheduled"
+                        save()
+                        return {"date": day, "status": "scheduled", "hits": record["hits"],
+                                "scheduled_at": record["scheduled_at"], "provider_status": "queued"}
+                except ProviderStatusError:
+                    pass
             raise
         record.update(status="scheduled", provider_message_id=outcome["provider_message_id"],
                       provider_message_ids=outcome.get("provider_message_ids", [outcome["provider_message_id"]]),
@@ -166,7 +183,7 @@ def message_identifiers(record):
 def recover_sent_identifiers(record, body, settings, now, getter):
     """Recover lost acknowledgement only from unique, exact sent content for every recipient."""
     identifiers = set()
-    target = instant(record["scheduled_at"])
+    target = event_start(record)
     for address in recipients(settings):
         query = urllib.parse.urlencode({"email": address, "startDate": record["date"],
             "endDate": now.astimezone(BERLIN).date().isoformat(), "limit": 100, "sort": "desc"})
@@ -199,6 +216,13 @@ def recover_sent_identifiers(record, body, settings, now, getter):
     return sorted(identifiers)
 
 
+def event_start(record):
+    # An immediate send has no scheduledAt, but its durable pre-POST marker exists.
+    attempts = record.get("attempts", [])
+    return instant(record.get("scheduled_at") or
+                   (attempts[-1].get("started_at") if attempts else None) or record["created_at"])
+
+
 def refresh_status(root, store, day, now=None, persist=None, getter=provider_get):
     """Read-only at Brevo. Never POST, cancel or replace a queued message."""
     now = now or datetime.now(timezone.utc)
@@ -206,15 +230,25 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
     with run_lock(store):
         path = store / "runs" / f"{day}.json"
         record = read_json(path, {})
-        if record.get("status") not in {"scheduled", "sent", "scheduling", "schedule_uncertain"} or not record.get("scheduled_at"):
+        if record.get("status") not in {"scheduled", "sent", "scheduling", "schedule_uncertain", "sending", "uncertain", "partial"}:
             return {"date": day, "status": record.get("status", "missing")}
         settings = mail_settings()
+        if (not record.get("recipient_set_id") and record.get("status") == "sent"
+                and record.get("accepted_at") and not record.get("fixture")
+                and message_identifiers(record) and settings["EMAIL_PROVIDER"] == "brevo"):
+            # Older immediate sends lack a recipient fingerprint. Migrate only
+            # after exact saved-body proof for every currently configured recipient.
+            recovered = recover_sent_identifiers(record, path.with_suffix(".html").read_text(encoding="utf-8"),
+                                                 settings, now, getter)
+            if {value.strip("<>") for value in recovered} != {value.strip("<>") for value in message_identifiers(record)}:
+                raise ProviderStatusError("Legacy send identifiers did not match exact-content proof")
+            record.update(recipient_set_id=recipient_identity(settings), expected_recipients=len(recipients(settings)))
         if (settings["EMAIL_PROVIDER"] != "brevo"
                 or not hmac.compare_digest(record.get("recipient_set_id", ""), recipient_identity(settings))):
             raise ProviderStatusError("Recipient configuration or API key changed; reconcile provider logs")
         record["provider_checked_at"] = now.isoformat()
         try:
-            if now < instant(record["scheduled_at"]):
+            if record.get("scheduled_at") and now < instant(record["scheduled_at"]):
                 record["provider_status"] = queue_status(record, settings, getter)
                 if record["provider_status"] == "queued":
                     record["schedule_verified_at"] = now.isoformat()
@@ -235,7 +269,7 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
                     if not isinstance(response.get("events"), list):
                         raise ProviderStatusError("Brevo delivery events unavailable")
                     events.extend(response["events"])
-                accepted, delivered, times, delivered_times = set(), set(), [], []
+                accepted, delivered, problems, times, delivered_times = set(), set(), set(), [], []
                 expected = recipients(settings)
                 for event in events:
                     if not isinstance(event, dict):
@@ -249,7 +283,7 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
                         event_time = instant(event.get("date", ""))
                     except (ValueError, TypeError, AttributeError):
                         continue
-                    if not instant(record["scheduled_at"]) <= event_time <= now + timedelta(minutes=1):
+                    if not event_start(record) <= event_time <= now + timedelta(minutes=1):
                         continue
                     if event.get("event") in {"request", "requests", "delivered"}:
                         accepted.add(address)
@@ -257,7 +291,11 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
                     if event.get("event") == "delivered":
                         delivered.add(address)
                         delivered_times.append(event_time)
-                record.update(sent_recipient_count=len(accepted), delivered_recipient_count=len(delivered))
+                    if event.get("event") in {"blocked", "hardBounce", "softBounce", "hard_bounce", "soft_bounce", "error", "invalid"}:
+                        problems.add(address)
+                problems -= delivered
+                record.update(sent_recipient_count=len(accepted), delivered_recipient_count=len(delivered),
+                              failed_recipient_count=len(problems), delivery_problem=bool(problems))
                 if accepted == expected:
                     record.update(status="sent", provider_status="sent")
                     record.setdefault("accepted_at", max(times).isoformat())
@@ -274,4 +312,4 @@ def refresh_status(root, store, day, now=None, persist=None, getter=provider_get
         atomic_json(path, record)
         persist(record)
         return {"date": day, "status": record["status"], "provider_status": record.get("provider_status"),
-                "scheduled_at": record["scheduled_at"], "accepted_at": record.get("accepted_at")}
+                "scheduled_at": record.get("scheduled_at"), "accepted_at": record.get("accepted_at")}

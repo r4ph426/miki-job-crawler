@@ -2,8 +2,8 @@ name: Miki delivery watchdog
 
 on:
   schedule:
-    # Provider polling from 08:37; warnings from 08:40 across DST. Never resends.
-    - cron: "37,40,50 6,7,8 * * 1-5"
+    # Morning recovery starts before 08:30 across DST; no blind resends.
+    - cron: "7,27,47 4-9 * * 1-5"
   workflow_dispatch:
 
 concurrency:
@@ -13,7 +13,7 @@ permissions:
   contents: read
 jobs:
   run:
-    if: github.event_name != 'schedule' || vars.SERVICE_ENABLED != 'false'
+    if: vars.SERVICE_ENABLED != 'false'
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 40
     permissions:
@@ -30,6 +30,8 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Check today delivery
         env:
+          MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
+          RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
           STATE_BRANCH: ${{ github.event.repository.default_branch }}
           EMAIL_PROVIDER: ${{ vars.EMAIL_PROVIDER || 'brevo' }}
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
@@ -43,13 +45,14 @@ jobs:
           set -euo pipefail
           git config user.name "miki-jobsearch-bot"
           git config user.email "miki-jobsearch-bot@users.noreply.github.com"
-          python3 -m miki_jobsearch.hybrid --actor github --task delivery-check
+          python3 -m miki_jobsearch.recovery
       - name: Upload safe readiness records
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: miki-delivery-watchdog-${{ github.run_id }}
           path: |
+            state/recovery/
             state/runs/
             state/delivery-alerts/
             state/status-feed.json

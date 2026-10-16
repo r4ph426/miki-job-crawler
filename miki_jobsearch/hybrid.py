@@ -58,8 +58,11 @@ def git(root, *args):
 
 def checkpoint(root, message):
     write_feed(root, root / "state")
-    git(root, "add", "--", "state/coordinator.json", "state/status-feed.json", "state/laptop-health.json")
-    git(root, "commit", "--only", "-m", message, "--", "state/coordinator.json", "state/status-feed.json", "state/laptop-health.json")
+    paths = ["state/coordinator.json", "state/status-feed.json", "state/laptop-health.json"]
+    if (root / "state/recovery").exists():
+        paths.append("state/recovery")
+    git(root, "add", "--", *paths)
+    git(root, "commit", "--only", "-m", message, "--", *paths)
     # Non-fast-forward is a failed claim. Never rebase stale outbox state.
     git(root, "push", "origin", "HEAD:refs/heads/main")
 
@@ -120,7 +123,7 @@ def check_provider(root, day, now=None):
 
 
 def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=False,
-            scheduler=schedule_report):
+            scheduler=schedule_report, recovery=False):
     now = now or datetime.now(timezone.utc)
     planned, planned_day = plan(now, actor)
     phase, day = phase or planned, day or planned_day
@@ -151,6 +154,25 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
     backup = None
     path = root / "state/runs" / f"{day}.json"
     html_path = path.with_suffix(".html")
+    recovery_path = root / "state/recovery" / f"{day}.json"
+    recovery_record = None
+    if recovery:
+        from .recovery import retry_allowed
+        recovery_record = read_json(recovery_path, {"date": day, "attempts": []})
+        allowed, reason = retry_allowed(recovery_record, phase, now)
+        if not allowed:
+            complete(root, token, day, {"status": reason})
+            return {"date": day, "status": reason}
+        recovery_record["attempts"].append({"phase": phase, "started_at": now.isoformat(), "status": "running"})
+        recovery_record["status"] = "running"
+        atomic_json(recovery_path, recovery_record)
+        persist({"date": day, "status": "recovery_started"})
+
+    def finish_recovery(status):
+        if recovery_record is not None:
+            recovery_record["attempts"][-1].update(status=status, finished_at=datetime.now(timezone.utc).isoformat())
+            recovery_record["status"] = status
+            atomic_json(recovery_path, recovery_record)
     if refresh and record.get("report"):
         backup = (record, html_path.read_bytes() if html_path.exists() else None)
         archive = root / "state/preparation-history" / f"{day}--{now.strftime('%Y%m%dT%H%M%S%fZ')}"
@@ -161,9 +183,10 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
     try:
         if not reuse_prepared:
             result = runner(root, root / "state", now=now, dry_run=False, persist=persist,
-                            prepare=phase == "prepare", delivery_date=day if phase == "prepare" else None,
+                            prepare=phase in {"prepare", "research"},
+                            delivery_date=day if phase in {"prepare", "research"} else None,
                             require_prepared=phase == "deliver",
-                            allow_early_prepare=phase == "prepare")
+                            allow_early_prepare=phase in {"prepare", "research"})
         if phase == "prepare":
             result = scheduler(root, root / "state", day, now=now, persist=persist)
     except StateSyncError:
@@ -171,6 +194,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
         # sending checkpoint for inspection; never merge and blindly retry.
         raise
     except Exception:
+        finish_recovery("failed")
         if backup and read_json(path, {}).get("status") not in TERMINAL:
             failed = read_json(path, {})
             atomic_json(archive.with_name(archive.name + "--failed").with_suffix(".json"), failed)
@@ -180,6 +204,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
             persist(backup[0])
         complete(root, token, day, {"status": "failed"})
         raise
+    finish_recovery(result.get("status", "finished"))
     complete(root, token, day, result)
     result["readiness"] = readiness(root, day)
     return result

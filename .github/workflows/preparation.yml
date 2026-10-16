@@ -2,18 +2,15 @@ name: Miki advance research and readiness check
 
 on:
   schedule:
-    # Sunday–Thursday prepares the next calendar weekday. Both Berlin DST offsets.
-    - cron: "0 7,8,11,12 * * 0-4"
-    # 09:00 preparation and 13:00 retries; local guards cover both DST offsets.
-    # GitHub readiness backup from 16:00 Berlin, plus a retry.
-    - cron: "0,30 14,15,16 * * 0-4"
+    # Reconcile actual state on every wakeup, even when GitHub starts late.
+    - cron: "13,43 * * * *"
   workflow_dispatch:
     inputs:
       task:
         description: "Scheduled-window preparation or readiness check"
         type: choice
-        options: [prepare-next, readiness-check]
-        default: prepare-next
+        options: [recover, prepare-next, readiness-check]
+        default: recover
 
 concurrency:
   group: miki-weekday-service
@@ -22,7 +19,7 @@ permissions:
   contents: read
 jobs:
   run:
-    if: github.event_name != 'schedule' || vars.SERVICE_ENABLED != 'false'
+    if: vars.SERVICE_ENABLED != 'false'
     runs-on: ubuntu-24.04-arm
     timeout-minutes: 40
     permissions:
@@ -39,7 +36,7 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Prepare tomorrow or check readiness
         env:
-          TASK: ${{ inputs.task || (contains(github.event.schedule, '7,8,11,12') && 'prepare-next' || 'readiness-check') }}
+          TASK: ${{ inputs.task || 'recover' }}
           STATE_BRANCH: ${{ github.event.repository.default_branch }}
           MIKI_OPENAI_API_KEY: ${{ secrets.MIKI_OPENAI_API_KEY || secrets.OPENAI_API_KEY }}
           RESEARCH_MODEL: ${{ vars.RESEARCH_MODEL }}
@@ -55,13 +52,18 @@ jobs:
           set -euo pipefail
           git config user.name "miki-jobsearch-bot"
           git config user.email "miki-jobsearch-bot@users.noreply.github.com"
-          python3 -m miki_jobsearch.hybrid --actor github --task "$TASK"
+          if [ "$TASK" = recover ]; then
+            python3 -m miki_jobsearch.recovery
+          else
+            python3 -m miki_jobsearch.hybrid --actor github --task "$TASK"
+          fi
       - name: Upload safe readiness records
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: miki-preparation-${{ github.run_id }}
           path: |
+            state/recovery/
             state/runs/
             state/alerts/
             state/status-feed.json

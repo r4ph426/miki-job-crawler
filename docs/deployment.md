@@ -84,30 +84,17 @@ supports app passwords; this is not the default delivery route.
    notifications and inspect missing weekday records. Check Actions usage and the
    OpenAI account's limits according to your account settings.
 
-The active workflow uses the [advance research schedule](laptop-first.md).
-`preparation.yml` researches the next calendar weekday from 09:00 Berlin on
-Sunday–Thursday, retries from 13:00, and queues the completed HTML at Brevo using
-`scheduledAt` for 08:30 the next weekday. It checks the provider queue from 16:00.
-Missing or unconfirmed queue entries trigger a
-warning to `MAIL_ALERT_TO` only, with no job recipients or CC. Configure that
-address in private GitHub Actions variables or secrets. Stored alert states prevent
-duplicate warnings after accepted or uncertain submission. Two independent cloud
-schedules are enabled on the private status Site: Sunday–Thursday at 16:00 checks
-next-day readiness; Monday–Friday at 08:40 checks send confirmation. They read fresh
-remote records containing the provider evidence, rather than calling Brevo directly.
-They notify the user only when action is needed and never submit or cancel emails.
-Their first unattended executions still require verification. The old local 10:00
-heartbeat is paused.
+The active automatic controller is [recovery](reliability.md). Both preparation
+and morning watchdog workflows reconcile actual state, retry failed research,
+queue saved reports in advance, and send a saved report after 08:30 if it was never
+accepted by Brevo. They poll recipient delivery before claiming success. Notifications
+are a last resort after repair attempts. Use preparation workflow input `recover`
+for a safe manual wakeup. `daily.yml` remains available for explicit operations.
 
-`daily.yml` now has manual operations only. Brevo owns the scheduled 08:30 weekday
-send, independent of GitHub and the laptop at that time. The documented provider
-dispatch delay is up to five minutes; inbox timing is separate. `delivery-watchdog.yml`
-polls exact-message recipient events from 08:37 Berlin, across summer/winter time,
-and warns only the operator from 08:40 if send acceptance is unconfirmed. It never resends.
-Use manual `daily.yml` mode `prepare-next` to prepare and queue a missing report.
-An already queued report cannot be refreshed before confirmed cancellation at Brevo.
-GitHub preparation/check triggers remain best-effort. Verify the cloud checks'
-first executions separately; a GitHub watchdog is not independent of GitHub scheduling.
+The independent Cloudflare scheduler is supplied in `scheduler/`; it requires
+separate authentication, secret installation, activation and an observed scheduled
+invocation. Until then, wakeups still depend on best-effort GitHub cron. See the
+activation/verification steps and remaining failure boundaries in [reliability](reliability.md).
 
 All runs share a non-cancelling concurrency group. Outputs are uploaded even if
 delivery fails. Artifacts retain reports for 30 days; committed state is the durable

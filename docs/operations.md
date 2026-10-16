@@ -1,3 +1,10 @@
+## Automatic recovery
+
+The current production recovery policy, retry budget, recipient verification and
+independent scheduler setup are documented in [reliability](reliability.md).
+Repair missing/failed research through preparation workflow `recover`; do not reset
+provider-uncertain state or bypass the durable outbox guards.
+
 # Operations
 
 Run `python3 -m miki_jobsearch status` from the checkout to inspect JSON state.
