@@ -95,5 +95,13 @@
       "last_result": "prepared",
       "reconciled_run_id": "38870688350"
     }
+  },
+  "lease": {
+    "token": "11d822f55eb24031ba0c9c0c08b03dd5",
+    "actor": "github",
+    "phase": "provider-check",
+    "date": "2026-10-16",
+    "started_at": "2026-10-16T08:09:13.245295+00:00",
+    "expires_at": "2026-10-16T08:49:13.245295+00:00"
   }
 }
