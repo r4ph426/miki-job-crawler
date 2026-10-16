@@ -1,7 +1,7 @@
 {
   "date": "2026-10-19",
   "created_at": "2026-10-16T07:59:33.655599+00:00",
-  "status": "prepared",
+  "status": "scheduling",
   "subject": "Stellen für Miki · 19.10.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 16.10.2026 für den Versand am 19.10.2026. 6 passende Neufunde mit belastbaren Anzeigen am 16.10.2026. Mix aus Einkauf/Supply Chain (starkes Skill‑Match) plus eine öffentliche Teamassistenz (sicheres Einstiegsprofil) und eine Modekoordination (fachlich passend, Sprachhürde).",
@@ -186,12 +186,22 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "status": "scheduling",
+      "started_at": "2026-10-16T08:09:16.867559+00:00"
+    }
+  ],
   "hits": 1,
   "researched_at": "2026-10-16T07:59:33.655599+00:00",
   "prepared_at": "2026-10-16T08:03:10.769479+00:00",
   "message_id": "<miki-2026-10-19-dab9bda695828a87@miki-jobsearch>",
   "last_attempt_at": "2026-10-16T07:59:33.655599+00:00",
   "last_attempt_run_id": "38870688350",
-  "design_version": "electric-blue-v1"
+  "design_version": "electric-blue-v1",
+  "scheduled_at": "2026-10-19T06:30:00Z",
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_batch_id": "7f5ab5de-1363-459e-82ce-9e1fd965099e"
 }
