@@ -192,7 +192,11 @@ class RecoveryTests(unittest.TestCase):
             atomic_json(store / "runs" / f"{DAY}.json", record)
             kwargs["persist"](record)
             return {"status": "prepared"}
-        with patch.dict(os.environ, {"STATE_BRANCH": "main"}):
+        # Keep the lease clock aligned with the simulated operation date, even
+        # when this regression test runs days or years later.
+        with patch.dict(os.environ, {"STATE_BRANCH": "main"}), patch(
+                "miki_jobsearch.hybrid.datetime", wraps=datetime) as clock:
+            clock.now.return_value = self.now
             execute(checkout, "github", now=self.now, phase="research", day=DAY, runner=runner, recovery=True)
             from miki_jobsearch.hybrid import checkpoint
             checkpoint(checkout, "repeat checkpoint")  # Safe even when state is unchanged.
