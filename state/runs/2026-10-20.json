@@ -1,157 +1,260 @@
 {
   "date": "2026-10-20",
-  "status": "research_failed",
-  "hits": 0,
-  "failed_at": "2026-10-20T08:17:40.025522+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "no_verified_candidates"
-  },
-  "candidate_diagnostics": [
-    {
-      "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - als Elternzeitvertretung auf 12 Monate befristet",
-      "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241?language=de",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - als Elternzeitvertretung auf 12 Monate befristet",
-        "employer": "aap Implantate AG",
-        "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241?language=de",
-        "district": "Unbekannt (Berlin)",
-        "hours": "Vollzeit",
-        "contract": "Befristet (12 Monate Elternzeitvertretung)",
-        "salary": "Unbekannt",
-        "commute": "Adresse im Inserat nicht genannt; vorsichtige Schätzung 50–60 Min. ÖPNV ab Berlin‑Heinersdorf",
-        "pro": "Auftragsabwicklung „Order-to-Invoice“ inkl. Exportprozessen passt gut zu Erfahrung in Reorders, Lead Times und Frachtkosten.",
-        "con": "Export-/Zollkenntnisse (z. B. Ausfuhrdokumente, EUR.1, COO) werden gefordert; befristet.",
-        "effort_details": "ATS (Personio): Profil/Registrierung, Unterlagen hochladen, Pflichtfragen; geschätzt 55 Min.",
-        "deadline": "",
-        "family": "B",
-        "source_group": "ats",
-        "scores": {
-          "skill": 34,
-          "entry": 20,
-          "commute": 10,
-          "conditions": 6
-        },
-        "effort_minutes": 55,
-        "evidence": "und Export Operative Abwicklung des kompletten „Order-to-Invoice\"-Prozesses (Auftragseingang und Auftragserfassung; Lieferterminabstimmung mit unserer Produktionsstätte bis zur Rechnungserstellung) Erstellung und Pflege von Ausfuhrpapieren Auftragsbetreuung, -verfolgung, Auftrags- und Terminabstimmung mit Kunden Betreuung unserer Kunden im Innendienst mittels ERP-System Rechnungsstellung und Mahnwesen Direkter Kundenkontakt für das In- und Ausland Abwicklung von Exporten in Drittländer"
-      }
-    },
-    {
-      "title": "Vertriebsinnendienst Mitarbeiter (m/w/d)",
-      "url": "https://tpg.jobs.personio.de/job/2624479?language=de",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Vertriebsinnendienst Mitarbeiter (m/w/d)",
-        "employer": "The Platform Group AG (COCOLI/MöbelFirst)",
-        "url": "https://tpg.jobs.personio.de/job/2624479?language=de",
-        "district": "Unbekannt (Berlin)",
+  "created_at": "2026-10-20T08:25:14.768709+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 20.10.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "8 passende Neuzugänge (A/B/C) gefunden und verifiziert; mehrere mit klaren Einkaufs-/Order‑Bezug und zwei öffentliche Teamassistenz‑Stellen mit Fristen bis 2026‑11‑05 bzw. 2026‑11‑19. Keine Dubletten zu früheren Meldungen. Alle Quellen verfügbar.",
+    "next_action": "Packmatic (Junior Buying Manager) und Zertificon (kaufm. Sachbearbeitung) heute priorisieren: je 1 CV‑Version (Einkauf/Koordination vs. Auftragsabwicklung) anpassen und bis 15:00 Uhr versenden; parallel 1 Rückruf bei APC AG zur Klärung des Berliner Standorts und Wochenstunden.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Sachbearbeiter Prozesse & Administration (m/w/d)",
+        "employer": "Deutsche Firmenkredit Partner (DFKP)",
+        "url": "https://dfkp.jobs.personio.de/job/2799187",
+        "district": "Unbekannt (zentral in Berlin)",
         "hours": "Vollzeit",
         "contract": "Festanstellung",
         "salary": "Unbekannt",
-        "commute": "Adresse im Inserat nicht genannt; vorsichtige Schätzung 50–60 Min. ÖPNV ab Berlin‑Heinersdorf",
-        "pro": "End-to-End Steuerung von Bestellung, Qualität und Logistikdienstleistern im Premium-Möbelsegment deckt sich stark mit Produkt-/Lieferkettenkoordination.",
-        "con": "Teilweise Samstagsarbeit möglich; genaue Standortangabe und Gehalt fehlen.",
-        "effort_details": "ATS (Personio): Registrierung/Profil, Dokumente, Fragen; geschätzt 55 Min.",
+        "commute": "Ohne genaue Adresse konservativ auf ca. 35–45 Min. ÖPNV von Berlin‑Heinersdorf geschätzt",
+        "pro": "Klar strukturierte Admin- und Prozessaufgaben inkl. CRM (Salesforce) passen zur koordinativen Erfahrung.",
+        "con": "Finanzierungsumfeld erfordert Einarbeitung außerhalb der bisherigen Branche.",
+        "effort_details": "ATS (Personio) – Standardbewerbung mit Profil/Anhängen; geschätzt 55 Min.",
         "deadline": "",
         "family": "B",
         "source_group": "ats",
         "scores": {
-          "skill": 36,
-          "entry": 28,
-          "commute": 10,
-          "conditions": 8
-        },
-        "effort_minutes": 55,
-        "evidence": "der Ware bei Händlern sowie Prüfung der Produktqualität Auswahl, Koordination und Steuerung von Logistikdienstleistern Organisation, Avisierung und Überwachung der Lieferprozesse Sicherstellung der Liefertreue sowie End-to-End-Prozesskontrolle vom Verkauf bis zur Nachlieferung Laufende Kundenbetreuung inkl. Stammkundenmanagement, After-Sales-Service und Bewertungsmanagement Bearbeitung komplexer Reklamationen sowie aktive Vermeidung von Retouren Rechnungsprüfung sowie Controlling der"
-      }
-    },
-    {
-      "title": "Auftragsmanager (w/m/d)",
-      "url": "https://karriere.gig24.com/Auftragsmanager-wmd-de-j204.html",
-      "reason": "URL outside configured HTTPS job sources",
-      "candidate": {
-        "title": "Auftragsmanager (w/m/d)",
-        "employer": "GIG facility services GmbH (GIG Unternehmensgruppe)",
-        "url": "https://karriere.gig24.com/Auftragsmanager-wmd-de-j204.html",
-        "district": "Berlin-Lichtenberg (Sitz Bornitzstraße 67; Arbeitgeberseite nennt Berlin, genaue Einsatzadressen variieren)",
-        "hours": "Vollzeit",
-        "contract": "Unbefristet",
-        "salary": "Unbekannt",
-        "commute": "ca. 30–40 Min ÖPNV ab Heinersdorf (konservativ, Einsatzorte variieren)",
-        "pro": "Hoher Fit: Disposition/Koordination, Termin- und Auftragssteuerung mit Nachunternehmern.",
-        "con": "Technisch geprägtes Umfeld (FM); Handwerksverständnis ausdrücklich gewünscht.",
-        "effort_details": "ATS-Portal: Profil anlegen, Lebenslauf, 2–3 Fragen zu Verfügbarkeit/Gehaltswunsch, Upload Zeugnisse.",
-        "deadline": "",
-        "evidence": "„Disposition und Steuerung von Kleininstandsetzungen sowie Mängelbeseitigungen … Koordination und Einsatzplanung der Servicetechniker sowie Beauftragung und Steuerung von Nachunternehmen … Überwachung der termingerechten Ausführung aller Aufträge … Vorbereitung der Rechnungslegung und Unterstützung bei der Abrechnung.“",
-        "family": "C",
-        "source_group": "ats",
-        "scores": {
-          "skill": 34,
-          "entry": 27,
-          "commute": 20,
+          "skill": 25,
+          "entry": 25,
+          "commute": 15,
           "conditions": 7
         },
-        "effort_minutes": 55
+        "effort_minutes": 55,
+        "evidence": "Sachbearbeiter Prozesse & Administration (m/w/d) | Jobs bei Deutsche Firmenkredit Partner Zum Hauptinhalt springen Zurück zu allen Stellen Sachbearbeiter Prozesse & Administration (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Deine Aufgaben Dein Schwerpunkt Bearbeitung und Pflege eingehender Leads und Vorgänge im operativen Tagesgeschäft Unterstützung des Beratungsteams bei administrativen und organisatorischen Aufgaben Bearbeitung von Kundenanfragen per Telefon und E-Mail",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked"
       }
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination",
+        "Projektassistenz",
+        "Teamassistenz",
+        "Office Management",
+        "Marketingkoordination"
+      ],
+      "B": [
+        "Einkäufer",
+        "Sachbearbeiter Einkauf",
+        "Supply Chain",
+        "Beschaffung",
+        "Order Management",
+        "Lieferantenmanagement"
+      ],
+      "C": [
+        "Product Coordinator",
+        "Vertriebsinnendienst",
+        "Merchandising Koordination"
+      ]
     },
-    {
-      "title": "Mitarbeiter:in für die Auftragsverarbeitung (w/m/d)",
-      "url": "https://kalo-vor-ort.jobs.personio.de/job/2490466",
-      "reason": "Expired",
-      "candidate": {
-        "title": "Mitarbeiter:in für die Auftragsverarbeitung (w/m/d)",
-        "employer": "KALO vor Ort GmbH (KALO)",
-        "url": "https://kalo-vor-ort.jobs.personio.de/job/2490466",
-        "district": "Berlin (Standort genannt, genaue Adresse nicht in der Anzeige) – Wohnungswirtschaft",
-        "hours": "Vollzeit",
-        "contract": "Unbefristet",
-        "salary": "Unbekannt",
-        "commute": "ca. 45–60 Min ÖPNV (konservativ mangels genauer Adresse)",
-        "pro": "End‑to‑end‑Auftragsabwicklung inkl. Partnersteuerung – deckt Orderflow/Koordination sehr gut ab.",
-        "con": "Wohnungswirtschaftsspezifika/Serviceteam‑Disposition einarbeiten.",
-        "effort_details": "ATS Personio: Basisdaten, CV, Motivationsfeld, Uploads.",
-        "deadline": "",
-        "evidence": "„Du organisierst die vollständige Auftragsabwicklung, betreust Kundenanliegen und verantwortest ein professionelles Auftrags‑ und Prozesscontrolling. Du koordinierst und planst unsere Servicepartner und stellst einen reibungslosen Ablauf sicher.“",
-        "family": "C",
-        "source_group": "ats",
-        "scores": {
-          "skill": 32,
-          "entry": 24,
-          "commute": 10,
-          "conditions": 6
-        },
-        "effort_minutes": 55
-      }
+    "family_observations": {
+      "A": "Öffentlicher Dienst dominiert die neuen Assistenz‑Ausschreibungen; mehrere EG‑6‑Stellen mit klaren Bewerbungsfristen und 30–40 Std. Optionen.",
+      "B": "Ein klarer Lichtblick im Junior‑Segment ist Packmatic (Lieferanten & Verhandlungen) in Prenzlauer Berg; klassische „Sachbearbeitung Einkauf“ bleibt häufig befristet/ANÜ oder mit SAP‑Fokus.",
+      "C": "Mehrere Auftrags-/B2B‑Rollen über Personio mit Prozessfokus (Auftragsbestätigung bis Rechnung); Standortangaben oft unpräzise – vorab klären, um die 60‑Min‑Pendelzielmarke zu halten."
     },
-    {
-      "title": "Projektassistenz (d/m/w)",
-      "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
-      "reason": "Detail page unavailable (TimeoutError)",
-      "candidate": {
-        "title": "Projektassistenz (d/m/w)",
-        "employer": "Prognos AG",
-        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
-        "district": "Berlin-Mitte (zentrale Innenstadtlage; exakte Adresse nicht in Anzeige)",
-        "hours": "Vollzeit oder Teilzeit; Homeoffice möglich",
-        "contract": "Befristet/Unbefristet (Anzeige nennt beide Optionen; vor Bewerbung klären)",
-        "salary": "Unbekannt",
-        "commute": "ca. 30–45 Min ÖPNV ab Heinersdorf (konservativ)",
-        "pro": "Klarer A‑Fit: Terminkoordination, Projektdokumentation, Budget-/Ablaufunterstützung.",
-        "con": "Nicht fachlicher Kernbereich; mögliche Befristung klären.",
-        "effort_details": "Bewerbung über Arbeitgeberportal (kein ATS-Hub): Formular, CV, Motivationsangabe.",
-        "deadline": "",
-        "evidence": "„Sie bringen erste einschlägige Berufserfahrung in der Projektassistenz, Teamassistenz, Geschäftsstellenarbeit, Verwaltung oder Projektkoordination mit.“",
-        "family": "A",
-        "source_group": "stepstone",
-        "scores": {
-          "skill": 26,
-          "entry": 26,
-          "commute": 15,
-          "conditions": 6
-        },
-        "effort_minutes": 70
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche/Detailseiten erreichbar; neue Detailseiten u. a. WIEDEMANN, DAkkS verifiziert."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Kategorie-/Übersichtsseiten erreichbar; keine heute verwendeten Einzel‑Detailseiten nötig."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio, Lever erreichbar; mehrere neue Detailseiten geöffnet (APC, Zertificon, DFKP, Packmatic)."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal funktionsfähig; zwei neue Teamassistenz‑Ausschreibungen mit Fristen verifiziert."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited erreichbar; heute kein belastbares Berlin‑Detail passend zu Profil gefunden (nur allgemeine Übersichten)."
       }
-    }
-  ]
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-fuer-den-Fachbereich-Objektmanagement-mwd-de-j69380.html",
+        "reason": "Nur für bereits beim Land Berlin Beschäftigte zugänglich; explizit interne Zielgruppe und laufbahn-/ausbildungsspezifische Vorgaben."
+      },
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-Psychosoziale-Dienste-Erziehungs-und-Familie-de-j70353.html",
+        "reason": "Erfordert anerkannten Verwaltungs-/Büro-Ausbildungsberuf oder Verwaltungslehrgang I; Aufgaben stark publikumsnah im psychosozialen Bereich und weniger passend zum Profil."
+      }
+    ],
+    "assessment_pages_checked": 6,
+    "rejected": [
+      {
+        "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
+        "url": "https://apc-ag.jobs.personio.de/job/2780473",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Kaufmännischer Mitarbeiter / Sachbearbeiter (w/m/d) - Niederlassung Berlin",
+          "employer": "APC AG",
+          "url": "https://apc-ag.jobs.personio.de/job/2780473",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "2.500 - 3.500 € pro Monat",
+          "commute": "Ohne genaue Adresse konservativ auf ca. 55–65 Min. ÖPNV von Berlin‑Heinersdorf geschätzt",
+          "pro": "Konkrete Aufgaben in Auftragsbearbeitung und Rechnungswesen passen zur Koordinations- und Admin-Erfahrung.",
+          "con": "Vergütungsspanne am unteren Ende; Einsatzort in Berlin ohne genaue Adresse.",
+          "effort_details": "ATS (Personio) – Profil anlegen/anhängen, Basisfragen; geschätzt 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "(MS Office, Outlook, Internet) Viel Spaß und Freude am Kontakt mit Menschen - persönlich oder telefonisch Deine Aufgaben Telefonische und schriftliche Korrespondenz mit unserem Außendienst und unseren Geschäftspartnern Auftragsbearbeitung, Erstellung und Kontrolle von Rechnungen und Verwaltung der Arbeitszeiten von den Außendienstmitarbeitern (w/m/d) der Niederlassung Allgemein anfallende, administrative Tätigkeiten und Büroorganisation Über uns DU suchst beruflich nach etwas Neuem"
+        }
+      },
+      {
+        "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+        "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Kaufmännischer Sachbearbeiter (w/m/d) im B2B Software-Unternehmen",
+          "employer": "Zertificon Solutions GmbH",
+          "url": "https://zertificon.jobs.personio.de/job/1895027?language=de",
+          "district": "Neukölln",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Schätzung ca. 45–55 Min. ÖPNV von Berlin‑Heinersdorf nach Neukölln",
+          "pro": "Breites Aufgabenspektrum von Auftragsabwicklung bis Rechnungsstellung in einem wachsenden Unternehmen.",
+          "con": "Mindestens 3 Jahre spezifische Sachbearbeitung gefordert, nicht aus identischem Sektor vorhanden.",
+          "effort_details": "ATS (Personio) – Lebenslauf, Kontaktdaten, Fragen; geschätzt 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 27,
+            "entry": 23,
+            "commute": 10,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "dem Softwarekauf passiert – von der Auftragsabwicklung bis zum Onboarding. Du unterstützt außerdem bei der E-Mail-Zertifikatsverwaltung für unsere Kunden. Von der Auftragsbestätigung bis zur Rechnungsstellung: Du bearbeitest Kundenaufträge und sorgst dafür, dass nach dem Verkauf alles reibungslos läuft Erstelle und versende Dokumente wie Verträge, Auftragsbestätigungen und Rechnungen Bearbeite Rechnungen für digitale Zertifikate von unseren Trustcenter-Partnern Für Kunden, Partner und"
+        }
+      },
+      {
+        "title": "Junior Buying Manager (w/m/d)",
+        "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Junior Buying Manager (w/m/d)",
+          "employer": "Packmatic GmbH",
+          "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+          "district": "Prenzlauer Berg (Pankow)",
+          "hours": "Vollzeit",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "Ca. 20–30 Min. ÖPNV von Berlin‑Heinersdorf nach Prenzlauer Berg",
+          "pro": "Lieferantenverhandlungen und Netzwerkaufbau decken Einkauf/Disposition und Lieferantenkoordination sehr gut ab.",
+          "con": "Explizit als Junior-Rolle ausgeschrieben; Vergütung nicht genannt.",
+          "effort_details": "ATS (Lever) – Profil/Resume, Formularfelder; geschätzt 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 35,
+            "entry": 26,
+            "commute": 20,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "und du wirst von einem klaren Wachstums- und Entwicklungspfad profitieren. Was dich bei uns erwartet Du verhandelst mit Lieferanten aus unserem Partnernetzwerk und stellst sicher, dass Kundenanfragen zu optimalen Konditionen eingekauft werden. Du identifizierst Lücken im Lieferantennetzwerk und trägst aktiv zur Weiterentwicklung und Akquise neuer Lieferanten bei. Du arbeitest eng mit dem Packaging-Team an Kundenprojekten zusammen und unterstützt bei der technischen und kaufmännischen"
+        }
+      },
+      {
+        "title": "Teamassistenz, die uns prima ergänzt (w/m/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003691402-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Teamassistenz, die uns prima ergänzt (w/m/d)",
+          "employer": "Deutsche Akkreditierungsstelle GmbH (DAkkS)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003691402-S",
+          "district": "Unbekannt",
+          "hours": "Vollzeit oder Teilzeit (nicht konkretisiert)",
+          "contract": "Befristet 24 Monate",
+          "salary": "Unbekannt",
+          "commute": "Adresse im Inserat nicht genannt – konservativ 45–60 Min.",
+          "pro": "Hoher Homeoffice‑Anteil bis zu 60 % erleichtert Vereinbarkeit.",
+          "con": "Befristung auf 24 Monate.",
+          "effort_details": "Bewerbung über Unternehmensseite (aus BA verlinkt) – normaler Firmenprozess (Anschreiben, CV, ggf. Fragen) ≈70 Min.",
+          "deadline": "",
+          "evidence": "„6 Wochen Jahresurlaub, … Homeoffice (bis zu 60 %) … angenehmes Arbeitsklima, geprägt von Wertschätzung, Integrität, Teamarbeit und Humor … Die Deutsche Akkreditierungsstelle GmbH (DAkkS) ist die nationale Akkreditierungsstelle der Bundesrepublik Deutschland.“",
+          "family": "A",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 20,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 8
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Mitarbeiter im Vertriebsinnendienst (m/w/d) – mehrere Berliner Niederlassungen",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003679254-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Mitarbeiter im Vertriebsinnendienst (m/w/d) – mehrere Berliner Niederlassungen",
+          "employer": "WIEDEMANN Burg GmbH (Fachgroßhandel Gebäudetechnik)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003679254-S",
+          "district": "verschiedene: Tempelhof / Reinickendorf / Mahlsdorf (Auswahl laut Anzeige)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "Je nach Standort 30–55 Min. aus Heinersdorf; konservativ 45–60 Min.",
+          "pro": "Stabile Mittelstandsstruktur, klarer Innendienst mit Kunden-/Auftragsfokus.",
+          "con": "Standortwahl offen – vor Bewerbung präferierten Standort klären.",
+          "effort_details": "Bewerbung über Firmen‑Bewerbersystem (aus BA verlinkt) – ATS ≈55 Min.",
+          "deadline": "",
+          "evidence": "„Für unsere Niederlassungen in Burg (bei Magdeburg), Berlin‑Tempelhof, Berlin‑Reinickendorf, Berlin‑Mahlsdorf, … suchen wir einen Mitarbeiter im Vertriebsinnendienst (m/w/d). – Du kommunizierst klar, bleibst dran und hast Spaß daran, Kunden wirklich weiterzuhelfen.“",
+          "family": "C",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 22,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-10-20T08:25:14.768709+00:00",
+  "prepared_at": "2026-10-20T08:28:41.045293+00:00",
+  "message_id": "<miki-2026-10-20-2cfd277b274510bd@miki-jobsearch>",
+  "last_attempt_at": "2026-10-20T08:25:14.768709+00:00",
+  "last_attempt_run_id": "39393230612",
+  "design_version": "electric-blue-v1",
+  "email_provider": "brevo"
 }
