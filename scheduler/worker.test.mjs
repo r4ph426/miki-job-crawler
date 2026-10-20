@@ -59,3 +59,28 @@ test('disabled worker and public HTTP requests cannot dispatch', async () => {
   assert.equal((await wake({ ...env, ENABLED: 'false' }, now, request)).status, 'disabled');
   assert.equal((await worker.fetch()).status, 404);
 });
+
+test('unchanged provider ambiguity cools down but is checked at 08:30', () => {
+  const checked = '2026-10-19T06:25:00Z';
+  const feed = { updated_at: checked, records: { '2026-10-19': {
+    status: 'schedule_uncertain', provider_check_failed: true, provider_checked_at: checked,
+    scheduled_at: '2026-10-19T06:30:00Z',
+  } } };
+  assert.equal(needsWake(feed, new Date('2026-10-19T06:26:00Z')), false);
+  assert.equal(needsWake(feed, new Date('2026-10-19T06:30:00Z')), true);
+  feed.records['2026-10-19'].provider_checked_at = '2026-10-19T06:31:00Z';
+  assert.equal(needsWake(feed, now), false);
+  assert.equal(needsWake(feed, new Date('2026-10-19T06:46:00Z')), true);
+});
+
+test('stale feed and repeated infrastructure failure cannot dispatch every tick', async () => {
+  for (const run of [
+    { status: 'completed', conclusion: 'success', created_at: '2026-10-19T06:35:00Z' },
+    { status: 'completed', conclusion: 'failure', created_at: '2026-10-19T05:00:00Z', updated_at: '2026-10-19T06:00:00Z' },
+  ]) {
+    let count = 0;
+    const request = async () => ++count === 1 ? Response.json({}) : Response.json({workflow_runs: [run]});
+    assert.equal((await wake(env, now, request)).status, 'dispatch_cooldown');
+    assert.equal(count, 2);
+  }
+});

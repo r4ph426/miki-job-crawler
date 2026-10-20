@@ -16,6 +16,7 @@ def write_feed(root, store):
              "failed_recipient_count", "delivery_problem")}
         records[r.get("date", path.stem)]["has_report"] = bool(r.get("report")) and not r.get("fixture")
         records[r.get("date", path.stem)]["has_mail"] = path.with_suffix(".html").exists() and not r.get("fixture")
+        records[r.get("date", path.stem)]["provider_check_failed"] = bool(r.get("provider_check_error"))
     shared = read_json(store / "coordinator.json", {})
     payload = {"updated_at": datetime.now(timezone.utc).isoformat(), "timezone": "Europe/Berlin",
                "schedule": {"mode": "brevo_scheduled", "prepare": "09:00", "prepare_retry": "13:00",

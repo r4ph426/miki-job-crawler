@@ -45,7 +45,7 @@ recipient can still require operator action; the service reports that truthfully
 
 ## Wakeups
 
-The GitHub preparation workflow wakes every 30 minutes. The morning recovery
+The GitHub preparation workflow wakes every hour. The morning recovery
 workflow additionally wakes every 20 minutes over both Berlin DST offsets. Both
 invoke the same recovery module and share the same non-cancelling concurrency group.
 `SERVICE_ENABLED=false` pauses both scheduled and externally dispatched recovery.
@@ -68,7 +68,7 @@ A fresh installation still needs its own authentication and protected secret:
    into `GITHUB_ACTIONS_TOKEN` with `wrangler secret put`. Use a protected prompt or
    transfer directly from Keychain; never print it or save it in a source file.
 4. Keep `ENABLED=true` and redeploy, preserving the secret. The cron is every
-   five minutes (UTC); target-date decisions use Europe/Berlin in code.
+   fifteen minutes (UTC); target-date decisions use Europe/Berlin in code.
 5. Verify a **scheduled** worker invocation, the resulting GitHub dispatch, the
    report's verified Brevo queue and subsequently each recipient's delivery event.
    A local unit test, accepted deployment or manual dispatch does not prove that
@@ -81,6 +81,21 @@ dependence on GitHub cron, not all GitHub outages. A full GitHub outage requires
 separate executor/state backend; it must not be improvised as a second sender.
 
 ## Notifications and validation
+
+Weekday 08:30 delivery was re-authorized on 20 October 2026. The scheduled
+workflows use ubuntu-24.04. The laptop agent remains disabled; cloud wakeups do
+not depend on an awake Mac.
+
+An assessed delivery incident is operational data, not a crashed workflow.
+Recovery emits needs_attention=true for unresolved business states and retains
+the incident in the run/feed; deduplicated readiness/delivery alerts remain
+separate. Genuine execution and Git-persistence exceptions still fail the job.
+Unchanged provider ambiguity is checked hourly before the send time, at the
+send time, then every 15 minutes. It never permits another POST.
+The independent scheduler enforces at least 15 minutes between dispatches and
+backs off for an hour after infrastructure failures, even with an unavailable
+status feed. Active repairs suppress new dispatches. Thus a persistent unresolved
+provider acknowledgement cannot recreate the five-minute GitHub failure-mail loop.
 
 Repair is attempted before notifying. Warn once after 22:00 if the next report is
 still not ready, or from 08:45 if today's recipient delivery is still unconfirmed.

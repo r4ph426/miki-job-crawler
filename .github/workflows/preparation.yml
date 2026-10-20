@@ -3,7 +3,7 @@ name: Miki advance research and readiness check
 on:
   schedule:
     # Reconcile actual state on every wakeup, even when GitHub starts late.
-    - cron: "13,43 * * * *"
+    - cron: "13 * * * *"
   workflow_dispatch:
     inputs:
       task:
@@ -20,7 +20,7 @@ permissions:
 jobs:
   run:
     if: vars.SERVICE_ENABLED != 'false'
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     permissions:
       contents: write

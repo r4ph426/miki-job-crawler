@@ -9,7 +9,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch
 
 from miki_jobsearch.hybrid import execute
-from miki_jobsearch.recovery import recover_day, retry_allowed, supervise, targets
+from miki_jobsearch.recovery import main, needs_attention, recover_day, retry_allowed, supervise, targets
 from miki_jobsearch.research import ResearchError
 from miki_jobsearch.service import StateSyncError, atomic_json, read_json, run
 
@@ -98,6 +98,39 @@ class RecoveryTests(unittest.TestCase):
         provider = Mock()
         self.assertEqual(recover_day(self.root, DAY, clock=lambda: self.now, provider=provider)["status"], "delivered")
         provider.assert_not_called()
+
+    def test_unchanged_ambiguity_waits_but_rechecks_at_actual_send_time(self):
+        self.saved("schedule_uncertain")
+        checked = self.now.replace(hour=8, minute=25)
+        record = read_json(self.path, {})
+        record.update(provider_checked_at=checked.isoformat(), provider_check_error="unconfirmed")
+        atomic_json(self.path, record)
+        provider = Mock(side_effect=__import__("miki_jobsearch.scheduled_mail", fromlist=["ProviderStatusError"]).ProviderStatusError("down"))
+        runner = Mock()
+        before = recover_day(self.root, DAY, clock=lambda: checked + timedelta(minutes=1),
+                             executor=runner, provider=provider)
+        self.assertFalse(before["retryable"])
+        provider.assert_not_called(); runner.assert_not_called()
+        recover_day(self.root, DAY, clock=lambda: checked.replace(minute=30), executor=runner, provider=provider)
+        provider.assert_called_once(); runner.assert_not_called()
+
+    def test_known_incident_stays_visible_without_a_new_github_failure(self):
+        results = [{"date": DAY, "status": "provider_unconfirmed", "retryable": False}]
+        self.assertTrue(needs_attention(results, self.now))
+        self.assertFalse(needs_attention([{"date": DAY, "status": "delivered"}], self.now))
+        with patch("sys.argv", ["recovery", "--attempts", "1"]), \
+             patch("miki_jobsearch.recovery.supervise", return_value=results), \
+             patch("miki_jobsearch.recovery.utcnow", return_value=self.now), \
+             patch("builtins.print") as output:
+            self.assertEqual(main(), 0)
+        summary = json.loads(output.call_args.args[0])
+        self.assertTrue(summary["needs_attention"])
+        self.assertEqual(summary["results"], results)
+
+    def test_real_state_failure_is_never_reported_as_a_successful_check(self):
+        with patch("sys.argv", ["recovery", "--attempts", "1"]), \
+             patch("miki_jobsearch.recovery.supervise", side_effect=StateSyncError("push failed")):
+            with self.assertRaises(StateSyncError): main()
 
     def test_configuration_and_research_failure_are_retryable_without_exposing_exception(self):
         secret = "private-credential-and-address"

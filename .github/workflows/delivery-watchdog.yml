@@ -14,7 +14,7 @@ permissions:
 jobs:
   run:
     if: vars.SERVICE_ENABLED != 'false'
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     permissions:
       contents: write

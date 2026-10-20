@@ -4,11 +4,11 @@ compatibility_date = "2026-10-16"
 workers_dev = false
 
 [triggers]
-crons = []
+crons = ["*/15 * * * *"]
 
 [vars]
-# Paused at the user request after repeated GitHub failure notifications. Re-enable only explicitly.
-ENABLED = "false"
+# Weekday 08:30 delivery re-authorized; unchanged provider incidents back off.
+ENABLED = "true"
 
 [observability]
 enabled = true

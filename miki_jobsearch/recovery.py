@@ -15,6 +15,10 @@ MAX_ATTEMPTS_PER_PHASE_PER_WINDOW = 3
 RETRY_SECONDS = 60
 PROVIDER_STATES = {"sent", "scheduled", "scheduling", "schedule_uncertain", "sending", "uncertain", "partial"}
 RETRY_STATES = {"missing", "research_failed", "configuration_failed", "failed", "prepared", "schedule_failed"}
+ATTENTION_STATES = {"research_failed", "configuration_failed", "failed", "schedule_failed",
+                    "retry_budget_exhausted", "provider_unconfirmed", "delivery_problem",
+                    "manual_review_required", "schedule_uncertain", "scheduling", "sending",
+                    "uncertain", "partial"}
 
 
 def utcnow():
@@ -59,6 +63,20 @@ def recover_day(root, day, clock=utcnow, executor=execute, provider=check_provid
         if status in PROVIDER_STATES:
             if record.get("delivered_at"):
                 return {"date": day, "status": "delivered"}
+            # An unchanged ambiguous acknowledgement cannot be repaired by another
+            # POST. Poll hourly ahead of delivery, then every 15 minutes; always
+            # recheck when the actual scheduled send time arrives.
+            if record.get("provider_check_error") and record.get("provider_checked_at"):
+                checked = datetime.fromisoformat(record["provider_checked_at"])
+                due = send_time(day)
+                after = checked + timedelta(minutes=60 if now < due else 15)
+                if now < due:
+                    after = min(after, due)
+                elif checked < due:
+                    after = due
+                if now < after:
+                    return {"date": day, "status": "provider_unconfirmed", "retryable": False,
+                            "next_check_at": after.isoformat()}
             try:
                 result = provider(root, day, now=now)
             except (ProviderStatusError, MailConfigurationError):
@@ -118,6 +136,12 @@ def supervise(root, clock=utcnow, recover=recover_day):
     return results
 
 
+def needs_attention(results, now):
+    local = now.astimezone(BERLIN)
+    return any(r.get("status") in ATTENTION_STATES or (
+        r.get("status") == "awaiting_delivery" and (local.hour, local.minute) >= (8, 45)) for r in results)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--attempts", type=int, choices=range(1, 4), default=3)
@@ -139,11 +163,12 @@ def main():
             check_delivery(root, result["date"], now=now)
         elif local.hour >= 22:
             check_readiness(root, result["date"], now=now)
-    return int(any(r.get("status") in {"research_failed", "configuration_failed", "failed", "schedule_failed",
-                                      "retry_budget_exhausted", "provider_unconfirmed", "delivery_problem",
-                                      "manual_review_required", "schedule_uncertain", "scheduling", "sending",
-                                      "uncertain", "partial"} or (r.get("status") == "awaiting_delivery"
-                                      and (local.hour, local.minute) >= (8, 45)) for r in results))
+    # Successfully assessing a known delivery incident is not a crashed workflow.
+    # Keep the incident explicit in output/feed and use the deduplicated warning
+    # above. Genuine execution/state-persistence exceptions still exit nonzero.
+    print(json.dumps({"operation": "recovery_check", "needs_attention": needs_attention(results, now),
+                      "results": results}), flush=True)
+    return 0
 
 
 if __name__ == "__main__":
