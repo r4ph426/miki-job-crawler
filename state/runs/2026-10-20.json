@@ -266,5 +266,12 @@
   "expected_recipients": 2,
   "refused_count": 0,
   "provider_message_id": "<202610200828.99236847026@smtp-relay.mailin.fr>",
-  "accepted_at": "2026-10-20T08:28:44.128724+00:00"
+  "accepted_at": "2026-10-20T08:28:44.128724+00:00",
+  "provider_checked_at": "2026-10-20T08:38:04.076087+00:00",
+  "sent_recipient_count": 2,
+  "delivered_recipient_count": 2,
+  "failed_recipient_count": 0,
+  "delivery_problem": false,
+  "provider_status": "delivered",
+  "delivered_at": "2026-10-20T08:28:45+00:00"
 }
