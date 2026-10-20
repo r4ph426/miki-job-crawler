@@ -385,6 +385,12 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
         prepare=False, revision=None, revision_reason=None, delivery_date=None,
         require_prepared=False, allow_early_prepare=False):
     now = now or datetime.now(timezone.utc)
+    # An unstarted GitHub run can remain queued even when cancellation fails.
+    # Fresh production checkouts must refuse explicitly revoked run identities.
+    revoked = read_json(root / "config/revoked-workflow-runs.json", [])
+    if (not dry_run or prepare) and os.environ.get("GITHUB_RUN_ID") in revoked:
+        return {"date": now.astimezone(BERLIN).date().isoformat(), "status": "skipped",
+                "reason": "Workflow run explicitly revoked; no research or delivery permitted"}
     config = read_json(root / "config/search.json", {})
     if (not dry_run or prepare) and fixture is not None:
         raise ValueError("Fixture data cannot be emailed")

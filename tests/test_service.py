@@ -29,6 +29,19 @@ MAIL_ENV = {"EMAIL_PROVIDER": "gmail", "GMAIL_USER": "sender@example.org", "GMAI
 
 
 class ScheduleTests(unittest.TestCase):
+    def test_revoked_unstarted_workflow_cannot_research_prepare_persist_or_send(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            atomic_json(root / "config/revoked-workflow-runs.json", ["39391363540"])
+            researcher, sender, persist = Mock(), Mock(), Mock()
+            with patch.dict(os.environ, {"GITHUB_RUN_ID": "39391363540"}):
+                for prepare in (False, True):
+                    result = run(root, root / "state", dry_run=False, prepare=prepare,
+                                 researcher=researcher, sender=sender, persist=persist)
+                    self.assertEqual(result["status"], "skipped")
+            researcher.assert_not_called(); sender.assert_not_called(); persist.assert_not_called()
+            self.assertFalse((root / "state").exists())
+
     def test_dst_and_weekends(self):
         cases = [
             ("2026-10-23T06:29:59+00:00", False),
