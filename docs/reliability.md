@@ -80,6 +80,18 @@ GitHub variable above. GitHub remains the execution/state backend, so this remov
 dependence on GitHub cron, not all GitHub outages. A full GitHub outage requires a
 separate executor/state backend; it must not be improvised as a second sender.
 
+## Live validation on 20 October 2026
+
+Recovery run [39394785812](https://github.com/r4ph426/miki-job-crawler/actions/runs/39394785812)
+confirmed today's delivery to both recipients and prepared four verified jobs for
+21 October. Brevo accepted the future message and its exact provider message ID
+returned `queued` for **2026-10-21T06:30:00Z (08:30 Europe/Berlin)**, verified at
+2026-10-20T08:42:45Z. This is queue confirmation, not a claim of future delivery.
+The external scheduler's active version is `88a42a90-2f51-4194-8ff3-2fa5065a87b9`,
+with `ENABLED=true` and a 15-minute cron. The preparation, morning watchdog,
+manual-only daily workflow and service checks are enabled. The local agent and
+old ChatGPT monitor remain paused. Validation passed 159 Python and 8 worker tests.
+
 ## Notifications and validation
 
 Weekday 08:30 delivery was re-authorized on 20 October 2026. The scheduled

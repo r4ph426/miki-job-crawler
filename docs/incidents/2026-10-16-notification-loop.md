@@ -47,3 +47,13 @@ pause, rather than using unhealthy as unconditional permission to dispatch again
 Keep genuine execution errors visible. Validate the complete dispatch → workflow
 result → account notification path, including repeated unchanged ambiguity, before
 explicit user authorization to resume.
+
+## Follow-up — 20 October 2026
+
+The user explicitly re-authorized weekday 08:30 delivery. Commit 9283319 separates
+known delivery incidents from crashed checks, adds provider-check cooldowns and
+independent dispatch backoff, and switches scheduled runners to ubuntu-24.04.
+The service was reactivated after 159 Python and 8 worker tests passed. Recovery
+39394785812 confirmed today's two deliveries and a verified Brevo queue for the
+21 October report at 08:30 Europe/Berlin. See reliability.md for current operation.
+The local scheduler and old ChatGPT monitor remain paused.
