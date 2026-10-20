@@ -1,7 +1,7 @@
 {
   "date": "2026-10-20",
   "created_at": "2026-10-20T08:25:14.768709+00:00",
-  "status": "sending",
+  "status": "sent",
   "subject": "Stellen für Miki · 20.10.2026 · 1 neue Treffer",
   "report": {
     "summary": "8 passende Neuzugänge (A/B/C) gefunden und verifiziert; mehrere mit klaren Einkaufs-/Order‑Bezug und zwei öffentliche Teamassistenz‑Stellen mit Fristen bis 2026‑11‑05 bzw. 2026‑11‑19. Keine Dubletten zu früheren Meldungen. Alle Quellen verfügbar.",
@@ -251,7 +251,7 @@
   "attempts": [
     {
       "started_at": "2026-10-20T08:28:42.372688+00:00",
-      "status": "sending"
+      "status": "sent"
     }
   ],
   "hits": 1,
@@ -263,5 +263,8 @@
   "design_version": "electric-blue-v1",
   "email_provider": "brevo",
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
-  "expected_recipients": 2
+  "expected_recipients": 2,
+  "refused_count": 0,
+  "provider_message_id": "<202610200828.99236847026@smtp-relay.mailin.fr>",
+  "accepted_at": "2026-10-20T08:28:44.128724+00:00"
 }
