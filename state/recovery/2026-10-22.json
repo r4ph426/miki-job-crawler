@@ -6,7 +6,12 @@
       "started_at": "2026-10-21T07:38:59.885944+00:00",
       "status": "prepared",
       "finished_at": "2026-10-21T07:42:28.746969+00:00"
+    },
+    {
+      "phase": "prepare",
+      "started_at": "2026-10-21T07:42:29.783400+00:00",
+      "status": "running"
     }
   ],
-  "status": "prepared"
+  "status": "running"
 }
