@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
   "created_at": "2026-10-21T07:38:59.885944+00:00",
-  "status": "prepared",
+  "status": "scheduling",
   "subject": "Stellen für Miki · 22.10.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 21.10.2026 für den Versand am 22.10.2026. 7 passende Neuzugänge (≥55 Punkte) aus StepStone/ATS, heute geprüft (21.10.2026, 08:30 Uhr). Fokus: Einkauf/Order-Management sowie Office/Teamassistenz. Keine Dubletten zu bisherigen Meldungen.",
@@ -192,12 +192,22 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "status": "scheduling",
+      "started_at": "2026-10-21T07:42:29.783400+00:00"
+    }
+  ],
   "hits": 1,
   "researched_at": "2026-10-21T07:38:59.885944+00:00",
   "prepared_at": "2026-10-21T07:42:27.742038+00:00",
   "message_id": "<miki-2026-10-22-833f12eb342ef96c@miki-jobsearch>",
   "last_attempt_at": "2026-10-21T07:38:59.885944+00:00",
   "last_attempt_run_id": "39563446749",
-  "design_version": "electric-blue-v1"
+  "design_version": "electric-blue-v1",
+  "scheduled_at": "2026-10-22T06:30:00Z",
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_batch_id": "559b896c-1f5c-40d7-b895-1985838a83f1"
 }
