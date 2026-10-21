@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-22",
+  "created_at": "2026-10-21T07:38:59.885944+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 22.10.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 21.10.2026 für den Versand am 22.10.2026. 7 passende Neuzugänge (≥55 Punkte) aus StepStone/ATS, heute geprüft (21.10.2026, 08:30 Uhr). Fokus: Einkauf/Order-Management sowie Office/Teamassistenz. Keine Dubletten zu bisherigen Meldungen.",
+    "next_action": "Zwei schnelle ATS-Bewerbungen heute (ucm Office Manager:in; ctrl QS Office Manager) und eine fokussierte Bewerbung Einkauf (Thermondo Operativer Einkauf). Bei Vonovia vor Absenden telefonisch Einsatzstandort klären.",
+    "weekend_action": "30–45 Min: Lebenslauf-Variante „Einkauf/SCM“ mit Stichworten zu NOOS/Lead Times/Frachtkosten schärfen; 30–40 Min: Kurzbausteine für Office/Assistenz (DE/EN) aktualisieren.",
+    "jobs": [
+      {
+        "title": "Technischer Einkäufer (m/w/d) - Junior oder Senior Level",
+        "employer": "FACTUREE",
+        "url": "https://facturee.jobs.personio.de/job/1536989?language=de",
+        "district": "Berlin-Wedding (Osram-Höfe)",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung (unbefristet)",
+        "salary": "3.750 - 5.000 € pro Monat",
+        "commute": "Ca. 35–45 Min. ÖPNV geschätzt (Wedding)",
+        "pro": "Einkauf/Projektsteuerung mit Lieferanten passt zur Koordinations- und Beschaffungserfahrung.",
+        "con": "Starker technischer Schwerpunkt (Zeichnungen/CAD) könnte Einarbeitung erfordern.",
+        "effort_details": "ATS (Personio) 55 Min + kurzes Anschreiben (erbeten) 10 Min = ca. 65 Min.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 30,
+          "entry": 16,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 65,
+        "evidence": "direkt an Maschinen oder in der Fertigung Deine fachlichen Kompetenzen Bildung im Bereich Produktion, Ingenieurwissenschaften, Wirtschaftsingenieurwesen, Produktdesign, technischer Einkauf oder Maschinenbau Idealerweise einschlägige Berufserfahrung im Einkauf und Zulieferermanagement Bestenfalls praktische Erfahrung in der Fertigung oder der Beschaffung von Fertigungsteilen Technisches Verständnis in den Bereichen Fertigungsverfahren, Teileeigenschaften, CAD, Toleranzen und Materialkunde",
+        "score": 68,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination Berlin site:arbeitsagentur.de (7 Tage)",
+        "Projektassistenz Berlin site:arbeitsagentur.de (7 Tage)",
+        "Teamassistenz Berlin site:arbeitsagentur.de (7 Tage)",
+        "Office Management Berlin site:stepstone.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:stepstone.de",
+        "Sachbearbeiter Einkauf Berlin site:arbeitsagentur.de (7 Tage)",
+        "Supply Chain Berlin site:stepstone.de",
+        "Order Management Berlin site:stepstone.de",
+        "Beschaffung Berlin site:arbeitsagentur.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:personio.de",
+        "Product Coordinator Berlin site:de.fashionjobs.com",
+        "Merchandising Koordination Berlin site:fashionunited.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Mehrere neue Office‑Manager‑Rollen in Agenturumfeld (z. B. ctrl QS, ucm); Präsenzquoten hoch, befristete Angebote kommen vor.",
+      "B": "ATS‑Markt liefert solide Einkaufstreffer mit operativem Schwerpunkt; genaue Standorte oft nicht genannt (Pendelzeit konservativ bewertet).",
+      "C": "Wenig neue Berlin‑Treffer mit Koordinationsschwerpunkt jenseits Retail; Inside‑Sales/Vertriebsinnendienst bleibt die stabile Alternative."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche nach Einkauf/Assistenz im 7‑Tage‑Fenster lieferte passende Trefferlisten; konkrete Kandidateseiten teils ohne neuen Mehrwert heute."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Vonovia‑Detailseite abrufbar; weitere Hubseiten genutzt, aber ohne zusätzliche belastbare Details."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Boards (ctrl QS, ucm, Thermondo, Tentamus, FACTUREE, Autohaus Royal) erreichbar; eine edoc/EITCO‑Seite 404 (vermutlich geschlossen)."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal erreichbar; neue Assistenz‑Ausschreibungen sichtbar, aber bereits gemeldete LfG‑B‑Stelle bleibt aktuell."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/FashionJobs erreichbar; Berlin‑Koordinatoren überwiegend Retail‑nah, aktuell ohne starken Fit für Miki."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://ucm.jobs.personio.de/job/2757520?language=de",
+        "reason": "Office-Management-Rolle mit Schwerpunkt Hospitality/Flächenmanagement; fachlich deutlich abseits Einkauf/Produktkoordination. Erwartete Gesamtpunktzahl <55 (Skill zu niedrig)."
+      },
+      {
+        "url": "https://ctrl-qs.jobs.personio.de/job/2798476",
+        "reason": "Office Manager (temporär, voll onsite). Schwerpunkt Workplace/Hospitality statt Einkauf/Produktkoordination; erwartete Gesamtpunktzahl <55 (Skill zu niedrig)."
+      },
+      {
+        "url": "https://autohaus-royal.jobs.personio.de/job/2471486",
+        "reason": "‚Branchenkenntnisse sind zwingend erforderlich‘ im Automobilhandel; diese harte Anforderung ist nicht erfüllt."
+      }
+    ],
+    "assessment_pages_checked": 5,
+    "rejected": [
+      {
+        "title": "Einkaufsmanager DACH (m/w/d) in Vollzeit",
+        "url": "https://tentamus.jobs.personio.de/job/2792160",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Einkaufsmanager DACH (m/w/d) in Vollzeit",
+          "employer": "Tentamus Group GmbH",
+          "url": "https://tentamus.jobs.personio.de/job/2792160",
+          "district": "Berlin-Weißensee (13088)",
+          "hours": "Vollzeit; Gleitzeit, Home-Office nach Absprache",
+          "contract": "Festanstellung (unbefristet)",
+          "salary": "Unbekannt",
+          "commute": "Ca. 15–25 Min. ÖPNV ab Berlin-Heinersdorf (sehr nah)",
+          "pro": "Arbeitsort 13088 Berlin (Weißensee) – sehr kurze Anfahrt.",
+          "con": "Reisebereitschaft gefordert und keine Gehaltsangabe.",
+          "effort_details": "ATS (Personio) ca. 55 Min: Profil anlegen/aktualisieren 20, CV hochladen 10, Fragen/Formular 15, Feinschliff 10.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 34,
+            "entry": 26,
+            "commute": 20,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "relevanter KPIs und Erstellung regelmäßiger Reports für das Management Koordination und Begleitung von Optimierungs- und Digitalisierungsprojekten im Einkauf, beispielsweise bei der Einführung von E-Procurement- oder SRM-Systemen Ihr Profil Erfolgreich abgeschlossenes Studium in Betriebswirtschaft, Finanzwirtschaft oder eine abgeschlossene kaufmännische Ausbildung mit einschlägiger Berufserfahrung Mindestens drei Jahre relevante Berufserfahrung im Einkauf, Kenntnisse der TIC-Branche sind"
+        }
+      },
+      {
+        "title": "Sachbearbeiter (m/w/d) Auftragsmanagement SHK",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-m-w-d-Auftragsmanagement-SHK-Berlin-Vonovia--14445021-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeiter (m/w/d) Auftragsmanagement SHK",
+          "employer": "Vonovia",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-m-w-d-Auftragsmanagement-SHK-Berlin-Vonovia--14445021-inline.html",
+          "district": "Unbekannt (Berlin, Einsatzgebiet nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet (laut Anzeige)",
+          "salary": "Unbekannt",
+          "commute": "Konservativ 45–60 Min. ab Heinersdorf (Einsatzort nicht präzisiert)",
+          "pro": "Stabile Rahmenbedingungen (DAX‑Konzern), Homeoffice-Option laut Anzeige.",
+          "con": "Einsatzort unklar; SHK‑Umfeld mit Handwerksprozessen – fachlich nicht Kernpräferenz.",
+          "effort_details": "StepStone-Unternehmensseite, Standardformular, 70 Min",
+          "deadline": "",
+          "evidence": "„Einen zukunftssicheren, unbefristeten Arbeitsvertrag bei ganzjähriger Beschäftigung in einem modernen, krisenfesten DAX 30 Unternehmen … Flexibilität & Weiterbildung: Arbeiten aus dem Homeoffice heraus? Wir bieten mobiles Arbeiten mit flexiblen Arbeitszeiten.“",
+          "family": "B",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 28,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Operativer Einkauf (m/w/d)",
+        "url": "https://thermondo.jobs.personio.de/job/2663130?language=de",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Operativer Einkauf (m/w/d)",
+          "employer": "Thermondo GmbH",
+          "url": "https://thermondo.jobs.personio.de/job/2663130?language=de",
+          "district": "Berlin‑Kreuzberg (Büro, genaue Adresse im Inserat)",
+          "hours": "Vollzeit",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "Ca. 45–55 Min. ab Heinersdorf",
+          "pro": "Kernaufgaben Materialversorgung/Bestellabwicklung – starker Skill‑Fit.",
+          "con": "Technisches Grundverständnis gefordert; Gehalt nicht genannt.",
+          "effort_details": "ATS (Personio), 55 Min",
+          "deadline": "",
+          "evidence": "„Versorgung sichern: Du stellst die Materialversorgung und Liefertreue … lückenlos sicher. … Dein Fundament: Du hast eine kaufmännische Ausbildung erfolgreich abgeschlossen – idealerweise bringst du dazu ein technisches Grundverständnis … mit.“",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 33,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-10-21T07:38:59.885944+00:00",
+  "prepared_at": "2026-10-21T07:42:27.742038+00:00",
+  "message_id": "<miki-2026-10-22-833f12eb342ef96c@miki-jobsearch>",
+  "last_attempt_at": "2026-10-21T07:38:59.885944+00:00",
+  "last_attempt_run_id": "39563446749",
+  "design_version": "electric-blue-v1"
+}
