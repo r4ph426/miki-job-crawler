@@ -1,7 +1,7 @@
 {
   "date": "2026-10-23",
   "created_at": "2026-10-22T07:39:52.121617+00:00",
-  "status": "prepared",
+  "status": "scheduling",
   "subject": "Wochenüberblick Stellensuche · KW 43",
   "report": {
     "summary": "Recherche vom 22.10.2026 für den Versand am 23.10.2026. 6 neue, verifizierte Optionen aus ATS-Seiten; BA/StepStone/Fashion/BERLIN-Portal geprüft. Schwerpunkt heute auf Einkauf/Disposition und Operations-Koordination in Berlin. Keine Dubletten zur Historie. Alle Kandidaten ≥55 Punkte.",
@@ -215,12 +215,22 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "status": "scheduling",
+      "started_at": "2026-10-22T07:43:13.114781+00:00"
+    }
+  ],
   "hits": 0,
   "researched_at": "2026-10-22T07:39:52.121617+00:00",
   "prepared_at": "2026-10-22T07:43:10.907699+00:00",
   "message_id": "<miki-2026-10-23-968727a3f9ad55a9@miki-jobsearch>",
   "last_attempt_at": "2026-10-22T07:39:52.121617+00:00",
   "last_attempt_run_id": "39741432996",
-  "design_version": "electric-blue-v1"
+  "design_version": "electric-blue-v1",
+  "scheduled_at": "2026-10-23T06:30:00Z",
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_batch_id": "87278232-6c91-4dce-a6fc-e96b06451a73"
 }
