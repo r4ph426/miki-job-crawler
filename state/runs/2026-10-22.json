@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
   "created_at": "2026-10-21T07:38:59.885944+00:00",
-  "status": "scheduled",
+  "status": "sent",
   "subject": "Stellen für Miki · 22.10.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 21.10.2026 für den Versand am 22.10.2026. 7 passende Neuzugänge (≥55 Punkte) aus StepStone/ATS, heute geprüft (21.10.2026, 08:30 Uhr). Fokus: Einkauf/Order-Management sowie Office/Teamassistenz. Keine Dubletten zu bisherigen Meldungen.",
@@ -215,7 +215,13 @@
     "<202610210742.75462131409@smtp-relay.mailin.fr>"
   ],
   "schedule_accepted_at": "2026-10-21T07:42:33.454355+00:00",
-  "provider_status": "queued",
+  "provider_status": "delivered",
   "schedule_verified_at": "2026-10-21T21:00:50.697759+00:00",
-  "provider_checked_at": "2026-10-21T21:00:50.697759+00:00"
+  "provider_checked_at": "2026-10-22T07:34:38.223679+00:00",
+  "sent_recipient_count": 2,
+  "delivered_recipient_count": 2,
+  "failed_recipient_count": 0,
+  "delivery_problem": false,
+  "accepted_at": "2026-10-22T06:30:06+00:00",
+  "delivered_at": "2026-10-22T06:30:06+00:00"
 }
