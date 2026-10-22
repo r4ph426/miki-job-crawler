@@ -4,8 +4,9 @@
     {
       "phase": "research",
       "started_at": "2026-10-22T07:34:42.462767+00:00",
-      "status": "running"
+      "status": "failed",
+      "finished_at": "2026-10-22T07:38:51.117404+00:00"
     }
   ],
-  "status": "running"
+  "status": "failed"
 }
