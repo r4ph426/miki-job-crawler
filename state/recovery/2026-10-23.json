@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-23",
+  "attempts": [
+    {
+      "phase": "research",
+      "started_at": "2026-10-22T07:34:42.462767+00:00",
+      "status": "running"
+    }
+  ],
+  "status": "running"
+}
