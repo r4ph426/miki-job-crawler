@@ -10,8 +10,9 @@
     {
       "phase": "research",
       "started_at": "2026-10-22T07:39:52.121617+00:00",
-      "status": "running"
+      "status": "prepared",
+      "finished_at": "2026-10-22T07:43:12.009775+00:00"
     }
   ],
-  "status": "running"
+  "status": "prepared"
 }

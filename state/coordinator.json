@@ -134,21 +134,13 @@
       "date": "2026-10-23",
       "status": "not_ready",
       "ready": false,
-      "delivery_status": "research_failed",
+      "delivery_status": "prepared",
       "hits": 0,
-      "researched_at": null,
+      "researched_at": "2026-10-22T07:39:52.121617+00:00",
       "delivery_time": "2026-10-23T08:30:00 Europe/Berlin",
-      "checked_at": "2026-10-22T07:38:51.118526+00:00",
+      "checked_at": "2026-10-22T07:43:12.011000+00:00",
       "actor": "github",
-      "last_result": "failed"
+      "last_result": "prepared"
     }
-  },
-  "lease": {
-    "token": "f73416cf4b894f67acccc2597db772ca",
-    "actor": "github",
-    "phase": "research",
-    "date": "2026-10-23",
-    "started_at": "2026-10-22T07:39:52.121617+00:00",
-    "expires_at": "2026-10-22T08:19:52.121617+00:00"
   }
 }
