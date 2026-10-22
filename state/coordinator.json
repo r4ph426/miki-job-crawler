@@ -144,11 +144,11 @@
     }
   },
   "lease": {
-    "token": "7af4c0cb6a9f46d594067ee404fdaab4",
+    "token": "bc7bcd2ea4454b43b0ecf0c3e2b5543c",
     "actor": "github",
     "phase": "provider-check",
     "date": "2026-10-23",
-    "started_at": "2026-10-22T18:32:39.932352+00:00",
-    "expires_at": "2026-10-22T19:12:39.932352+00:00"
+    "started_at": "2026-10-22T19:45:48.099935+00:00",
+    "expires_at": "2026-10-22T20:25:48.099935+00:00"
   }
 }
