@@ -1,10 +1,226 @@
 {
   "date": "2026-10-23",
-  "status": "research_failed",
+  "created_at": "2026-10-22T07:39:52.121617+00:00",
+  "status": "prepared",
+  "subject": "Wochenüberblick Stellensuche · KW 43",
+  "report": {
+    "summary": "Recherche vom 22.10.2026 für den Versand am 23.10.2026. 6 neue, verifizierte Optionen aus ATS-Seiten; BA/StepStone/Fashion/BERLIN-Portal geprüft. Schwerpunkt heute auf Einkauf/Disposition und Operations-Koordination in Berlin. Keine Dubletten zur Historie. Alle Kandidaten ≥55 Punkte.",
+    "next_action": "FACTUREE und Terra parallel priorisieren: heute (22.10.2026) je 55 Min für ATS-Bewerbung mit zwei Varianten des Kurzprofils (Einkauf/Disposition vs. technischer Einkauf) einplanen; bei Terra vor Absenden telefonische Klärung zur Befristung/Laufzeit der Elternzeitvertretung.",
+    "weekend_action": "30–45 Min: Kurzes Profil-Template für ‚Operations-/Supply-Koordination‘ erstellen (NOOS/Orderflows, Lieferantenkommunikation, Stammdatenpflege) und als drittes Muster neben Einkauf & Office ablegen.",
+    "jobs": [],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de",
+        "Teamassistenz Berlin site:karriereportal-stellen.berlin.de",
+        "Office Manager Berlin site:personio.de",
+        "Office Coordinator Berlin site:personio.de",
+        "Marketingkoordination Berlin site:personio.de"
+      ],
+      "B": [
+        "Eink\u0000e4ufer Berlin site:personio.de",
+        "Sachbearbeiter Einkauf Berlin site:personio.de",
+        "Beschaffung Berlin site:arbeitsagentur.de",
+        "Supply Chain Berlin site:stepstone.de"
+      ],
+      "C": [
+        "Product Coordinator Berlin site:personio.de",
+        "Vertriebsinnendienst Berlin site:personio.de",
+        "Merchandising Koordination Berlin site:fashionunited.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Öffentlicher Dienst aktuell mit mehreren Teilzeit‑Teamassistenzrollen (E6) und starren Fristen, aber oft <30h oder rein sekretariatslastig; privatwirtschaftlich v. a. Office‑Koordination über ATS (Personio) mit HO‑Optionen.",
+      "B": "Gute Treffer im operativen Einkauf/Disposition über ATS (Terra, FACTUREE). BA heute stark durch Personaldienstleister und Senior‑Rollen geprägt; konkrete Sachbearbeiterrollen teils wiederveröffentlicht, aber Dubletten zur Historie.",
+      "C": "Operations-/Sales‑Koordination mit CRM-/Replenishment‑Bezug im D2C/E‑Com‑Umfeld stabil auffindbar (every., Eberhardt). Fashion-spezifische C‑Rollen heute ohne neue passende HQ‑Koordination in Berlin."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche Einkauf/ Sachbearbeiter Einkauf/ Order Management in Berlin geprüft; mehrere neue/aktualisierte Treffer, heute keine zusätzliche shortlist‑taugliche Neuanzeige ohne Überschneidung zur Historie. ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/suche?suchbereich=jobs&was=Einkauf&wo=Berlin))"
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen f\u0000fcr Vertriebsinnendienst/Order Management/ Auftragsabwicklung gepr\u0000fcft; keine eindeutige neue Detailanzeige ohne Dopplung. ([stepstone.de](https://www.stepstone.de/jobs/vertriebsinnendienst/in-berlin?utm_source=openai))"
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Neue/pr\u0000e4sente Anzeigen direkt auf Personio verifiziert: FACTUREE, Terra, every., HOLY, Eberhardt, DFKP. ([facturee.jobs.personio.de](https://facturee.jobs.personio.de/job/1536989?language=de))"
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal gepr\u0000fcft (LfG‑B Teamassistenz weiterhin aktiv; weitere Teamassistenzrollen mit l\u0000e4ngeren Fristen). Heute keine zus\u0000e4tzliche shortlist‑taugliche Neuanzeige. ([karriereportal-stellen.berlin.de](https://www.karriereportal-stellen.berlin.de/Teamassistenz-mwd-in-Teilzeit-de-j70274.html?utm_source=openai))"
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited Berlin-Liste gepr\u0000fcft; keine neue HQ‑Koordination passend (Retaillastig). Aeyde-Wholesale‑Coordinator weiter aktiv, aber bereits am 24.09. gemeldet. ([fashionunited.de](https://fashionunited.de/jobs-in-der-mode/in/berlin))"
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://facturee.jobs.personio.de/job/1536989?language=de",
+        "reason": "Erfordert technische/ingenieurwissenschaftliche Ausbildung (z. B. Ingenieurwesen, Wirtschaftsingenieurwesen, Maschinenbau) und technische Zeichnungsinterpretation als Voraussetzung; fällt unter harte Ausschlusskriterien."
+      }
+    ],
+    "assessment_pages_checked": 4,
+    "rejected": [
+      {
+        "title": "Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung",
+        "url": "https://terra-naturkost-handels-kg.jobs.personio.de/job/2813911",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung",
+          "employer": "Terra Naturkost Handels GmbH",
+          "url": "https://terra-naturkost-handels-kg.jobs.personio.de/job/2813911",
+          "district": "Berlin-Neukölln",
+          "hours": "Vollzeit",
+          "contract": "Befristet (1 Jahr, Elternzeitvertretung)",
+          "salary": "Unbekannt",
+          "commute": "Ca. 55 Min. ÖPNV ab Berlin-Heinersdorf (auf Basis Bezirk Neukölln; genaue Adresse im Inserat nicht genannt, konservativ geschätzt)",
+          "pro": "Tägliche Disposition und Sicherstellung der Warenverfügbarkeit passen direkt zu NOOS-/Reorder- und Lieferantenkoordinationserfahrung.",
+          "con": "Befristung als Elternzeitvertretung und regelmäßiger Samstagsdienst.",
+          "effort_details": "ATS (Personio): Profil anlegen/aktualisieren, Lebenslauf hochladen, kurzes Anschreiben möglich. Geschätzter Aufwand ohne Tests oder Case: 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 36,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung | Jobs bei Terra Naturkost Handels GmbH Zum Hauptinhalt springen Zurück zu allen Stellen Disponent im Einkauf Trocken (m/w/d) - Elternzeitvertretung Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Das erwartet dich bei uns Du bist erste/r Ansprechpartner/in für unsere Lieferanten Du disponierst täglich und stellst damit unsere Warenverfügbarkeit sicher Du vergleichst Produkte und Lieferanten hinsichtlich Qualitäten und"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Prozesse & Administration (m/w/d)",
+        "url": "https://dfkp.jobs.personio.de/job/2799187",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sachbearbeiter Prozesse & Administration (m/w/d)",
+          "employer": "Deutsche Firmenkredit Partner (DFKP)",
+          "url": "https://dfkp.jobs.personio.de/job/2799187",
+          "district": "Berlin-Mitte (geschätzt)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Ca. 50 Min. ÖPNV ab Berlin-Heinersdorf (genaue Adresse nicht genannt; konservative Schätzung für zentrale Lage)",
+          "pro": "Starker Fokus auf Prozessarbeit, CRM-/Datenpflege und abteilungsübergreifende Koordination deckt sich mit Koordinations- und Schnittstellenerfahrung.",
+          "con": "Finanzierungs-/KMU-Finance-Umfeld ist fachfremd zur bisherigen Fashion-/Konsumgütererfahrung.",
+          "effort_details": "ATS (Personio): Online-Bewerbung mit Lebenslauf, Basisfragen; kein aufwendiger Konzern-Login. Geschätzter Aufwand: 55 Min.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 28,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Sachbearbeiter Prozesse & Administration (m/w/d) | Jobs bei Deutsche Firmenkredit Partner Zum Hauptinhalt springen Zurück zu allen Stellen Sachbearbeiter Prozesse & Administration (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Deine Aufgaben Dein Schwerpunkt Bearbeitung und Pflege eingehender Leads und Vorgänge im operativen Tagesgeschäft Unterstützung des Beratungsteams bei administrativen und organisatorischen Aufgaben Bearbeitung von Kundenanfragen per Telefon und E-Mail"
+        }
+      },
+      {
+        "title": "(Jr.) Office Coordinator (m/f/d)",
+        "url": "https://holy.jobs.personio.de/job/2810465?language=en",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "(Jr.) Office Coordinator (m/f/d)",
+          "employer": "HOLY Softdrinks GmbH",
+          "url": "https://holy.jobs.personio.de/job/2810465?language=en",
+          "district": "Berlin-Prenzlauer Berg",
+          "hours": "Full-time",
+          "contract": "Permanent employee",
+          "salary": "Unbekannt",
+          "commute": "Ca. 20 Min. ÖPNV/Tram M2 ab Berlin-Heinersdorf bis Prenzlauer Berg (Saarbrücker Str. 37).",
+          "pro": "Konsumentengüter-/Lifestyle-Umfeld mit Lieferanten-/Vendor-Koordination und Office-Operations bietet hohen Fit zur operativen Koordinationspraxis.",
+          "con": "Starker Front-Desk-/Onsite-Anteil und weniger direkter Bezug zu Einkauf/Disposition.",
+          "effort_details": "ATS (Personio) auf Englisch; Upload CV, Basisfragen. Case Study erst in späterer Runde. Geschätzter initialer Aufwand: 55 Min.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 25,
+            "commute": 20,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "Temple Operations & Facilities: Ensure our on-site storage remains clean and orderly, ordering food for workplace events, snacks and office supplies stocked. Coordinate HBC cleaning and day-to-day facilities upkeep. Mail, Hardware & New Hire Setup: Manage mail and deliveries, track hardware, and prepare Day 1 desks with HOLY Welcome packages and equipment, in partnership with the People team. Vendor & Supplier Coordination: Manage relationships with Rewe, JUIT, CoffeeCircle, HBC, Backfabrik,"
+        }
+      },
+      {
+        "title": "Junior Operations Coordinator – Upstream Operations (m/f/d)",
+        "url": "https://every.jobs.personio.de/job/2842182",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Junior Operations Coordinator – Upstream Operations (m/f/d)",
+          "employer": "every. GmbH",
+          "url": "https://every.jobs.personio.de/job/2842182",
+          "district": "Berlin (genauer Bezirk nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 40–50 Min ab Heinersdorf (Schätzung mangels Adresse)",
+          "pro": "End-to-end-Nachschubsteuerung inkl. Bestellauslösung und Liefertermintracking (sehr nah an Order‑/Bestandsplanung).",
+          "con": "Arbeits- und Kommunikationssprache stark englisch geprägt; Food/E-Com-Set-up.",
+          "effort_details": "ATS (Personio) 55 Min: Profilabgleich 15, Anschreiben 25 (Replenishment/Forecast‑Bezug), CV 10, Upload 5.",
+          "deadline": "",
+          "evidence": "„You own the day-to-day replenishment of products and packaging materials … You place and track replenishment orders with suppliers … You monitor stock levels and coverage against our demand plan.“ ([every.jobs.personio.de](https://every.jobs.personio.de/job/2842182?utm_source=openai))",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 32,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55
+        }
+      },
+      {
+        "title": "Sales Coordinator / Vertriebsmitarbeiter (m/w/d)",
+        "url": "https://es-group.jobs.personio.de/job/2454127?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sales Coordinator / Vertriebsmitarbeiter (m/w/d)",
+          "employer": "Eberhardt Service Group GmbH",
+          "url": "https://es-group.jobs.personio.de/job/2454127?language=de",
+          "district": "Berlin (Bezirk nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 50–60 Min ab Heinersdorf (konservativ, Adresse fehlt)",
+          "pro": "Koordination von Angeboten/Ausschreibungen und CRM‑Pipeline – saubere Schnittstellen‑ und Prozessrolle.",
+          "con": "Mehr Sales‑Support als Supply/Einkauf; fachlicher Schritt seitlich.",
+          "effort_details": "ATS (Personio) 55 Min: Profilabgleich 15, Anschreiben 25 (Koordination/Prozesskompetenz), CV 10, Upload 5.",
+          "deadline": "",
+          "evidence": "„Als Sales Coordinator … koordinierst Angebote und Ausschreibungen und sorgst dafür, dass unsere Pipeline sauber läuft. … CRM- & Pipeline-Pflege … Markt- & Wettbewerbsrecherche.“ ([es-group.jobs.personio.de](https://es-group.jobs.personio.de/job/2454127?language=de&utm_source=openai))",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 28,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
   "hits": 0,
-  "failed_at": "2026-10-22T07:34:42.462767+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "invalid_assessment"
-  }
+  "researched_at": "2026-10-22T07:39:52.121617+00:00",
+  "prepared_at": "2026-10-22T07:43:10.907699+00:00",
+  "message_id": "<miki-2026-10-23-968727a3f9ad55a9@miki-jobsearch>",
+  "last_attempt_at": "2026-10-22T07:39:52.121617+00:00",
+  "last_attempt_run_id": "39741432996",
+  "design_version": "electric-blue-v1"
 }
