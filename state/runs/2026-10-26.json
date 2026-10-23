@@ -1,7 +1,7 @@
 {
   "date": "2026-10-26",
   "created_at": "2026-10-23T07:31:33.686268+00:00",
-  "status": "scheduling",
+  "status": "scheduled",
   "subject": "Stellen für Miki · 26.10.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 23.10.2026 für den Versand am 26.10.2026. 7 passende Neuzugänge mit belastbaren Quellen. Zwei sehr gute B‑Treffer (Packmatic, P&T) mit Lieferanten-/Order‑Bezug und drei solide A‑Optionen (SenBJF, Velero, marta). Ein C‑Treffer (Astrofein) deckt Auftragsabwicklung/Export ab; Allane ergänzt als 30‑Stunden‑Sales‑Support. BBR‑Projektassistenz (E7 TVöD) fällt wegen geforderter SÜ2‑Sicherheitsüberprüfung unter den harten Ausschluss. Gesamteinschätzung: Heute bewerben bei Packmatic und P&T; SenBJF prüfen (öffentlicher Dienst, E9b, Frist 2026‑11‑12).",
@@ -268,7 +268,7 @@
   },
   "attempts": [
     {
-      "status": "scheduling",
+      "status": "scheduled",
       "started_at": "2026-10-23T07:34:49.474239+00:00"
     }
   ],
@@ -283,5 +283,10 @@
   "email_provider": "brevo",
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
   "expected_recipients": 2,
-  "provider_batch_id": "4b189ea3-6740-489c-8344-5e05a1e3e7d5"
+  "provider_batch_id": "4b189ea3-6740-489c-8344-5e05a1e3e7d5",
+  "provider_message_id": "<202610230734.70799241420@smtp-relay.mailin.fr>",
+  "provider_message_ids": [
+    "<202610230734.70799241420@smtp-relay.mailin.fr>"
+  ],
+  "schedule_accepted_at": "2026-10-23T07:34:53.108205+00:00"
 }
