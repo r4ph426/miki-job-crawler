@@ -1,7 +1,7 @@
 {
   "date": "2026-10-23",
   "created_at": "2026-10-22T07:39:52.121617+00:00",
-  "status": "scheduled",
+  "status": "sent",
   "subject": "Wochenüberblick Stellensuche · KW 43",
   "report": {
     "summary": "Recherche vom 22.10.2026 für den Versand am 23.10.2026. 6 neue, verifizierte Optionen aus ATS-Seiten; BA/StepStone/Fashion/BERLIN-Portal geprüft. Schwerpunkt heute auf Einkauf/Disposition und Operations-Koordination in Berlin. Keine Dubletten zur Historie. Alle Kandidaten ≥55 Punkte.",
@@ -238,7 +238,13 @@
     "<202610220743.91897378278@smtp-relay.mailin.fr>"
   ],
   "schedule_accepted_at": "2026-10-22T07:43:16.915971+00:00",
-  "provider_status": "queued",
+  "provider_status": "delivered",
   "schedule_verified_at": "2026-10-22T21:00:48.207765+00:00",
-  "provider_checked_at": "2026-10-22T21:00:48.207765+00:00"
+  "provider_checked_at": "2026-10-23T07:31:29.865655+00:00",
+  "sent_recipient_count": 2,
+  "delivered_recipient_count": 2,
+  "failed_recipient_count": 0,
+  "delivery_problem": false,
+  "accepted_at": "2026-10-23T06:42:01+00:00",
+  "delivered_at": "2026-10-23T06:42:01+00:00"
 }
