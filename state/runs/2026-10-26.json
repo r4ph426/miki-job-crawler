@@ -1,0 +1,277 @@
+{
+  "date": "2026-10-26",
+  "created_at": "2026-10-23T07:31:33.686268+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 26.10.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 23.10.2026 für den Versand am 26.10.2026. 7 passende Neuzugänge mit belastbaren Quellen. Zwei sehr gute B‑Treffer (Packmatic, P&T) mit Lieferanten-/Order‑Bezug und drei solide A‑Optionen (SenBJF, Velero, marta). Ein C‑Treffer (Astrofein) deckt Auftragsabwicklung/Export ab; Allane ergänzt als 30‑Stunden‑Sales‑Support. BBR‑Projektassistenz (E7 TVöD) fällt wegen geforderter SÜ2‑Sicherheitsüberprüfung unter den harten Ausschluss. Gesamteinschätzung: Heute bewerben bei Packmatic und P&T; SenBJF prüfen (öffentlicher Dienst, E9b, Frist 2026‑11‑12).",
+    "next_action": "Heute 08:30–12:00: 1) Bewerben Packmatic (55 Min, Lever). 2) Bewerben P&T (55 Min, Personio). 3) Kurzcheck SenBJF-Anforderungen und Zeugnislage (15 Min) und CV auf TV‑L wording trimmen. 4) Wenn Zeit: marta (45–52k) Profil anpassen und bewerben (55 Min, Personio).",
+    "weekend_action": "90 Min: 1) Lieferanten-/MOQ‑Beispiele als Bulletpoints für Anschreiben vorbereiten (30 Min). 2) Portfolio-Notizen zu NOOS/Reorders + Lead-Times/Freight in 3 konkreten Fällen (30 Min). 3) BA‑Favoriten aktualisieren und Kalendereinträge für Fristen setzen (30 Min).",
+    "jobs": [
+      {
+        "title": "Mitarbeit im Projektbüro für Digitalisierungsprojekte in der SenBJF (m/w/d)",
+        "employer": "Senatsverwaltung für Bildung, Jugend und Familie",
+        "url": "https://www.karriereportal-stellen.berlin.de/Mitarbeit-im-Projektbuero-fuer-Digitalisierungsprojekte-in-de-j69980.html",
+        "district": "Mitte",
+        "hours": "Teilzeit oder Vollzeit; bei Vollzeit 39:24 Std (TV-L) bzw. 40 Std (Beamt:innen)",
+        "contract": "Unbefristet",
+        "salary": "A 10 / E 9b TV-L",
+        "commute": "ca. 35–40 Min ÖPNV von Berlin-Heinersdorf nach Mitte (Alexanderplatz/Bernhard-Weiß-Str. 6)",
+        "pro": "Sicherer öffentlicher Dienst mit klaren Strukturen und flexiblen Arbeitszeitmodellen.",
+        "con": "Inhaltlich stark verwaltungs-/projektbürolastig, wenig Produkt- und Lieferkettenbezug.",
+        "effort_details": "Öffentliches Karriereportal: Registrierung, Formulare, Anlagen hochladen, Profilfragen (ausführlich) – ca. 130 Min.",
+        "deadline": "2026-11-12",
+        "family": "C",
+        "source_group": "berlin",
+        "scores": {
+          "skill": 27,
+          "entry": 24,
+          "commute": 15,
+          "conditions": 9
+        },
+        "effort_minutes": 130,
+        "evidence": "Ihre Aufgaben Mitarbeit im Projektbüro für Digitalisierungsprojekte Organisation und Steuerung des Projektbüros Unterstützung des Akzeptanzmanagements Selbständige Erarbeitung von Berichten, Präsentationen und Status-Updates Koordination der internen und externen Kommunikation der Projektbeteiligten Vorbereitung, Organisation und Nachbereitung von Gremiensitzungen innerhalb der Projektorganisation Protokollierung und Nachverfolgung von Aufgaben und Besprechungen",
+        "score": 75,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:stepstone.de",
+        "Projektassistenz Berlin karriereportal-stellen.berlin.de",
+        "Teamassistenz Berlin site:stepstone.de",
+        "Office Management Berlin site:personio.de",
+        "Marketingkoordination Berlin site:stepstone.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Sachbearbeiter Einkauf Berlin site:stepstone.de",
+        "Supply Chain Coordinator Berlin site:greenhouse.io",
+        "Beschaffung Berlin site:personio.de"
+      ],
+      "C": [
+        "Product Coordinator Berlin site:personio.de",
+        "Vertriebsinnendienst Berlin site:personio.de",
+        "Order Management Berlin site:stepstone.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Öffentlicher Dienst hat mehrere frische Assistenz-/Projektbüro-Ausschreibungen (z. B. SenBJF, Frist 2026‑11‑12). In der Privatwirtschaft dominieren Teamassistenz‑Rollen mit Hybrid‑Optionen und ohne Bau-/Technikabschlusspflicht.",
+      "B": "Frische Einsteiger/Jr.-Zuschnitte im Einkauf/Operations (Packmatic, P&T) betonen Lieferantenkommunikation, Daten/Excel und Prozessverbesserung; harte Technik- oder IT‑Profile sind aussortiert.",
+      "C": "Auftragsabwicklung/Vertriebsinnendienst zeigt Nachfrage mit ERP/Export‑Bezug (Astrofein) und Backoffice‑Sales‑Support (Allane 30h). Exportkontrolle taucht häufiger als Plus auf, ist aber kein Muss."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche nach Einkauf/Projektassistenz mit 7‑Tage‑Filter; keine neuen, passenden Detailseiten mit starkem Fit heute identifiziert."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "BBR‑Projektassistenz (E7 TVöD, Frist 2026‑11‑02) geprüft, jedoch Ausschluss wegen SÜ2; Velero Teamassistenz hinzugefügt."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Mindestens zwei ATS genutzt (Personio, Lever). Neue passende Rollen bei P&T, Allane, Astrofein, marta, Packmatic."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal geprüft; SenBJF‑Projektbüro mit Frist 2026‑11‑12 aufgenommen."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/FashionJobs gescreent; nur Retail‑Verkauf oder Senior‑Einkauf. Keine neuen, passenden Koordinations-/Einkaufsrollen für das Profil."
+      }
+    ],
+    "assessment_exclusions": [],
+    "assessment_pages_checked": 6,
+    "rejected": [
+      {
+        "title": "Junior Procurement & Operations Manager (m/w/d)",
+        "url": "https://paperandtea.jobs.personio.de/job/2832093",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Junior Procurement & Operations Manager (m/w/d)",
+          "employer": "P&T (Paper & Tea)",
+          "url": "https://paperandtea.jobs.personio.de/job/2832093",
+          "district": "Unbekannt",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Adresse im Inserat nicht genannt; konservativ 46–60 Min ÖPNV von Berlin-Heinersdorf innerhalb Berlins angenommen.",
+          "pro": "Starker Fit zu Einkauf/Produktion/Supply Chain inkl. Lieferantenkoordination in Konsumgütern.",
+          "con": "Gehalt nicht genannt; Standort im Inserat unklar.",
+          "effort_details": "ATS (Personio): Account/Profil anlegen, Fragen beantworten, Unterlagen hochladen – ca. 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 35,
+            "entry": 29,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Wir suchen ab sofort eine engagierte Persönlichkeit, die unsere Procurement- und Operations-Prozesse unterstützt und gemeinsam mit uns weiterentwickelt. Dabei arbeitest du an der Schnittstelle zwischen Einkauf, Produktion und Supply Chain und trägst dazu bei, dass unsere Produkte in der richtigen Qualität, zur richtigen Zeit und in den richtigen Mengen verfügbar sind. Du koordinierst die Zusammenarbeit mit Produktionspartnern und Lieferanten, unterstützt die Steuerung von"
+        }
+      },
+      {
+        "title": "Junior Buying Manager (w/m/d)",
+        "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Junior Buying Manager (w/m/d)",
+          "employer": "Packmatic GmbH",
+          "url": "https://jobs.lever.co/Packmatic/f057a42e-520b-4096-b969-8ca8e51fea1d",
+          "district": "Prenzlauer Berg",
+          "hours": "Vollzeit (Hybrid)",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "ca. 20–25 Min ÖPNV von Berlin-Heinersdorf nach Prenzlauer Berg.",
+          "pro": "Einkauf mit Lieferantenverhandlungen und Netzwerkaufbau; sehr nah an Miki’s Erfahrung.",
+          "con": "Gehalt und Vertragsart im Inserat nicht ausgewiesen.",
+          "effort_details": "ATS (Lever): Kurzprofil, Fragen, Lebenslauf/Anlagen – ca. 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 34,
+            "entry": 27,
+            "commute": 20,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "von einem klaren Wachstums- und Entwicklungspfad profitieren. Was dich bei uns erwartet Du verhandelst mit Lieferanten aus unserem Partnernetzwerk und stellst sicher, dass Kundenanfragen zu optimalen Konditionen eingekauft werden. Du identifizierst Lücken im Lieferantennetzwerk und trägst aktiv zur Weiterentwicklung und Akquise neuer Lieferanten bei. Du arbeitest eng mit dem Packaging-Team an Kundenprojekten zusammen und unterstützt bei der technischen und kaufmännischen Abstimmung. Du"
+        }
+      },
+      {
+        "title": "Mitarbeiter Sales Support (m/w/d)",
+        "url": "https://allane.jobs.personio.de/job/503091",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Mitarbeiter Sales Support (m/w/d)",
+          "employer": "Allane SE",
+          "url": "https://allane.jobs.personio.de/job/503091",
+          "district": "Unbekannt",
+          "hours": "Teilzeit, 30 Std/Woche",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Einsatzort im Großraum Berlin; genaue Adresse fehlt – konservativ 46–60 Min ÖPNV von Berlin-Heinersdorf angenommen.",
+          "pro": "Klare 30-Std.-Option mit strukturierten Prozessen und Schnittstellen zum Vertrieb/Vertragsprüfung.",
+          "con": "Operativer Vertrags-/Datenfokus, wenig direkter Produkt- oder Lieferkettenbezug.",
+          "effort_details": "ATS (Personio): Profil, Formularfragen, Uploads – ca. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 29,
+            "entry": 28,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "und Vertragsprüfung. Mit einem persönlichen Paten an deiner Seite startest du bestens begleitet in eine Aufgabe, in der deine Genauigkeit und dein Organisationstalent wirklich zählen. Die Position ist in Teilzeit, mit 30 Stunden pro Woche und bietet dir damit die Möglichkeit, Verantwortung und Flexibilität optimal miteinander zu verbinden. Deine neue Rolle Du prüfst die vom Kunden eingereichten Leasing-Vertragsunterlagen auf Vollständigkeit und Richtigkeit Du stellst sicher, dass alle"
+        }
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+        "url": "https://astrofein.jobs.personio.de/job/2722080",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+          "employer": "Astro- und Feinwerktechnik Adlershof GmbH",
+          "url": "https://astrofein.jobs.personio.de/job/2722080",
+          "district": "Adlershof (Treptow-Köpenick)",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 65–70 Min ÖPNV von Berlin-Heinersdorf nach Adlershof (Albert-Einstein-Str. 12).",
+          "pro": "Breites Aufgabenspektrum inkl. ERP, Versandorganisation sowie Export-/Zollthemen.",
+          "con": "Langer Arbeitsweg; technisch geprägtes Umfeld Raumfahrt.",
+          "effort_details": "ATS (Personio): Profil anlegen, Daten erfassen, Unterlagen hochladen – ca. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 27,
+            "entry": 26,
+            "commute": 5,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "Mitarbeiter Vertriebsinnendienst (m/w/d) | Jobs bei Astro- und Feinwerktechnik Adlershof GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Mitarbeiter Vertriebsinnendienst (m/w/d) Berlin - HQ, Remote Voll- oder Teilzeit Festanstellung Auf diese Stelle bewerben Deutsch Ihre Aufgaben Betreuung des gesamten Auftragsdurchlaufs im ERP-System – von der Angebotserstellung über die Auftragsbestätigung bis zum Versand Erstellung und Nachverfolgung von Aufträgen (Follow-ups) sowie"
+        }
+      },
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta GmbH",
+          "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+          "district": "Mitte",
+          "hours": "Vollzeit (tägliche Präsenz erwartet)",
+          "contract": "Festanstellung, unbefristet",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ca. 30–40 Min ÖPNV von Berlin-Heinersdorf nach Berlin-Mitte.",
+          "pro": "Transparente Vergütung und klare Verantwortung für Office, Verträge und Tools.",
+          "con": "Starke Office-Präsenzpflicht; weniger Bezug zu Produkt-/Supply-Chain-Themen.",
+          "effort_details": "ATS (Personio): Profil/Fragen, Lebenslauf, kurzer Motivationstext; Uploads – ca. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 25,
+            "entry": 23,
+            "commute": 15,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
+        }
+      },
+      {
+        "title": "Teamassistenz Investment Management (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Teamassistenz-Investment-Management-m-w-d-Berlin-Velero-Management-GmbH--14564244-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Teamassistenz Investment Management (m/w/d)",
+          "employer": "Velero Management GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Teamassistenz-Investment-Management-m-w-d-Berlin-Velero-Management-GmbH--14564244-inline.html",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit, hybrid bis 2 Tage/Woche mobil",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "konservativ 45–60 Min (Adresse nicht genannt)",
+          "pro": "Prozess‑/Datenraum‑, Fristen‑ und Transaktionskoordination – starker A‑Fit.",
+          "con": "Immobilien‑Transaktionsumfeld; Einarbeitung in Deal‑Prozesse nötig.",
+          "effort_details": "StepStone mit Firmenportal; 70 Min.",
+          "deadline": "",
+          "evidence": "„Organisatorische und administrative Unterstützung des Investment‑Teams … Erstellung und Pflege von Excel‑Auswertungen … Organisation und Pflege von Datenräumen … Koordination und Nachhalten von Aufgaben, Fristen, Meilensteinen …“ ([stepstone.de](https://www.stepstone.de/stellenangebote--Teamassistenz-Investment-Management-m-w-d-Berlin-Velero-Management-GmbH--14564244-inline.html))",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 26,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-10-23T07:31:33.686268+00:00",
+  "prepared_at": "2026-10-23T07:34:47.243109+00:00",
+  "message_id": "<miki-2026-10-26-a7a1c3b6d77d9b19@miki-jobsearch>",
+  "last_attempt_at": "2026-10-23T07:31:33.686268+00:00",
+  "last_attempt_run_id": "39918313668",
+  "design_version": "electric-blue-v1"
+}
