@@ -329,5 +329,6 @@
   ],
   "schedule_accepted_at": "2026-10-26T08:35:17.192157+00:00",
   "provider_status": "queued",
-  "schedule_verified_at": "2026-10-26T08:35:18.896001+00:00"
+  "schedule_verified_at": "2026-10-26T09:45:44.099771+00:00",
+  "provider_checked_at": "2026-10-26T09:45:44.099771+00:00"
 }
