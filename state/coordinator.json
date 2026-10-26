@@ -166,5 +166,13 @@
       "actor": "github",
       "last_result": "scheduled"
     }
+  },
+  "lease": {
+    "token": "d580535c3f32479bb8b98dfc205741dd",
+    "actor": "github",
+    "phase": "provider-check",
+    "date": "2026-10-27",
+    "started_at": "2026-10-26T12:15:43.287214+00:00",
+    "expires_at": "2026-10-26T12:55:43.287214+00:00"
   }
 }
