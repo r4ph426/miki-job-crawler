@@ -154,5 +154,13 @@
       "actor": "github",
       "last_result": "sent"
     }
+  },
+  "lease": {
+    "token": "86a1debe361242bc922a77492ccad8d4",
+    "actor": "github",
+    "phase": "research",
+    "date": "2026-10-27",
+    "started_at": "2026-10-26T08:30:50.512874+00:00",
+    "expires_at": "2026-10-26T09:10:50.512874+00:00"
   }
 }
