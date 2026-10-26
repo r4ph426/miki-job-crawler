@@ -1,7 +1,7 @@
 {
   "date": "2026-10-27",
   "created_at": "2026-10-26T08:30:50.512874+00:00",
-  "status": "prepared",
+  "status": "scheduling",
   "subject": "Stellen für Miki · 27.10.2026 · 6 neue Treffer",
   "report": {
     "summary": "Recherche vom 26.10.2026 für den Versand am 27.10.2026. 8 neue, plausible Treffer (A/B/C abgedeckt). Fokus heute: frische BA-Anzeigen (Einkauf/VI), sowie ATS-Rollen bei Personio/Greenhouse/Lever. Keine doppelten Meldungen aus der Historie übernommen.",
@@ -305,12 +305,22 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "status": "scheduling",
+      "started_at": "2026-10-26T08:35:12.934458+00:00"
+    }
+  ],
   "hits": 6,
   "researched_at": "2026-10-26T08:30:50.512874+00:00",
   "prepared_at": "2026-10-26T08:35:10.483640+00:00",
   "message_id": "<miki-2026-10-27-9b3989d37ecc0ade@miki-jobsearch>",
   "last_attempt_at": "2026-10-26T08:30:50.512874+00:00",
   "last_attempt_run_id": "40292740905",
-  "design_version": "electric-blue-v1"
+  "design_version": "electric-blue-v1",
+  "scheduled_at": "2026-10-27T07:30:00Z",
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_batch_id": "db9d48ad-5e42-4573-8d1e-d8890b0b8eb3"
 }
