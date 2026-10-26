@@ -146,21 +146,13 @@
       "date": "2026-10-26",
       "status": "ready",
       "ready": true,
-      "delivery_status": "scheduled",
+      "delivery_status": "sent",
       "hits": 1,
       "researched_at": "2026-10-23T07:31:33.686268+00:00",
       "delivery_time": "2026-10-26T08:30:00 Europe/Berlin",
-      "checked_at": "2026-10-25T21:47:24.827111+00:00",
+      "checked_at": "2026-10-26T08:30:49.279233+00:00",
       "actor": "github",
-      "last_result": "scheduled"
+      "last_result": "sent"
     }
-  },
-  "lease": {
-    "token": "2990f80a32344e4192bbb44e6c2bd856",
-    "actor": "github",
-    "phase": "provider-check",
-    "date": "2026-10-26",
-    "started_at": "2026-10-26T08:30:46.090717+00:00",
-    "expires_at": "2026-10-26T09:10:46.090717+00:00"
   }
 }
