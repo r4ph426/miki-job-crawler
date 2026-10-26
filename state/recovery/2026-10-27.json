@@ -10,8 +10,9 @@
     {
       "phase": "prepare",
       "started_at": "2026-10-26T08:35:12.934458+00:00",
-      "status": "running"
+      "status": "scheduled",
+      "finished_at": "2026-10-26T08:35:21.110601+00:00"
     }
   ],
-  "status": "running"
+  "status": "scheduled"
 }
