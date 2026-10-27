@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T08:45:49.261337+00:00",
+  "updated_at": "2026-10-27T08:48:32.872830+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -403,6 +403,29 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "provider_check_failed": false
+    },
+    "2026-10-28": {
+      "date": "2026-10-28",
+      "status": "research_failed",
+      "hits": 0,
+      "researched_at": null,
+      "prepared_at": null,
+      "created_at": null,
+      "accepted_at": null,
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "expected_recipients": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
+      "has_report": false,
+      "has_mail": false,
       "provider_check_failed": false
     }
   },
