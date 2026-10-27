@@ -1,10 +1,284 @@
 {
   "date": "2026-10-28",
-  "status": "research_failed",
-  "hits": 0,
-  "failed_at": "2026-10-27T08:45:48.117689+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "invalid_assessment"
-  }
+  "created_at": "2026-10-27T08:49:34.927921+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 28.10.2026 · 5 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 27.10.2026 für den Versand am 28.10.2026. 8 neue, verifizierte Anzeigen aus allen fünf Quellgruppen. Zwei starke B‑Treffer (Einkauf/Beschaffung) mit geringer Einstiegshürde, mehrere solide A‑Optionen (Assistenz/Office/Projekt) und zwei C‑Optionen (Vertriebsinnendienst). Keine Dubletten gegenüber der Historie. Öffentlicher Dienst heute mit zwei passenden Teamassistenz‑Rollen; eine weitere (Steglitz‑Zehlendorf) verlangt interne Landesbeschäftigte und wurde deshalb ausgeschlossen. Alle Zitate stammen aus den Live‑Detailseiten per 2026-10-27.",
+    "next_action": "COMDOK (B, Mitte) heute zuerst: Bewerbung vorbereiten (Anschreiben mit Schwerpunkt Beschaffungsprozesse, Lieferantenkommunikation, SAP/PLM‑Datenpflege; Lebenslauf feinjustieren) und über die Unternehmensseite einreichen.",
+    "weekend_action": "30–45 Minuten: Berlin‑Portal filtern (E 6–9a, „Teamassistenz“ und „Sachbearbeitung Einkauf“) und Fristenliste aktualisieren; parallel Personio‑Suche nach „Einkauf“, „Order Management“, „Office Manager“ (Berlin) speichern.",
+    "jobs": [
+      {
+        "title": "Projektassistenz (w/m/d)",
+        "employer": "Apleona Facility Management GmbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17628-44513472-1016-S",
+        "district": "Moabit (10557)",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 35–45 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt)",
+        "pro": "Koordination mit Dienstleistern und Lieferanten passt zur langjährigen Schnittstellen- und Koordinationspraxis.",
+        "con": "Stärker ticket- und FM-orientierte Sachbearbeitung, weniger Produkt-/Sortimentsbezug.",
+        "effort_details": "BA-Schnellbewerbung: Kontaktdaten prüfen/übernehmen, Unterlagen hochladen, Absenden.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 26,
+          "entry": 27,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 25,
+        "evidence": "mit den zuständigen technischen Ansprechpartnern Einholen von Angeboten bei Dienstleistern und Lieferanten sowie Unterstützung bei der Angebotssichtung und -dokumentation Enge Zusammenarbeit mit Objektleitung, Technik-Teams und ggf. externen Dienstleistern Das wünschen wir uns von Ihnen: Abgeschlossene kaufmännische Ausbildung oder vergleichbare Qualifikation Erste Berufserfahrung in der (technischen) Sachbearbeitung, im Service oder im Facility Management von Vorteil Sicherer Umgang mit MS",
+        "score": 75,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 33000,
+          "annual_max_eur": 47000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Projektassistent/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Projektassistent-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 33400,
+          "reference_annual_max_eur": 46200,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "employer": "GFK Ingenieure GmbH",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "district": "Charlottenburg (10629)",
+        "hours": "Vollzeit (40 Std./Woche)",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–55 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt)",
+        "pro": "Breites Office-/Assistenzspektrum inkl. Dienstleister- und Lieferantenkoordination.",
+        "con": "Hohe Präsenz im Büro gefordert; Vollzeit 40 Std.",
+        "effort_details": "ATS (Personio): Profil anlegen/aktualisieren, CV/Anlagen hochladen, Fragen beantworten.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 24,
+          "entry": 27,
+          "commute": 10,
+          "conditions": 8
+        },
+        "effort_minutes": 55,
+        "evidence": "läuft Vor- und Nachbereiten von Meetings, Reisen und Veranstaltungen Bearbeiten von Rechnungen und Behalten des Überblicks über alle Vorgänge Administrative und koordinative Unterstützung unserer Abteilungen Koordinieren von Dienstleistern, Lieferanten und Partnern und Sicherstellen einer klaren Kommunikation Überwachen von Terminen, Fristen und Aufgaben Verwalten von Bürobedarf und interner Infrastruktur Profil Du hast eine abgeschlossene kaufmännische Ausbildung oder einen vergleichbaren",
+        "score": 69,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 33000,
+          "annual_max_eur": 46000,
+          "hours_basis": "40 Std./Woche; anteilig auf Basis von 40 Std.",
+          "benchmark_role": "Officemanager/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Officemanager-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 33000,
+          "reference_annual_max_eur": 45200,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Office & Workplace Experience Manager (all genders)",
+        "employer": "Reflex Aerospace GmbH",
+        "url": "https://reflex-aerospace-gmbh.jobs.personio.de/job/2758987?language=en",
+        "district": "Unbekannt (an der Spree, Berlin)",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–60 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt)",
+        "pro": "Teilzeitoption und klarer Fokus auf Prozesse, Provider- und Budgetsteuerung.",
+        "con": "Mehrjährige Office-Management-/Hospitality-Erfahrung gewünscht; Betreuung mehrerer Standorte.",
+        "effort_details": "ATS (Personio): Angaben erfassen, Unterlagen hochladen, Fragen beantworten, absenden.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 24,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 8
+        },
+        "effort_minutes": 55,
+        "evidence": "service providers – from cleaning and maintenance to catering, beverage deliveries, and property management – and ensure consistently high service quality. You keep an eye on what the office needs and where things could be improved, take proactive action, and manage our internal ticketing system. You ensure that equipment, supplies, and other office essentials are always available while keeping an eye on budgets, invoices, and ongoing contracts. You manage our small company fleet,",
+        "score": 66,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Office Manager (all genders)",
+        "employer": "ctrl QS GmbH",
+        "url": "https://ctrl-qs.jobs.personio.de/job/2798476",
+        "district": "Unbekannt (zentral)",
+        "hours": "Vollzeit",
+        "contract": "Befristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–55 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt)",
+        "pro": "Verantwortung für Office-Betrieb inkl. Anbieter/Verträge/Budgets und Eventorganisation.",
+        "con": "Vollständig vor Ort in Berlin, 5 Tage/Woche; befristete Rolle.",
+        "effort_details": "ATS (Personio): Profil, CV, motivierende Felder, Einreichung.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 22,
+          "entry": 25,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "well-stocked, and ready to use, from meeting rooms and shared spaces to equipment and workplace technology. When something doesn’t work, you’ll solve it or coordinate with the right people to get it fixed. Keep operations moving. Manage facilities, suppliers, and service providers, while keeping an eye on contracts, budgets, costs, and administrative processes. Get people where they need to be. Coordinate business travel for team members and leadership, including bookings, logistics,",
+        "score": 63,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 33000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Officemanager/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Officemanager-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 33000,
+          "reference_annual_max_eur": 45200,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Inside Sales Support (m/w/d) – Terminvereinbarung | Energiebranche",
+        "employer": "Ampere AG",
+        "url": "https://ampere.jobs.personio.de/job/2801824",
+        "district": "Tiergarten (10787)",
+        "hours": "Teilzeit 30 Std./Woche, 50 % Homeoffice",
+        "contract": "Befristet (1 Jahr, Option auf Übernahme)",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–55 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt); 50 % Homeoffice reduziert Pendelzeit",
+        "pro": "Teilzeit mit 30 Std./Woche und 50 % Homeoffice passt zu Verfügbarkeitswunsch.",
+        "con": "Fokus auf Telefonvertrieb/Terminierung statt Produktkoordination; befristet.",
+        "effort_details": "ATS (Personio): Profil, CV hochladen, kurze Fragen, Einreichung.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 18,
+          "entry": 27,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "vereinbarst Beratungstermine für unser Sales-Team und pflegst die relevanten Informationen im CRM-System. Auch engagierte Quereinsteiger sind bei uns herzlich willkommen. Das vertrauen wir Dir an Du rufst potenzielle Kunden an – ohne Kaltakquise. Du koordinierst und vereinbarst qualifizierte Beratungstermine und legst damit den Grundstein für unseren Vertriebserfolg. Du hältst Gesprächsergebnisse klar und strukturiert fest und pflegst alle relevanten Daten sorgfältig im CRM-System. Das führt",
+        "score": 62,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de",
+        "Teamassistenz Berlin karriereportal-stellen.berlin.de",
+        "Office Management Berlin site:personio.de",
+        "Projektkoordination Berlin StepStone"
+      ],
+      "B": [
+        "Einkauf Berlin site:stepstone.de",
+        "Sachbearbeiter Einkauf Berlin site:arbeitsagentur.de",
+        "Beschaffung Berlin StepStone heute"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:personio.de",
+        "Sales Support Berlin site:personio.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Heute mehrere A‑Optionen mit klaren Prozessen (FM/Office). Öffentlicher Dienst aktiv (E 6), Fristen 2026‑11‑05 und später.",
+      "B": "Neuer, attraktiver Direkteinstieg bei COMDOK (Berlin‑Mitte). BASF bietet Hybrid/P2P‑Rolle, aber Sprachanforderung IT/ES als Hürde.",
+      "C": "C‑Treffer v. a. über Personio (Ampere). Klassische Auftragsabwicklung im Tech/Space‑Umfeld (Astrofein) war bereits gemeldet und wurde daher ausgeschlossen."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche+Detailseiten erreichbar; neue Treffer u. a. Apleona, BASF."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Neue B‑Anzeige COMDOK verifizierbar; Seitenladezeit normal."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Seiten (ctrl QS, GFK, Reflex, Ampere) vollständig ladbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal lieferte vollständige Detailtexte inkl. Fristen/Entgelt."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "Sichtung lieferte heute keine geeignete, neue C‑Koordination ohne Retail‑/Aushilfsbezug; daher nur als Beobachtung geführt."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-Psychosoziale-Dienste-Erziehungs-und-Familie-de-j70353.html",
+        "reason": "Eintrittsvoraussetzungen fokussieren auf verwaltungsnahe Ausbildung (Verwaltungsfachangestellte/r, Büromanagement oder Verwaltungslehrgang I). Mit BWL-Studium ohne spezifische Verwaltungsausbildung voraussichtlich nicht erfüllbar; zudem Publikumsverkehr in psychosozialem Kontext. Score <55."
+      },
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/16852-44526999-1022-S",
+        "reason": "Erforderliche Sprachkenntnisse Italienisch und/oder Spanisch (zusätzlich Englisch) werden nicht erfüllt; Kernanforderung laut Ausschreibung."
+      }
+    ],
+    "assessment_pages_checked": 7,
+    "rejected": [
+      {
+        "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+          "employer": "COMDOK GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+          "district": "Berlin-Mitte (\"Modernen Arbeitsplatz in Berlins Mitte\")",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 30–35 Min ÖPNV ab Heinersdorf (Mitte; konservative Annahme)",
+          "pro": "Einstieg auch ohne Vergabe‑Vorerfahrung; klarer Beschaffungsfokus mit Telearbeit.",
+          "con": "Vergabebezug kann Einarbeitung in öffentliche Beschaffung erfordern.",
+          "effort_details": "Normale Firmenbewerbung über StepStone/Unternehmensseite: ca. 70 Min (Anschreiben 30, CV/Profil 20, Fragen/Uploads 15, Feinschliff 5).",
+          "deadline": "",
+          "evidence": "„Zur sofortigen Verstärkung unserer Vergabestelle suchen wir in Berlin zur unbefristeten Festanstellung eine engagierte Persönlichkeit, die uns bei der Beschaffung von Waren und Dienstleistungen unterstützt … Sie müssen noch kein Vergabeprofi sein. Wichtig sind uns kaufmännisches Verständnis und Sorgfalt. … Modernen Arbeitsplatz in Berlins Mitte.“ ([stepstone.de](https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html))",
+          "family": "B",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 32,
+            "entry": 26,
+            "commute": 20,
+            "conditions": 7
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 5,
+  "researched_at": "2026-10-27T08:49:34.927921+00:00",
+  "prepared_at": "2026-10-27T08:53:38.190298+00:00",
+  "message_id": "<miki-2026-10-28-9284ca9a4866f891@miki-jobsearch>",
+  "last_attempt_at": "2026-10-27T08:49:34.927921+00:00",
+  "last_attempt_run_id": "40475750045",
+  "design_version": "electric-blue-v1"
 }
