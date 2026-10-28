@@ -1,8 +1,10 @@
 {
   "date": "2026-10-29",
   "kind": "readiness_warning",
-  "status": "sending",
+  "status": "sent",
   "checked_at": "2026-10-28T21:00:58.452265+00:00",
   "message_id": "<miki-readiness-2026-10-29@miki-jobsearch>",
-  "started_at": "2026-10-28T21:01:14.297233+00:00"
+  "started_at": "2026-10-28T21:01:14.297233+00:00",
+  "accepted_at": "2026-10-28T21:01:24.911230+00:00",
+  "provider_message_id": "<202610282101.23575259740@smtp-relay.mailin.fr>"
 }
