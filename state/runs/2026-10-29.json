@@ -2,7 +2,7 @@
   "date": "2026-10-29",
   "status": "research_failed",
   "hits": 0,
-  "failed_at": "2026-10-28T08:32:44.231383+00:00",
+  "failed_at": "2026-10-28T15:15:43.767731+00:00",
   "error": "Research failed (ResearchError); see workflow log",
   "research_diagnostic": {
     "code": "api_http_error",
