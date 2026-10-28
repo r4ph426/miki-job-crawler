@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T08:31:37.229820+00:00",
+  "updated_at": "2026-10-28T08:31:38.869366+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -684,8 +684,8 @@
       "attempts": 3
     },
     "2026-10-29": {
-      "status": "failed",
-      "attempts": 1
+      "status": "running",
+      "attempts": 2
     }
   },
   "delivery_alerts": {
