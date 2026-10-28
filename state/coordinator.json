@@ -177,14 +177,18 @@
       "checked_at": "2026-10-28T08:30:28.880001+00:00",
       "actor": "github",
       "last_result": "sent"
+    },
+    "2026-10-29": {
+      "date": "2026-10-29",
+      "status": "not_ready",
+      "ready": false,
+      "delivery_status": "research_failed",
+      "hits": 0,
+      "researched_at": null,
+      "delivery_time": "2026-10-29T08:30:00 Europe/Berlin",
+      "checked_at": "2026-10-28T08:30:35.977359+00:00",
+      "actor": "github",
+      "last_result": "failed"
     }
-  },
-  "lease": {
-    "token": "32275144c72847a8a068cbc6259c4bf2",
-    "actor": "github",
-    "phase": "research",
-    "date": "2026-10-29",
-    "started_at": "2026-10-28T08:30:30.242583+00:00",
-    "expires_at": "2026-10-28T09:10:30.242583+00:00"
   }
 }
