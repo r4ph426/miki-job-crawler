@@ -18,7 +18,12 @@
       "started_at": "2026-10-28T08:32:44.231383+00:00",
       "status": "failed",
       "finished_at": "2026-10-28T08:32:50.708367+00:00"
+    },
+    {
+      "phase": "research",
+      "started_at": "2026-10-28T15:15:43.767731+00:00",
+      "status": "running"
     }
   ],
-  "status": "failed"
+  "status": "running"
 }
