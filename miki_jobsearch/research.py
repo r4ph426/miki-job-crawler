@@ -29,7 +29,10 @@ class ResearchError(RuntimeError):
         if isinstance(api_status, str) and api_status in {"completed", "incomplete", "failed", "cancelled", "queued", "in_progress"}:
             self.diagnostic["api_status"] = api_status
         known_errors = {"invalid_api_key", "insufficient_quota", "billing_hard_limit_reached",
-                        "model_not_found", "rate_limit_exceeded", "account_deactivated", "server_error"}
+                        "model_not_found", "rate_limit_exceeded", "account_deactivated", "server_error",
+                        "credit_balance_exhausted", "organization_spend_limit_exceeded",
+                        "project_spend_limit_exceeded", "organization_usage_limit_exceeded",
+                        "slow_down", "server_is_overloaded"}
         if isinstance(error_code, str) and error_code in known_errors:
             self.diagnostic["error_code"] = error_code
         if isinstance(incomplete_reason, str) and incomplete_reason in {"max_output_tokens", "content_filter"}:

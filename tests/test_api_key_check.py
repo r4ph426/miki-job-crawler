@@ -33,6 +33,18 @@ class KeyCheckTests(unittest.TestCase):
         result = check({"MIKI_OPENAI_API_KEY": "test"}, "gpt-5", MagicMock(side_effect=error))
         self.assertEqual(result["status"], "billing_required")
 
+    def test_current_quota_codes_require_action_and_never_expose_response_message(self):
+        for code in ('credit_balance_exhausted', 'organization_spend_limit_exceeded',
+                     'project_spend_limit_exceeded', 'organization_usage_limit_exceeded'):
+            with self.subTest(code=code):
+                error = urllib.error.HTTPError('https://api.openai.com/v1/responses', 429, 'Quota', {},
+                    io.BytesIO(json.dumps({'error': {'code': code, 'type': 'insufficient_quota',
+                                                    'message': 'private-key-value'}}).encode()))
+                result = check({'MIKI_OPENAI_API_KEY': 'private-key-value'}, 'gpt-5', MagicMock(side_effect=error))
+                self.assertEqual(result['status'], 'billing_required')
+                self.assertEqual(result['error_code'], code)
+                self.assertNotIn('private-key-value', json.dumps(result))
+
 
 if __name__ == "__main__":
     unittest.main()

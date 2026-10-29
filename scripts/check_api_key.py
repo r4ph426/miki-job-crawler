@@ -31,11 +31,15 @@ def check(environ, model, opener=urllib.request.urlopen):
             code = None
         # Ignore server messages: they may contain fragments of a rejected key.
         known = {"invalid_api_key", "insufficient_quota", "billing_hard_limit_reached",
-                 "model_not_found", "rate_limit_exceeded", "account_deactivated"}
+                 "model_not_found", "rate_limit_exceeded", "account_deactivated",
+                 "credit_balance_exhausted", "organization_spend_limit_exceeded",
+                 "project_spend_limit_exceeded", "organization_usage_limit_exceeded", "slow_down"}
         code = code if code in known else "unknown"
         if error.code == 401:
             status, guidance = "authentication_failed", "Replace the GitHub secret with an active API key."
-        elif code in {"insufficient_quota", "billing_hard_limit_reached"}:
+        elif code in {"insufficient_quota", "billing_hard_limit_reached", "credit_balance_exhausted",
+                      "organization_spend_limit_exceeded", "project_spend_limit_exceeded",
+                      "organization_usage_limit_exceeded"}:
             status, guidance = "billing_required", "Check OpenAI API billing, project budget and credits."
         elif error.code == 403:
             status, guidance = "permission_denied", "Check key permissions and project/model access."
