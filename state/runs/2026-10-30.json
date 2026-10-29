@@ -1,0 +1,323 @@
+{
+  "date": "2026-10-30",
+  "created_at": "2026-10-29T07:58:05.206535+00:00",
+  "status": "prepared",
+  "subject": "Wochenüberblick Stellensuche · KW 44",
+  "report": {
+    "summary": "Recherche vom 29.10.2026 für den Versand am 30.10.2026. 8 neue, plausible Anzeigen über BA, Personio und das Berliner Karriereportal. Schwerpunkte: operativer Einkauf/Lieferantenkoordination (starkes Skill‑Match) und Projekt-/Teamassistenz (gute Einstiegshürde). Eine C‑Rolle mit klarer Auftrags-/Buchungskoordination inkl. Gehaltsangabe.",
+    "next_action": "Heute zwei Bewerbungen starten: 1) Exolaunch – Operativer Einkäufer/Technical Buyer (starkes Fach‑Match, ATS, 55 Min Aufwand). 2) Senatsverwaltung – Administrative Sachbearbeitung Vergabestelle (E 8 TV‑L, sichere Rahmenbedingungen, 130 Min Aufwand, Frist 2026-11-11).",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "HörakustikerIn/ Manager Einkauf & Operations (m/w/d)",
+        "employer": "MySecondEar Audiology Group GmbH",
+        "url": "https://mysecondear-audiology-group-gmbh.jobs.personio.de/job/2598268",
+        "district": "Berlin (Zentrale im Zentrum; genaue Adresse nicht genannt)",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–60 Min ÖPNV ab Heinersdorf (konservativ, ohne Adresse)",
+        "pro": "Leitungsfunktion Einkauf/Lager mit hoher Eigenverantwortung im wachsenden E‑Commerce-Umfeld.",
+        "con": "Branchenkenntnisse Hörakustik werden bevorzugt.",
+        "effort_details": "Personio-ATS; CV/Unterlagen-Upload",
+        "deadline": "",
+        "family": "A",
+        "source_group": "ats",
+        "scores": {
+          "skill": 35,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 5
+        },
+        "effort_minutes": 55,
+        "evidence": "unseren Einkauf und unser Lager in unserer Zentrale in Berlin. Hierbei zeigen Sie vollen Einsatz, die von unseren Kunden bestellten Produkte zügig von unserem Zentraleinkauf zu organisieren, die Kommunikation zwischen Vertrieb und Versand effizient zu organisieren und eine kontinuierliche Steigerung unserer Kundenzufriedenheit bei der Zustellung unserer Produkte zu erzielen. Sie steuern dabei eigenverantwortlich und in enger Abstimmung mit der Geschäftsleitung den gesamten",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Projektassistenz (m/w/d) für Energieanlagenbau",
+        "employer": "BTB Energie GmbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003926939-S",
+        "district": "Berlin-Charlottenburg (Gaußstr. 11, 10589 Berlin)",
+        "hours": "Vollzeit; 38‑Stunden‑Woche; bis zu 40% Homeoffice",
+        "contract": "Unbefristet",
+        "salary": "13‑monatige Bezahlung gem. Rahmenhaustarifvertrag; Urlaubsgeld",
+        "commute": "ca. 50–60 Min ÖPNV ab Heinersdorf (geschätzt)",
+        "pro": "Tarifgebundene Vergütung, 30 Tage Urlaub und HO-Anteil in koordinierender Projektrolle.",
+        "con": "Technischer Anlagenbaukontext mit Ausschreibungs- und Vergabethemen erfordert Einarbeitung.",
+        "effort_details": "BA-Portal; Online-Bewerbung über Button möglich",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 30,
+          "entry": 25,
+          "commute": 10,
+          "conditions": 9
+        },
+        "effort_minutes": 25,
+        "evidence": "eine optimale Vereinbarkeit von Beruf und Privatleben. Vergütung: Attraktive 13-monatige Bezahlung gemäß Rahmenhaustarifvertrag und Urlaubsgeld. Zusätzliche Benefits: 630 € steuerfrei pro Jahr über eine Benefits Card zur privaten Nutzung. Urlaub & freie Tage: 30 Tage Urlaub sowie arbeitsfreie Tage am 24.12. und 31.12. Altersvorsorge & Sozialleistungen: Betriebliche Altersvorsorge, vermögenswirksame Leistungen und weitere Sozialleistungen. Einarbeitung: Sorgfältige praxisbezogene Einarbeitung",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Operativer Einkäufer / Technical Buyer (m/w/d)",
+        "employer": "EXOLAUNCH GmbH",
+        "url": "https://exolaunch.jobs.personio.de/job/2570347",
+        "district": "Berlin-Charlottenburg/Wedding (Engineering & Logistics Hub: Lise-Meitner-Str./Max-Dohrn-Str.; gelegentlich Potsdamer Platz)",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 50–60 Min ÖPNV ab Heinersdorf (geschätzt)",
+        "pro": "Stark einkaufsnahe Rolle mit Lieferantenkoordination und Prozessoptimierung in internationalem Umfeld.",
+        "con": "Mindestens 4 Jahre Erfahrung im technischen Einkauf explizit gefordert.",
+        "effort_details": "Personio-ATS mit Profilanlage und Formularfragen",
+        "deadline": "",
+        "family": "A",
+        "source_group": "ats",
+        "scores": {
+          "skill": 34,
+          "entry": 22,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "oder technische Ausbildung (z. B. Industriekaufmann/-frau, technischer Fachwirt) oder eine vergleichbare Qualifikation. Ein gutes technisches Grundverständnis für Hardwarekomponenten ist erforderlich. Erfahrung: Mindestens 4 Jahre einschlägige Berufserfahrung im technischen Einkauf oder in der Materialwirtschaft. Sicherer Umgang mit mehreren parallelen Bestellprozessen sowie Erfahrung in der Koordination von Lieferanten und internen Stakeholdern. Sprachkenntnisse: Fließende Deutsch-",
+        "score": 73,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 37000,
+          "annual_max_eur": 55000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Einkäufer/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Einkaeufer-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 37600,
+          "reference_annual_max_eur": 54500,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Sachbearbeiter:in Einkauf (m/w/d)",
+        "employer": "HAN-Netzbau GmbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1208283969-S",
+        "district": "Berlin-Tempelhof (Schätzelbergstr. 1-3, 12099 Berlin)",
+        "hours": "Vollzeit oder Teilzeit",
+        "contract": "Unbekannt",
+        "salary": "Unbekannt",
+        "commute": "ca. 55–65 Min ÖPNV ab Heinersdorf (geschätzt)",
+        "pro": "Operativer Einkauf mit Disposition, Angebotseinholung und Lieferterminüberwachung.",
+        "con": "Technisches Umfeld Bau/Handwerk; Einarbeitung in branchenspezifische Materialien nötig.",
+        "effort_details": "Schnelle Bewerbung per E‑Mail laut BA‑Anzeige",
+        "deadline": "",
+        "family": "A",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 32,
+          "entry": 26,
+          "commute": 10,
+          "conditions": 5
+        },
+        "effort_minutes": 25,
+        "evidence": "Stammdaten und Einkaufsdokumentation im System ✅ Dein Profil 🎓 Abgeschlossene kaufmännische Ausbildung oder vergleichbare Qualifikation 📈 Erste Erfahrung im Einkauf, idealerweise im technischen Umfeld (z. B. Bau, Handwerk) 🧠 Sorgfältige, eigenständige und lösungsorientierte Arbeitsweise 💻 Sicherer Umgang mit MS Office 🗣️ Sehr gute Deutschkenntnisse in Wort und Schrift (C1) 🎁 Wir bieten dir 🔒 Einen sicheren Arbeitsplatz mit Entwicklungsperspektiven 🤝 Kollegiales Umfeld mit kurzen",
+        "score": 73,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 30000,
+          "annual_max_eur": 44000,
+          "hours_basis": "Vollzeitäquivalent (40 Std./Woche); tatsächliche Wochenstunden unklar",
+          "benchmark_role": "Sachbearbeiter/in Einkauf",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Sachbearbeiter-in-Einkauf/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 30200,
+          "reference_annual_max_eur": 43500,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Projekt- und Office-Assistenz",
+        "employer": "PlanTeam400 GmbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1208236343-S",
+        "district": "Berlin-Kreuzberg (Urbanstraße 10, 10967 Berlin)",
+        "hours": "Teilzeit 25–30 Std/Woche; Kernarbeitszeit 8–15 Uhr",
+        "contract": "Unbefristet",
+        "salary": "bis 40.000 € brutto/Jahr auf Vollzeitbasis (anteilig bei 25–30 Std)",
+        "commute": "ca. 45–55 Min ÖPNV ab Heinersdorf (geschätzt)",
+        "pro": "Breites Assistenzspektrum mit klaren Strukturen und planbarer Teilzeit.",
+        "con": "Vergütung in Teilzeit anteilig eher niedrig.",
+        "effort_details": "Kurzbewerbung per E‑Mail laut BA‑Anzeige",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 27,
+          "entry": 23,
+          "commute": 10,
+          "conditions": 5
+        },
+        "effort_minutes": 25,
+        "evidence": "anteilig bei 25-30 Wochenstunden - abhängig von Berufserfahrung und Qualifikation unbefristete Festanstellung 30 Tage Urlaub pro Jahr Kernarbeitszeit 8 bis 15 Uhr Fachliche Weiterbildungen Kurze Entscheidungswege und direkter Austausch Eigenverantwortlicher Aufgabenbereich Regelmäßige Teamevents Du möchtest Teil unseres PlanTeams in Berlin (Urbanstraße, 10967 Berlin) werden? Sende deine vollständigen Bewerbungsunterlagen, gerne mit Angabe deiner Gehaltsvorstellung, einfach per Mail an",
+        "score": 65,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Logistics Coordinator (m/w/d) - Germany",
+        "employer": "Butternut Box",
+        "url": "https://job-boards.greenhouse.io/butternutbox/jobs/8658337002",
+        "district": "Berlin (hybrides Arbeiten; regionales Office lt. Benefits in Hamburg erwähnt)",
+        "hours": "Vollzeit",
+        "contract": "Unbekannt",
+        "salary": "Unbekannt",
+        "commute": "ca. 45–60 Min ÖPNV ab Heinersdorf (Berlin‑Einsätze; ohne genaue Adresse)",
+        "pro": "Starke operative Logistik- und Eventkoordination mit Prozess- und Bestandsverantwortung.",
+        "con": "Erfordert C2 Deutsch und Bereitschaft für parallele Events deutschlandweit.",
+        "effort_details": "Greenhouse-ATS mit Formularfeldern und CV‑Upload",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 29,
+          "entry": 21,
+          "commute": 10,
+          "conditions": 5
+        },
+        "effort_minutes": 55,
+        "evidence": "dein Match! 💛 🚀 Dein Aufgabenbereich Event-Logistik & Ablaufplanung: Du planst, koordinierst und überwachst die Event-Logistik für unsere Auftritte in ganz Deutschland. In enger Abstimmung mit dem DS-Team erstellst du zweiwöchige Fahrpläne und stellst sicher, dass vom Aufbau bis zum Debriefing alles reibungslos läuft – auch bei bis zu 10 parallelen Events. Relationship Building: Du baust eine enge, professionelle Beziehung zu unseren Logistik-Partnern auf, damit der Auf- und Abbau vor Ort",
+        "score": 65,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Administrative Sachbearbeitung Vergabestelle öffentlicher Hochbau (w/m/d)",
+        "employer": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+        "url": "https://www.karriereportal-stellen.berlin.de/Administrative-Sachbearbeitung-Vergabestelle-oeffentlicher-de-j70631.html",
+        "district": "Berlin-Wilmersdorf (Fehrbelliner Platz 4, 10707 Berlin)",
+        "hours": "Vollzeit 39,4–40 Std/Woche; Teilzeit möglich",
+        "contract": "Unbefristet",
+        "salary": "A8 LBesG / E 8 TV‑L (Bewertungsvermutung)",
+        "commute": "ca. 50–60 Min ÖPNV ab Heinersdorf (geschätzt)",
+        "pro": "Sicherer öffentlicher Dienst mit klaren Strukturen und TV‑L-Eingruppierung.",
+        "con": "Erwartet spezifische Vergabe- und Haushaltsrechtskenntnisse, die eingearbeitet werden müssten.",
+        "effort_details": "Öffentlicher Dienst-Portal mit Anlagenanforderungen (Lebenslauf, Zeugnisse, Beurteilungen)",
+        "deadline": "2026-11-11",
+        "family": "B",
+        "source_group": "berlin",
+        "scores": {
+          "skill": 26,
+          "entry": 18,
+          "commute": 10,
+          "conditions": 8
+        },
+        "effort_minutes": 130,
+        "evidence": "Bewerbungsfrist: 11.11.2026 Besoldungsgruppe/Entgeltgruppe: A8 LBesG/ E 8 TV-L (Bewertungsvermutung) Vollzeit mit 40 Wochenstunden (B) bzw. 39,4 Wochenstunden (T) – Teilzeit ist möglich. Ihr Aufgabengebiet umfasst: Die Sachbearbeitung für die Durchführung von Vergabeverfahren (Ausschreibung, Submission und Prüfung) für Bauleistungen nach VOB und Leistungen nach VgV o. UVgO bzw. LHO sowie Durchführung der elektronischen Vergabe (eVergabe). Ihr Profil Sie haben... Beamte: Erfüllung der",
+        "score": 62,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de",
+        "Projektassistenz Teilzeit 30 Berlin",
+        "Teamassistenz Berlin site:stepstone.de",
+        "Projektkoordination Berlin Energie",
+        "Projektassistenz Berlin Karriereportal",
+        "Office Assistenz Berlin 30h BA"
+      ],
+      "B": [
+        "Einkäufer Berlin site:arbeitsagentur.de",
+        "Sachbearbeiter Einkauf Berlin BA 7 Tage",
+        "Operativer Einkäufer Berlin site:personio.de",
+        "Vergabe Sachbearbeitung Berlin site:karriereportal-stellen.berlin.de",
+        "Beschaffung Berlin Karriereportal"
+      ],
+      "C": [
+        "Sales Coordinator Berlin site:personio.de",
+        "Vertriebsinnendienst Berlin BA",
+        "Logistics Coordinator Berlin site:greenhouse.io"
+      ]
+    },
+    "family_observations": {
+      "A": "BA bot heute zwei neue, verwertbare Projektassistenz‑Anzeigen (BTB Energie, avb). StepStone listet mehrere Teilzeit‑Varianten; viele sind sozial/NGO‑nah mit befristeten Projekten.",
+      "B": "Starkes Angebot im operativen Einkauf (Exolaunch, HAN‑Netzbau) sowie mehrere Vergabe‑Stellen im ÖD mit Fristen bis Mitte November.",
+      "C": "C‑Rollen kamen überwiegend aus ATS (Homaris mit Gehaltsband; Butternut Box mit klarer Logistikkoordination). BA lieferte heute wenig Passendes im Innendienst ohne Kaltakquise."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche und 7‑Tage‑Fenster funktionierten; mehrere neue Detailseiten abrufbar."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Suche nutzbar; Detailseiten teils alt/unscharf datiert, heute ohne Shortlist‑Treffer."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio und Greenhouse erreichbar; mehrere neue Berlin‑Rollen mit Volltext."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal lieferte neue Vergabe‑Stellen inkl. Fristen und E‑Gruppe."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "Fashionjobs/FashionUnited geprüft; heute keine geeignete Koordinationsrolle ≥30h."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003905878-S",
+        "reason": "Arbeitsort Kleinmachnow; voraussichtliche ÖPNV‑Pendeldauer ab Berlin‑Heinersdorf >75 Min. Bei nicht kernnaher Rolle (Projektassistenz) ergibt sich trotz solider Passung eine Gesamtscore‑Prognose <55."
+      }
+    ],
+    "assessment_pages_checked": 9,
+    "rejected": [
+      {
+        "title": "Corporate Reservations & Sales Coordinator (all genders) in Berlin",
+        "url": "https://homaris.jobs.personio.de/job/2843433",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Corporate Reservations & Sales Coordinator (all genders) in Berlin",
+          "employer": "Homaris",
+          "url": "https://homaris.jobs.personio.de/job/2843433",
+          "district": "Berlin (ohne konkrete Adresse)",
+          "hours": "Full-time",
+          "contract": "Permanent employee",
+          "salary": "39,000 - 46,000 € per year",
+          "commute": "ca. 45–60 Min ÖPNV ab Heinersdorf (konservativ, ohne Adresse)",
+          "pro": "Klare End-to-End-Prozessverantwortung und enge bereichsübergreifende Zusammenarbeit.",
+          "con": "Hospitality-/Reservations-Hintergrund ist von Vorteil und nicht ausgewiesen.",
+          "effort_details": "Personio-ATS, CV-Upload, Standardfragen",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 29,
+            "entry": 20,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Corporate Reservations & Sales Coordinator (all genders) in Berlin | Jobs at Homaris Skip to main content English English Back to all jobs Corporate Reservations & Sales Coordinator (all genders) in Berlin Berlin Full-time Permanent employee 39,000 - 46,000 € per year Apply for this job English We're building the future of urban stays. One city at a time. Homaris exists to solve one of the most persistent problems in modern cities: People from abroad need places to live, work, and just feel at"
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 7,
+  "researched_at": "2026-10-29T07:58:05.206535+00:00",
+  "prepared_at": "2026-10-29T08:01:27.407313+00:00",
+  "message_id": "<miki-2026-10-30-3442086480676b21@miki-jobsearch>",
+  "last_attempt_at": "2026-10-29T07:58:05.206535+00:00",
+  "last_attempt_run_id": "40838811996",
+  "design_version": "electric-blue-v1"
+}
