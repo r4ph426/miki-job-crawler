@@ -198,17 +198,9 @@
       "hits": 7,
       "researched_at": "2026-10-29T07:58:05.206535+00:00",
       "delivery_time": "2026-10-30T08:30:00 Europe/Berlin",
-      "checked_at": "2026-10-29T21:30:51.393785+00:00",
+      "checked_at": "2026-10-29T21:30:55.340824+00:00",
       "actor": "github",
       "last_result": "scheduled"
     }
-  },
-  "lease": {
-    "token": "c29e3e59916f4af3bb5a2b76394ae831",
-    "actor": "github",
-    "phase": "provider-check",
-    "date": "2026-10-30",
-    "started_at": "2026-10-29T21:30:52.476832+00:00",
-    "expires_at": "2026-10-29T22:10:52.476832+00:00"
   }
 }
