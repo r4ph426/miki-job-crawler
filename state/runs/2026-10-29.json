@@ -251,8 +251,10 @@
   "researched_at": "2026-10-29T07:48:13.268012+00:00",
   "prepared_at": "2026-10-29T07:48:19.847088+00:00",
   "message_id": "<miki-2026-10-29-b62b342085f657b1@miki-jobsearch>",
-  "last_attempt_at": "2026-10-29T07:48:13.268012+00:00",
+  "last_attempt_at": "2026-10-29T07:48:54.008965+00:00",
   "design_version": "electric-blue-v1",
   "research_origin": "codex_manual_live_research",
-  "research_recovery_reason": "Automated research API HTTP 429; original failure archived"
+  "research_recovery_reason": "Automated research API HTTP 429; original failure archived",
+  "last_attempt_run_id": "40837823834",
+  "email_provider": "brevo"
 }
