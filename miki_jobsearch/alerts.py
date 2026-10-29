@@ -95,6 +95,15 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
             html = (f'<p>Für den Versand am <strong>{day} um 08:30 Uhr</strong> ist noch kein fertiger '
                     'Bericht bei Brevo bestätigt eingeplant.</p><p>Bitte zuerst den Brevo-Status prüfen und '
                     'einen fehlenden Bericht im GitHub-Workflow <strong>prepare-next</strong> vorbereiten.</p>')
+        problem = delivery.get('research_diagnostic', {}).get('error_code')
+        if problem == 'credit_balance_exhausted':
+            detail = 'Ursache: Das OpenAI-API-Guthaben ist aufgebraucht. Bitte im OpenAI-API-Konto Guthaben nachladen; wiederholte Rechercheversuche beheben diesen Fehler nicht.'
+            text += '\n' + detail + '\n'
+            html += '<p>' + detail + '</p>'
+        elif problem in {'insufficient_quota', 'billing_hard_limit_reached', 'organization_spend_limit_exceeded', 'project_spend_limit_exceeded', 'organization_usage_limit_exceeded'}:
+            detail = 'Ursache: Der OpenAI-Recherchezugang ist durch ein Konto- oder Nutzungslimit gesperrt. Bitte Guthaben und Projekt-/Organisationslimits prüfen.'
+            text += '\n' + detail + '\n'
+            html += '<p>' + detail + '</p>'
         message.set_content(text)
         message.add_alternative(html + f'<p><a href="{STATUS_URL}">Status prüfen</a> · '
                                 f'<a href="{WORKFLOW_URL}">GitHub-Läufe öffnen</a></p>', subtype='html')

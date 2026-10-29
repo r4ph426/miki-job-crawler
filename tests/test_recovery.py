@@ -205,6 +205,46 @@ class RecoveryTests(unittest.TestCase):
             self.assertEqual(config["previous_candidate_urls"], ["https://failed.example/job"])
             self.assertIn("Never weaken", config["recovery_instruction"])
 
+    def test_credit_failure_does_not_retry_in_same_run_or_next_wakeup(self):
+        runner = Mock()
+        atomic_json(self.path, {'date': DAY, 'status': 'research_failed',
+            'failed_at': (self.now - timedelta(minutes=15)).isoformat(),
+            'research_diagnostic': {'error_code': 'credit_balance_exhausted'}})
+        result = recover_day(self.root, DAY, clock=lambda: self.now, executor=runner)
+        self.assertEqual(result['status'], 'research_access_blocked')
+        self.assertFalse(result['retryable'])
+        runner.assert_not_called()
+
+    def test_successful_access_check_unblocks_credit_failure_immediately(self):
+        atomic_json(self.path, {'date': DAY, 'status': 'research_failed',
+            'failed_at': (self.now - timedelta(minutes=15)).isoformat(),
+            'research_diagnostic': {'error_code': 'credit_balance_exhausted'}})
+        atomic_json(self.root / 'state/api-check.json', {'status': 'ready',
+            'checked_at': (self.now - timedelta(minutes=1)).isoformat()})
+        runner = Mock(return_value={'status': 'deferred'})
+        recover_day(self.root, DAY, clock=lambda: self.now, executor=runner)
+        runner.assert_called_once()
+
+    def test_retry_after_is_honored_across_controller_restarts(self):
+        atomic_json(self.path, {'date': DAY, 'status': 'research_failed',
+            'failed_at': (self.now - timedelta(minutes=15)).isoformat(),
+            'research_diagnostic': {'error_code': 'rate_limit_exceeded', 'retry_after_seconds': 1800}})
+        runner = Mock(return_value={'status': 'deferred'})
+        result = recover_day(self.root, DAY, clock=lambda: self.now, executor=runner)
+        self.assertEqual(result['status'], 'retry_cooldown')
+        runner.assert_not_called()
+        recover_day(self.root, DAY, clock=lambda: self.now + timedelta(minutes=16), executor=runner)
+        runner.assert_called_once()
+
+    def test_credit_failure_never_blocks_saved_report_delivery_or_queue(self):
+        self.saved()
+        record = read_json(self.path, {})
+        record.update(failed_at=self.now.isoformat(), research_diagnostic={'error_code': 'credit_balance_exhausted'})
+        atomic_json(self.path, record)
+        runner = Mock(return_value={'status': 'scheduled'})
+        recover_day(self.root, DAY, clock=lambda: self.now, executor=runner)
+        self.assertEqual(runner.call_args.kwargs['phase'], 'prepare')
+
     def test_real_git_transactions_release_lease_and_persist_finished_recovery(self):
         remote = self.root / "remote.git"
         checkout = self.root / "checkout"

@@ -298,6 +298,16 @@ class ResearchTests(unittest.TestCase):
                          {"code": "api_http_error", "http_status": 429, "error_code": "rate_limit_exceeded"})
         self.assertNotIn("unit-test-secret", str(caught.exception))
 
+    def test_provider_retry_after_is_safe_durable_numeric_metadata(self):
+        error = urllib.error.HTTPError('https://api.openai.com/v1/responses', 429, 'Limited',
+            {'Retry-After': '1800'}, io.BytesIO(b'{"error":{"code":"slow_down","message":"unit-test-secret"}}'))
+        with patch.object(provider.urllib.request, 'urlopen', side_effect=error):
+            with self.assertRaises(ResearchError) as caught:
+                provider.response_json({'model': 'gpt-5', 'input': 'test'}, 'unit-test-only')
+        self.assertEqual(caught.exception.diagnostic['retry_after_seconds'], 1800)
+        self.assertEqual(caught.exception.diagnostic['error_code'], 'slow_down')
+        self.assertNotIn('unit-test-secret', str(caught.exception.diagnostic))
+
 
 class DeliveryTests(unittest.TestCase):
     def test_production_skips_before_0830_without_research_or_email(self):

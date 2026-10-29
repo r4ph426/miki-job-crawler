@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from .hybrid import check_provider, execute
-from .research import ResearchError
+from .research import API_ACTION_REQUIRED_CODES, ResearchError
 from .scheduled_mail import ProviderStatusError, send_time
 from .service import BERLIN, DeliveryFailure, MailConfigurationError, StateSyncError, read_json
 
@@ -18,7 +18,7 @@ RETRY_STATES = {"missing", "research_failed", "configuration_failed", "failed", 
 ATTENTION_STATES = {"research_failed", "configuration_failed", "failed", "schedule_failed",
                     "retry_budget_exhausted", "provider_unconfirmed", "delivery_problem",
                     "manual_review_required", "schedule_uncertain", "scheduling", "sending",
-                    "uncertain", "partial"}
+                    "uncertain", "partial", "research_access_blocked"}
 
 
 def utcnow():
@@ -95,6 +95,21 @@ def recover_day(root, day, clock=utcnow, executor=execute, provider=check_provid
             return {"date": day, "status": "manual_review_required", "retryable": False}
         saved = bool(record.get("report")) and path.with_suffix(".html").exists()
         if not saved:
+            # Account/credit failures need user action. Check at most hourly,
+            # but allow an explicit successful key check to unblock immediately.
+            diagnostic = record.get('research_diagnostic', {})
+            if record.get('failed_at'):
+                failed = datetime.fromisoformat(record['failed_at'])
+                access = read_json(root / 'state/api-check.json', {})
+                restored = (access.get('status') == 'ready' and access.get('checked_at')
+                            and datetime.fromisoformat(access['checked_at']) > failed)
+                seconds = diagnostic.get('retry_after_seconds', 0)
+                if diagnostic.get('error_code') in API_ACTION_REQUIRED_CODES and not restored:
+                    seconds = max(seconds, 3600)
+                if now < failed + timedelta(seconds=seconds):
+                    return {'date': day, 'status': 'research_access_blocked' if diagnostic.get('error_code') in API_ACTION_REQUIRED_CODES else 'retry_cooldown',
+                            'error_code': diagnostic.get('error_code'), 'retryable': False,
+                            'next_check_at': (failed + timedelta(seconds=seconds)).isoformat()}
             phase = "research"
         elif now >= send_time(day):
             # Never release a previous/future day's report or send before 08:30 Berlin.
@@ -115,9 +130,12 @@ def recover_day(root, day, clock=utcnow, executor=execute, provider=check_provid
             raise  # A failed shared checkpoint must halt all actions on this checkout.
         except (ResearchError, DeliveryFailure, MailConfigurationError) as error:
             current = read_json(path, {})
-            return {"date": day, "status": current.get("status", "failed"),
-                    "error_type": type(error).__name__,
-                    "retryable": current.get("status") not in PROVIDER_STATES}
+            diagnostic = current.get('research_diagnostic', {})
+            action_required = diagnostic.get('error_code') in API_ACTION_REQUIRED_CODES
+            return {"date": day, "status": 'research_access_blocked' if action_required else current.get("status", "failed"),
+                    "error_type": type(error).__name__, 'error_code': diagnostic.get('error_code'),
+                    "retryable": (not action_required and not diagnostic.get('retry_after_seconds')
+                                  and current.get("status") not in PROVIDER_STATES)}
         if result.get("status") in {"deferred", "retry_budget_exhausted", "retry_cooldown"}:
             return dict(result, retryable=result["status"] != "retry_budget_exhausted")
         if phase == "deliver":

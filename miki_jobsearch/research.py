@@ -12,9 +12,17 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 
+API_ACTION_REQUIRED_CODES = frozenset({
+    'invalid_api_key', 'account_deactivated', 'insufficient_quota',
+    'billing_hard_limit_reached', 'credit_balance_exhausted',
+    'organization_spend_limit_exceeded', 'project_spend_limit_exceeded',
+    'organization_usage_limit_exceeded',
+})
+
+
 class ResearchError(RuntimeError):
     def __init__(self, message, *, code="research_error", http_status=None, api_status=None,
-                 error_code=None, incomplete_reason=None):
+                 error_code=None, incomplete_reason=None, retry_after_seconds=None):
         super().__init__(message)
         # Only fixed identifiers enter durable state; exception text and provider
         # error bodies can contain credentials or other private input.
@@ -35,6 +43,8 @@ class ResearchError(RuntimeError):
                         "slow_down", "server_is_overloaded"}
         if isinstance(error_code, str) and error_code in known_errors:
             self.diagnostic["error_code"] = error_code
+        if type(retry_after_seconds) is int and 0 <= retry_after_seconds <= 604800:
+            self.diagnostic['retry_after_seconds'] = retry_after_seconds
         if isinstance(incomplete_reason, str) and incomplete_reason in {"max_output_tokens", "content_filter"}:
             self.diagnostic["incomplete_reason"] = incomplete_reason
 
@@ -178,8 +188,22 @@ def response_json(payload, key, require_search=False):
             provider_code = json.loads(error.read(16000)).get("error", {}).get("code")
         except (ValueError, TypeError, AttributeError):
             provider_code = None
+        retry_after = None
+        raw_delay = error.headers.get('Retry-After') if error.headers else None
+        try:
+            retry_after = max(0, int(raw_delay))
+        except (ValueError, TypeError):
+            if raw_delay:
+                from datetime import datetime, timezone
+                from email.utils import parsedate_to_datetime
+                import math
+                try:
+                    retry_after = max(0, math.ceil((parsedate_to_datetime(raw_delay) - datetime.now(timezone.utc)).total_seconds()))
+                except (ValueError, TypeError, OverflowError):
+                    pass
         raise ResearchError(f"Research API returned HTTP {error.code}", code="api_http_error",
-                            http_status=error.code, error_code=provider_code) from error
+                            http_status=error.code, error_code=provider_code,
+                            retry_after_seconds=retry_after) from error
     except (urllib.error.URLError, TimeoutError, OSError) as error:
         raise ResearchError(f"Research API connection failed ({type(error).__name__})", code="api_connection_error") from error
     if result.get("status") != "completed":
