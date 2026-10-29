@@ -123,3 +123,30 @@ Sources: [GitHub schedule semantics](https://docs.github.com/en/actions/referenc
 [Brevo scheduling](https://developers.brevo.com/docs/schedule-batch-sendings),
 [Brevo email API](https://developers.brevo.com/reference/send-transac-email),
 [Cloudflare Cron Triggers](https://developers.cloudflare.com/workers/configuration/cron-triggers/).
+
+
+## 29 October 2026 recovery
+
+The missing edition had two independent causes: alert tests used the real runner
+clock and failed before 08:40 Berlin, and the research API credit balance was
+exhausted. Alert tests now freeze their clock. Safe API diagnostics distinguish
+`credit_balance_exhausted` and current spend/usage-limit codes from throttling.
+The API access check succeeded after the owner replenished credits.
+
+Recovery stops rapid retries for account failures, checks an unchanged account
+failure at most hourly, and accepts a newer successful API check immediately.
+Transient provider `Retry-After` delays persist across wakeups and start when the
+request fails, rather than when research starts. Account-related warning mail
+names the actionable cause and retains the existing once-per-day guard.
+Previously prepared reports remain eligible for scheduling/sending even when
+research access is blocked. Provider ambiguity still never permits another POST.
+
+The 30 October Friday edition was researched by the normal service (7 verified
+jobs), accepted by Brevo, and verified queued for `2026-10-30T07:30:00Z`
+(08:30 Europe/Berlin, winter time), with two expected recipients. This confirms
+preparation and provider scheduling; future delivery must still be reconciled
+from exact-message recipient events. Do not resend an already queued edition.
+
+Operational prerequisite: sufficient API credits. Any automatic top-up and its
+spending cap must be configured by the account owner; no billing setting is
+changed by this service.

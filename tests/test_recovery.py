@@ -205,6 +205,17 @@ class RecoveryTests(unittest.TestCase):
             self.assertEqual(config["previous_candidate_urls"], ["https://failed.example/job"])
             self.assertIn("Never weaken", config["recovery_instruction"])
 
+    def test_retry_delay_starts_when_request_fails_not_when_research_started(self):
+        ended = self.now.replace(hour=9) + timedelta(minutes=5)
+        def research(*args):
+            raise ResearchError('limited', code='api_http_error', http_status=429,
+                                error_code='rate_limit_exceeded', retry_after_seconds=1800)
+        with tempfile.TemporaryDirectory() as folder, patch('miki_jobsearch.service.datetime', wraps=datetime) as timer:
+            timer.now.return_value = ended
+            with self.assertRaises(ResearchError):
+                run(ROOT, Path(folder), now=self.now.replace(hour=9), dry_run=False, prepare=True, researcher=research)
+            self.assertEqual(read_json(Path(folder) / 'runs' / f'{DAY}.json', {})['failed_at'], ended.isoformat())
+
     def test_credit_failure_does_not_retry_in_same_run_or_next_wakeup(self):
         runner = Mock()
         atomic_json(self.path, {'date': DAY, 'status': 'research_failed',

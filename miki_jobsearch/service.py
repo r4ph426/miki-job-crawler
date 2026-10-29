@@ -471,7 +471,7 @@ def run(root, store, now=None, dry_run=True, fixture=None, output_dir=None,
             except Exception as error:
                 if not dry_run:
                     failure = {"date": str(day), "status": "research_failed", "hits": 0,
-                               "failed_at": now.isoformat(), "error": f"Research failed ({type(error).__name__}); see workflow log"}
+                               "failed_at": datetime.now(timezone.utc).isoformat(), "error": f"Research failed ({type(error).__name__}); see workflow log"}
                     if isinstance(error, ResearchError):
                         failure["research_diagnostic"] = error.diagnostic
                     if revision:
