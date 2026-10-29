@@ -14,7 +14,12 @@ class AlertTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name);self.day='2026-10-08'
-        self.now=datetime.now(timezone.utc)
+        # Warning tests run after the delivery grace period, independent of the
+        # runner clock (including early morning and winter/summer time).
+        self.now=datetime(2026, 10, 8, 10, 0, tzinfo=timezone.utc)
+        self.clock=patch('miki_jobsearch.alerts.datetime', wraps=datetime)
+        self.alert_datetime=self.clock.start();self.addCleanup(self.clock.stop)
+        self.alert_datetime.now.return_value=self.now
         atomic_json(self.root/'state/coordinator.json',{'lease':{'token':'token','expires_at':(self.now+timedelta(hours=1)).isoformat()}})
         self.claim=patch('miki_jobsearch.alerts.claim',return_value='token');self.claim.start();self.addCleanup(self.claim.stop)
         self.complete=patch('miki_jobsearch.alerts.complete');self.complete.start();self.addCleanup(self.complete.stop)
