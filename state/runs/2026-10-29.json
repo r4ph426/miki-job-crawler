@@ -1,11 +1,256 @@
 {
   "date": "2026-10-29",
-  "status": "research_failed",
-  "hits": 0,
-  "failed_at": "2026-10-29T07:43:04.132321+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "api_http_error",
-    "http_status": 429
-  }
+  "created_at": "2026-10-29T07:48:13.268012+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 29.10.2026 · 6 neue Treffer",
+  "report": {
+    "summary": "Sechs am 29.10.2026 geprüfte Neufunde: ERP-/Warenwirtschaft und Einkauf bieten die direktesten Anknüpfungspunkte; daneben Assistenz und Geschäftskundenkoordination.",
+    "next_action": "Zuerst Astrofein anhand der bisherigen SAP-/Stammdaten- und Versandaufgaben prüfen. Bei Eberhardt Führerschein und Standortbesuche abgleichen. Initiative Musik bei Interesse vor der Frist am 01.11.2026 bearbeiten.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Kaufmännischen Mitarbeiter (m/w/d)",
+        "employer": "Astro- und Feinwerktechnik Adlershof GmbH",
+        "url": "https://astrofein.jobs.personio.de/job/2734262",
+        "family": "B",
+        "source_group": "ats",
+        "district": "Treptow-Köpenick (Adlershof)",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "Geschätzt 50–65 Min. mit ÖPNV ab Heinersdorf zur Albert-Einstein-Straße 12; Route vor Bewerbung prüfen.",
+        "pro": "ERP-/Artikelstammdaten, Warenwirtschaft und internationale Versandabwicklung passen direkt zur Koordinationserfahrung.",
+        "con": "Dynamics NAV wäre neu; längerer Arbeitsweg nach Adlershof.",
+        "scores": {
+          "skill": 35,
+          "entry": 27,
+          "commute": 5,
+          "conditions": 7
+        },
+        "evidence": "Artikelanlage, -pflege und -verwaltung im ERP-System Pflege von Stücklisten in Zusammenarbeit mit Konstruktion und Arbeitsvorbereitung",
+        "deadline": "",
+        "effort_minutes": 55,
+        "effort_details": "55 Min.: Lebenslauf anpassen, kurze Motivation, Unterlagen und Formular bzw. PDF-Versand prüfen.",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Assistent:in der Geschäftsleitung",
+        "employer": "RITTERWALD Unternehmensberatung GmbH",
+        "url": "https://ritterwald-unternehmensberatung-gmbh.jobs.personio.de/job/1164383",
+        "family": "A",
+        "source_group": "ats",
+        "district": "Charlottenburg-Wilmersdorf (Kurfürstendamm)",
+        "hours": "Voll- oder Teilzeit im Kopf; Beschreibung nennt Vollzeit – klären",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "Geschätzt 46–60 Min. mit ÖPNV ab Heinersdorf zum Kurfürstendamm 22.",
+        "pro": "Breite Termin-, Reise-, Veranstaltungs- und Angebotskoordination; abgestimmtes Homeoffice möglich.",
+        "con": "Stundenumfang widersprüchlich; Schwerpunkt klassische Assistenz statt Produkt-/Lieferkettenarbeit.",
+        "scores": {
+          "skill": 28,
+          "entry": 27,
+          "commute": 10,
+          "conditions": 8
+        },
+        "evidence": "Du buchst Reisen für unsere Geschäftsführung und Partner und managst die anfallenden Reiseabrechnungen.",
+        "deadline": "",
+        "effort_minutes": 70,
+        "effort_details": "70 Min.: Lebenslauf anpassen, kurze Motivation, Unterlagen und Formular bzw. PDF-Versand prüfen.",
+        "score": 73,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "(Junior)Strategischer Einkäufer / Strategic Procurement Manager (m/w/d)",
+        "employer": "Eberhardt Service Group GmbH",
+        "url": "https://es-group.jobs.personio.de/job/2862795",
+        "family": "B",
+        "source_group": "ats",
+        "district": "Unbekannt",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "Mangels konkreter Büroadresse konservativ geschätzt 46–60 Min. mit ÖPNV ab Heinersdorf.",
+        "pro": "Kaufmännisches Studium und Lieferantenkoordination passen; operativer Einkauf mit schrittweise eigener Vergabeverantwortung.",
+        "con": "Führerschein B erforderlich (Verfügbarkeit unbekannt); Facility-Fachwissen und regelmäßige Standortbesuche nötig.",
+        "scores": {
+          "skill": 31,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 7
+        },
+        "evidence": "Du betreust Beschaffungsvorgänge im operativen und taktischen Einkauf und sorgst für reibungslose Abläufe.",
+        "deadline": "",
+        "effort_minutes": 55,
+        "effort_details": "55 Min.: Lebenslauf anpassen, kurze Motivation, Unterlagen und Formular bzw. PDF-Versand prüfen.",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 37000,
+          "annual_max_eur": 55000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Einkäufer/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Einkaeufer-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 37600,
+          "reference_annual_max_eur": 54500,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Projekt- und Teamassistenz Export",
+        "employer": "Initiative Musik gemeinnützige Projektgesellschaft mbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003904437-S",
+        "family": "A",
+        "source_group": "arbeitsagentur",
+        "district": "Mitte",
+        "hours": "Vollzeit",
+        "contract": "Befristet bis 30.06.2027",
+        "salary": "43.500–48.000 €/Jahr laut Anzeige; Vergütung in Anlehnung an TVöD Bund EG 8",
+        "commute": "Geschätzt 31–45 Min. mit ÖPNV ab Heinersdorf zur Friedrichstraße 122.",
+        "pro": "Projektorganisation, Termine und Vertrags-/Rechnungsmanagement; bis zu elf mobile Arbeitstage pro Monat.",
+        "con": "Befristung bis 30.06.2027; Frist 01.11.2026. Kultur-/Eventerfahrung oder vergleichbare passgenaue Erfahrung muss belegt werden.",
+        "scores": {
+          "skill": 28,
+          "entry": 21,
+          "commute": 15,
+          "conditions": 8
+        },
+        "evidence": "Du unterstützt bei administrativen Vorgängen wie Ausschreibungsverfahren, Vertrags- und Rechnungsmanagement",
+        "deadline": "2026-11-01",
+        "effort_minutes": 90,
+        "effort_details": "90 Min.: Lebenslauf anpassen, kurze Motivation, Unterlagen und Formular bzw. PDF-Versand prüfen.",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Teamassistenz (m/w/d)",
+        "employer": "Berliner Häuser Gruppe",
+        "url": "https://bhgruppe.jobs.personio.de/job/2516934",
+        "family": "A",
+        "source_group": "ats",
+        "district": "Mitte",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "Ohne genaue Büroadresse konservativ geschätzt 46–60 Min. mit ÖPNV ab Heinersdorf.",
+        "pro": "Auftragskoordination, Stammdaten und Büroorganisation; Immobilienerfahrung nur idealerweise gefordert.",
+        "con": "Stärkerer Mieter-/Verwaltungsservice als Produktkoordination; konkrete Wochenstunden offen.",
+        "scores": {
+          "skill": 26,
+          "entry": 28,
+          "commute": 10,
+          "conditions": 8
+        },
+        "evidence": "du hast eine abgeschlossene kaufmännische Ausbildung oder ähnliche Qualifikation",
+        "deadline": "",
+        "effort_minutes": 70,
+        "effort_details": "70 Min.: Lebenslauf anpassen, kurze Motivation, Unterlagen und Formular bzw. PDF-Versand prüfen.",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 45000,
+          "hours_basis": "Vollzeitäquivalent (40 Std./Woche); tatsächliche Wochenstunden unklar",
+          "benchmark_role": "Teamassistent/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Teamassistent-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32400,
+          "reference_annual_max_eur": 44500,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Corporate Reservations & Sales Coordinator (all genders) in Berlin",
+        "employer": "Homaris",
+        "url": "https://homaris.jobs.personio.de/job/2843433",
+        "family": "C",
+        "source_group": "ats",
+        "district": "Unbekannt",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "39.000–46.000 €/Jahr",
+        "commute": "Mangels konkreter Büroadresse konservativ geschätzt 46–60 Min. mit ÖPNV ab Heinersdorf.",
+        "pro": "Geschäftskundenangebote, Datenpflege und Abstimmung zwischen Sales und Operations greifen Koordinationserfahrung auf.",
+        "con": "Branchenwechsel: Reservierungs-/CRM-Systeme und Hospitality- bzw. Kundenservice-Erfahrung gefordert; Präsenz wichtig.",
+        "scores": {
+          "skill": 25,
+          "entry": 20,
+          "commute": 10,
+          "conditions": 7
+        },
+        "evidence": "From reservation through changes, cancellations and invoicing, you are the reference point for every question.",
+        "deadline": "",
+        "effort_minutes": 55,
+        "effort_details": "55 Min.: Lebenslauf anpassen, kurze Motivation, Unterlagen und Formular bzw. PDF-Versand prüfen.",
+        "score": 62,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Berlin Projektkoordination Projektassistenz Teamassistenz Office Management Marketingkoordination site:personio.de",
+        "Berlin Projektassistenz Teamassistenz site:arbeitsagentur.de/jobsuche/jobdetail",
+        "Berlin Office Management Marketingkoordination site:boards.greenhouse.io OR site:jobs.lever.co",
+        "site:karriereportal-stellen.berlin.de Teamassistenz Büromanagement November 2026"
+      ],
+      "B": [
+        "Berlin Einkauf Beschaffung Supply Chain Order Management site:personio.de",
+        "Berlin Sachbearbeiter Einkauf Beschaffung site:personio.de",
+        "Berlin Order Management Lieferantenmanagement Wardow site:personio.de",
+        "Berlin Einkauf kaufmännische site:personio.de/job/ -praktikum -werkstudent"
+      ],
+      "C": [
+        "Berlin Product Coordinator Vertriebsinnendienst Merchandising site:stepstone.de",
+        "Berlin Product Coordinator Vertriebsinnendienst site:personio.de",
+        "Berlin Merchandising Koordination site:stepstone.de/stellenangebote"
+      ]
+    },
+    "family_observations": {
+      "A": "Neue Assistenzangebote zugänglich; Initiative Musik hat eine kurze Frist und Befristung. Formale Zugangsvoraussetzungen im öffentlichen Dienst bleiben ein Filter.",
+      "B": "Astrofein verbindet ERP, Materialwirtschaft und Versand. Eberhardt bietet einen kaufmännischen Einkaufseinstieg; Führerschein muss vor Bewerbung geklärt werden.",
+      "C": "Geschäftskundenkoordination bei Homaris als Branchenwechsel. Fashion-Planungs- und Fulfillment-Rollen verlangen teils besondere mehrjährige Erfahrung."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Projekt-/Teamassistenz gesucht; Initiative-Musik-Detailseite vollständig geladen und Anforderungen/Frist geprüft."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Merchandising- und Coordinator-Suche geprüft. Listentreffer allein nicht übernommen; keine Gehaltsschätzungen als Arbeitgebergehalt behandelt."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio-Detailseiten direkt geladen. Greenhouse-/Lever-Suchen ergänzend durchgeführt; keine zusätzlichen verifizierten Neufunde daraus übernommen. Aeyde und WARDOW als Zielunternehmen geprüft."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal gesucht. Fachassistenz Spandau mit speziellen formalen Ausbildungsanforderungen nicht übernommen; alte/abgelaufene Treffer ausgeschlossen."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/Mode-Einkauf und Zielunternehmen geprüft; keine zusätzliche belegte passende Neuanzeige übernommen."
+      }
+    ],
+    "rejected": []
+  },
+  "attempts": [],
+  "hits": 6,
+  "researched_at": "2026-10-29T07:48:13.268012+00:00",
+  "prepared_at": "2026-10-29T07:48:19.847088+00:00",
+  "message_id": "<miki-2026-10-29-b62b342085f657b1@miki-jobsearch>",
+  "last_attempt_at": "2026-10-29T07:48:13.268012+00:00",
+  "design_version": "electric-blue-v1"
 }
