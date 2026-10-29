@@ -334,5 +334,7 @@
   "provider_message_ids": [
     "<202610290801.57567311581@smtp-relay.mailin.fr>"
   ],
-  "schedule_accepted_at": "2026-10-29T08:01:30.691480+00:00"
+  "schedule_accepted_at": "2026-10-29T08:01:30.691480+00:00",
+  "provider_status": "queued",
+  "schedule_verified_at": "2026-10-29T08:01:32.618440+00:00"
 }
