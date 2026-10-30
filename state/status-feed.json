@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T07:30:45.154919+00:00",
+  "updated_at": "2026-10-30T07:30:53.413738+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -463,7 +463,7 @@
       "schedule_accepted_at": "2026-10-29T08:01:30.691480+00:00",
       "schedule_verified_at": "2026-10-30T07:05:09.244513+00:00",
       "provider_status": "queued",
-      "provider_checked_at": "2026-10-30T07:05:09.244513+00:00",
+      "provider_checked_at": "2026-10-30T07:30:45.148635+00:00",
       "expected_recipients": 2,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
@@ -472,7 +472,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
-      "provider_check_failed": false
+      "provider_check_failed": true
     }
   },
   "lease": {
