@@ -1,7 +1,7 @@
 {
   "date": "2026-10-30",
   "created_at": "2026-10-29T07:58:05.206535+00:00",
-  "status": "scheduled",
+  "status": "sent",
   "subject": "Wochenüberblick Stellensuche · KW 44",
   "report": {
     "summary": "Recherche vom 29.10.2026 für den Versand am 30.10.2026. 8 neue, plausible Anzeigen über BA, Personio und das Berliner Karriereportal. Schwerpunkte: operativer Einkauf/Lieferantenkoordination (starkes Skill‑Match) und Projekt-/Teamassistenz (gute Einstiegshürde). Eine C‑Rolle mit klarer Auftrags-/Buchungskoordination inkl. Gehaltsangabe.",
@@ -335,8 +335,13 @@
     "<202610290801.57567311581@smtp-relay.mailin.fr>"
   ],
   "schedule_accepted_at": "2026-10-29T08:01:30.691480+00:00",
-  "provider_status": "queued",
+  "provider_status": "delivered",
   "schedule_verified_at": "2026-10-30T07:05:09.244513+00:00",
-  "provider_checked_at": "2026-10-30T07:30:45.148635+00:00",
-  "provider_check_error": "Brevo delivery events unavailable"
+  "provider_checked_at": "2026-10-30T08:00:41.743818+00:00",
+  "sent_recipient_count": 2,
+  "delivered_recipient_count": 2,
+  "failed_recipient_count": 0,
+  "delivery_problem": false,
+  "accepted_at": "2026-10-30T07:30:19+00:00",
+  "delivered_at": "2026-10-30T07:30:19+00:00"
 }
