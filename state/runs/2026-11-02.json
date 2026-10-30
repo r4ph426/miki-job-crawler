@@ -1,0 +1,286 @@
+{
+  "date": "2026-11-02",
+  "created_at": "2026-10-30T08:00:47.882164+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 02.11.2026 · 5 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 30.10.2026 für den Versand am 02.11.2026. 6 neue, plausible Treffer mit ≥55 Punkten aus A/B/C, keine Dubletten. Schwerpunkt heute: solide Office-/Assistenzrollen (A) sowie zwei klare Einkauf/SCM-Rollen (B) mit gutem Aufgabenfit. C blieb dünn mit nur einem tragfähigen Inside‑Sales‑Support-Fund. Nächste Schritte unten.",
+    "next_action": "Heute zwei Bewerbungen priorisieren: 1) Trisor Office Manager (breiter Office-/Assistenzmix, solide Einstiegshürde). 2) IKZ Sachbearbeitung Einkauf & Finanzen (klarer B‑Fit, HO möglich). Parallel zwei Kurzbewerbungen vorbereiten (FACTUREE Sales Support; LTE Germany Inside Sales).",
+    "weekend_action": "60–90 Min: Profil/Anschreiben-Duo einmal für „Office/Assistenz generalistisch“ (A) und einmal für „Operativer Einkauf/Orderflow“ (B) feinschleifen; je 2 Bullet‑Erfolge aus NOOS/Lead‑time/PLM einbauen und als Textbausteine speichern.",
+    "jobs": [
+      {
+        "title": "Sales Support Specialist (m/f/d)",
+        "employer": "FACTUREE",
+        "url": "https://facturee.jobs.personio.de/job/2287892?language=en",
+        "district": "Wedding",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "2,500 - 4,000 € per month",
+        "commute": "ca. 40 Min. ÖPNV ab Berlin-Heinersdorf zu den Osram-Höfen (geschätzt)",
+        "pro": "Transparente Gehaltsangabe und strukturierter Onboarding-/Interviewprozess.",
+        "con": "Gefordert sind Deutsch und Englisch auf muttersprachlichem Niveau.",
+        "effort_details": "ATS (Personio) – englisches Formular, Unterlagen hochladen, Standardfragen.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "ats",
+        "scores": {
+          "skill": 28,
+          "entry": 18,
+          "commute": 15,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "of our operations – our “command center” – and the very first person new and returning customers connect with. Your communication flair, problem-solving mindset, and organizational skills will help turn prospects into loyal, long-term partners. Your responsibilities with us Respond promptly and professionally to customer inquiries via email and phone Create tailored quotations and solve customer issues independently Ensure a smooth, fast, and hassle-free ordering process Forward specialized",
+        "score": 68,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Supply Chain Manager, Procurement & Logistics Operations",
+        "employer": "Planet Labs Germany GmbH",
+        "url": "https://job-boards.greenhouse.io/planetlabs/jobs/8289157",
+        "district": "Unbekannt",
+        "hours": "Vollzeit (5 Tage/Woche vor Ort)",
+        "contract": "Unbekannt",
+        "salary": "Germany Salary Range €60.900 - €76.100 EUR",
+        "commute": "ca. 50 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt, da nur Stadt angegeben)",
+        "pro": "Starker Fit bei Beschaffung/Logistik inkl. Incoterms, Import/Export und Lieferantensteuerung.",
+        "con": "Geforderte Führungserfahrung sowie Zoll-/Exportpraxis; 5 Tage Präsenz vor Ort.",
+        "effort_details": "ATS (Greenhouse) – Formularfragen inkl. Gehaltsfrage und Export-Control-Checks, Unterlagen hochladen.",
+        "deadline": "2027-01-27",
+        "family": "A",
+        "source_group": "ats",
+        "scores": {
+          "skill": 36,
+          "entry": 12,
+          "commute": 10,
+          "conditions": 8
+        },
+        "effort_minutes": 55,
+        "evidence": "sense, and execute long-term agreements. Build and run inbound, outbound and intercompany logistics between the US and Germany and across Europe, including freight-forwarder management, Incoterms and cost-effective routing of high-value, sensitive flight hardware. Own import and export execution for Germany: customs declarations, tariff (HS/CN) classification, duty optimization, and coordination with customs brokers and our US trade-compliance team. Ensure shipments comply with export-control",
+        "score": 66,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Office Assistant (m/w/d)",
+        "employer": "European IT Consultancy EITCO GmbH",
+        "url": "https://eitco-gmbh.jobs.personio.de/job/2834580",
+        "district": "Mitte",
+        "hours": "Voll- oder Teilzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 50 Min. ÖPNV ab Berlin-Heinersdorf bis Potsdamer Platz 10, 10785 Berlin",
+        "pro": "Klare Office-/Assistenzaufgaben inkl. Reiseplanung und Facility-Management.",
+        "con": "Präsenzzeiten im Wochenverlauf erforderlich; kein Bezug zu Produktkoordination.",
+        "effort_details": "ATS (Personio) – Profil anlegen/aktualisieren, Fragen beantworten, Lebenslauf/Anschreiben hochladen.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 26,
+          "entry": 22,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 55,
+        "evidence": "Präsentation der EITCO Niederlassung Berlin als erster Ansprechpartner für Kunden und Mitarbeitende Eigenständige Übernahme allgemeiner Büroorganisations- und kaufmännischer Bürotätigkeiten (Sekretariat) Empfang und Betreuung von Gästen, Besucher und Empfangsmanagement Ordnung und Sauberkeit: Verantwortung für die Ordnung und Sauberkeit in den Küchen und Besprechungsräumen und die Gewährleistung einer angenehmen Arbeitsumgebung Reiseplanung für die Geschäftsführung Prüfung von",
+        "score": 64,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+        "employer": "Trisor GmbH",
+        "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+        "district": "Unbekannt",
+        "hours": "Vollzeit",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "ca. 50 Min. ÖPNV ab Berlin-Heinersdorf (geschätzt, da keine Adresse angegeben)",
+        "pro": "Breites Aufgabenspektrum inkl. Rechnungsprüfung und Unterstützung bei Finance-Prozessen.",
+        "con": "Keine Gehaltsangabe und klarer Office-Schwerpunkt statt Produktkoordination.",
+        "effort_details": "ATS (Personio) – Profil anlegen/aktualisieren, Fragen beantworten, Lebenslauf/Anschreiben hochladen.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 24,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 5
+        },
+        "effort_minutes": 55,
+        "evidence": "und Lust hat, Dinge aktiv voranzubringen: Du koordinierst externe Dienstleister, Bestellungen sowie die allgemeine Büroorganisation und behältst dabei Verträge, Dokumente, Büroausstattung und die Arbeitsumgebung im Blick Du organisierst interne sowie externe Termine und Geschäftsreisen von der Planung bis zur Reisekostenabrechnung Du kümmerst Dich um den Post Ein- und -ausgang sowie um die strukturierte Ablage und Organisation wichtiger Dokumente und Unterlagen Du prüfst und bearbeitest",
+        "score": 63,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 33000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Officemanager/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Officemanager-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 33000,
+          "reference_annual_max_eur": 45200,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      },
+      {
+        "title": "Mitarbeiter:in Sales Innendienst (m/w/d)",
+        "employer": "LTE Germany GmbH",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003620013-S",
+        "district": "Adlershof",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "40.000 € – 50.000 €/Jahr",
+        "commute": "ca. 65 Min. ÖPNV ab Berlin-Heinersdorf bis Rudower Chaussee 13, 12489 Berlin",
+        "pro": "Klare Gehaltsrange und Remote-Option genannt.",
+        "con": "Bevorzugter Standort Adlershof führt zu langem Arbeitsweg.",
+        "effort_details": "Schnellbewerbung über BA möglich; Basisdaten, Lebenslauf hochladen.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 26,
+          "entry": 22,
+          "commute": 5,
+          "conditions": 7
+        },
+        "effort_minutes": 25,
+        "evidence": "und unterstützen den Vertrieb bei der Erstellung von Angeboten sowie der Bearbeitung nationaler und internationaler Kundenanfragen. Ihre Aufgaben Erstellung und Kalkulation von Kundenangeboten, insbesondere mittels Microsoft Excel Bearbeitung und Nachverfolgung von Kundenanfragen in deutscher und englischer Sprache Unterstützung des Vertriebsteams bei administrativen und organisatorischen Aufgaben Enge Zusammenarbeit mit internen Fachbereichen und internationalen Stakeholdern Teilnahme an",
+        "score": 60,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin StepStone",
+        "Teamassistenz Berlin StepStone",
+        "Office Management Berlin Personio",
+        "Marketingkoordination Berlin StepStone"
+      ],
+      "B": [
+        "Einkäufer Berlin Arbeitsagentur",
+        "Sachbearbeiter Einkauf Berlin StepStone",
+        "Supply Chain Berlin Greenhouse",
+        "Beschaffung Berlin Personio"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin Personio",
+        "Sales Coordinator Berlin Personio"
+      ]
+    },
+    "family_observations": {
+      "A": "Viele Office‑/Assistenzrollen laufen über Personio‑Boards kleiner/mittlerer Firmen. Signifikant: mehrere neue, aber teils unklare Stundenumfänge (Teilzeit ohne Stundenzahl).",
+      "B": "ATS‑Boards zeigen wieder vermehrt „Direct Buyer/Procurement“ in E‑Com/Tech (Grover) und „Orderflow/Import‑Export“ in Space/Hardware (Planet). BA liefert stabile öffentliche/halböffentliche Einkaufssachbearbeitungen (IKZ).",
+      "C": "Vertriebsinnendienst bleibt fragmentiert: Mischung aus technisch‑produzierenden Mittelständlern (BAUER, FACTUREE) und Dienstleistung. Gehälter selten genannt; Personio‑Einträge teils mit klaren Monatsbändern (FACTUREE)."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere Detailseiten verifiziert (IKZ, LTE). Einige Suchlisten zeigten viele >7‑Tage‑Treffer; 7‑Tage‑Filter über direkte Detail‑Aufrufe umgangen, wo sinnvoll."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Prognos‑Detailseite erreichbar; generische Listen liefern viele Alteinträge, aber Einzelseite nutzbar."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio/Greenhouse funktionierten stabil (Trisor, Penning, EITCO, FACTUREE, Grover, Planet)."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Heute kein neuer passender Treffer mit klarer A/B/C‑Zuordnung; Portal erreichbar."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "Kein neuer valider A/B/C‑Treffer in Berlin heute; Aeyde/Wardow bereits früher gemeldet; keine neuen passenden Listings."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://penning-sanitaer-handel-gmbh-co-kg-1.jobs.personio.de/job/2767382?language=de",
+        "reason": "Teilzeit-Empfangsrolle mit unklarer Stundenanzahl; Aufgaben stark frontdesk-orientiert. Geschätzte Punktzahl <55."
+      },
+      {
+        "url": "https://job-boards.greenhouse.io/grover/jobs/7791600003?gh_src=f5mtd9yo3us",
+        "reason": "Allgemeine Stellenseite ohne konkrete, passende Detailausschreibung; keine Office-/Koordinationsrolle ersichtlich."
+      }
+    ],
+    "assessment_pages_checked": 7,
+    "rejected": [
+      {
+        "title": "Projektassistenz (d/m/w) – Bereich Sozial- und Gesellschaftspolitik (2 Jahre)",
+        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Projektassistenz (d/m/w) – Bereich Sozial- und Gesellschaftspolitik (2 Jahre)",
+          "employer": "Prognos AG",
+          "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-d-m-w-Berlin-Prognos-AG-Wir-geben-Orientierung--14580919-inline.html",
+          "district": "Unbekannt (Berlin, konservativ geschätzt)",
+          "hours": "Vollzeit, 40 Std./Woche",
+          "contract": "befristet 2 Jahre",
+          "salary": "Unbekannt",
+          "commute": "konservativ 45–60 Min ab Heinersdorf (Adresse im Inserat nicht genannt)",
+          "pro": "Klarer A‑Fit: strukturierte Projektorganisation/‑administration im Beratungskontext.",
+          "con": "Befristung 24 Monate.",
+          "effort_details": "ATS/Unternehmensportal StepStone→Firmenbewerbung, 70 Min (Profilabgleich 20, CV/Anschreiben 35, Fragen 10, QA 5)",
+          "deadline": "",
+          "evidence": "„DATUM 15.11.2026 | STANDORT Berlin | PENSUM 40 Stunden/Woche | DAUER 2 Jahre … Sie arbeiten in einem engagierten Team und unterstützen die Projektleitung sowie das fachliche Projektteam bei der strukturierten Organisation und administrativen Begleitung der Geschäftsstelle.“",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 26,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Sachbearbeiter*in Einkauf und Finanzen (m/w/d) – HO möglich, befristet bis 31.07.2028",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207613459-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Sachbearbeiter*in Einkauf und Finanzen (m/w/d) – HO möglich, befristet bis 31.07.2028",
+          "employer": "Leibniz‑Institut für Kristallzüchtung (IKZ)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1207613459-S",
+          "district": "Adlershof (Treptow‑Köpenick)",
+          "hours": "Vollzeit/Teilzeit (Vormittag/Nachmittag)",
+          "contract": "befristet bis 2028‑07‑31",
+          "salary": "Unbekannt",
+          "commute": "ca. 55–65 Min ab Heinersdorf",
+          "pro": "Solider B‑Fit: operativer Einkauf + Finanzschnittstelle; HO möglich.",
+          "con": "Lange Befristung bis 2028; Pendelzeit an die 60 Min.",
+          "effort_details": "BA‑Listing → Institutsbewerbung (normal), 70 Min",
+          "deadline": "",
+          "evidence": "„Beginn ab 01.12.2026 … Homeoffice möglich … Anstellungsart Vollzeit, Teilzeit (Vormittag, Nachmittag) … Das Leibniz‑Institut für Kristallzüchtung (IKZ) … Zur Unterstützung suchen wir eine Sachbearbeiter*in Einkauf und Finanzen (m/w/d).“",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 30,
+            "entry": 23,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 5,
+  "researched_at": "2026-10-30T08:00:47.882164+00:00",
+  "prepared_at": "2026-10-30T08:04:19.203009+00:00",
+  "message_id": "<miki-2026-11-02-7a5f02caf329a0cc@miki-jobsearch>",
+  "last_attempt_at": "2026-10-30T08:00:47.882164+00:00",
+  "last_attempt_run_id": "41023580529",
+  "design_version": "electric-blue-v1"
+}
