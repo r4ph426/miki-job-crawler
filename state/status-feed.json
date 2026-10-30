@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T08:00:45.737519+00:00",
+  "updated_at": "2026-10-30T08:00:46.876285+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -475,13 +475,7 @@
       "provider_check_failed": false
     }
   },
-  "lease": {
-    "actor": "github",
-    "phase": "provider-check",
-    "date": "2026-10-30",
-    "started_at": "2026-10-30T08:00:41.743818+00:00",
-    "expires_at": "2026-10-30T08:40:41.743818+00:00"
-  },
+  "lease": null,
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",
@@ -677,13 +671,13 @@
       "date": "2026-10-30",
       "status": "ready",
       "ready": true,
-      "delivery_status": "scheduled",
+      "delivery_status": "sent",
       "hits": 7,
       "researched_at": "2026-10-29T07:58:05.206535+00:00",
       "delivery_time": "2026-10-30T08:30:00 Europe/Berlin",
-      "checked_at": "2026-10-30T07:30:55.110678+00:00",
+      "checked_at": "2026-10-30T08:00:46.870003+00:00",
       "actor": "github",
-      "last_result": "provider_check_failed"
+      "last_result": "sent"
     }
   },
   "laptop": {
