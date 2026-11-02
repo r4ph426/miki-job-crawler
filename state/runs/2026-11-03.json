@@ -1,7 +1,7 @@
 {
   "date": "2026-11-03",
   "created_at": "2026-11-02T08:00:49.630307+00:00",
-  "status": "scheduling",
+  "status": "scheduled",
   "subject": "Stellen für Miki · 03.11.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 02.11.2026 für den Versand am 03.11.2026. 6 passende Neuzugänge mit klarer Koordinations-/Einkaufs‑/Auftragsbezug gefunden (Schwerpunkt B/C), plus 1 A‑Match; zwei Teilzeitrollen liegen unter 30 Std. und sind als „Kann‑Optionen“ markiert.",
@@ -271,7 +271,7 @@
   },
   "attempts": [
     {
-      "status": "scheduling",
+      "status": "scheduled",
       "started_at": "2026-11-02T08:08:53.592642+00:00"
     }
   ],
@@ -286,5 +286,10 @@
   "email_provider": "brevo",
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
   "expected_recipients": 2,
-  "provider_batch_id": "cf4d4489-cd42-4a34-8671-b4e16e80c370"
+  "provider_batch_id": "cf4d4489-cd42-4a34-8671-b4e16e80c370",
+  "provider_message_id": "<202611020808.88412864144@smtp-relay.mailin.fr>",
+  "provider_message_ids": [
+    "<202611020808.88412864144@smtp-relay.mailin.fr>"
+  ],
+  "schedule_accepted_at": "2026-11-02T08:08:56.881479+00:00"
 }
