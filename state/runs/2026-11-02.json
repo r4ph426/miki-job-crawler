@@ -1,7 +1,7 @@
 {
   "date": "2026-11-02",
   "created_at": "2026-10-30T08:00:47.882164+00:00",
-  "status": "scheduled",
+  "status": "sent",
   "subject": "Stellen für Miki · 02.11.2026 · 5 neue Treffer",
   "report": {
     "summary": "Recherche vom 30.10.2026 für den Versand am 02.11.2026. 6 neue, plausible Treffer mit ≥55 Punkten aus A/B/C, keine Dubletten. Schwerpunkt heute: solide Office-/Assistenzrollen (A) sowie zwei klare Einkauf/SCM-Rollen (B) mit gutem Aufgabenfit. C blieb dünn mit nur einem tragfähigen Inside‑Sales‑Support-Fund. Nächste Schritte unten.",
@@ -298,8 +298,13 @@
     "<202610300804.58370271607@smtp-relay.mailin.fr>"
   ],
   "schedule_accepted_at": "2026-10-30T08:04:25.307950+00:00",
-  "provider_status": "queued",
+  "provider_status": "delivered",
   "schedule_verified_at": "2026-11-02T07:00:43.242031+00:00",
-  "provider_checked_at": "2026-11-02T07:30:43.372824+00:00",
-  "provider_check_error": "Brevo delivery events unavailable"
+  "provider_checked_at": "2026-11-02T08:00:44.533480+00:00",
+  "sent_recipient_count": 2,
+  "delivered_recipient_count": 2,
+  "failed_recipient_count": 0,
+  "delivery_problem": false,
+  "accepted_at": "2026-11-02T07:30:49+00:00",
+  "delivered_at": "2026-11-02T07:30:49+00:00"
 }
