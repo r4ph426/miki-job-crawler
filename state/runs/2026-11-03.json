@@ -1,0 +1,280 @@
+{
+  "date": "2026-11-03",
+  "created_at": "2026-11-02T08:00:49.630307+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 03.11.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 02.11.2026 für den Versand am 03.11.2026. 6 passende Neuzugänge mit klarer Koordinations-/Einkaufs‑/Auftragsbezug gefunden (Schwerpunkt B/C), plus 1 A‑Match; zwei Teilzeitrollen liegen unter 30 Std. und sind als „Kann‑Optionen“ markiert.",
+    "next_action": "Heute bis 12:00 Uhr: COMDOK (Einkauf/Beschaffung) und every (Operations Coordinator) priorisieren und je 1 fokussiertes Anschreiben (Stichworte: Bestellabwicklung/NOOS, Liefertermine, Stammdaten/PLM/SAP; 3PL‑Steuerung, KPI‑Tracking, Eskalationsroutine) vorbereiten; parallel bei TIGRIS telefonisch klären, ob 30 Std. möglich.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Operations Coordinator (f/m/d)",
+        "employer": "Every. GmbH",
+        "url": "https://every.jobs.personio.de/job/2827126?language=en",
+        "district": "Kreuzberg",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 50 Min ÖPNV ab Berlin‑Heinersdorf (konservativ geschätzt)",
+        "pro": "Direkte Steuerung von 3PLs und KPI-basierte Fulfillment-Verantwortung passt zu koordinativer Erfahrung.",
+        "con": "Sehr operatives Tagesgeschäft mit geringerem Produktbezug.",
+        "effort_details": "ATS (Personio): Profil/CV hochladen 10, Pflichtfelder 10, kurze Motivationspunkte 15, CV-Anpassung 15, Endkontrolle 5 = 55 Min.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 33,
+          "entry": 24,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "operational issues, analyse root causes and implement sustainable solutions Support the roll-out of new packaging formats, processes and sites Collaborate closely with Customer Care, Upstream, Quality & Safety, Product and Tech What you bring Fluent German and English (EN company language / DE for daily work w partners) 1–3 years of experience in fulfillment, logistics, supply chain or warehouse operations, ideally working with 3PLs or fulfillment centres A strong sense of ownership,",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:stepstone.de",
+        "Teamassistenz Berlin site:stepstone.de",
+        "Office Management Berlin site:stepstone.de",
+        "Marketingkoordination Berlin site:personio.de"
+      ],
+      "B": [
+        "Einkauf Berlin site:arbeitsagentur.de 7 Tage",
+        "Sachbearbeiter Einkauf Berlin site:stepstone.de",
+        "Supply Chain Coordinator Berlin site:personio.de",
+        "Beschaffung Berlin StepStone COMDOK"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:stepstone.de",
+        "Product Coordinator Berlin site:personio.de / fashionunited.de"
+      ]
+    },
+    "family_observations": {
+      "A": "A‑Treffer kommen heute v. a. über StepStone; mehrere Office‑Management‑Profile mit stabiler Nachfrage, fachlich oft Rückschritt gegenüber Einkauf/SCM.",
+      "B": "Sehr gute Woche: COMDOK (niedrige Schwelle, unbefristet) und CURA (Einkauf+Fuhrpark) neu; mehrere BA‑Treffer und ATS‑Optionen (every) mit klarem Orderflow/KPI‑Fit.",
+      "C": "Breite Koordination verfügbar: Vertriebsinnendienst (BIOTRONIK), Event‑/Logistikkoordination (Butternut) und Visual Merchandising (New Balance). Teilzeitanteil beachten."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche/Detailseiten erreichbar; neue Treffer (z. B. CURA, Stromnetz Berlin)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen und Detailseiten stabil; neue Inserate (COMDOK, TIGRIS, BIOTRONIK)."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio/Greenhouse/Workday erreichbar (every, Butternut, New Balance). EXOLAUNCH Office Coordinator 404 → vermutlich geschlossen."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Portal erreichbar; mehrere aktuelle Vergabe-/Assistenzrollen sichtbar, heute ohne Übernahme in die Shortlist (Profilfit/Vergaberecht)."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited lieferte v. a. Retail‑/Lagerrollen; passender C‑Treffer via New Balance (Workday)."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14927-eqjd07q3sy-S",
+        "reason": "BA-Detailseite enthält keine Aufgaben/Anforderungen; verweist nur auf externen Partnerlink. Pflichthinweise nicht verifizierbar, daher keine belastbare Bewertung möglich."
+      }
+    ],
+    "assessment_pages_checked": 3,
+    "rejected": [
+      {
+        "title": "Logistics Coordinator (m/w/d) - Germany",
+        "url": "https://job-boards.greenhouse.io/butternutbox/jobs/8658337002?gh_src=1eafda9c2us",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Logistics Coordinator (m/w/d) - Germany",
+          "employer": "Butternut Box",
+          "url": "https://job-boards.greenhouse.io/butternutbox/jobs/8658337002?gh_src=1eafda9c2us",
+          "district": "Unbekannt",
+          "hours": "Unbekannt",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "Ohne genaue Adresse; konservativ 46–60 Min ÖPNV ab Berlin‑Heinersdorf angenommen.",
+          "pro": "Klare Verantwortlichkeit für Event‑Logistik, externe Partner und Bestände; Anforderungen auch für Quereinsteiger passend.",
+          "con": "Deutschlandweite Event-Einsätze können Reise- und Abendzeiten erfordern; C2‑Deutsch Pflicht.",
+          "effort_details": "ATS (Greenhouse): Profil/CV hochladen 10, Pflichtfragen (Deutsch C2, Büropräsenztage, Gehaltsangabe, RTW) 20, CV‑Anpassung 15, Endkontrolle 10 = 55 Min.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 31,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "dein Match! 💛 🚀 Dein Aufgabenbereich Event-Logistik & Ablaufplanung: Du planst, koordinierst und überwachst die Event-Logistik für unsere Auftritte in ganz Deutschland. In enger Abstimmung mit dem DS-Team erstellst du zweiwöchige Fahrpläne und stellst sicher, dass vom Aufbau bis zum Debriefing alles reibungslos läuft – auch bei bis zu 10 parallelen Events. Relationship Building: Du baust eine enge, professionelle Beziehung zu unseren Logistik-Partnern auf, damit der Auf- und Abbau vor Ort"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+          "employer": "COMDOK GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+          "district": "Mitte (Büro laut Anzeige), Firmenadresse bei StepStone generisch",
+          "hours": "Vollzeit, alternierende Telearbeit möglich",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 30–40 Min ÖPNV von Heinersdorf (konservativ geschätzt, genaue Büroadresse in Berlin-Mitte nicht genannt)",
+          "pro": "Niedrige Einstiegshürde („Sie müssen noch kein Vergabeprofi sein“), sauberer Einkaufsschnitt.",
+          "con": "Kleiner IT‑Dienstleister; Vergabethemen neu zu erarbeiten.",
+          "effort_details": "StepStone-Außenlink → reguläre Firmenbewerbung (CV+kurzes Anschreiben): 70 Min (Profilcheck 10, Anschreiben 35, CV/Anhang 15, Formular 10)",
+          "deadline": "",
+          "evidence": "„Zur sofortigen Verstärkung unserer Vergabestelle suchen wir in Berlin zur unbefristeten Festanstellung … Sie müssen noch kein Vergabeprofi sein. Wichtig sind uns kaufmännisches Verständnis und Sorgfalt.“",
+          "family": "B",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 32,
+            "entry": 26,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Sachbearbeitung im Vertriebsinnendienst Retoure / externe Geräte (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeitung im Vertriebsinnendienst Retoure / externe Geräte (m/w/d)",
+          "employer": "BIOTRONIK Corporate Services SE",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeitung-im-Vertriebsinnendienst-Retoure-externe-Geraete-m-w-d-Berlin-BIOTRONIK-Corporate-Services-SE--14522733-inline.html",
+          "district": "Neukölln (Unternehmenssitze Sieversufer/Woermannkehre)",
+          "hours": "Vollzeit, Teilzeit möglich",
+          "contract": "Befristet (Festanstellung, befristet)",
+          "salary": "Unbekannt",
+          "commute": "ca. 50–55 Min ÖPNV von Heinersdorf (Neukölln)",
+          "pro": "Klarer Auftrags-/Retouren‑Prozessfokus mit externen Partnern – direkt anschlussfähig.",
+          "con": "Befristung; MedTech‑Spezifika einarbeiten.",
+          "effort_details": "StepStone-Außenlink → Firmenprozess: 70 Min (Profil 10, Anschreiben 35, CV 15, Formular 10)",
+          "deadline": "",
+          "evidence": "„… verantwortlich für die kaufmännische Bearbeitung der Retouren und der Auftragsbearbeitung für die Externen Geräte. Der Schwerpunkt … besteht im Nachhalten der internen Prozessabläufe sowie im Zusammenspiel mit externen Partnern.“",
+          "family": "C",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 28,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Teamassistenz (m/w/d) – Auftragsabwicklung & Büroorganisation (25–30 Std.)",
+        "url": "https://www.stepstone.de/stellenangebote--Teamassistenz-m-w-d-Auftragsabwicklung-Bueroorganisation-Berlin-TIGRIS-Elektronik-GmbH--14694782-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Teamassistenz (m/w/d) – Auftragsabwicklung & Büroorganisation (25–30 Std.)",
+          "employer": "TIGRIS Elektronik GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Teamassistenz-m-w-d-Auftragsabwicklung-Bueroorganisation-Berlin-TIGRIS-Elektronik-GmbH--14694782-inline.html",
+          "district": "„citynaher Süden Berlins“ (konkrete Adresse in Anzeige nicht genannt)",
+          "hours": "Teilzeit 25–30 Std./Woche",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "ca. 45–60 Min ÖPNV (konservativ, Südrandlage)",
+          "pro": "Auftragsabwicklung mit ERP (Sage 100) und Bestellungen – prozessnaher Fit.",
+          "con": "Regel 25–30 Std.; 30‑Std.-Untergrenze vor Bewerbung klären.",
+          "effort_details": "StepStone-Außenlink → Firmenprozess: 70 Min (Profil 10, Anschreiben 30, CV 15, Formular 15)",
+          "deadline": "",
+          "evidence": "„Ob Bestellung, Auftragsbestätigung, Lieferschein oder Rechnung – du erstellst und bearbeitest die entsprechenden Dokumente in unserem ERP‑System Sage 100 … du unterstützt unsere Projektmanager bei der Abwicklung ihrer Projekte.“",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 26,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 5
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Teamassistenz | Office Manager:in (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Teamassistenz-Office-Manager-in-m-w-d-Berlin-PB3C-GmbH--14607040-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Teamassistenz | Office Manager:in (m/w/d)",
+          "employer": "PB3C GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Teamassistenz-Office-Manager-in-m-w-d-Berlin-PB3C-GmbH--14607040-inline.html",
+          "district": "Charlottenburg (Rankestraße 17)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 40–50 Min ÖPNV von Heinersdorf",
+          "pro": "Breites Office‑/Event‑Spektrum; klar strukturierte Aufgaben, unbefristet.",
+          "con": "Wenig direkter Einkaufs-/Lieferkettenanteil (fachlicher Rückschritt).",
+          "effort_details": "StepStone-Außenlink → Firmenprozess: 70 Min (Profil 10, Anschreiben 35, CV 15, Formular 10)",
+          "deadline": "",
+          "evidence": "„Du planst und organisierst interne und externe Veranstaltungen und Messen … Du sorgst für alle Belange rund um unser Office … Du übernimmst Terminkoordinationen sowie Reiseplanung und ‑abrechnung.“",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 20,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Visual Merchandising Coordinator (m/w/d) – Berlin West (20 Std.)",
+        "url": "https://newbalance.wd1.myworkdayjobs.com/en-US/careers-uk/job/Berlin-West-Germany-Retail/Visual-Merchandising-Coordinator--m-w-d----Berlin-West_R40810",
+        "reason": "Supporting quotation not present in accessible detail-page text",
+        "candidate": {
+          "title": "Visual Merchandising Coordinator (m/w/d) – Berlin West (20 Std.)",
+          "employer": "New Balance",
+          "url": "https://newbalance.wd1.myworkdayjobs.com/en-US/careers-uk/job/Berlin-West-Germany-Retail/Visual-Merchandising-Coordinator--m-w-d----Berlin-West_R40810",
+          "district": "Charlottenburg‑Wilmersdorf (Berlin West, Retail)",
+          "hours": "Teilzeit 20 Std./Woche",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "ca. 45–55 Min ÖPNV von Heinersdorf",
+          "pro": "Echte Merchandising‑Koordination im Fashion‑Umfeld; Retail‑Schnittstelle.",
+          "con": "20 Std. deutlich unter Zielumfang; starker Store‑/Wochenendeinsatz.",
+          "effort_details": "Workday (ATS): 55 Min (Profil 10, Fragen 15, Anschreiben 20, Upload 10)",
+          "deadline": "",
+          "evidence": "„Verantwortlich für die Umsetzung visueller Standards, Konzepte und Kampagnen im Geschäft … Sicherstellung einer ansprechenden Präsentation unseres Warensortiments … Mitwirkung bei Promotion‑ und Marketingaktionen im Store.“",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 22,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 4
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-11-02T08:00:49.630307+00:00",
+  "prepared_at": "2026-11-02T08:08:51.664793+00:00",
+  "message_id": "<miki-2026-11-03-348ee5f3fba69162@miki-jobsearch>",
+  "last_attempt_at": "2026-11-02T08:00:49.630307+00:00",
+  "last_attempt_run_id": "41409957167",
+  "design_version": "electric-blue-v1"
+}
