@@ -294,6 +294,6 @@
   "schedule_accepted_at": "2026-11-02T08:08:56.881479+00:00",
   "provider_status": "queued",
   "schedule_verified_at": "2026-11-03T06:45:49.583574+00:00",
-  "provider_checked_at": "2026-11-03T08:00:54.754384+00:00",
+  "provider_checked_at": "2026-11-03T08:05:55.755801+00:00",
   "provider_check_error": "Brevo delivery events unavailable"
 }
