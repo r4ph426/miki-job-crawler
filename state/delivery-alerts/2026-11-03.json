@@ -1,8 +1,10 @@
 {
   "date": "2026-11-03",
   "kind": "delivery_warning",
-  "status": "sending",
+  "status": "sent",
   "checked_at": "2026-11-03T08:05:55.755801+00:00",
   "message_id": "<miki-delivery-2026-11-03@miki-jobsearch>",
-  "started_at": "2026-11-03T08:06:03.876857+00:00"
+  "started_at": "2026-11-03T08:06:03.876857+00:00",
+  "accepted_at": "2026-11-03T08:06:05.612592+00:00",
+  "provider_message_id": "<202611030806.45316646565@smtp-relay.mailin.fr>"
 }
