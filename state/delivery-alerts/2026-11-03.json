@@ -1,7 +1,8 @@
 {
   "date": "2026-11-03",
   "kind": "delivery_warning",
-  "status": "prepared",
+  "status": "sending",
   "checked_at": "2026-11-03T08:05:55.755801+00:00",
-  "message_id": "<miki-delivery-2026-11-03@miki-jobsearch>"
+  "message_id": "<miki-delivery-2026-11-03@miki-jobsearch>",
+  "started_at": "2026-11-03T08:06:03.876857+00:00"
 }
