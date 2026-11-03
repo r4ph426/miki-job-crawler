@@ -1,0 +1,348 @@
+{
+  "date": "2026-11-04",
+  "created_at": "2026-11-03T08:01:15.168222+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 04.11.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 03.11.2026 für den Versand am 04.11.2026. 9 passende, verifizierte Anzeigen gefunden (A/B/C abgedeckt). Quote-Pflicht erfüllt. StepStone erreichbar; eine ältere Anzeige (Prognos) inzwischen 410 Gone. Öffentlicher Dienst-Portal erreichbar, heute ohne passfähigen Neuzugang.",
+    "next_action": "Zuerst ucm und marta (beide mit Gehalt, zentrale Lage) heute anstoßen; anschließend Aktiv‑Schuh (Adlershof, starkes Aufgaben‑Match Einkauf) und Astrofein (klarer Order‑to‑Invoice‑Prozess). Apleona und GFK als zusätzliche A‑Familie in Reserve halten.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - Elternzeitvertretung",
+        "employer": "aap Implantate AG",
+        "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241",
+        "district": "Unbekannt (Berlin)",
+        "hours": "Vollzeit",
+        "contract": "Befristet (12 Monate Elternzeitvertretung)",
+        "salary": "Unbekannt",
+        "commute": "Ohne Adresse konservativ geschätzt ÖPNV 65–70 Min. ab Berlin-Heinersdorf.",
+        "pro": "Kompletter Order-to-Invoice-Prozess mit internationalem Kundenkontakt.",
+        "con": "Befristung und explizite Export-/Zollkenntnisse gefordert.",
+        "effort_details": "ATS (Personio): Profil anlegen, CV hochladen; Pflichtangaben ausfüllen.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 32,
+          "entry": 20,
+          "commute": 5,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "und Export Operative Abwicklung des kompletten „Order-to-Invoice\"-Prozesses (Auftragseingang und Auftragserfassung; Lieferterminabstimmung mit unserer Produktionsstätte bis zur Rechnungserstellung) Erstellung und Pflege von Ausfuhrpapieren Auftragsbetreuung, -verfolgung, Auftrags- und Terminabstimmung mit Kunden Betreuung unserer Kunden im Innendienst mittels ERP-System Rechnungsstellung und Mahnwesen Direkter Kundenkontakt für das In- und Ausland Abwicklung von Exporten in Drittländer",
+        "score": 64,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Teamassistenz Berlin site:arbeitsagentur.de",
+        "Office Management Berlin site:personio.de",
+        "Marketingkoordination Berlin StepStone"
+      ],
+      "B": [
+        "Einkäufer/in Berlin site:arbeitsagentur.de (Sortierung: Datum)",
+        "Operativer Einkauf Berlin site:stepstone.de",
+        "Beschaffung Berlin site:stepstone.de",
+        "Einkauf Berlin site:personio.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:personio.de",
+        "Product Coordinator/Coordinator Berlin site:greenhouse.io / site:lever.co",
+        "Merchandising Koordination Berlin site:fashionjobs.com"
+      ]
+    },
+    "family_observations": {
+      "A": "Heute mehrere belastbare OM/Assistenz‑Rollen via Personio; StepStone‑Eintrag Prognos seit 03.11. früh 410 (abgelaufen).",
+      "B": "Lebensmittel/Food (Vielfaltmenü) und Retail (Aktiv‑Schuh) mit klarem Aufgabenfit; stark technische Einkäufe (Exolaunch etc.) eher zu spezialisiert.",
+      "C": "Order‑/Auftragsabwicklung mit Export (aap, Astrofein) gut verfügbar; beide mit ERP‑/Zollanteil und klaren Prozessbeschreibungen."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Ergebnisse abrufbar; Apleona‑Detail mit vollem Text (10557 Berlin)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Suche lieferte Treffer; spezifische Anzeige Prognos 410 (abgelaufen)."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Mehrere Personio‑Boards (ucm, marta, GFK, Aktiv‑Schuh, Astrofein, Vielfaltmenü) mit vollständigen Inhalten."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal erreichbar; heute keine passgenaue neue Anzeige mit marktgerechten Anforderungen."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited erreichbar; heutige Treffer primär Retail/VM (teils <30h), daher nicht gelistet."
+      }
+    ],
+    "assessment_exclusions": [],
+    "assessment_pages_checked": 9,
+    "rejected": [
+      {
+        "title": "Projektassistenz (w/m/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17628-44513472-1016-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Projektassistenz (w/m/d)",
+          "employer": "Apleona Facility Management GmbH",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/17628-44513472-1016-S",
+          "district": "10557 Berlin (Tiergarten/Moabit)",
+          "hours": "Vollzeit",
+          "contract": "unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 50 Min. ab Berlin-Heinersdorf (Hbf/Tiergarten); genaue Einsatzadresse laut BA 10557.",
+          "pro": "Unbefristet mit Tarifvorteilen, 30 Tage Urlaub und Option auf mobiles Arbeiten.",
+          "con": "Aufgaben stark ticketsystem-/FM-lastig, wenig Produkt-/Sortimentsbezug.",
+          "effort_details": "Unternehmensportal über BA-Link (Apleona JobID 27466); Registrierung, CV-Upload, Formfelder.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 28,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 8
+          },
+          "effort_minutes": 90,
+          "evidence": "Zukunft! Wir - die Apleona Facility Management GmbH - suchen für unseren Standort in Berlin Projektassistenz (w/m/d) - JobID 27466 Das machen Sie bei uns: Bearbeitung des Ticketsystems: Anlage, Pflege und Abschluss von Tickets Überführung von Kundenmeldungen in das Ticketsystem und Sicherstellung der vollständigen Dokumentation Unterstützung im Berichtswesen (z. B. Auswertungen aus dem Ticketsystem, Vorbereitung von regelmäßigen Reports) Auslösen und Verfolgung von Kleinaufträgen in"
+        }
+      },
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+          "employer": "GFK Ingenieure GmbH",
+          "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+          "district": "Charlottenburg (10629)",
+          "hours": "Vollzeit (40 Std./Woche), hybrid",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 55 Min. ab Berlin-Heinersdorf (Charlottenburg/Giesebrechtstr. 20).",
+          "pro": "Breites Assistenz- und Office-Management-Spektrum mit hybrider Arbeit und vielen Benefits.",
+          "con": "Hohe Präsenz im Büro ausdrücklich gefordert.",
+          "effort_details": "ATS (Personio): Profil anlegen, CV hochladen, wenige Fragen, Absenden.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "läuft Vor- und Nachbereiten von Meetings, Reisen und Veranstaltungen Bearbeiten von Rechnungen und Behalten des Überblicks über alle Vorgänge Administrative und koordinative Unterstützung unserer Abteilungen Koordinieren von Dienstleistern, Lieferanten und Partnern und Sicherstellen einer klaren Kommunikation Überwachen von Terminen, Fristen und Aufgaben Verwalten von Bürobedarf und interner Infrastruktur Profil Du hast eine abgeschlossene kaufmännische Ausbildung oder einen vergleichbaren"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+        "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+          "employer": "Trisor GmbH",
+          "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+          "district": "Unbekannt (Berlin HQ)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Ohne genaue Adresse konservativ geschätzt ÖPNV 65–70 Min. ab Berlin-Heinersdorf.",
+          "pro": "Verantwortungsschnittstelle zwischen Office-Management und kaufmännischen Prozessen (Finance).",
+          "con": "Keine Gehaltsangabe; voraussichtlich hohe Office-Präsenz erforderlich.",
+          "effort_details": "ATS (Personio): Profil, CV, Fragen; zügiger Prozess.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 25,
+            "commute": 5,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "und Lust hat, Dinge aktiv voranzubringen: Du koordinierst externe Dienstleister, Bestellungen sowie die allgemeine Büroorganisation und behältst dabei Verträge, Dokumente, Büroausstattung und die Arbeitsumgebung im Blick Du organisierst interne sowie externe Termine und Geschäftsreisen von der Planung bis zur Reisekostenabrechnung Du kümmerst Dich um den Post Ein- und -ausgang sowie um die strukturierte Ablage und Organisation wichtiger Dokumente und Unterlagen Du prüfst und bearbeitest"
+        }
+      },
+      {
+        "title": "Office Manager:in - VZ/TZ",
+        "url": "https://ucm.jobs.personio.de/job/2757520",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager:in - VZ/TZ",
+          "employer": "ucm",
+          "url": "https://ucm.jobs.personio.de/job/2757520",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Voll- oder Teilzeit (20–40 Std./Woche)",
+          "contract": "Festanstellung",
+          "salary": "38.000 - 50.000 € pro Jahr",
+          "commute": "Ohne Adresse konservativ geschätzt ÖPNV 65–70 Min. ab Berlin-Heinersdorf.",
+          "pro": "Transparente Vergütung und flexible Teilzeit-/Vollzeit-Optionen.",
+          "con": "Starker Fokus auf Office/Hospitality-Operative statt Produktkoordination.",
+          "effort_details": "ATS (Personio): Konto/Profil, CV, Basisangaben; zügige Bewerbung.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 24,
+            "commute": 5,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager:in - VZ/TZ | Jobs bei ucm Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager:in - VZ/TZ Berlin Voll- oder Teilzeit Festanstellung 38.000 - 50.000 € pro Jahr Auf diese Stelle bewerben Deine Mission bei ucm: Als Office Manager machst du unser Berliner Office zu einem Ort, an dem Menschen gerne arbeiten und Gäste sich vom ersten Moment an gut aufgehoben fühlen. Gleichzeitig entwickelst du unsere freien Flächen unternehmerisch weiter: Du testest neue"
+        }
+      },
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta",
+          "url": "https://marta.jobs.personio.de/job/2826650?language=de",
+          "district": "Berlin-Mitte",
+          "hours": "Vollzeit, tägliche Präsenz erwartet",
+          "contract": "Festanstellung (unbefristet)",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ÖPNV ca. 40–45 Min. ab Berlin-Heinersdorf (Mitte, genaue Adresse nicht genannt).",
+          "pro": "Klares Gehalt, direkte Zusammenarbeit mit Gründern und definiertem Verantwortungsbereich.",
+          "con": "Sehr präsenzgebundenes Office-Setup; Schwerpunkt Office-Betrieb statt Waren-/Beschaffungsprozesse.",
+          "effort_details": "ATS (Personio): Profil anlegen, CV hochladen; klarer mehrstufiger Prozess nach Bewerbung.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 25,
+            "commute": 15,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+        "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+          "employer": "Aktiv-Schuh Handelsgesellschaft mbH",
+          "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013",
+          "district": "Adlershof (Zentrale)",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 60 Min. ab Berlin-Heinersdorf (Adlershof).",
+          "pro": "Direkter Einkauf/Bestellmanagement im Fashion-/Schuhhandel, starke inhaltliche Passung.",
+          "con": "Keine Gehaltsangabe; ERP-Spezifik (Dynamics NAV) nur vorteilhaft, nicht Pflicht.",
+          "effort_details": "ATS (Personio): Konto/Profil, CV, wenige Angaben; abschicken.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 36,
+            "entry": 27,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Liefertermine & Retouren: Du behältst Liefertermine und Retouren im Blick, prüfst offene Vorgänge und kümmerst dich um die entsprechende Nachverfolgung. Schnittstelle zu unseren Filialen: Du bist Ansprechpartner für unsere Filialen und unsere Logistik bei allen Fragen rund um den Einkauf. Einkaufsvorbereitung: Du wertest relevante Daten aus und bereitest die Einkaufstermine für unsere Einkäufer vor. Das bringst du mit Du hast eine abgeschlossene kaufmännische Ausbildung und"
+        }
+      },
+      {
+        "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+        "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Einkäufer (m/w/d) in Berlin gesucht!",
+          "employer": "Vielfaltmenü GmbH",
+          "url": "https://vielfaltmenue.jobs.personio.de/job/1712573",
+          "district": "Tempelhof (Oberlandstraße 13-14)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 60 Min. ab Berlin-Heinersdorf (Tempelhof).",
+          "pro": "Gestaltungsspielraum im Einkauf mit Option auf mobiles Arbeiten und Weiterbildung.",
+          "con": "Branchenerfahrung in Gastronomie/Lebensmittelhandel ideal gefordert.",
+          "effort_details": "ATS (Personio): Profil, CV-Upload, Pflichtfelder; abschließen.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 32,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Einkäufer (m/w/d) in Berlin gesucht! | Jobs bei Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Einkäufer (m/w/d) in Berlin gesucht! Berlin (Zentrale) Vollzeit Festanstellung Auf diese Stelle bewerben Geschäftsbereich / Standort: Oberlandstraße 13-14 12099 Berlin Ihr neuer Traumjob: Zur Verstärkung unseres Teams suchen wir eine/n Einkäufer (m/w/d), der mit Leidenschaft und Präzision unsere Einkaufsprozesse optimiert und unsere hohen Standards wahrt. Bio, Saisonalität,"
+        }
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+        "url": "https://astrofein.jobs.personio.de/job/2722080",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+          "employer": "Astro- und Feinwerktechnik Adlershof GmbH",
+          "url": "https://astrofein.jobs.personio.de/job/2722080",
+          "district": "Adlershof (Albert-Einstein-Straße 12)",
+          "hours": "Voll- oder Teilzeit, Remote-Option",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 60 Min. ab Berlin-Heinersdorf (Adlershof).",
+          "pro": "ERP-basierte Auftragsabwicklung inkl. Export und enge bereichsübergreifende Zusammenarbeit; TZ möglich.",
+          "con": "Technisches/raumfahrtbezogenes Umfeld mit Exportkontrollthemen.",
+          "effort_details": "ATS (Personio): Profil anlegen, CV hochladen; kurze Fragen.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 34,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Mitarbeiter Vertriebsinnendienst (m/w/d) | Jobs bei Astro- und Feinwerktechnik Adlershof GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Mitarbeiter Vertriebsinnendienst (m/w/d) Berlin - HQ, Remote Voll- oder Teilzeit Festanstellung Auf diese Stelle bewerben Deutsch Ihre Aufgaben Betreuung des gesamten Auftragsdurchlaufs im ERP-System – von der Angebotserstellung über die Auftragsbestätigung bis zum Versand Erstellung und Nachverfolgung von Aufträgen (Follow-ups) sowie"
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-11-03T08:01:15.168222+00:00",
+  "prepared_at": "2026-11-03T08:04:41.635489+00:00",
+  "message_id": "<miki-2026-11-04-b0f76491f59cb75f@miki-jobsearch>",
+  "last_attempt_at": "2026-11-03T08:01:15.168222+00:00",
+  "last_attempt_run_id": "41600120066",
+  "design_version": "electric-blue-v1"
+}
