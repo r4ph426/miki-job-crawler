@@ -35,7 +35,7 @@ does not confirm send acceptance. `delivered_at` requires delivery events for ev
 and indicates receiving-server acceptance, not human reading or inbox placement.
 Queued/unclear jobs remain reserved against repetition in later reports.
 
-Warnings start at 08:40. Missing acknowledgement identifiers never authorize another
+Delivery warnings start no earlier than 11:00 Europe/Berlin, after a fresh provider check. Missing acknowledgement identifiers never authorize another
 POST. A saved batch ID permits read-only queue lookup. After the scheduled time,
 the service can recover missing message IDs only when it finds one unique sent
 message for each recipient with the exact subject and saved HTML, followed by

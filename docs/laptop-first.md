@@ -17,7 +17,7 @@ All times use Europe/Berlin, including daylight-saving changes.
   GitHub or laptop execution is required. Allow up to five minutes provider delay;
   inbox arrival is a separate step.
 - From 08:37: the GitHub backup polls send/delivery events for the exact message and all
-  configured recipients. From 08:40, unconfirmed acceptance triggers one operator warning per
+  configured recipients. From 11:00 Europe/Berlin, unconfirmed delivery triggers one operator warning per
   day, stored separately from the readiness warning. It never sends the jobs again.
 - Independent cloud checks are enabled on the private status Site at 16:00
   Sunday–Thursday and 08:40 Monday–Friday. They inspect fresh remote records of

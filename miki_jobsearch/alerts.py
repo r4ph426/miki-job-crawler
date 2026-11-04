@@ -8,6 +8,8 @@ from .scheduled_mail import ProviderStatusError
 from .service import (BERLIN, DeliveryFailure, MailConfigurationError, StateSyncError, TERMINAL,
                       atomic_json, git_persister, mail_settings, read_json, send_mail)
 
+DELIVERY_WARNING_TIME = (11, 0)  # Europe/Berlin, independent of DST.
+
 STATUS_URL = 'https://miki-crawler-status.raphael-regli.chatgpt.site'
 WORKFLOW_URL = 'https://github.com/r4ph426/miki-job-crawler/actions/workflows/daily.yml'
 
@@ -48,7 +50,7 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
     if checked['ready']:
         return dict(checked, status=quiet_status)
     local = now.astimezone(BERLIN)
-    if kind == 'delivery' and (local.hour, local.minute) < (8, 40):
+    if kind == 'delivery' and (local.hour, local.minute) < DELIVERY_WARNING_TIME:
         return dict(checked, status='awaiting_provider_confirmation')
     path = store / ('delivery-alerts' if kind == 'delivery' else 'alerts') / f'{day}.json'
     existing = read_json(path, {})
@@ -76,13 +78,13 @@ def _check_warning(root, day, kind, now=None, sender=send_mail):
         message['Message-ID'] = record['message_id']
         if kind == 'delivery':
             message['Subject'] = f'Miki: Zustellung für {day} braucht Aufmerksamkeit'
-            text = (f'Für die Stellenmail vom {day} ist ab 08:40 Uhr Berliner Zeit kein vollständiger '
+            text = (f'Für die Stellenmail vom {day} ist ab 11:00 Uhr Berliner Zeit keine vollständige '
                     'Zustellung an alle Empfänger bestätigt. Der Versandstatus fehlt, ist fehlgeschlagen '
                     'oder noch unklar.\n\nBitte Status und GitHub-Läufe prüfen. Bei sending, uncertain oder '
                     'partial zuerst den Anbieterstatus abgleichen; nicht blind erneut senden.\n\n'
                     f'Status: {STATUS_URL}\nWorkflow: {WORKFLOW_URL}\n')
-            html = (f'<p>Der Versand der Stellenmail vom <strong>{day}</strong> ist ab 08:40 Uhr '
-                    'Berliner Zeit noch nicht vollständig bestätigt.</p><p>Bitte Status und GitHub-Läufe '
+            html = (f'<p>Die Zustellung der Stellenmail vom <strong>{day}</strong> konnte bis 11:00 Uhr '
+                    'Berliner Zeit noch nicht vollständig bestätigt werden.</p><p>Bitte Status und GitHub-Läufe '
                     'prüfen. Bei unklarem oder teilweisem Versand zuerst den Anbieterstatus abgleichen.</p>')
         else:
             message['Subject'] = f'Miki: Bericht für {day} noch nicht bereit'

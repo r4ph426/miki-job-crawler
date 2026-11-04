@@ -173,11 +173,11 @@ def main():
             break
         time.sleep(RETRY_SECONDS)
     # Warn only after attempting repair, once per report/day. No alerts for healthy state.
-    from .alerts import check_delivery, check_readiness
+    from .alerts import DELIVERY_WARNING_TIME, check_delivery, check_readiness
     now = utcnow()
     local = now.astimezone(BERLIN)
     for result in results:
-        if result["date"] == local.date().isoformat() and (local.hour, local.minute) >= (8, 45):
+        if result["date"] == local.date().isoformat() and (local.hour, local.minute) >= DELIVERY_WARNING_TIME:
             check_delivery(root, result["date"], now=now)
         elif local.hour >= 22:
             check_readiness(root, result["date"], now=now)

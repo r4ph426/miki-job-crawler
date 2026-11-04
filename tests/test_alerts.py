@@ -103,6 +103,37 @@ class AlertTests(unittest.TestCase):
             result = check_delivery(self.root, self.day, now=self.now, sender=Mock(return_value={'status':'sent'}))
         self.assertEqual(result['status'], 'warning_sent')
 
+    def test_no_delivery_warning_before_1100_in_summer_or_winter(self):
+        for stamp in ('2026-10-08T10:59:59+02:00', '2026-11-04T10:59:59+01:00'):
+            with self.subTest(stamp=stamp):
+                sender=Mock()
+                result=check_delivery(self.root,self.day,now=datetime.fromisoformat(stamp),sender=sender)
+                self.assertEqual(result['status'],'awaiting_provider_confirmation')
+                sender.assert_not_called()
+        self.assertFalse((self.root/'state/delivery-alerts'/f'{self.day}.json').exists())
+
+    def test_unconfirmed_delivery_warns_once_from_1100(self):
+        now=datetime.fromisoformat('2026-10-08T11:00:00+02:00')
+        sender=Mock(return_value={'status':'sent'})
+        self.assertEqual(check_delivery(self.root,self.day,now=now,sender=sender)['status'],'warning_sent')
+        self.assertIn('11:00 Uhr', sender.call_args.args[0].get_body(preferencelist=('plain',)).get_content())
+        self.assertEqual(check_delivery(self.root,self.day,now=now,sender=sender)['status'],'already_alerted')
+        sender.assert_called_once()
+
+    def test_fresh_provider_delivery_at_1100_suppresses_warning(self):
+        atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':'scheduled',
+            'scheduled_at':self.day+'T06:30:00Z','recipient_set_id':'test'})
+        def confirmed(*args,**kwargs):
+            atomic_json(self.root/'state/runs'/f'{self.day}.json',{'date':self.day,'status':'sent',
+                'accepted_at':self.now.isoformat(),'delivered_at':self.now.isoformat(),
+                'recipient_set_id':'test','expected_recipients':2,'delivered_recipient_count':2})
+            return {'status':'sent'}
+        sender=Mock()
+        with patch('miki_jobsearch.alerts.check_provider',side_effect=confirmed) as provider:
+            result=check_delivery(self.root,self.day,now=self.now,sender=sender)
+        self.assertEqual(result['status'],'delivered')
+        provider.assert_called_once();sender.assert_not_called()
+
     def test_provider_poll_before_0840_does_not_send_warning(self):
         sender=Mock()
         result=check_delivery(self.root,self.day,now=datetime.fromisoformat('2026-10-08T08:37:00+02:00'),sender=sender)

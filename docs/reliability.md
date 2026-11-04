@@ -110,7 +110,7 @@ status feed. Active repairs suppress new dispatches. Thus a persistent unresolve
 provider acknowledgement cannot recreate the five-minute GitHub failure-mail loop.
 
 Repair is attempted before notifying. Warn once after 22:00 if the next report is
-still not ready, or from 08:45 if today's recipient delivery is still unconfirmed.
+still not ready, or from 11:00 Europe/Berlin if today's recipient delivery is still unconfirmed after a fresh provider check. The first scheduled wakeup at or after 11:00 may send the warning; polling and recovery continue earlier.
 Warnings go only to `MAIL_ALERT_TO`; successful routine wakeups stay quiet. The
 public feed includes recovery counts and delivery-problem flags, not secrets.
 

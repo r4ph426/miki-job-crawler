@@ -21,7 +21,7 @@ def write_feed(root, store):
     payload = {"updated_at": datetime.now(timezone.utc).isoformat(), "timezone": "Europe/Berlin",
                "schedule": {"mode": "brevo_scheduled", "prepare": "09:00", "prepare_retry": "13:00",
                             "check": "after recovery", "send": "08:30", "provider_poll": "08:37",
-                            "delivery_check": "08:45", "prepare_days": "daily; next weekday within 72h",
+                            "delivery_check": "11:00", "prepare_days": "daily; next weekday within 72h",
                             "recovery": "every 30 minutes; morning every 20 minutes",
                             "send_days": "Monday–Friday"},
                "records": records,
