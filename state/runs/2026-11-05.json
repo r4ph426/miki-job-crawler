@@ -1,7 +1,7 @@
 {
   "date": "2026-11-05",
   "created_at": "2026-11-04T08:00:58.876077+00:00",
-  "status": "prepared",
+  "status": "scheduling",
   "subject": "Stellen für Miki · 05.11.2026 · 0 neue Treffer",
   "report": {
     "summary": "Recherche vom 04.11.2026 für den Versand am 05.11.2026. Kein neuer, ausreichend passender (≥55) Treffer am 2026-11-04: Alle heute verifizierten Anzeigen in Berlin/Brandenburg waren entweder bereits gemeldet (Dublette), klar fachfremd/überqualifiziert (Technik/Bau/IT-only), verlangten >3 Jahre Spezialerfahrung außerhalb des Profils oder boten keine verifizierbaren Detailseiten (StepStone-Listen ohne belastbaren Volltext, BA-Ergebnisliste ohne geeignete Detailtreffer).",
@@ -65,12 +65,22 @@
     ],
     "rejected": []
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "status": "scheduling",
+      "started_at": "2026-11-04T08:01:46.663245+00:00"
+    }
+  ],
   "hits": 0,
   "researched_at": "2026-11-04T08:00:58.876077+00:00",
   "prepared_at": "2026-11-04T08:01:44.396590+00:00",
   "message_id": "<miki-2026-11-05-1500cf243ff36a30@miki-jobsearch>",
   "last_attempt_at": "2026-11-04T08:00:58.876077+00:00",
   "last_attempt_run_id": "41796219733",
-  "design_version": "electric-blue-v1"
+  "design_version": "electric-blue-v1",
+  "scheduled_at": "2026-11-05T07:30:00Z",
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_batch_id": "da151f0c-a188-403f-b7ce-ff66db580e8c"
 }
