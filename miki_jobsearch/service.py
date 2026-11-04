@@ -9,6 +9,7 @@ import re
 import smtplib
 import subprocess
 import tempfile
+import time
 import urllib.error
 import urllib.request
 from contextlib import contextmanager
@@ -331,8 +332,25 @@ def git_persister(root, store):
         if diff.returncode == 1:
             if command("commit", "--only", "-m", f"Record Miki run {record['date']}: {record['status']}", "--", "state").returncode:
                 raise StateSyncError("Could not commit delivery state")
-        if command("push", "origin", f"HEAD:refs/heads/{branch}").returncode:
-            raise StateSyncError("Could not push delivery state; delivery must not be retried blindly")
+        local = command('rev-parse', 'HEAD')
+        if local.returncode:
+            raise StateSyncError('Could not identify delivery checkpoint')
+        local_sha = local.stdout.strip()
+        for attempt in range(3):
+            if command('push', 'origin', f'HEAD:refs/heads/{branch}').returncode == 0:
+                return
+            # A lost acknowledgement may still have committed this exact marker.
+            remote = command('ls-remote', 'origin', f'refs/heads/{branch}')
+            remote_sha = remote.stdout.split()[0] if remote.returncode == 0 and remote.stdout.split() else ''
+            if remote_sha == local_sha:
+                return
+            # Retry only this identical immutable commit; never merge competing
+            # state, overwrite another lease, or repeat the provider operation.
+            if not remote_sha or command('merge-base', '--is-ancestor', remote_sha, local_sha).returncode:
+                break
+            if attempt < 2:
+                time.sleep(2 ** attempt)
+        raise StateSyncError('Could not push delivery state; delivery must not be retried blindly')
     return persist
 
 

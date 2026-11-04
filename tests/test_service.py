@@ -592,6 +592,31 @@ class DeliveryTests(unittest.TestCase):
 
 
 class GitPersistenceTests(unittest.TestCase):
+    def test_checkpoint_retry_confirms_exact_commit_and_never_overwrites_competing_state(self):
+        for remote_kind, failures, expected_pushes, succeeds in (
+                ('ancestor', 1, 2, True), ('exact', 9, 1, True),
+                ('competing', 9, 1, False), ('missing', 9, 1, False), ('ancestor', 9, 3, False)):
+            with self.subTest(remote_kind=remote_kind), tempfile.TemporaryDirectory() as temp:
+                root=Path(temp);pushes=[]
+                def command(args, **kwargs):
+                    action=args[1]
+                    if action=='push':
+                        pushes.append(args)
+                        return subprocess.CompletedProcess(args, 1 if len(pushes)<=failures else 0, '', '')
+                    if action=='rev-parse':return subprocess.CompletedProcess(args,0,'local-sha\n','')
+                    if action=='ls-remote':
+                        value='local-sha' if remote_kind=='exact' else 'remote-sha'
+                        return subprocess.CompletedProcess(args,1 if remote_kind=='missing' else 0,value+' refs/heads/main\n','')
+                    if action=='merge-base':return subprocess.CompletedProcess(args,1 if remote_kind=='competing' else 0,'','')
+                    return subprocess.CompletedProcess(args,0,'','')
+                with patch.dict(os.environ,{'STATE_BRANCH':'main'}), patch('miki_jobsearch.service.subprocess.run',side_effect=command), patch('miki_jobsearch.service.time.sleep'):
+                    persist=git_persister(root,root/'state')
+                    if succeeds:persist({'date':'2026-11-04','status':'prepared'})
+                    else:
+                        with self.assertRaises(StateSyncError):persist({'date':'2026-11-04','status':'prepared'})
+                self.assertEqual(len(pushes),expected_pushes)
+                self.assertTrue(all('--force' not in args for args in pushes))
+
     def test_fresh_clone_preserves_delivery_guard_and_history(self):
         with tempfile.TemporaryDirectory() as temp:
             base = Path(temp)
