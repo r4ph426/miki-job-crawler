@@ -2098,5 +2098,47 @@
     "verification": "Live detail page and supporting quotation checked",
     "date": "2026-11-03",
     "delivery_status": "sent"
+  },
+  {
+    "title": "Exportsachbearbeiter – Vertriebsinnendienst – national/international (m/w/d) - Elternzeitvertretung",
+    "employer": "aap Implantate AG",
+    "url": "https://aap-implantate-ag.jobs.personio.de/job/2576241",
+    "district": "Unbekannt (Berlin)",
+    "hours": "Vollzeit",
+    "contract": "Befristet (12 Monate Elternzeitvertretung)",
+    "salary": "Unbekannt",
+    "commute": "Ohne Adresse konservativ geschätzt ÖPNV 65–70 Min. ab Berlin-Heinersdorf.",
+    "pro": "Kompletter Order-to-Invoice-Prozess mit internationalem Kundenkontakt.",
+    "con": "Befristung und explizite Export-/Zollkenntnisse gefordert.",
+    "effort_details": "ATS (Personio): Profil anlegen, CV hochladen; Pflichtangaben ausfüllen.",
+    "deadline": "",
+    "family": "C",
+    "source_group": "ats",
+    "scores": {
+      "skill": 32,
+      "entry": 20,
+      "commute": 5,
+      "conditions": 7
+    },
+    "effort_minutes": 55,
+    "evidence": "und Export Operative Abwicklung des kompletten „Order-to-Invoice\"-Prozesses (Auftragseingang und Auftragserfassung; Lieferterminabstimmung mit unserer Produktionsstätte bis zur Rechnungserstellung) Erstellung und Pflege von Ausfuhrpapieren Auftragsbetreuung, -verfolgung, Auftrags- und Terminabstimmung mit Kunden Betreuung unserer Kunden im Innendienst mittels ERP-System Rechnungsstellung und Mahnwesen Direkter Kundenkontakt für das In- und Ausland Abwicklung von Exporten in Drittländer",
+    "score": 64,
+    "verification": "Live detail page and supporting quotation checked",
+    "salary_estimate": {
+      "annual_min_eur": 32000,
+      "annual_max_eur": 46000,
+      "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+      "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+      "benchmark_region": "Berlin",
+      "source_name": "StepStone",
+      "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+      "source_checked_on": "2026-10-06",
+      "reference_annual_min_eur": 32500,
+      "reference_annual_max_eur": 45800,
+      "reference_weekly_hours": 40,
+      "method_version": "berlin-market-v1"
+    },
+    "date": "2026-11-04",
+    "delivery_status": "sent"
   }
 ]

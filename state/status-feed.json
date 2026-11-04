@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T08:30:43.221007+00:00",
+  "updated_at": "2026-11-04T08:30:52.287837+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -522,26 +522,26 @@
     },
     "2026-11-04": {
       "date": "2026-11-04",
-      "status": "scheduled",
+      "status": "sent",
       "hits": 1,
       "researched_at": "2026-11-03T08:01:15.168222+00:00",
       "prepared_at": "2026-11-03T08:04:41.635489+00:00",
       "created_at": "2026-11-03T08:01:15.168222+00:00",
-      "accepted_at": null,
+      "accepted_at": "2026-11-04T07:56:25+00:00",
       "scheduled_at": "2026-11-04T07:30:00Z",
       "schedule_accepted_at": "2026-11-03T08:04:47.752907+00:00",
       "schedule_verified_at": "2026-11-04T06:15:43.670163+00:00",
-      "provider_status": "queued",
-      "provider_checked_at": "2026-11-04T08:02:58.717906+00:00",
+      "provider_status": "delivered",
+      "provider_checked_at": "2026-11-04T08:30:43.215419+00:00",
       "expected_recipients": 2,
-      "sent_recipient_count": null,
-      "delivered_recipient_count": null,
-      "delivered_at": null,
-      "failed_recipient_count": null,
-      "delivery_problem": null,
+      "sent_recipient_count": 2,
+      "delivered_recipient_count": 2,
+      "delivered_at": "2026-11-04T07:56:25+00:00",
+      "failed_recipient_count": 0,
+      "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
-      "provider_check_failed": true
+      "provider_check_failed": false
     },
     "2026-11-05": {
       "date": "2026-11-05",
