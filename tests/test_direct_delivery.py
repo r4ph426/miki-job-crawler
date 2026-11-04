@@ -102,3 +102,21 @@ class DirectDeliveryTests(unittest.TestCase):
                 switch(self.root,DAY,BATCH,now=self.now-timedelta(days=1),persist=Mock(side_effect=[None]*(at-1)+[StateSyncError('no push')]),
                        canceller=cancel,getter=lambda *a:{'status':'queued','scheduledAt':DAY+'T07:30:00Z'})
             self.assertEqual(cancel.call_count,0 if at==1 else 1)
+
+    def test_explicit_message_cancel_after_batch_404_requires_fresh_queue_and_204(self):
+        for state, code in [('queued',204),('queued',404),('processed',204)]:
+            self.queued()
+            self.record['delivery_switch']={'status':'cancellation_unconfirmed','batch_id':BATCH}
+            atomic_json(self.path,self.record)
+            cancel=Mock(return_value=code)
+            with patch.dict('os.environ',ENV,clear=True):
+                kwargs=dict(now=self.now-timedelta(days=1),persist=Mock(),canceller=cancel,
+                            getter=lambda *a:{'status':state,'scheduledAt':DAY+'T07:30:00Z'},cancel_message=True)
+                if state=='queued' and code==204:
+                    switch(self.root,DAY,BATCH,**kwargs)
+                    self.assertEqual(read_json(self.path,{})['status'],'prepared')
+                else:
+                    with self.assertRaises(ProviderStatusError): switch(self.root,DAY,BATCH,**kwargs)
+                    self.assertEqual(read_json(self.path,{})['status'],'scheduled')
+            if state=='queued': cancel.assert_called_once_with('<old@smtp-relay.mailin.fr>',ENV)
+            else: cancel.assert_not_called()

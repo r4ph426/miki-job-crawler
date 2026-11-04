@@ -9,11 +9,11 @@ from pathlib import Path
 
 from .hybrid import claim, complete
 from .repair_schedule import cancel
-from .scheduled_mail import ProviderStatusError, queue_status, recipient_identity, send_time
+from .scheduled_mail import ProviderStatusError, message_identifiers, queue_status, recipient_identity, send_time
 from .service import StateSyncError, atomic_json, git_persister, mail_settings, read_json
 
 
-def switch(root, day, expected_batch, now=None, persist=None, canceller=cancel, getter=None):
+def switch(root, day, expected_batch, now=None, persist=None, canceller=cancel, getter=None, cancel_message=False):
     now = now or datetime.now(timezone.utc)
     if uuid.UUID(expected_batch).version != 4 or send_time(day) - now <= timedelta(minutes=5):
         raise ValueError('Switch requires exact UUIDv4 and a future send more than five minutes away')
@@ -21,23 +21,35 @@ def switch(root, day, expected_batch, now=None, persist=None, canceller=cancel, 
     record = read_json(path, {})
     settings = mail_settings()
     if (record.get('date') != day or record.get('status') != 'scheduled'
-            or record.get('provider_batch_id') != expected_batch or record.get('delivery_switch')
+            or record.get('provider_batch_id') != expected_batch
             or record.get('accepted_at') or record.get('delivered_at') or record.get('fixture')
             or record.get('sent_recipient_count', 0) or record.get('delivered_recipient_count', 0)
             or not record.get('report') or not path.with_suffix('.html').exists()
             or record.get('recipient_set_id') != recipient_identity(settings)
             or settings['EMAIL_PROVIDER'] != 'brevo'):
         raise ValueError('Exact unsent queue, recipients and saved report must match; otherwise stop')
+    previous = record.get('delivery_switch')
+    identifiers = message_identifiers(record)
+    if cancel_message:
+        if (not previous or previous.get('status') != 'cancellation_unconfirmed'
+                or previous.get('batch_id') != expected_batch or len(identifiers) != 1):
+            raise ValueError('Message cancellation requires one exact message and an unresolved batch cancellation')
+        identifier = identifiers[0]
+    else:
+        if previous:
+            raise ValueError('Existing switch intent requires explicit inspection; cancellation blocked')
+        identifier = expected_batch
     state = queue_status(record, settings, **({'getter': getter} if getter else {}))
     if state != 'queued':
         raise ProviderStatusError('Queue is already processing or unconfirmed; direct release blocked')
     save = persist or git_persister(root, root / 'state')
     original = copy.deepcopy(record)
     record['delivery_switch'] = {'status': 'cancellation_requested', 'batch_id': expected_batch,
-                                'requested_at': now.isoformat()}
+                                'requested_at': now.isoformat(), 'identifier': identifier,
+                                'previous_attempt': copy.deepcopy(previous)}
     atomic_json(path, record); save(record)
     try:
-        if canceller(expected_batch, settings) != 204:
+        if canceller(identifier, settings) != 204:
             raise ProviderStatusError('Cancellation unconfirmed; direct release blocked')
     except ProviderStatusError:
         record['delivery_switch']['status'] = 'cancellation_unconfirmed'
@@ -63,6 +75,7 @@ def switch(root, day, expected_batch, now=None, persist=None, canceller=cancel, 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('day'); parser.add_argument('expected_batch')
+    parser.add_argument('--cancel-message', action='store_true')
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     os.environ['STATE_BRANCH'] = 'main'
@@ -77,7 +90,7 @@ def main():
             raise StateSyncError('Switch lease expired; stop')
         save(record)
     try:
-        result = switch(root, args.day, args.expected_batch, now=now, persist=persist)
+        result = switch(root, args.day, args.expected_batch, now=now, persist=persist, cancel_message=args.cancel_message)
     except StateSyncError:
         raise
     except (ValueError, ProviderStatusError):

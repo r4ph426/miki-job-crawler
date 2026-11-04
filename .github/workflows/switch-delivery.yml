@@ -10,6 +10,10 @@ on:
         description: "Exact existing batch UUID; requires HTTP 204 cancellation"
         required: true
         type: string
+      cancel_message:
+        description: "Use one exact message after an inspected unconfirmed batch cancellation"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -31,6 +35,7 @@ jobs:
       - name: Cancel exact future queue and preserve report for direct release
         env:
           SWITCH_DAY: ${{ inputs.day }}
+          CANCEL_MESSAGE: ${{ inputs.cancel_message }}
           EXPECTED_BATCH: ${{ inputs.expected_batch }}
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           EMAIL_PROVIDER: brevo
@@ -41,4 +46,6 @@ jobs:
           set -euo pipefail
           git config user.name "miki-jobsearch-bot"
           git config user.email "miki-jobsearch-bot@users.noreply.github.com"
-          python3 -m miki_jobsearch.switch_delivery "$SWITCH_DAY" "$EXPECTED_BATCH"
+          extra=()
+          if [[ "$CANCEL_MESSAGE" == "true" ]]; then extra+=(--cancel-message); fi
+          python3 -m miki_jobsearch.switch_delivery "$SWITCH_DAY" "$EXPECTED_BATCH" "${extra[@]}"
