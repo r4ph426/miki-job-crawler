@@ -202,7 +202,7 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     os.environ["STATE_BRANCH"] = "main"
-    prewarm_release(root)
+    prewarm_release(root, clock=utcnow)
     for attempt in range(args.attempts):
         results = supervise(root)
         print(json.dumps({"attempt": attempt + 1, "results": results}), flush=True)

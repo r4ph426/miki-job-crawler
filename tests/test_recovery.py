@@ -24,6 +24,9 @@ class RecoveryTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         self.path = self.root / "state/runs" / f"{DAY}.json"
+        # CLI tests isolate the unattended wait/Git refresh from the real checkout.
+        self.prewarm_patch = patch('miki_jobsearch.recovery.prewarm_release', return_value=False)
+        self.prewarm_patch.start(); self.addCleanup(self.prewarm_patch.stop)
         self.now = datetime.fromisoformat("2026-10-19T07:00:00+02:00")
 
     def saved(self, status="prepared"):
