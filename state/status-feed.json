@@ -1,14 +1,15 @@
 {
-  "updated_at": "2026-11-04T09:10:40.766455+00:00",
+  "updated_at": "2026-11-04T10:10:54.557828+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
-    "mode": "brevo_scheduled",
+    "mode": "prepared_immediate",
     "prepare": "09:00",
     "prepare_retry": "13:00",
     "check": "after recovery",
     "send": "08:30",
+    "runner_prewarm": "08:00–08:30",
     "provider_poll": "08:37",
-    "delivery_check": "08:45",
+    "delivery_check": "11:00",
     "prepare_days": "daily; next weekday within 72h",
     "recovery": "every 30 minutes; morning every 20 minutes",
     "send_days": "Monday–Friday"
@@ -35,6 +36,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-05T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-06": {
@@ -58,6 +60,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-06T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-07": {
@@ -81,6 +84,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-07T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-08": {
@@ -104,6 +108,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-08T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-09": {
@@ -127,6 +132,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-09T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-12": {
@@ -150,6 +156,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-12T08:30:00+02:00",
       "provider_check_failed": true
     },
     "2026-10-13": {
@@ -173,6 +180,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-13T08:30:00+02:00",
       "provider_check_failed": true
     },
     "2026-10-14": {
@@ -196,6 +204,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-14T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-15": {
@@ -219,6 +228,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-15T08:30:00+02:00",
       "provider_check_failed": true
     },
     "2026-10-16": {
@@ -242,6 +252,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-16T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-19": {
@@ -265,6 +276,7 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-19T08:30:00+02:00",
       "provider_check_failed": true
     },
     "2026-10-20": {
@@ -288,6 +300,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-20T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-21": {
@@ -311,6 +324,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-21T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-22": {
@@ -334,6 +348,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-22T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-23": {
@@ -357,6 +372,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-23T08:30:00+02:00",
       "provider_check_failed": false
     },
     "2026-10-26": {
@@ -380,6 +396,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-26T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-10-27": {
@@ -403,6 +420,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-27T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-10-28": {
@@ -426,6 +444,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-28T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-10-29": {
@@ -449,6 +468,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-29T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-10-30": {
@@ -472,6 +492,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-10-30T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-11-02": {
@@ -495,6 +516,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-11-02T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-11-03": {
@@ -518,6 +540,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-11-03T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-11-04": {
@@ -541,6 +564,7 @@
       "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-11-04T08:30:00+01:00",
       "provider_check_failed": false
     },
     "2026-11-05": {
@@ -564,15 +588,16 @@
       "delivery_problem": null,
       "has_report": true,
       "has_mail": true,
+      "planned_delivery_at": "2026-11-05T08:30:00+01:00",
       "provider_check_failed": false
     }
   },
   "lease": {
-    "actor": "github",
-    "phase": "provider-check",
+    "actor": "manual",
+    "phase": "switch-delivery",
     "date": "2026-11-05",
-    "started_at": "2026-11-04T09:10:38.748508+00:00",
-    "expires_at": "2026-11-04T09:50:38.748508+00:00"
+    "started_at": "2026-11-04T10:10:54.551261+00:00",
+    "expires_at": "2026-11-04T10:50:54.551261+00:00"
   },
   "confirmations": {
     "2026-10-08": {
