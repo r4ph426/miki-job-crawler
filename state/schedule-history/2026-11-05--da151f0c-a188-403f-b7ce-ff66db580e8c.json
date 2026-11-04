@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-05",
+  "created_at": "2026-11-04T08:00:58.876077+00:00",
+  "status": "scheduled",
+  "subject": "Stellen für Miki · 05.11.2026 · 0 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 04.11.2026 für den Versand am 05.11.2026. Kein neuer, ausreichend passender (≥55) Treffer am 2026-11-04: Alle heute verifizierten Anzeigen in Berlin/Brandenburg waren entweder bereits gemeldet (Dublette), klar fachfremd/überqualifiziert (Technik/Bau/IT-only), verlangten >3 Jahre Spezialerfahrung außerhalb des Profils oder boten keine verifizierbaren Detailseiten (StepStone-Listen ohne belastbaren Volltext, BA-Ergebnisliste ohne geeignete Detailtreffer).",
+    "next_action": "Morgen (2026-11-05) früh erneut Vollsuche mit Fokus auf: BA 7‑Tage‑Fenster für „Projektassistenz/Teamassistenz/Einkauf/Supply Chain/Vertriebsinnendienst“ (Berlin ±30 km), StepStone-Neuzugänge der letzten 24h, sowie ATS bei Zielunternehmen (Aeyde, KoRo, home24, MYKITA, Lautsprecher Teufel) und Personio/Greenhouse/Lever nach „Einkauf/Supply/Coordinator/Office“.",
+    "weekend_action": "",
+    "jobs": [],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Teamassistenz Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Projektassistenz Berlin site:stepstone.de",
+        "Projektassistenz Kabelleitungstiefbau Berlin site:stepstone.de",
+        "Office Manager Berlin site:personio.de",
+        "Projektassistenz Berlin site:karriereportal-stellen.berlin.de"
+      ],
+      "B": [
+        "Einkauf Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Einkäufer Berlin site:stepstone.de",
+        "Sachbearbeiter Einkauf Berlin site:stepstone.de",
+        "Procurement Berlin site:personio.de",
+        "Supply Chain Berlin site:stepstone.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:stepstone.de",
+        "Product Coordinator Berlin site:fashionunited.de",
+        "Merchandising Koordination Berlin site:fashionunited.de",
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Mehrere Projektassistenz-/Office-Listings auf StepStone ohne aussagekräftige Detailseiten; im öffentlichen Dienst heute keine einschlägige, noch offene Projekt-/Teamassistenz mit klarer Frist gefunden.",
+      "B": "BA zeigte frische Einkauf-/Beschaffungs-Treffer, aber überwiegend Technik/Bau spezifisch oder bereits als Dublette in der Historie; keine neue, verifizierbare Sachbearbeitung Einkauf mit passender Einstiegshürde.",
+      "C": "StepStone listet diverse Vertriebsinnendienst-Anzeigen; die wenigen mit Detailseiten passten fachlich (starker Telefonvertrieb/Softwareverkauf) schlechter als administrative Auftrags-/Order-Management-Profile."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Suche mit 7‑Tage‑Fenster u.a. für „Einkauf“, „Projektassistenz“, „Vertrieb/Vertriebsinnendienst“; heute keine neuen passenden Detailseiten mit klarer Eignung."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen mit mehreren Treffern, aber neue Detailseiten entweder Dubletten bereits gemeldeter Anzeigen oder fachlich nicht passend (Bau/IT/Hardcore‑Vertrieb)."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio/Greenhouse geprüft (u.a. GFK Ingenieure, marta, Reflex Aerospace, EXOLAUNCH, Constellr) – heute nur bereits gemeldete Anzeigen sichtbar; keine neue passende Rolle."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal geprüft; aktuelle Einträge überwiegend IT/Soziales/Leitung; keine neue Team-/Projektassistenz oder Beschaffung mit klarer Frist."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/FashionJobs durchsucht; in Berlin heute nur Logistik-/Fulfillment‑Koordination (Fabletics) sichtbar, fachlich randpassend und ohne klaren Einkauf-/Order‑Management‑Schwerpunkt."
+      }
+    ],
+    "rejected": []
+  },
+  "attempts": [
+    {
+      "status": "scheduled",
+      "started_at": "2026-11-04T08:01:46.663245+00:00"
+    }
+  ],
+  "hits": 0,
+  "researched_at": "2026-11-04T08:00:58.876077+00:00",
+  "prepared_at": "2026-11-04T08:01:44.396590+00:00",
+  "message_id": "<miki-2026-11-05-1500cf243ff36a30@miki-jobsearch>",
+  "last_attempt_at": "2026-11-04T08:00:58.876077+00:00",
+  "last_attempt_run_id": "41796219733",
+  "design_version": "electric-blue-v1",
+  "scheduled_at": "2026-11-05T07:30:00Z",
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2,
+  "provider_batch_id": "da151f0c-a188-403f-b7ce-ff66db580e8c",
+  "provider_message_id": "<202611040801.61388060831@smtp-relay.mailin.fr>",
+  "provider_message_ids": [
+    "<202611040801.61388060831@smtp-relay.mailin.fr>"
+  ],
+  "schedule_accepted_at": "2026-11-04T08:01:50.603997+00:00",
+  "provider_status": "queued",
+  "schedule_verified_at": "2026-11-04T09:10:38.748508+00:00",
+  "provider_checked_at": "2026-11-04T09:10:38.748508+00:00",
+  "delivery_switch": {
+    "status": "cancelled",
+    "batch_id": "da151f0c-a188-403f-b7ce-ff66db580e8c",
+    "requested_at": "2026-11-04T10:16:16.480492+00:00",
+    "identifier": "<202611040801.61388060831@smtp-relay.mailin.fr>",
+    "previous_attempt": {
+      "status": "cancellation_unconfirmed",
+      "batch_id": "da151f0c-a188-403f-b7ce-ff66db580e8c",
+      "requested_at": "2026-11-04T10:10:54.551261+00:00"
+    },
+    "http_status": 204,
+    "confirmed_at": "2026-11-04T10:16:51.077846+00:00"
+  }
+}
