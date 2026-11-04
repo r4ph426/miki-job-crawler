@@ -250,5 +250,13 @@
       "actor": "manual",
       "last_result": "switch_blocked"
     }
+  },
+  "lease": {
+    "token": "3706684aac7341d0864936c6b2314f5e",
+    "actor": "manual",
+    "phase": "switch-delivery",
+    "date": "2026-11-05",
+    "started_at": "2026-11-04T10:16:16.480492+00:00",
+    "expires_at": "2026-11-04T10:56:16.480492+00:00"
   }
 }
