@@ -92,7 +92,7 @@
   "schedule_verified_at": "2026-11-04T09:10:38.748508+00:00",
   "provider_checked_at": "2026-11-04T09:10:38.748508+00:00",
   "delivery_switch": {
-    "status": "cancellation_requested",
+    "status": "cancelled",
     "batch_id": "da151f0c-a188-403f-b7ce-ff66db580e8c",
     "requested_at": "2026-11-04T10:16:16.480492+00:00",
     "identifier": "<202611040801.61388060831@smtp-relay.mailin.fr>",
@@ -100,6 +100,8 @@
       "status": "cancellation_unconfirmed",
       "batch_id": "da151f0c-a188-403f-b7ce-ff66db580e8c",
       "requested_at": "2026-11-04T10:10:54.551261+00:00"
-    }
+    },
+    "http_status": 204,
+    "confirmed_at": "2026-11-04T10:16:51.077846+00:00"
   }
 }
