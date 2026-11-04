@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T08:00:59.945238+00:00",
+  "updated_at": "2026-11-04T08:01:44.402105+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -542,6 +542,29 @@
       "has_report": true,
       "has_mail": true,
       "provider_check_failed": true
+    },
+    "2026-11-05": {
+      "date": "2026-11-05",
+      "status": "prepared",
+      "hits": 0,
+      "researched_at": "2026-11-04T08:00:58.876077+00:00",
+      "prepared_at": "2026-11-04T08:01:44.396590+00:00",
+      "created_at": "2026-11-04T08:00:58.876077+00:00",
+      "accepted_at": null,
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "expected_recipients": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
+      "has_report": true,
+      "has_mail": true,
+      "provider_check_failed": false
     }
   },
   "lease": {
