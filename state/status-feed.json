@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T08:30:56.609995+00:00",
+  "updated_at": "2026-11-04T08:30:57.665676+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "brevo_scheduled",
@@ -567,13 +567,7 @@
       "provider_check_failed": false
     }
   },
-  "lease": {
-    "actor": "github",
-    "phase": "provider-check",
-    "date": "2026-11-05",
-    "started_at": "2026-11-04T08:30:54.964998+00:00",
-    "expires_at": "2026-11-04T09:10:54.964998+00:00"
-  },
+  "lease": null,
   "confirmations": {
     "2026-10-08": {
       "date": "2026-10-08",
@@ -821,7 +815,7 @@
       "hits": 0,
       "researched_at": "2026-11-04T08:00:58.876077+00:00",
       "delivery_time": "2026-11-05T08:30:00 Europe/Berlin",
-      "checked_at": "2026-11-04T08:02:57.608191+00:00",
+      "checked_at": "2026-11-04T08:30:57.649729+00:00",
       "actor": "github",
       "last_result": "scheduled"
     }
