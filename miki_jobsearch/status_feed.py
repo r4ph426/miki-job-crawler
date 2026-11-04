@@ -1,9 +1,11 @@
 """Minimal read-only public operational feed; never includes reports or addresses."""
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 
 def write_feed(root, store):
     from .service import atomic_json, read_json
+    mode = read_json(root / 'config/search.json', {}).get('delivery_mode', 'brevo_scheduled')
     records = {}
     for path in sorted((store / "runs").glob('*.json'))[-30:]:
         r = read_json(path, {})
@@ -16,11 +18,13 @@ def write_feed(root, store):
              "failed_recipient_count", "delivery_problem")}
         records[r.get("date", path.stem)]["has_report"] = bool(r.get("report")) and not r.get("fixture")
         records[r.get("date", path.stem)]["has_mail"] = path.with_suffix(".html").exists() and not r.get("fixture")
+        if mode == 'prepared_immediate':
+            records[r.get('date', path.stem)]['planned_delivery_at'] = datetime.fromisoformat(r.get('date', path.stem)).replace(hour=8, minute=30, tzinfo=ZoneInfo('Europe/Berlin')).isoformat()
         records[r.get("date", path.stem)]["provider_check_failed"] = bool(r.get("provider_check_error"))
     shared = read_json(store / "coordinator.json", {})
     payload = {"updated_at": datetime.now(timezone.utc).isoformat(), "timezone": "Europe/Berlin",
-               "schedule": {"mode": "brevo_scheduled", "prepare": "09:00", "prepare_retry": "13:00",
-                            "check": "after recovery", "send": "08:30", "provider_poll": "08:37",
+               "schedule": {"mode": mode, "prepare": "09:00", "prepare_retry": "13:00",
+                            "check": "after recovery", "send": "08:30", "runner_prewarm": "08:00–08:30", "provider_poll": "08:37",
                             "delivery_check": "11:00", "prepare_days": "daily; next weekday within 72h",
                             "recovery": "every 30 minutes; morning every 20 minutes",
                             "send_days": "Monday–Friday"},

@@ -6,7 +6,7 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from .hybrid import check_provider, execute
+from .hybrid import check_provider, execute, git
 from .research import API_ACTION_REQUIRED_CODES, ResearchError
 from .scheduled_mail import ProviderStatusError, send_time
 from .service import BERLIN, DeliveryFailure, MailConfigurationError, StateSyncError, read_json
@@ -116,6 +116,9 @@ def recover_day(root, day, clock=utcnow, executor=execute, provider=check_provid
             if day != now.astimezone(BERLIN).date().isoformat():
                 return {"date": day, "status": "manual_review_required", "retryable": False}
             phase = "deliver"
+        elif read_json(root / 'config/search.json', {}).get('delivery_mode') == 'prepared_immediate':
+            return {'date': day, 'status': 'prepared', 'retryable': False,
+                    'planned_delivery_at': send_time(day).isoformat()}
         elif send_time(day) - now >= timedelta(minutes=5):
             phase = "prepare"
         else:
@@ -160,12 +163,46 @@ def needs_attention(results, now):
         r.get("status") == "awaiting_delivery" and (local.hour, local.minute) >= (8, 45)) for r in results)
 
 
+def prewarm_release(root, clock=utcnow, sleeper=time.sleep, sync=None):
+    """Acquire the runner early; use the prepared outbox only at 08:30 Berlin.
+
+    No credentials, email POST or state changes occur during the wait. The shared
+    GitHub concurrency group prevents another runner from releasing in parallel;
+    the normal durable lease and pre-POST checkpoint still guard actual delivery.
+    """
+    if read_json(root / 'config/search.json', {}).get('delivery_mode') != 'prepared_immediate':
+        return False
+    now = clock()
+    local = now.astimezone(BERLIN)
+    if local.weekday() >= 5:
+        return False
+    day = local.date().isoformat()
+    record = read_json(root / 'state/runs' / f'{day}.json', {})
+    remaining = (send_time(day) - now).total_seconds()
+    if (not 0 < remaining <= 1800 or record.get('status') != 'prepared'
+            or not record.get('report') or record.get('fixture') or record.get('scheduled_at')
+            or record.get('provider_message_id')
+            or not (root / 'state/runs' / f'{day}.html').exists()):
+        return False
+    print(json.dumps({'operation': 'prewarm_release', 'date': day,
+                      'send_at': send_time(day).isoformat(), 'wait_seconds': round(remaining)}), flush=True)
+    while clock() < send_time(day):
+        sleeper(min(30, (send_time(day) - clock()).total_seconds()))
+    # Re-read shared state after waiting; later changes must be seen before send.
+    if sync is None:
+        git(root, 'pull', '--ff-only', 'origin', 'main')
+    else:
+        sync()
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--attempts", type=int, choices=range(1, 4), default=3)
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     os.environ["STATE_BRANCH"] = "main"
+    prewarm_release(root)
     for attempt in range(args.attempts):
         results = supervise(root)
         print(json.dumps({"attempt": attempt + 1, "results": results}), flush=True)

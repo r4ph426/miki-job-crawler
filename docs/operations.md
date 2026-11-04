@@ -186,3 +186,13 @@ uncertain delivery, source health, recommended jobs and run history. A manual-ru
 pause control needs authentication and should use the same scheduler and delivery
 guard. Do not expose credentials or the original CV through that frontend. Current
 `status` output is local state, not proof that an external scheduler is activated.
+
+
+### Current release mode
+
+The service uses `prepared_immediate`: prepare the report ahead of time, acquire
+a morning runner between 08:00 and 08:30 Berlin, then submit the saved report
+without `scheduledAt` at 08:30. Existing provider queues must be reconciled or
+explicitly cancelled with HTTP 204 before moving their records to this mode.
+See `docs/reliability.md` for the 4 November queue-delay incident and the safe
+one-queue migration. Never manually resend an existing scheduled record.

@@ -1,0 +1,44 @@
+name: Switch one future queue to direct delivery
+on:
+  workflow_dispatch:
+    inputs:
+      day:
+        description: "Existing future report date YYYY-MM-DD"
+        required: true
+        type: string
+      expected_batch:
+        description: "Exact existing batch UUID; requires HTTP 204 cancellation"
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: miki-weekday-service
+  cancel-in-progress: false
+jobs:
+  switch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate service
+        run: python3 -m unittest discover -s tests -v
+      - name: Cancel exact future queue and preserve report for direct release
+        env:
+          SWITCH_DAY: ${{ inputs.day }}
+          EXPECTED_BATCH: ${{ inputs.expected_batch }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          EMAIL_PROVIDER: brevo
+          MAIL_FROM: ${{ secrets.MAIL_FROM || vars.MAIL_FROM }}
+          MAIL_TO: ${{ secrets.MAIL_TO || vars.MAIL_TO }}
+          MAIL_CC: ${{ secrets.MAIL_CC || vars.MAIL_CC }}
+        run: |
+          set -euo pipefail
+          git config user.name "miki-jobsearch-bot"
+          git config user.email "miki-jobsearch-bot@users.noreply.github.com"
+          python3 -m miki_jobsearch.switch_delivery "$SWITCH_DAY" "$EXPECTED_BATCH"

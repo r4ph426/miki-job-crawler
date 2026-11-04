@@ -38,8 +38,12 @@ def scheduled_target(now, task):
 
 def readiness(root, day):
     record = read_json(root / "state/runs" / f"{day}.json", {})
+    direct_ready = (read_json(root / 'config/search.json', {}).get('delivery_mode') == 'prepared_immediate'
+                    and record.get('status') == 'prepared' and bool(record.get('report'))
+                    and (root / 'state/runs' / f'{day}.html').exists()
+                    and not record.get('scheduled_at') and not record.get('provider_message_id'))
     ready = (record.get("date") == day and not record.get("fixture") and
-             ((record.get("status") == "sent" and bool(record.get("accepted_at"))) or
+             (direct_ready or (record.get("status") == "sent" and bool(record.get("accepted_at"))) or
               (record.get("status") == "scheduled" and record.get("provider_status") == "queued"
                and bool(record.get("schedule_verified_at")) and bool(record.get("report")))))
     return {"date": day, "status": "ready" if ready else "not_ready", "ready": ready,
@@ -148,6 +152,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
         if lease.get("token") != token or datetime.now(timezone.utc) >= datetime.fromisoformat(lease["expires_at"]):
             raise StateSyncError("Worker lease expired; no delivery attempted")
         save(record)
+    result = {'date': day, 'status': 'prepared', 'hits': record.get('hits', 0)}
     backup = None
     path = root / "state/runs" / f"{day}.json"
     html_path = path.with_suffix(".html")
@@ -184,7 +189,7 @@ def execute(root, actor, now=None, phase=None, day=None, runner=run, refresh=Fal
                             delivery_date=day if phase in {"prepare", "research"} else None,
                             require_prepared=phase == "deliver",
                             allow_early_prepare=phase in {"prepare", "research"})
-        if phase == "prepare":
+        if phase == "prepare" and read_json(root / 'config/search.json', {}).get('delivery_mode') != 'prepared_immediate':
             result = scheduler(root, root / "state", day, now=now, persist=persist)
     except StateSyncError:
         # The remote may have advanced or ownership expired. Leave the lease and

@@ -150,3 +150,32 @@ from exact-message recipient events. Do not resend an already queued edition.
 Operational prerequisite: sufficient API credits. Any automatic top-up and its
 spending cap must be configured by the account owner; no billing setting is
 changed by this service.
+
+
+## Direct prepared release from 5 November 2026
+
+The 4 November report was queued the previous day and verified for 08:30 Berlin,
+but Brevo recorded both send and delivery only at 08:56:25 (26m25s late). On
+3 November its recorded send was 09:04:33 (34m33s late). These delays occurred
+after queue acceptance, before the provider's send event. The exposed logs do
+not identify Brevo's internal queue cause; changing recipient polling cannot
+speed up that queue.
+
+`config/search.json` now selects `prepared_immediate`. Research still prepares
+the next weekday in advance. Future prepared reports are ready without posting
+`scheduledAt` to Brevo. A recovery runner that starts between 08:00 and 08:30
+Berlin with a saved live report waits until 08:30, refreshes shared Git state,
+then uses the existing leased prepared-only immediate send path. The wait
+occurs within the 40-minute workflow timeout. Cloudflare's existing 15-minute
+wakeups and GitHub's morning schedule can both acquire that runner early.
+A late-acquired runner releases the same saved report once, rather than waiting
+for another research run. This removes Brevo's future queue from the release
+path; it does not guarantee receiving-server/inbox latency or runner availability.
+
+Existing queued records always remain on the GET-only provider reconciliation
+path. `.github/workflows/switch-delivery.yml` can move one future queue to the
+direct outbox only after exact batch/recipient/time checks, a live queued status,
+a durably recorded DELETE intent, HTTP 204, and a durably recorded cancellation
+receipt. The original record and HTML are archived. A 404, timeout, processing
+queue or failed checkpoint blocks release; none permits a replacement send.
+The switch never sends a message. Delivery warnings remain at or after 11:00.
