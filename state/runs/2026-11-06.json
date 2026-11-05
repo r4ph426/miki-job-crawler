@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-06",
+  "created_at": "2026-11-05T08:00:52.872568+00:00",
+  "status": "prepared",
+  "subject": "Wochenüberblick Stellensuche · KW 45",
+  "report": {
+    "summary": "Recherche vom 05.11.2026 für den Versand am 06.11.2026. 8 passende, verifizierte Anzeigen gefunden (A/B/C abgedeckt). Schwerpunkt heute: Office-/Teamassistenz und Vergabestellen (öffentlicher Dienst) sowie eine neue Projektassistenz (ANÜ) mit Gehaltsband. Keine Dubletten zu früheren Meldungen.",
+    "next_action": "Vorrangig heute marta, GFK Ingenieure und Trisor prüfen und ggf. ein kurzes Anschreiben vorbereiten; parallel die beiden Vergabe-Stellen (BA F’hain‑Kreuzberg, SenSBW) auf formale Muss‑Kriterien (Vergaberecht/TV‑Entgeltgruppen) gegen Profil abklären.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Projektassistenz (m/w/d)",
+        "employer": "FERCHAU GmbH Niederlassung Berlin",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12265-490651_JB5286014-S",
+        "district": "Steglitz-Zehlendorf (12203 Berlin, Lichterfelde)",
+        "hours": "Vollzeit",
+        "contract": "Arbeitnehmerüberlassung; unbefristeter Vertrag bei Ferchau",
+        "salary": "45.000 € – 65.000 € / Jahr",
+        "commute": "ÖPNV ca. 61–75 Min. (geschätzt)",
+        "pro": "Transparente Gehaltsspanne und unbefristeter Vertrag beim Dienstleister.",
+        "con": "Einsatz in ANÜ; längere Pendelzeit.",
+        "effort_details": "BA-Portal Schnellbewerbung: Basisprofil 10 Min, Unterlagen hochladen 10 Min, Versand 5 Min.",
+        "deadline": "",
+        "family": "B",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 26,
+          "entry": 24,
+          "commute": 5,
+          "conditions": 6
+        },
+        "effort_minutes": 25,
+        "evidence": "Expertise und fachlichem Know-how. Als Berufserfahrene:r unterstützen Sie Ihre Kolleg:innen mit Ihrem langjährigen Know-how und Ihrer Expertise. Projektassistenz (m/w/d) Dein Aufgabengebiet Unterstützung bei der Projektplanung und -durchführung Koordination von Terminen und Meetings Erstellung von Berichten und Präsentationen Verwaltung von Projektunterlagen und Dokumentation Kommunikation mit internen und externen Stakeholderinnen Überwachung des Projektfortschritts und Einhaltung von",
+        "score": 61,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:arbeitsagentur.de (7 Tage)",
+        "Teamassistenz Berlin site:arbeitsagentur.de (7 Tage)",
+        "Projektassistenz Berlin site:stepstone.de",
+        "Office Manager Berlin site:personio.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:arbeitsagentur.de",
+        "Sachbearbeiter Einkauf Berlin site:stepstone.de",
+        "Beschaffung Berlin site:karriereportal-stellen.berlin.de",
+        "Supply Chain Berlin site:jobs.lever.co"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de",
+        "Product Coordinator Berlin site:personio.de"
+      ]
+    },
+    "family_observations": {
+      "A": "Heute viele Office‑/Assistenzrollen über Personio und BA; mehrere befristet oder ANÜ, aber zwei klare Direktanstellungen mit passender Stundenzahl.",
+      "B": "Öffentlicher Dienst liefert aktuell die belastbarsten Beschaffungs‑/Vergabe‑Optionen mit klaren Fristen; privatwirtschaftlicher Einkauf heute überwiegend Wiederholungen älterer Anzeigen.",
+      "C": "Neue C‑Treffer mit klarem Koordinationsanteil waren rar; Vertriebsinnendienst weiterhin stark vertreten, aber oft mit Sales‑Fokus statt Koordination."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere Detailseiten geladen (FERCHAU, HZB u.a.), 7‑Tage‑Fenster greift."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen erreichbar; tagesaktuelle Einzelanzeigen schwer zu verifizieren, da viele ältere Wiederholungen."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Mehrere Personio‑Detailseiten (marta, GFK, Trisor, ctrl QS) verifizierbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal mit zwei relevanten Vergabe‑Ausschreibungen inkl. Fristen (11.11., 12.11.)."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "Fashionjobs/Fashionunited erreichbar; relevante Einkaufsrollen vorhanden, heute jedoch ohne klaren Fit oder außerhalb Berlin/zu seniorig."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Sachbearbeitung-von-Vergabeverfahren-in-der-Zentralen-Verg-de-j69086.html",
+        "reason": "Erfordert spezifischen Verwaltungsabschluss (FH/Bachelor Verwaltungswirtschaft oder Verwaltungslehrgang II, DQR6) und mindestens einjährige Erfahrung in Vergabeverfahren nach öffentlichem Vergaberecht; passt nicht zu den vorhandenen Qualifikationen."
+      },
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003915996-S",
+        "reason": "Arbeitsort Berlin-Wannsee; voraussichtliche ÖPNV-Pendelzeit >75 Min. von Berlin-Heinersdorf. Bei fehlender sehr hoher Passung (Skill <35) Gesamtscore unter Schwelle."
+      }
+    ],
+    "assessment_pages_checked": 7,
+    "rejected": [
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta",
+          "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+          "district": "Mitte",
+          "hours": "Vollzeit; tägliche Präsenz erwartet",
+          "contract": "Festanstellung, unbefristet",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ÖPNV ca. 31–45 Min. (geschätzt)",
+          "pro": "Klare Gehaltsangabe und unbefristeter Vertrag.",
+          "con": "Starke Büropräsenz verlangt; Hund im Office nicht erlaubt.",
+          "effort_details": "ATS (Personio): Profil anlegen 20 Min, Formularfragen 15 Min, Unterlagen/Uploads 20 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 25,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "und Verwaltung Du bereitest Verträge vor, sorgst dafür, dass sie unterschrieben werden, und archivierst sie so, dass sie in Minuten auffindbar sind. Du pflegst unsere Vorlagen: alle an einem Ort, versioniert, mit Datum. Quartalsweise geprüft. Du führst das Inventar unserer Software-Tools mit Verantwortlichen, Nutzerzahlen, Kosten, Laufzeiten und Kündigungsfristen. Du kündigst, was niemand nutzt, und verhandelst nach, was bleibt. Du hältst die Dokumentation für Datenschutz und Audits"
+        }
+      },
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+          "employer": "GFK Ingenieure GmbH",
+          "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+          "district": "Charlottenburg",
+          "hours": "Vollzeit (40 Std./Woche), hybrid möglich",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ÖPNV ca. 46–60 Min. (geschätzt)",
+          "pro": "Modernes Arbeitsumfeld mit ergonomischer Ausstattung.",
+          "con": "Hohe Präsenz im Büro explizit erwartet; Gehalt nicht transparent.",
+          "effort_details": "ATS (Personio): Profil anlegen 20 Min, Formularfragen 15 Min, Unterlagen/Uploads 20 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "läuft Vor- und Nachbereiten von Meetings, Reisen und Veranstaltungen Bearbeiten von Rechnungen und Behalten des Überblicks über alle Vorgänge Administrative und koordinative Unterstützung unserer Abteilungen Koordinieren von Dienstleistern, Lieferanten und Partnern und Sicherstellen einer klaren Kommunikation Überwachen von Terminen, Fristen und Aufgaben Verwalten von Bürobedarf und interner Infrastruktur Profil Du hast eine abgeschlossene kaufmännische Ausbildung oder einen vergleichbaren"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+        "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+          "employer": "Trisor GmbH",
+          "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+          "district": "Unbekannt (HQ Berlin)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Ohne genaue Adresse; konservativ ÖPNV ca. 46–60 Min. geschätzt",
+          "pro": "Breites Aufgabenspektrum inkl. GF-Assistenz und Finance-Unterstützung.",
+          "con": "Zahlenaffinität und Tools wie Datev/Candis/Pleo werden gewünscht.",
+          "effort_details": "ATS (Personio): Profil anlegen 20 Min, Formularfragen 15 Min, Unterlagen/Uploads 20 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 25,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "und Lust hat, Dinge aktiv voranzubringen: Du koordinierst externe Dienstleister, Bestellungen sowie die allgemeine Büroorganisation und behältst dabei Verträge, Dokumente, Büroausstattung und die Arbeitsumgebung im Blick Du organisierst interne sowie externe Termine und Geschäftsreisen von der Planung bis zur Reisekostenabrechnung Du kümmerst Dich um den Post Ein- und -ausgang sowie um die strukturierte Ablage und Organisation wichtiger Dokumente und Unterlagen Du prüfst und bearbeitest"
+        }
+      },
+      {
+        "title": "Administrative Sachbearbeitung Vergabestelle öffentlicher Hochbau (w/m/d)",
+        "url": "https://www.karriereportal-stellen.berlin.de/Administrative-Sachbearbeitung-Vergabestelle-oeffentlicher-de-j70631.html",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Administrative Sachbearbeitung Vergabestelle öffentlicher Hochbau (w/m/d)",
+          "employer": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen",
+          "url": "https://www.karriereportal-stellen.berlin.de/Administrative-Sachbearbeitung-Vergabestelle-oeffentlicher-de-j70631.html",
+          "district": "Wilmersdorf (Fehrbelliner Platz)",
+          "hours": "Vollzeit 40/39,4 Std.; Teilzeit möglich",
+          "contract": "Unbefristet",
+          "salary": "A8 LBesG/ E 8 TV-L (Bewertungsvermutung)",
+          "commute": "ÖPNV ca. 46–60 Min. (geschätzt)",
+          "pro": "TV-L mit flexiblen Arbeitszeitmodellen und ÖPNV-Zuschuss.",
+          "con": "Vergaberechts- und Haushaltsrechtskenntnisse sind sehr wichtig.",
+          "effort_details": "Öffentlicher Dienst: Online-Formular 60 Min, Unterlagen/Anhänge zusammenstellen 60 Min, Portalversand 10 Min.",
+          "deadline": "2026-11-11",
+          "family": "C",
+          "source_group": "berlin",
+          "scores": {
+            "skill": 22,
+            "entry": 18,
+            "commute": 10,
+            "conditions": 8
+          },
+          "effort_minutes": 130,
+          "evidence": "Bewerbungsfrist: 11.11.2026 Besoldungsgruppe/Entgeltgruppe: A8 LBesG/ E 8 TV-L (Bewertungsvermutung) Vollzeit mit 40 Wochenstunden (B) bzw. 39,4 Wochenstunden (T) – Teilzeit ist möglich. Ihr Aufgabengebiet umfasst: Die Sachbearbeitung für die Durchführung von Vergabeverfahren (Ausschreibung, Submission und Prüfung) für Bauleistungen nach VOB und Leistungen nach VgV o. UVgO bzw. LHO sowie Durchführung der elektronischen Vergabe (eVergabe). Ihr Profil Sie haben... Beamte: Erfüllung der"
+        }
+      },
+      {
+        "title": "Office Manager (all genders)",
+        "url": "https://ctrl-qs.jobs.personio.de/job/2798476",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (all genders)",
+          "employer": "ctrl QS GmbH",
+          "url": "https://ctrl-qs.jobs.personio.de/job/2798476",
+          "district": "Mitte (Zentrum, genaue Adresse nicht genannt)",
+          "hours": "Vollzeit, vor Ort (5 Tage/Woche)",
+          "contract": "Befristet",
+          "salary": "Unbekannt",
+          "commute": "Heinersdorf–Zentrum ca. 30–40 Min ÖPNV, konservativ 30–40 Min.",
+          "pro": "Klarer Rahmen, zentrale Lage; stark koordinative Rolle mit Event-/Workplace‑Bezug.",
+          "con": "Befristeter Vertrag; kaum Produkt-/Einkaufsbezug.",
+          "effort_details": "ATS‑Bewerbung Personio (~55 Min): Profil 5, CV 15, Anschreiben 25, Formular 10.",
+          "deadline": "",
+          "evidence": "„As our Office Manager, you'll be the face of our Berlin office … You enjoy being present … this role is fully on‑site in Berlin, 5 days per week.“",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 20,
+            "entry": 27,
+            "commute": 20,
+            "conditions": 5
+          },
+          "effort_minutes": 55
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-11-05T08:00:52.872568+00:00",
+  "prepared_at": "2026-11-05T08:03:24.473251+00:00",
+  "message_id": "<miki-2026-11-06-5072a745c00a00e5@miki-jobsearch>",
+  "last_attempt_at": "2026-11-05T08:00:52.872568+00:00",
+  "last_attempt_run_id": "41991230411",
+  "design_version": "electric-blue-v1"
+}
