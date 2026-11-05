@@ -12,7 +12,12 @@
       "started_at": "2026-11-04T08:01:46.663245+00:00",
       "status": "scheduled",
       "finished_at": "2026-11-04T08:01:53.288123+00:00"
+    },
+    {
+      "phase": "deliver",
+      "started_at": "2026-11-05T07:30:00.328583+00:00",
+      "status": "running"
     }
   ],
-  "status": "scheduled"
+  "status": "running"
 }
