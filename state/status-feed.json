@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T08:00:47.208025+00:00",
+  "updated_at": "2026-11-05T08:00:49.942841+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "prepared_immediate",
@@ -578,18 +578,18 @@
       "scheduled_at": null,
       "schedule_accepted_at": null,
       "schedule_verified_at": null,
-      "provider_status": null,
-      "provider_checked_at": "2026-11-05T07:31:08.072389+00:00",
+      "provider_status": "delivered",
+      "provider_checked_at": "2026-11-05T08:00:47.201012+00:00",
       "expected_recipients": 2,
-      "sent_recipient_count": null,
-      "delivered_recipient_count": null,
-      "delivered_at": null,
-      "failed_recipient_count": null,
-      "delivery_problem": null,
+      "sent_recipient_count": 2,
+      "delivered_recipient_count": 2,
+      "delivered_at": "2026-11-05T07:30:13+00:00",
+      "failed_recipient_count": 0,
+      "delivery_problem": false,
       "has_report": true,
       "has_mail": true,
       "planned_delivery_at": "2026-11-05T08:30:00+01:00",
-      "provider_check_failed": true
+      "provider_check_failed": false
     }
   },
   "lease": {
