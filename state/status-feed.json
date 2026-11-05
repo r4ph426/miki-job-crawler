@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T07:31:08.079989+00:00",
+  "updated_at": "2026-11-05T07:31:09.977856+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "prepared_immediate",
@@ -579,7 +579,7 @@
       "schedule_accepted_at": null,
       "schedule_verified_at": null,
       "provider_status": null,
-      "provider_checked_at": null,
+      "provider_checked_at": "2026-11-05T07:31:08.072389+00:00",
       "expected_recipients": 2,
       "sent_recipient_count": null,
       "delivered_recipient_count": null,
@@ -589,7 +589,7 @@
       "has_report": true,
       "has_mail": true,
       "planned_delivery_at": "2026-11-05T08:30:00+01:00",
-      "provider_check_failed": false
+      "provider_check_failed": true
     }
   },
   "lease": {
