@@ -1,7 +1,7 @@
 {
   "date": "2026-11-06",
   "created_at": "2026-11-05T08:00:52.872568+00:00",
-  "status": "sending",
+  "status": "sent",
   "subject": "Wochenüberblick Stellensuche · KW 45",
   "report": {
     "summary": "Recherche vom 05.11.2026 für den Versand am 06.11.2026. 8 passende, verifizierte Anzeigen gefunden (A/B/C abgedeckt). Schwerpunkt heute: Office-/Teamassistenz und Vergabestellen (öffentlicher Dienst) sowie eine neue Projektassistenz (ANÜ) mit Gehaltsband. Keine Dubletten zu früheren Meldungen.",
@@ -247,7 +247,7 @@
   "attempts": [
     {
       "started_at": "2026-11-06T07:30:03.929912+00:00",
-      "status": "sending"
+      "status": "sent"
     }
   ],
   "hits": 1,
@@ -259,5 +259,8 @@
   "design_version": "electric-blue-v1",
   "email_provider": "brevo",
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
-  "expected_recipients": 2
+  "expected_recipients": 2,
+  "refused_count": 0,
+  "provider_message_id": "<202611060730.91634069676@smtp-relay.mailin.fr>",
+  "accepted_at": "2026-11-06T07:30:05.692538+00:00"
 }

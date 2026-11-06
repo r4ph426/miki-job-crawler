@@ -2140,5 +2140,33 @@
     },
     "date": "2026-11-04",
     "delivery_status": "sent"
+  },
+  {
+    "title": "Projektassistenz (m/w/d)",
+    "employer": "FERCHAU GmbH Niederlassung Berlin",
+    "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12265-490651_JB5286014-S",
+    "district": "Steglitz-Zehlendorf (12203 Berlin, Lichterfelde)",
+    "hours": "Vollzeit",
+    "contract": "Arbeitnehmerüberlassung; unbefristeter Vertrag bei Ferchau",
+    "salary": "45.000 € – 65.000 € / Jahr",
+    "commute": "ÖPNV ca. 61–75 Min. (geschätzt)",
+    "pro": "Transparente Gehaltsspanne und unbefristeter Vertrag beim Dienstleister.",
+    "con": "Einsatz in ANÜ; längere Pendelzeit.",
+    "effort_details": "BA-Portal Schnellbewerbung: Basisprofil 10 Min, Unterlagen hochladen 10 Min, Versand 5 Min.",
+    "deadline": "",
+    "family": "B",
+    "source_group": "arbeitsagentur",
+    "scores": {
+      "skill": 26,
+      "entry": 24,
+      "commute": 5,
+      "conditions": 6
+    },
+    "effort_minutes": 25,
+    "evidence": "Expertise und fachlichem Know-how. Als Berufserfahrene:r unterstützen Sie Ihre Kolleg:innen mit Ihrem langjährigen Know-how und Ihrer Expertise. Projektassistenz (m/w/d) Dein Aufgabengebiet Unterstützung bei der Projektplanung und -durchführung Koordination von Terminen und Meetings Erstellung von Berichten und Präsentationen Verwaltung von Projektunterlagen und Dokumentation Kommunikation mit internen und externen Stakeholderinnen Überwachung des Projektfortschritts und Einhaltung von",
+    "score": 61,
+    "verification": "Live detail page and supporting quotation checked",
+    "date": "2026-11-06",
+    "delivery_status": "sent"
   }
 ]
