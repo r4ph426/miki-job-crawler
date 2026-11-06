@@ -262,5 +262,7 @@
   "expected_recipients": 2,
   "refused_count": 0,
   "provider_message_id": "<202611060730.91634069676@smtp-relay.mailin.fr>",
-  "accepted_at": "2026-11-06T07:30:05.692538+00:00"
+  "accepted_at": "2026-11-06T07:30:05.692538+00:00",
+  "provider_checked_at": "2026-11-06T07:31:07.976003+00:00",
+  "provider_check_error": "Brevo delivery events unavailable"
 }
