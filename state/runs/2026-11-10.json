@@ -1,0 +1,274 @@
+{
+  "date": "2026-11-10",
+  "created_at": "2026-11-09T08:00:43.164956+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 10.11.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 09.11.2026 für den Versand am 10.11.2026. 8 passende Neufunde (A/B/C) am 09.11.2026, alle ≥55 Punkte. Schwerpunkt heute: mehrere solide Office-/Assistenzrollen (A) mit kurzer Pendelzeit und zwei saubere Einkaufs-/Koordinationsrollen (B/C) mit klaren Anforderungen.",
+    "next_action": "Zwei Schnellbewerbungen heute: 1) marta – Executive Assistant & Office Manager (Gehalt offen ausgewiesen, kurzer Pendelweg) und 2) BVG – Sachbearbeitung Einkauf im Lager (TV‑N E5, feste Frist 2026‑11‑19). Parallel Stellen 3–6 vormerken und Unterlagen anpassen.",
+    "weekend_action": "Kein Wochenendblock nötig (Montag). Nächster Wochenend-Slot: Aeyde-/Mode-ATS erneut screenen (≤60 Min), Schwerpunkt: Planning/Buying/Operations-Jobs.",
+    "jobs": [
+      {
+        "title": "Sales Coordinator (Bilingual - English/German, M/F/X)",
+        "employer": "Yext",
+        "url": "https://job-boards.greenhouse.io/yext/jobs/8138263",
+        "district": "Unbekannt",
+        "hours": "Unbekannt",
+        "contract": "Unbekannt",
+        "salary": "Unbekannt",
+        "commute": "Adresse nicht genannt; konservativ ca. 46–60 Min ÖPNV (Heinersdorf → Berlin)",
+        "pro": "Koordinative Vertriebsrolle mit Fokus auf Recherche, Account-Mapping und Terminsteuerung in DE/EN.",
+        "con": "SaaS-Vertriebserfahrung (1–3 Jahre) und intensiver Einsatz von AI-Workflows ausdrücklich gefordert.",
+        "effort_details": "ATS (Greenhouse) – mehrstufiges Formular; vorauss. 55 Min.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 24,
+          "entry": 20,
+          "commute": 10,
+          "conditions": 5
+        },
+        "effort_minutes": 55,
+        "evidence": "sit at the heart of our enterprise sales pods. This role is an evolution of the traditional BDR: less high-volume outbound, more deep account intelligence, AI-powered sales coordination, and building MCP-enabled workflows that help enterprise sales teams operate more effectively. You will build a living understanding of your assigned accounts, keep the sales engine running smoothly, and use AI as your primary workflow tool, operating at a depth and scale that would otherwise be impossible.",
+        "score": 59,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeitäquivalent (40 Std./Woche); tatsächliche Wochenstunden unklar",
+          "benchmark_role": "Sales Coordinator",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Sales-Coordinator/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32200,
+          "reference_annual_max_eur": 45900,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin",
+        "Projektassistenz arbeitsagentur Berlin",
+        "Teamassistenz Berlin karriereportal",
+        "Office Management Berlin personio",
+        "Marketingkoordination Berlin"
+      ],
+      "B": [
+        "Einkauf Berlin arbeitsagentur",
+        "Sachbearbeiter Einkauf Berlin stepstone",
+        "Operativer Einkäufer Berlin",
+        "Beschaffung Berlin",
+        "Supply Chain Berlin",
+        "Order Management Berlin"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin arbeitsagentur",
+        "Sales Coordinator Berlin Greenhouse",
+        "Product Coordinator Berlin",
+        "Merchandising Koordination Berlin"
+      ]
+    },
+    "family_observations": {
+      "A": "ÖD‑Portale liefern weiterhin verlässliche Assistenztreffer mit Fristen; auf ATS (Personio) viele Office‑Rollen mit klaren Aufgabenprofilen.",
+      "B": "BA und StepStone zeigen stabile Nachfrage nach operativem Einkauf (teilweise Homeoffice); TV‑N/TV‑L‑Stellen mit klaren Rahmenbedingungen punkten bei Einstieg.",
+      "C": "Koordinationsrollen im Vertrieb/Operations liegen häufig auf Greenhouse/Lever; gute Passung für Schnittstellen‑ und Auftragskoordinationserfahrung."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Neue Treffer u. a. BVG (Einkauf im Lager) verifiziert; Listenseiten am 09.11. geprüft."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "COMDOK (Sachbearbeiter Einkauf und Beschaffung) mit Detailseite verifiziert."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio/Greenhouse aktuell erreichbar; GFK, Trisor, marta, Yext, Butternut Box mit Live‑Detailseiten."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal mit neuen/aktiven Einträgen, z. B. Teamassistenz Steglitz‑Zehlendorf; LAGeSo heute ebenfalls aktiv (bereits gemeldet)."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited/Fashionjobs überwiegend Retail/Praktika; keine neue passende Koordinationsstelle heute in Berlin."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1208571149-S",
+        "reason": "Pflichtanforderung abgeschlossene Ausbildung als Fachkraft für Lagerlogistik und teils Lager-/Schichttätigkeit inkl. Gabelstaplerschein; Fokus Lagerbetrieb statt kaufmännisch-koordinativer Produkt-/Office-Rolle."
+      },
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/Teamassistenz-fuer-den-Fachbereich-Objektmanagement-mwd-de-j69380.html",
+        "reason": "Ausschließlich für bereits beim Land Berlin Beschäftigte; externe Bewerbungen nicht zugelassen."
+      }
+    ],
+    "assessment_pages_checked": 7,
+    "rejected": [
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta",
+          "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+          "district": "Mitte",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung, unbefristet",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ca. 35–45 Min ÖPNV (Heinersdorf → Berlin-Mitte)",
+          "pro": "Transparente Gehaltsangabe und klar umrissenes Verantwortungsfeld über Office, Verträge und Einkauf.",
+          "con": "Tägliche Präsenz im Office erwartet und nur 27 Urlaubstage.",
+          "effort_details": "ATS (Personio) – Standardformular, CV + Kurztext; vorauss. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 32,
+            "entry": 27,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
+        }
+      },
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+          "employer": "GFK Ingenieure GmbH",
+          "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+          "district": "Charlottenburg",
+          "hours": "Vollzeit (40 Std./Woche)",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 45–55 Min ÖPNV (Heinersdorf → Charlottenburg, Giesebrechtstr. 20)",
+          "pro": "Breites Office-Management mit Prozessoptimierung und koordinativer Schnittstellenrolle.",
+          "con": "Hohe Büropräsenz gefordert; keine Gehaltsangabe.",
+          "effort_details": "ATS (Personio) – Standardbewerbung; vorauss. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 30,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager / Abteilungsassistenz Berlin (all genders) | Jobs bei GFK Ingenieure GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager / Abteilungsassistenz Berlin (all genders) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Aufgaben Organisieren und Koordinieren des täglichen Office-Betriebs an unserem neuen Standort im Herzen Berlins in der Giesebrechtstr. 20, 10629 Berlin Strukturieren und Optimieren administrativer Prozesse, damit alles"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+        "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+          "employer": "Trisor GmbH",
+          "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+          "district": "Unbekannt",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Adresse nicht genannt; konservativ ca. 46–60 Min ÖPNV (Heinersdorf → Berlin HQ)",
+          "pro": "Kombination aus Office-Management und kaufmännischer Unterstützung in Finance-Prozessen.",
+          "con": "Keine Gehaltsangabe und genaue Standortadresse fehlt.",
+          "effort_details": "ATS (Personio) – Standardformular; vorauss. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 29,
+            "entry": 27,
+            "commute": 10,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "der Geschäftsführungsassistenz und Administration sorgst Du dafür, dass in unserem Berliner Headquarter organisatorisch und administrativ alles rundläuft. Du arbeitest eng mit unserem Geschäftsführungs- und Assistenzteam zusammen, übernimmst eigenständig vielfältige Aufgaben im Office Management und unterstützt bei kaufmännischen und organisatorischen Finance-Prozessen. Dabei suchen wir jemanden, der Aufgaben abarbeiten kann, aber dabei mitdenkt, Prioritäten erkennt, pragmatische Lösungen"
+        }
+      },
+      {
+        "title": "Logistics Coordinator (m/w/d) - Germany",
+        "url": "https://job-boards.greenhouse.io/butternutbox/jobs/8658337002",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Logistics Coordinator (m/w/d) - Germany",
+          "employer": "Butternut Box",
+          "url": "https://job-boards.greenhouse.io/butternutbox/jobs/8658337002",
+          "district": "Unbekannt",
+          "hours": "Unbekannt",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "Adresse nicht genannt; konservativ ca. 46–60 Min ÖPNV (Heinersdorf → Berlin)",
+          "pro": "Verantwortliche Event-Logistik mit Prozesssteuerung und Bestandsmanagement, Ownership/ESOP möglich.",
+          "con": "Hohe Reisetätigkeit/Mehrfach-Events und C2-Deutschpflicht; Office-Anwesenheit 3 Tage/Woche.",
+          "effort_details": "ATS (Greenhouse) – Formularfragen + Upload; vorauss. 55 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 28,
+            "entry": 28,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "dein Match! 💛 🚀 Dein Aufgabenbereich Event-Logistik & Ablaufplanung: Du planst, koordinierst und überwachst die Event-Logistik für unsere Auftritte in ganz Deutschland. In enger Abstimmung mit dem DS-Team erstellst du zweiwöchige Fahrpläne und stellst sicher, dass vom Aufbau bis zum Debriefing alles reibungslos läuft – auch bei bis zu 10 parallelen Events. Relationship Building: Du baust eine enge, professionelle Beziehung zu unseren Logistik-Partnern auf, damit der Auf- und Abbau vor Ort"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+          "employer": "COMDOK GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+          "district": "Berlin (Adresse nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "Adresse nicht genannt – konservativ 45–60 Min ÖPNV (teilweise Homeoffice)",
+          "pro": "Unbefristete Festanstellung und Einarbeitung in Vergabewesen.",
+          "con": "Keine Gehaltsangabe in der Anzeige.",
+          "effort_details": "Normale Firmenbewerbung 70 Min (CV/Profilabgleich 15, Anschreiben 35, Upload/Fragebogen 20).",
+          "deadline": "",
+          "evidence": "„Zur sofortigen Verstärkung unserer Vergabestelle suchen wir in Berlin zur unbefristeten Festanstellung … Eine abwechslungsreiche Aufgabe und eine fundierte Einarbeitung in Einkauf, Beschaffung und Vergabewesen.“",
+          "family": "B",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 28,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-11-09T08:00:43.164956+00:00",
+  "prepared_at": "2026-11-09T08:04:25.754616+00:00",
+  "message_id": "<miki-2026-11-10-0c3671dd82fb43d7@miki-jobsearch>",
+  "last_attempt_at": "2026-11-09T08:00:43.164956+00:00",
+  "last_attempt_run_id": "42582901110",
+  "design_version": "electric-blue-v1"
+}
