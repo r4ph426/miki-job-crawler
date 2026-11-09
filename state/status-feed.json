@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T07:30:03.902905+00:00",
+  "updated_at": "2026-11-09T07:30:05.533090+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "prepared_immediate",
@@ -617,12 +617,12 @@
     },
     "2026-11-09": {
       "date": "2026-11-09",
-      "status": "sending",
+      "status": "sent",
       "hits": 4,
       "researched_at": "2026-11-06T08:00:47.667528+00:00",
       "prepared_at": "2026-11-06T08:05:31.802648+00:00",
       "created_at": "2026-11-06T08:00:47.667528+00:00",
-      "accepted_at": null,
+      "accepted_at": "2026-11-09T07:30:05.519381+00:00",
       "scheduled_at": null,
       "schedule_accepted_at": null,
       "schedule_verified_at": null,
