@@ -1,7 +1,7 @@
 {
   "date": "2026-11-09",
   "created_at": "2026-11-06T08:00:47.667528+00:00",
-  "status": "prepared",
+  "status": "sending",
   "subject": "Stellen für Miki · 09.11.2026 · 4 neue Treffer",
   "report": {
     "summary": "Recherche vom 06.11.2026 für den Versand am 09.11.2026. 9 passende Anzeigen gefunden (A/B/C gemischt), alle neu geprüft am 2026-11-06. Schwerpunkte heute: öffentliche Beschaffung (LAGeSo), operative Beschaffung/ANÜ (FERCHAU), Marketing-/Ticketing-Koordination sowie Office-Management (Personio/Agenturen).",
@@ -187,7 +187,12 @@
     "assessment_pages_checked": 9,
     "rejected": []
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "started_at": "2026-11-09T07:30:03.895510+00:00",
+      "status": "sending"
+    }
+  ],
   "hits": 4,
   "researched_at": "2026-11-06T08:00:47.667528+00:00",
   "prepared_at": "2026-11-06T08:05:31.802648+00:00",
@@ -195,5 +200,7 @@
   "last_attempt_at": "2026-11-09T07:30:00.292845+00:00",
   "last_attempt_run_id": "42578176267",
   "design_version": "electric-blue-v1",
-  "email_provider": "brevo"
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2
 }
