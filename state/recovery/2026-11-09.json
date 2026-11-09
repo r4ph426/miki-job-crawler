@@ -10,8 +10,9 @@
     {
       "phase": "deliver",
       "started_at": "2026-11-09T07:30:00.292845+00:00",
-      "status": "running"
+      "status": "sent",
+      "finished_at": "2026-11-09T07:30:06.835345+00:00"
     }
   ],
-  "status": "running"
+  "status": "sent"
 }
