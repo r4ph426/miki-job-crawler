@@ -1,7 +1,7 @@
 {
   "date": "2026-11-10",
   "created_at": "2026-11-09T08:00:43.164956+00:00",
-  "status": "sending",
+  "status": "sent",
   "subject": "Stellen für Miki · 10.11.2026 · 1 neue Treffer",
   "report": {
     "summary": "Recherche vom 09.11.2026 für den Versand am 10.11.2026. 8 passende Neufunde (A/B/C) am 09.11.2026, alle ≥55 Punkte. Schwerpunkt heute: mehrere solide Office-/Assistenzrollen (A) mit kurzer Pendelzeit und zwei saubere Einkaufs-/Koordinationsrollen (B/C) mit klaren Anforderungen.",
@@ -266,7 +266,7 @@
   "attempts": [
     {
       "started_at": "2026-11-10T07:30:03.484964+00:00",
-      "status": "sending"
+      "status": "sent"
     }
   ],
   "hits": 1,
@@ -278,5 +278,8 @@
   "design_version": "electric-blue-v1",
   "email_provider": "brevo",
   "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
-  "expected_recipients": 2
+  "expected_recipients": 2,
+  "refused_count": 0,
+  "provider_message_id": "<202611100730.10780905820@smtp-relay.mailin.fr>",
+  "accepted_at": "2026-11-10T07:30:04.799009+00:00"
 }
