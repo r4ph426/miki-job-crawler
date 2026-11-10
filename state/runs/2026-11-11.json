@@ -1,0 +1,283 @@
+{
+  "date": "2026-11-11",
+  "created_at": "2026-11-10T08:00:43.209078+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 11.11.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 10.11.2026 für den Versand am 11.11.2026. 8 passende Neuzugänge ≥55 Punkte gefunden (A/B/C abgedeckt). Schwerpunkt heute: mehrere aktuelle BA-Ausschreibungen im Einkauf/Vertriebsinnendienst sowie zwei ATS‑Office‑Rollen mit klaren Aufgabenprofilen und – bei marta – konkreter Vergütung.",
+    "next_action": "Zuerst marta (ATS, Gehalt klar) und persona service (Marzahn, kurzer Weg) priorisieren; parallel BA‑Anzeigen Vitanas/Vilo/Manpower telefonisch auf Einsatzort und Homeoffice klären, bevor Unterlagen versendet werden.",
+    "weekend_action": "",
+    "jobs": [
+      {
+        "title": "Sachbearbeiter Einkauf (m/w/d) 26,27€/Std.",
+        "employer": "Manpower GmbH & Co. KG",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11081-BVL555DNAGMUU9GH-S",
+        "district": "Moabit",
+        "hours": "Unbekannt",
+        "contract": "Arbeitnehmerüberlassung, unbefristet",
+        "salary": "26,27 € – 29,19 €/Std.",
+        "commute": "ca. 45–55 Min ÖPNV (Heinersdorf → 10553 Berlin-Moabit)",
+        "pro": "Guter Stundenlohn und klar definierte Einkaufsaufgaben inkl. Lieferantenkommunikation/SAP Ariba.",
+        "con": "Arbeitnehmerüberlassung statt Direkteinstellung.",
+        "effort_details": "Schnelle Bewerbung über Zeitarbeitsagentur: ca. 25 Min.",
+        "deadline": "",
+        "family": "A",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 34,
+          "entry": 22,
+          "commute": 10,
+          "conditions": 6
+        },
+        "effort_minutes": 25,
+        "evidence": "Überwachung von Vertragslaufzeiten und Compliance-Anforderungen Enge Zusammenarbeit mit den Bereichen Contract Manufacturing, Engineering, Supplier Quality Development und Procurement Pflege von Stammdaten sowie sourcingrelevanter Dokumentationen Damit überzeugst du uns: Abgeschlossene kaufmännische oder fachbezogene Ausbildung Mindestens 2 Jahre Berufserfahrung im Einkauf, Procurement oder Sourcing Gute Kenntnisse in SAP und idealerweise SAP Ariba Erfahrung in der",
+        "score": 72,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin site:stepstone.de",
+        "Teamassistenz site:karriereportal-stellen.berlin.de",
+        "Projektassistenz site:arbeitsagentur.de Veröffentlicht seit 7",
+        "Office Manager Berlin site:personio.de",
+        "Projektkoordination Berlin site:stepstone.de"
+      ],
+      "B": [
+        "Einkäufer/in Berlin site:arbeitsagentur.de",
+        "Operativer Einkäufer Berlin site:arbeitsagentur.de",
+        "Einkauf Berlin site:arbeitsagentur.de sort=veroeffdatum",
+        "Sachbearbeiter Einkauf Berlin site:arbeitsagentur.de"
+      ],
+      "C": [
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de",
+        "Auftragsabwicklung Berlin site:stepstone.de",
+        "Product Coordinator Berlin site:personio.de",
+        "Merchandising Koordination Berlin site:fashionjobs.com"
+      ]
+    },
+    "family_observations": {
+      "A": "Viele Office-/Assistenzrollen ohne Gehaltsangabe; Personio‑Boards liefern die klarsten Aufgabenbeschreibungen und sind bewerbungsseitig effizient.",
+      "B": "Mehrere tagesaktuelle BA‑Anzeigen (auch ANÜ) mit konkreten Tools (SAP Ariba) und Gehalts-/Stundenangaben; Einsatzorte oft unbenannt – zwingend vorab klären.",
+      "C": "Heute gute Dichte an BA‑Innendienstrollen; Gehaltsangaben uneinheitlich (teils offensichtlich fehlerhaft). Fashion‑Portale liefern eher VM/Store‑Rollen als Koordination im HQ."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere neue Detailseiten heute verfügbar (z. B. 11081-BVL555DNAGMUU9GH-S; 14888-QF63K4NL3FGPT8OF-S)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "KODIAK‑Projektassistenz heute gelistet; weitere Suchlisten abrufbar."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Boards u. a. GFK Ingenieure und marta erreichbar; Inhalte vollständig lesbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal geprüft (z. B. LfG‑B Teamassistenz weiterhin online); heute keine passende neue Vollzeitrolle ≥30h."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "fashionjobs.com liefert v. a. Visual‑Merchandising/Store‑Rollen (z. B. New Balance VM‑Coordinator, Nike VMS Specialist) – Stundenumfang/Profil heute nicht passend."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12122-981436957-S",
+        "reason": "Gesamt-Score <55: Vertriebsinnendienst-Aufgaben nur teils passend; zudem unplausible/äußerst niedrige Gehaltsangabe im Inserat (3.000 € – 3.500 €/Jahr)."
+      }
+    ],
+    "assessment_pages_checked": 5,
+    "rejected": [
+      {
+        "title": "Operativer Einkäufer (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14888-QF63K4NL3FGPT8OF-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Operativer Einkäufer (m/w/d)",
+          "employer": "Vilo-Personal GmbH",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14888-QF63K4NL3FGPT8OF-S",
+          "district": "Moabit",
+          "hours": "35 Std./Woche (Vollzeit)",
+          "contract": "Arbeitnehmerüberlassung, unbefristet",
+          "salary": "46.000 € – 51.600 €/Jahr",
+          "commute": "ca. 45–55 Min ÖPNV (Heinersdorf → 10553 Berlin-Moabit)",
+          "pro": "Klare Gehaltsspanne und 35‑Stunden‑Woche.",
+          "con": "Sehr gute Englischkenntnisse zwingend; Arbeitnehmerüberlassung.",
+          "effort_details": "Schnelle Bewerbung über Zeitarbeitsagentur: ca. 25 Min.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 34,
+            "entry": 23,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 25,
+          "evidence": "übernehmen Sie folgende Aufgaben im internationalen Einkauf: Durchführung und Koordination von Angebotsanfragen (RFQs) über SAP Ariba Kommunikation mit Lieferanten sowie Nachverfolgung laufender Ausschreibungen Unterstützung und Durchführung elektronischer Auktionen (eAuctions) Prüfung, Konsolidierung und Auswertung von Lieferantenangeboten Erstellung von Preisvergleichen und Beschaffungsempfehlungen Verwaltung von Verträgen sowie Pflege der Vertragsdatenbank Überwachung von"
+        }
+      },
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+          "employer": "GFK Ingenieure GmbH",
+          "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+          "district": "Charlottenburg",
+          "hours": "Vollzeit (40 Std./Woche), hybrid",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 50–60 Min ÖPNV (Heinersdorf → 10629 Berlin-Charlottenburg)",
+          "pro": "Breites Office- und Assistenzspektrum mit klaren Aufgaben und Hybridoption.",
+          "con": "Keine Gehaltsangabe im Inserat.",
+          "effort_details": "ATS (Personio) – Profil anlegen/Unterlagen hochladen: ca. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 30,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "und bereits Erfahrung im Office Management, in der Assistenz oder einer ähnlichen Rolle gesammelt. Der Umgang mit den gängigen MS-Office-Tools gehört für dich zum Alltag. Für diese Position ist eine hohe Präsenz im Büro wichtig – du bist also gern mittendrin statt nur dabei. Du arbeitest eigenständig, strukturiert und lösungsorientiert, behältst auch dann den Überblick, wenn mehrere Themen gleichzeitig auf dem Tisch liegen, und punktest mit Organisationstalent, Diskretion und starker"
+        }
+      },
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta",
+          "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+          "district": "Mitte",
+          "hours": "Vollzeit, tägliche Präsenz erwartet",
+          "contract": "Festanstellung, unbefristet",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ca. 35–45 Min ÖPNV (Heinersdorf → Berlin-Mitte)",
+          "pro": "Transparente Gehaltsspanne und unbefristete Rolle mit hoher Verantwortung.",
+          "con": "Tägliche Präsenz im Office ausdrücklich gefordert.",
+          "effort_details": "ATS (Personio) – Profil anlegen/Unterlagen hochladen: ca. 55 Min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 32,
+            "entry": 24,
+            "commute": 15,
+            "conditions": 8
+          },
+          "effort_minutes": 55,
+          "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
+        }
+      },
+      {
+        "title": "Projektassistenz (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-m-w-d-Berlin-KODIAK-GmbH--14734637-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Projektassistenz (m/w/d)",
+          "employer": "KODIAK GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-m-w-d-Berlin-KODIAK-GmbH--14734637-inline.html",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "Adresse im Inserat nicht genannt; konservativ 45–60 Min ab Heinersdorf.",
+          "pro": "Breites, koordinatives Aufgabenpaket inkl. SAP/P2P‑Prozessen (passend zu PLM/SAP‑Erfahrung).",
+          "con": "Energie-/Infrastrukturprojekte; Branchenwechsel ohne Modebezug.",
+          "effort_details": "Direktbewerbung über StepStone/Unternehmen: ca. 70 Min (Profilcheck 10, CV 20, Anschreiben 30, Formular 10).",
+          "deadline": "",
+          "evidence": "„Koordination von Dienstleistern und Partnern (z. B. Veranstaltungsorte, Technik, Catering, Moderation) … Organisation und Nachbereitung von Besprechungen und Projektterminen, inklusive Raum- und Technikbuchung, Protokollführung und Teilnehmermanagement … Pflege und Nutzung projektbezogener Systeme wie SAP/P2P für Bestellanforderungen, Rechnungsverfolgung oder Leistungsregistrierung im Zusammenhang mit Veranstaltungen.” ([stepstone.de](https://www.stepstone.de/stellenangebote--Projektassistenz-m-w-d-Berlin-KODIAK-GmbH--14734637-inline.html?utm_source=openai))",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 24,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Sachbearbeiter (m|w|d) Operativer Einkauf",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14027-00009320017001-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Sachbearbeiter (m|w|d) Operativer Einkauf",
+          "employer": "Vitanas GmbH & Co. KGaA",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/14027-00009320017001-S",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Unbekannt",
+          "contract": "Unbefristet (laut BA „Heute veröffentlicht“)",
+          "salary": "Unbekannt",
+          "commute": "Adresse im Inserat nicht genannt; konservativ 45–60 Min.",
+          "pro": "Operativer Einkauf mit Stammdaten/Bestellabwicklung deckt Kernkompetenzen (MOQ/Leadtimes/Lieferantenkommunikation) ab.",
+          "con": "Branchenwechsel Gesundheit/ Pflege; branchenspezifische Tools möglich.",
+          "effort_details": "Schnellbewerbung an Arbeitgeber (über BA/Unternehmen): 25–40 Min; hier veranschlagt 40 Min (BA‑Profil 10, Unterlagen 20, Versand 10).",
+          "deadline": "",
+          "evidence": "„Die Vitanas Gruppe beschäftigt … rund 5.000 Mitarbeiter … Sachbearbeiter (m|w|d) Operativer Einkauf … Herzliche Arbeitsatmosphäre in einem Team mit tollen Kollegen und flachen Hierarchien.“ ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/14027-00009320017001-S?utm_source=openai))",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 34,
+            "entry": 20,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 40
+        }
+      },
+      {
+        "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003722346-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Mitarbeiter Vertriebsinnendienst (m/w/d)",
+          "employer": "DARE GmbH (Entsorgung)",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003722346-S",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "Adresse nicht genannt; konservativ 45–60 Min.",
+          "pro": "Kern Auftrags-/Angebotsabwicklung und Kundenkommunikation – sauberer Anschluss an Innendienst-/Order‑Erfahrung.",
+          "con": "Entsorgungsbranche; Reisetätigkeit/Schicht unbekannt.",
+          "effort_details": "Kurzbewerbung an Arbeitgeber: 40 Min (Profil 10, CV 15, Anschreiben 15).",
+          "deadline": "",
+          "evidence": "„Im Vertriebsinnendienst bist Du die wichtige Schnittstelle zwischen unseren Kunden … Du nimmst Aufträge entgegen … sorgst dafür, dass Angebote und Aufträge zuverlässig bearbeitet werden. … Unser Ziel ist es, der größte Entsorger der Bauwirtschaft in der Region Berlin/Brandenburg zu werden.“ ([arbeitsagentur.de](https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003722346-S?utm_source=openai))",
+          "family": "C",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 26,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 40
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-11-10T08:00:43.209078+00:00",
+  "prepared_at": "2026-11-10T08:04:30.065016+00:00",
+  "message_id": "<miki-2026-11-11-9d4712cb7153fae3@miki-jobsearch>",
+  "last_attempt_at": "2026-11-10T08:00:43.209078+00:00",
+  "last_attempt_run_id": "42779303917",
+  "design_version": "electric-blue-v1"
+}

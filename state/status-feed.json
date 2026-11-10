@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T08:00:44.434995+00:00",
+  "updated_at": "2026-11-10T08:04:30.073916+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "prepared_immediate",
@@ -661,6 +661,30 @@
       "has_report": true,
       "has_mail": true,
       "planned_delivery_at": "2026-11-10T08:30:00+01:00",
+      "provider_check_failed": false
+    },
+    "2026-11-11": {
+      "date": "2026-11-11",
+      "status": "prepared",
+      "hits": 1,
+      "researched_at": "2026-11-10T08:00:43.209078+00:00",
+      "prepared_at": "2026-11-10T08:04:30.065016+00:00",
+      "created_at": "2026-11-10T08:00:43.209078+00:00",
+      "accepted_at": null,
+      "scheduled_at": null,
+      "schedule_accepted_at": null,
+      "schedule_verified_at": null,
+      "provider_status": null,
+      "provider_checked_at": null,
+      "expected_recipients": null,
+      "sent_recipient_count": null,
+      "delivered_recipient_count": null,
+      "delivered_at": null,
+      "failed_recipient_count": null,
+      "delivery_problem": null,
+      "has_report": true,
+      "has_mail": true,
+      "planned_delivery_at": "2026-11-11T08:30:00+01:00",
       "provider_check_failed": false
     }
   },
