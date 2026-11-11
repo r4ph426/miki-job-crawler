@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T08:07:22.339600+00:00",
+  "updated_at": "2026-11-11T08:10:42.608445+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "prepared_immediate",
@@ -689,11 +689,11 @@
     },
     "2026-11-12": {
       "date": "2026-11-12",
-      "status": "research_failed",
+      "status": "prepared",
       "hits": 0,
-      "researched_at": null,
-      "prepared_at": null,
-      "created_at": null,
+      "researched_at": "2026-11-11T08:07:21.014288+00:00",
+      "prepared_at": "2026-11-11T08:10:42.604205+00:00",
+      "created_at": "2026-11-11T08:07:21.014288+00:00",
       "accepted_at": null,
       "scheduled_at": null,
       "schedule_accepted_at": null,
@@ -706,8 +706,8 @@
       "delivered_at": null,
       "failed_recipient_count": null,
       "delivery_problem": null,
-      "has_report": false,
-      "has_mail": false,
+      "has_report": true,
+      "has_mail": true,
       "planned_delivery_at": "2026-11-12T08:30:00+01:00",
       "provider_check_failed": false
     }

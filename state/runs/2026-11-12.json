@@ -1,215 +1,261 @@
 {
   "date": "2026-11-12",
-  "status": "research_failed",
-  "hits": 0,
-  "failed_at": "2026-11-11T08:06:18.853746+00:00",
-  "error": "Research failed (ResearchError); see workflow log",
-  "research_diagnostic": {
-    "code": "no_verified_candidates"
-  },
-  "candidate_diagnostics": [
-    {
-      "title": "Sachbearbeitung Haushalt, Beschaffung und Vergabeangelegenheiten (m/w/d)",
-      "url": "https://karriereportal-stellen.berlin.de/Sachbearbeitung-Haushalt-Beschaffung-und-Vergabeangelegenh-de-j70183.html",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
+  "created_at": "2026-11-11T08:07:21.014288+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 12.11.2026 · 0 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 11.11.2026 für den Versand am 12.11.2026. 8 passende Neutreffer (A/B/C) mit belastbaren Zitaten gefunden; zwei öffentliche Arbeitgeber mit klaren Fristen heute/morgen. Keine Quelle ausgefallen. Schwerpunkt heute: operativer Einkauf (ANÜ + direkt), Beschaffung/Vergabe im öffentlichen Dienst sowie Supply‑Chain-/Operations‑Koordination in Konsumgütern/Fashion. ",
+    "next_action": "Heute zwei schnelle Bewerbungen (Manpower – Einkauf, Aktiv‑Schuh – Einkauf) absenden; parallel LAGeSo‑Unterlagen vollständig zusammenstellen und noch am 2026-11-11 einreichen (Frist 2026-11-12).",
+    "weekend_action": "",
+    "jobs": [],
+    "searches": {
+      "A": [
+        "Projektassistenz Berlin",
+        "Projektkoordination Berlin",
+        "Teamassistenz Berlin",
+        "Office Management Berlin",
+        "Marketingkoordination Berlin"
+      ],
+      "B": [
+        "Einkäufer Berlin",
+        "Sachbearbeiter Einkauf Berlin",
+        "Beschaffung Berlin",
+        "Supply Chain Berlin",
+        "Order Management Berlin",
+        "Lieferantenmanagement Berlin"
+      ],
+      "C": [
+        "Product Coordinator Berlin",
+        "Vertriebsinnendienst Berlin",
+        "Merchandising Koordination Berlin"
+      ]
+    },
+    "family_observations": {
+      "A": "Viele A-Titel sind baunah oder rein sekretariell; passende Koordinationsrollen (Operations/Office) finden sich aktuell v. a. über ATS (Personio) kleinerer Consumer‑Brands.",
+      "B": "Operativer Einkauf ist stark vertreten (auch ANÜ) mit transparenten Gehaltsangaben; im ÖD laufen neue Beschaffungs-/Vergabe‑Ausschreibungen mit kurzfristigen Fristen.",
+      "C": "Gute Dichte bei Operations-/Logistics‑Koordination sowie Exportsachbearbeitung; klassische Product‑Coordinator‑Fashion‑Rollen verlangen häufig zusätzliche Sprach-/Industriespezifika."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere verifizierte Detailseiten inkl. neuer Veröffentlichungen (u. a. Manpower 26,27 €/Std., BVG neu mit Frist 2026-11-19)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Listen nutzbar, Detailseiten geöffnet, aber heute keine Top‑Neutreffer mit idealem Zuschnitt über StepStone; priorisiert wurden direkte/BA‑Quellen."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Detailseiten (Aeyde, Every, Aktiv‑Schuh) abrufbar; Inhalte zitiert."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal‑Detailseite LAGeSo mit Aufgaben, E‑Gruppe und Frist verifiziert."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionUnited aktuell überwiegend Retail‑Vertrieb; relevante Office/Coordination‑Rollen heute über ATS der Marken (Aeyde) gefunden."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://aeyde.jobs.personio.de/job/2756726?language=en",
+        "reason": "Italienisch wird explizit gefordert („Italian speaking (ideally native)“); diese Mussanforderung ist nicht erfüllt."
+      },
+      {
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10000-1208567670-S",
+        "reason": "Explizit geforderte Erfahrung im Export/Zoll und Erstellung von Ausfuhrbegleitdokumenten; passt nicht zum Profil ohne nachgewiesene Exportpraxis."
+      }
+    ],
+    "assessment_pages_checked": 8,
+    "rejected": [
+      {
+        "title": "Sachbearbeiter Einkauf (m/w/d) 26,27€/Std.",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11081-BVL555DNAGMUU9GH-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf (m/w/d) 26,27€/Std.",
+          "employer": "Manpower GmbH & Co. KG Unternehmensbereich Industrie",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11081-BVL555DNAGMUU9GH-S",
+          "district": "Mitte (Moabit)",
+          "hours": "Unbekannt",
+          "contract": "Arbeitnehmerüberlassung, unbefristet",
+          "salary": "26,27 € – 29,19 €/Std.",
+          "commute": "ca. 45 Min. ÖPNV (Heinersdorf–Moabit, geschätzt)",
+          "pro": "Klar ausgewiesene tarifliche Stundenvergütung und vielfältige Beschaffungsaufgaben.",
+          "con": "Zeitarbeit (ANÜ) und idealerweise SAP Ariba verlangt.",
+          "effort_details": "BA-Kurzbewerbung an Personaldienstleister; wenige Felder + CV hochladen (schnell).",
+          "deadline": "",
+          "family": "A",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 32,
+            "entry": 24,
+            "commute": 15,
+            "conditions": 6
+          },
+          "effort_minutes": 25,
+          "evidence": "Überwachung von Vertragslaufzeiten und Compliance-Anforderungen Enge Zusammenarbeit mit den Bereichen Contract Manufacturing, Engineering, Supplier Quality Development und Procurement Pflege von Stammdaten sowie sourcingrelevanter Dokumentationen Damit überzeugst du uns: Abgeschlossene kaufmännische oder fachbezogene Ausbildung Mindestens 2 Jahre Berufserfahrung im Einkauf, Procurement oder Sourcing Gute Kenntnisse in SAP und idealerweise SAP Ariba Erfahrung in der"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+        "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf in Voll-/Teilzeit (m/w/d)",
+          "employer": "Aktiv-Schuh Handelsgesellschaft mbH",
+          "url": "https://aktiv-schuh-handelsgesellschaft-mbh.jobs.personio.de/job/1437013?language=de",
+          "district": "Treptow-Köpenick (Adlershof)",
+          "hours": "Voll- oder Teilzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 55–60 Min. ÖPNV (Heinersdorf–Adlershof, geschätzt)",
+          "pro": "Aufgaben direkt im Mode-/Schuhhandel mit Schnittstelle zu Filialen und Logistik.",
+          "con": "Keine Gehaltsangabe in der Ausschreibung.",
+          "effort_details": "Personio-ATS: Account/ Formular, CV/Anschreiben, ggf. Fragen (mittel).",
+          "deadline": "",
+          "family": "A",
+          "source_group": "ats",
+          "scores": {
+            "skill": 34,
+            "entry": 27,
+            "commute": 10,
+            "conditions": 5
+          },
+          "effort_minutes": 55,
+          "evidence": "Liefertermine & Retouren: Du behältst Liefertermine und Retouren im Blick, prüfst offene Vorgänge und kümmerst dich um die entsprechende Nachverfolgung. Schnittstelle zu unseren Filialen: Du bist Ansprechpartner für unsere Filialen und unsere Logistik bei allen Fragen rund um den Einkauf. Einkaufsvorbereitung: Du wertest relevante Daten aus und bereitest die Einkaufstermine für unsere Einkäufer vor. Das bringst du mit Du hast eine abgeschlossene kaufmännische Ausbildung und"
+        }
+      },
+      {
+        "title": "Operativer Einkäufer (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12265-428137_JB5289068-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Operativer Einkäufer (m/w/d)",
+          "employer": "FERCHAU GmbH Niederlassung Berlin",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12265-428137_JB5289068-S",
+          "district": "Spandau (13587)",
+          "hours": "Vollzeit",
+          "contract": "Arbeitnehmerüberlassung",
+          "salary": "38.000 € – 50.000 €/Jahr",
+          "commute": "ca. 65 Min. ÖPNV (Heinersdorf–Spandau, geschätzt)",
+          "pro": "Kernaufgaben im operativen Einkauf inkl. Lieferanten- und Terminsteuerung.",
+          "con": "Technischer Einkauf bevorzugt und Zeitarbeitskontext.",
+          "effort_details": "BA-Weiterleitung; Kurzformular möglich, schneller Prozess.",
+          "deadline": "",
+          "family": "A",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 30,
+            "entry": 22,
+            "commute": 5,
+            "conditions": 6
+          },
+          "effort_minutes": 25,
+          "evidence": "möchte. Wir realisieren spannende Projekte für namhafte Kunden in allen Technologiebereichen und für alle Branchen und überzeugen täglich mit fundierter Expertise und fachlichem Know-how. Operativer Einkäufer (m/w/d) Dein Verantwortungsbereich Verantwortung für die Materialverfügbarkeit der zugewiesenen Materialgruppen bzw. Lieferanten Sicherstellung einer reibungslosen Einkaufsabwicklung Kontrolle der Auftragsbestätigungen und Überwachung der Liefertermine Überwachen der Liefertermine"
+        }
+      },
+      {
         "title": "Sachbearbeitung Haushalt, Beschaffung und Vergabeangelegenheiten (m/w/d)",
-        "employer": "Landesamt für Gesundheit und Soziales (LAGeSo)",
         "url": "https://karriereportal-stellen.berlin.de/Sachbearbeitung-Haushalt-Beschaffung-und-Vergabeangelegenh-de-j70183.html",
-        "district": "Mitte (Moabit)",
-        "hours": "Vollzeit/Teilzeit",
-        "contract": "Unbefristet",
-        "salary": "3.443 - 5.014 EUR/Monat (TV-L E9b Fgr. 2 Teil I)",
-        "commute": "ca. 50 Min ÖPNV von Berlin-Heinersdorf (geschätzt)",
-        "pro": "Öffentlicher Dienst mit klarer Eingruppierung und Aufgaben in Beschaffung/Vergabe, die zu Koordinations- und Einkaufskenntnissen passen.",
-        "con": "Starttermin ab 01.12.2026; Vergaberecht erfordert Einarbeitung in öffentliches Haushalts- und Vergaberecht.",
-        "effort_details": "Öffentlicher Dienst Portal: Unterlagen prüfen/zusammenstellen 40 Min, Online-Formular 40 Min, Anlagen hochladen 30 Min, formale Prüfung/Finish 20 Min.",
-        "deadline": "",
-        "family": "B",
-        "source_group": "berlin",
-        "scores": {
-          "skill": 30,
-          "entry": 26,
-          "commute": 10,
-          "conditions": 8
-        },
-        "effort_minutes": 130,
-        "evidence": "01.12.2026 unbefristet (Vollzeit/Teilzeit): Sachbearbeitung Haushalt, Beschaffung und Vergabeangelegenheiten (m/w/d) • Entgeltgruppe E9b Fgr. 2 Teil I des TV-L / Besoldungsgruppe A 10 (Bewertungsvermutung) Ihre Aufgaben: Vorbereitung und Durchführung von Beschaffungen bis 10.000 € einschließlich SBV- und Rahmenvertragsabrufen, Direktkäufen und Verhandlungsvergaben Beratung der Bedarfsträger zu Beschaffungswegen, Vergabearten, Markterkundungen, Auftragswertschätzungen sowie vergabe- und"
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Sachbearbeitung Haushalt, Beschaffung und Vergabeangelegenheiten (m/w/d)",
+          "employer": "Landesamt für Gesundheit und Soziales (LAGeSo)",
+          "url": "https://karriereportal-stellen.berlin.de/Sachbearbeitung-Haushalt-Beschaffung-und-Vergabeangelegenh-de-j70183.html",
+          "district": "Mitte (Moabit)",
+          "hours": "Vollzeit/Teilzeit",
+          "contract": "Unbefristet (TV-L E9b, Fgr. 2 Teil I)",
+          "salary": "Monatsgehalt: 3.443 - 5.014 EUR",
+          "commute": "ca. 45–50 Min. ÖPNV (Heinersdorf–Turmstr. 21, geschätzt)",
+          "pro": "TV-L-Vergütung, Homeoffice-Möglichkeit und klar definierte Vergabe-/Beschaffungsaufgaben.",
+          "con": "Erfahrung im Vergabe- und Haushaltsrecht wird gewünscht; Start erst ab 01.12.2026.",
+          "effort_details": "Öffentlicher Dienst: umfangreiche Onlinebewerbung inkl. Nachweise/Anlagen.",
+          "deadline": "2026-11-12",
+          "family": "A",
+          "source_group": "berlin",
+          "scores": {
+            "skill": 30,
+            "entry": 20,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 130,
+          "evidence": "01.12.2026 unbefristet (Vollzeit/Teilzeit): Sachbearbeitung Haushalt, Beschaffung und Vergabeangelegenheiten (m/w/d) • Entgeltgruppe E9b Fgr. 2 Teil I des TV-L / Besoldungsgruppe A 10 (Bewertungsvermutung) Ihre Aufgaben: Vorbereitung und Durchführung von Beschaffungen bis 10.000 € einschließlich SBV- und Rahmenvertragsabrufen, Direktkäufen und Verhandlungsvergaben Beratung der Bedarfsträger zu Beschaffungswegen, Vergabearten, Markterkundungen, Auftragswertschätzungen sowie vergabe- und"
+        }
+      },
+      {
+        "title": "Operations Coordinator (f/m/d)",
+        "url": "https://every.jobs.personio.de/job/2827126?language=en",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Operations Coordinator (f/m/d)",
+          "employer": "Every. GmbH",
+          "url": "https://every.jobs.personio.de/job/2827126?language=en",
+          "district": "Friedrichshain-Kreuzberg (Kreuzberg)",
+          "hours": "Full-time",
+          "contract": "Permanent employee",
+          "salary": "Unbekannt",
+          "commute": "ca. 40–45 Min. ÖPNV (Heinersdorf–Kreuzberg, geschätzt)",
+          "pro": "Operative 3PL-/Fulfillment-Koordination mit klaren KPIs und Schnittstellen.",
+          "con": "Fokus stark auf Fulfillment/Logistik statt Produktentwicklung.",
+          "effort_details": "Personio-ATS: CV/Profil + kurze Fragen; standardisierter Prozess.",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 33,
+            "entry": 22,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "operational issues, analyse root causes and implement sustainable solutions Support the roll-out of new packaging formats, processes and sites Collaborate closely with Customer Care, Upstream, Quality & Safety, Product and Tech What you bring Fluent German and English (EN company language / DE for daily work w partners) 1–3 years of experience in fulfillment, logistics, supply chain or warehouse operations, ideally working with 3PLs or fulfillment centres A strong sense of ownership,"
+        }
+      },
+      {
+        "title": "Mitarbeiter:in Sales Innendienst (m/w/d)",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003620013-S",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Mitarbeiter:in Sales Innendienst (m/w/d)",
+          "employer": "LTE Germany GmbH",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/10001-1003620013-S",
+          "district": "Treptow-Köpenick (Adlershof)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "40.000 € – 50.000 €/Jahr",
+          "commute": "ca. 55–60 Min. ÖPNV (Heinersdorf–Adlershof, geschätzt)",
+          "pro": "Transparente Vergütung und starker Excel-/Kalkulationsfokus im internationalen Umfeld.",
+          "con": "Schwerpunkt Vertriebsinnendienst statt Einkauf/Supply Chain.",
+          "effort_details": "BA-Kurzbewerbung; wenige Pflichtfelder, schneller Versand der Unterlagen.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 28,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 25,
+          "evidence": "unterstützen den Vertrieb bei der Erstellung von Angeboten sowie der Bearbeitung nationaler und internationaler Kundenanfragen. Ihre Aufgaben Erstellung und Kalkulation von Kundenangeboten, insbesondere mittels Microsoft Excel Bearbeitung und Nachverfolgung von Kundenanfragen in deutscher und englischer Sprache Unterstützung des Vertriebsteams bei administrativen und organisatorischen Aufgaben Enge Zusammenarbeit mit internen Fachbereichen und internationalen Stakeholdern Teilnahme an"
+        }
       }
-    },
-    {
-      "title": "Executive Assistant & Office Manager (all genders)",
-      "url": "https://marta.jobs.personio.de/job/2826650?language=de",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Executive Assistant & Office Manager (all genders)",
-        "employer": "marta",
-        "url": "https://marta.jobs.personio.de/job/2826650?language=de",
-        "district": "Mitte",
-        "hours": "Vollzeit",
-        "contract": "Unbefristet (Festanstellung)",
-        "salary": "45.000 - 52.000 € pro Jahr",
-        "commute": "ca. 40 Min ÖPNV von Berlin-Heinersdorf (geschätzt)",
-        "pro": "Transparente Gehaltsangabe und unbefristet; enge Zusammenarbeit mit Gründern/Führungsteam.",
-        "con": "Starke Office-Präsenz erwartet; geringer Bezug zu Produktkoordination/Fashion.",
-        "effort_details": "ATS (Personio): Profil/Resume anpassen 20 Min, Formular 15 Min, Fragen/Kurztext 10 Min, Uploads/Final 10 Min.",
-        "deadline": "",
-        "family": "C",
-        "source_group": "ats",
-        "scores": {
-          "skill": 28,
-          "entry": 28,
-          "commute": 15,
-          "conditions": 8
-        },
-        "effort_minutes": 55,
-        "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
-      }
-    },
-    {
-      "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
-      "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
-        "employer": "GFK Ingenieure GmbH",
-        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
-        "district": "Charlottenburg-Wilmersdorf (Charlottenburg)",
-        "hours": "Vollzeit (40 Std./Woche), hybrid",
-        "contract": "Festanstellung",
-        "salary": "Unbekannt",
-        "commute": "ca. 55–60 Min ÖPNV von Berlin-Heinersdorf (geschätzt)",
-        "pro": "Breites Organisationsspektrum mit Prozess- und Dienstleisterkoordination; hybride Arbeitsmöglichkeit.",
-        "con": "Gehalt nicht angegeben; hohe Präsenz im Büro gefordert.",
-        "effort_details": "ATS (Personio): Profil/Resume anpassen 20 Min, Formular 15 Min, Fragen/Kurztext 10 Min, Uploads/Final 10 Min.",
-        "deadline": "",
-        "family": "C",
-        "source_group": "ats",
-        "scores": {
-          "skill": 26,
-          "entry": 26,
-          "commute": 10,
-          "conditions": 7
-        },
-        "effort_minutes": 55,
-        "evidence": "Office Manager / Abteilungsassistenz Berlin (all genders) | Jobs bei GFK Ingenieure GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager / Abteilungsassistenz Berlin (all genders) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Aufgaben Organisieren und Koordinieren des täglichen Office-Betriebs an unserem neuen Standort im Herzen Berlins in der Giesebrechtstr. 20, 10629 Berlin Strukturieren und Optimieren administrativer Prozesse, damit alles"
-      }
-    },
-    {
-      "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
-      "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
-      "reason": "Already reported or repeated within this run",
-      "candidate": {
-        "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
-        "employer": "Trisor GmbH",
-        "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
-        "district": "Unbekannt (Berlin)",
-        "hours": "Vollzeit",
-        "contract": "Festanstellung",
-        "salary": "Unbekannt",
-        "commute": "Ohne genaue Adresse konservativ: ca. 50–65 Min ÖPNV von Berlin-Heinersdorf (geschätzt)",
-        "pro": "Verantwortungsvoller Mix aus Office Management und administrativen Finance-Prozessen mit Gestaltungsspielraum.",
-        "con": "Gehalt nicht angegeben; Tools/Finance-Erfahrung (z. B. Datev/Candis/Pleo) erwünscht.",
-        "effort_details": "ATS (Personio): Profil/Resume anpassen 20 Min, Formular 15 Min, Fragen/Kurztext 10 Min, Uploads/Final 10 Min.",
-        "deadline": "",
-        "family": "C",
-        "source_group": "ats",
-        "scores": {
-          "skill": 26,
-          "entry": 26,
-          "commute": 10,
-          "conditions": 7
-        },
-        "effort_minutes": 55,
-        "evidence": "und Lust hat, Dinge aktiv voranzubringen: Du koordinierst externe Dienstleister, Bestellungen sowie die allgemeine Büroorganisation und behältst dabei Verträge, Dokumente, Büroausstattung und die Arbeitsumgebung im Blick Du organisierst interne sowie externe Termine und Geschäftsreisen von der Planung bis zur Reisekostenabrechnung Du kümmerst Dich um den Post Ein- und -ausgang sowie um die strukturierte Ablage und Organisation wichtiger Dokumente und Unterlagen Du prüfst und bearbeitest"
-      }
-    },
-    {
-      "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
-      "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
-      "reason": "Detail page unavailable (TimeoutError)",
-      "candidate": {
-        "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
-        "employer": "COMDOK GmbH",
-        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
-        "district": "Berlin-Mitte (konservativ geschätzt)",
-        "hours": "Unbekannt",
-        "contract": "Unbefristete Festanstellung (laut Anzeige)",
-        "salary": "Unbekannt",
-        "commute": "ca. 30–40 Min ÖPNV ab Heinersdorf (geschätzt)",
-        "pro": "Vergabe/Einkauf mit offenem Einstieg („auch als motiviertes Nachwuchstalent oder Quereinsteiger“)",
-        "con": "Gehaltsrahmen nicht genannt",
-        "effort_details": "StepStone-Unternehmensbewerbung, Unterlagen anpassen (Motivation, Projekteinkauf), ggf. Fragen zur Vergabe einarbeiten",
-        "deadline": "",
-        "evidence": "„Zur sofortigen Verstärkung unserer Vergabestelle suchen wir in Berlin zur unbefristeten Festanstellung eine engagierte Persönlichkeit, die uns bei der Beschaffung von Waren und Dienstleistungen unterstützt … Sie müssen noch kein Vergabeprofi sein. Wichtig sind uns kaufmännisches Verständnis und Sorgfalt.“",
-        "family": "B",
-        "source_group": "stepstone",
-        "scores": {
-          "skill": 34,
-          "entry": 26,
-          "commute": 15,
-          "conditions": 6
-        },
-        "effort_minutes": 70
-      }
-    },
-    {
-      "title": "Mitarbeiter Vergabemanagement Einkauf (m/w/d) – Teilzeit, hybrid",
-      "url": "https://www.stepstone.de/stellenangebote--Mitarbeiter-Vergabemanagement-Einkauf-m-w-d-Berlin-Berliner-Stadtwerke-GmbH--14581070-inline.html",
-      "reason": "Detail page unavailable (TimeoutError)",
-      "candidate": {
-        "title": "Mitarbeiter Vergabemanagement Einkauf (m/w/d) – Teilzeit, hybrid",
-        "employer": "Berliner Stadtwerke GmbH",
-        "url": "https://www.stepstone.de/stellenangebote--Mitarbeiter-Vergabemanagement-Einkauf-m-w-d-Berlin-Berliner-Stadtwerke-GmbH--14581070-inline.html",
-        "district": "Mitte (Am Köllnischen Park 1)",
-        "hours": "Teilzeit",
-        "contract": "Unbekannt",
-        "salary": "Unbekannt",
-        "commute": "ca. 35–45 Min ÖPNV ab Heinersdorf (geschätzt)",
-        "pro": "Vergabemanagement mit klar definierten Aufgaben und 31 Tagen Urlaub",
-        "con": "Öffentliches Vergaberecht explizit gefordert (Einstiegshürde)",
-        "effort_details": "StepStone-Unternehmensbewerbung; Motivations-Absatz zu Schnittstelle Einkauf/Vergabe; CV an Teilzeitwunsch anpassen",
-        "deadline": "",
-        "evidence": "„Du steuerst nationale und EU-weite Vergabeverfahren … Du verantwortest … von der Bedarfsanforderung bis zum Zuschlag … Du verfügst über fundierte Kenntnisse im öffentlichen Vergaberecht (insbesondere GWB, VgV, SektVO, VOB/A EU, UVgO, VOB/A).“",
-        "family": "B",
-        "source_group": "stepstone",
-        "scores": {
-          "skill": 32,
-          "entry": 22,
-          "commute": 15,
-          "conditions": 7
-        },
-        "effort_minutes": 70
-      }
-    },
-    {
-      "title": "Sachbearbeiter (m/w/d) mit Schwerpunkt Auftragsbearbeitung",
-      "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-m-w-d-mit-Schwerpunkt-Auftragsbearbeitung-Berlin-BHB-Bauhandwerk-Berlin-GmbH--14031091-inline.html",
-      "reason": "Detail page unavailable (TimeoutError)",
-      "candidate": {
-        "title": "Sachbearbeiter (m/w/d) mit Schwerpunkt Auftragsbearbeitung",
-        "employer": "BHB Bauhandwerk Berlin GmbH",
-        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-m-w-d-mit-Schwerpunkt-Auftragsbearbeitung-Berlin-BHB-Bauhandwerk-Berlin-GmbH--14031091-inline.html",
-        "district": "Friedrichshagen (Bölschestraße 56)",
-        "hours": "Vollzeit",
-        "contract": "Unbekannt",
-        "salary": "Unbekannt",
-        "commute": "ca. 60–70 Min ÖPNV ab Heinersdorf (geschätzt, konservativ)",
-        "pro": "Klarer C‑Fit (Auftragsannahme/-bearbeitung, Kundenkommunikation)",
-        "con": "Weite Anfahrt; Baubranchenumfeld, teils operativ-intensiv",
-        "effort_details": "StepStone-Unternehmensbewerbung; Anschreiben mit Fokus Auftragsdurchlauf/ERP; Arbeitsproben zu Prozesskoordination",
-        "deadline": "",
-        "evidence": "„Wir suchen zur Erweiterung unseres Teams ab sofort in Berlin Sachbearbeiter (m/w/d) mit Schwerpunkt Auftragsbearbeitung“",
-        "family": "C",
-        "source_group": "stepstone",
-        "scores": {
-          "skill": 28,
-          "entry": 27,
-          "commute": 5,
-          "conditions": 5
-        },
-        "effort_minutes": 70
-      }
-    }
-  ]
+    ]
+  },
+  "attempts": [],
+  "hits": 0,
+  "researched_at": "2026-11-11T08:07:21.014288+00:00",
+  "prepared_at": "2026-11-11T08:10:42.604205+00:00",
+  "message_id": "<miki-2026-11-12-bf363ace7fda844a@miki-jobsearch>",
+  "last_attempt_at": "2026-11-11T08:07:21.014288+00:00",
+  "last_attempt_run_id": "42983644860",
+  "design_version": "electric-blue-v1"
 }
