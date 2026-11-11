@@ -2322,5 +2322,33 @@
     },
     "date": "2026-11-10",
     "delivery_status": "sent"
+  },
+  {
+    "title": "Sachbearbeiter Einkauf (m/w/d) 26,27€/Std.",
+    "employer": "Manpower GmbH & Co. KG",
+    "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/11081-BVL555DNAGMUU9GH-S",
+    "district": "Moabit",
+    "hours": "Unbekannt",
+    "contract": "Arbeitnehmerüberlassung, unbefristet",
+    "salary": "26,27 € – 29,19 €/Std.",
+    "commute": "ca. 45–55 Min ÖPNV (Heinersdorf → 10553 Berlin-Moabit)",
+    "pro": "Guter Stundenlohn und klar definierte Einkaufsaufgaben inkl. Lieferantenkommunikation/SAP Ariba.",
+    "con": "Arbeitnehmerüberlassung statt Direkteinstellung.",
+    "effort_details": "Schnelle Bewerbung über Zeitarbeitsagentur: ca. 25 Min.",
+    "deadline": "",
+    "family": "A",
+    "source_group": "arbeitsagentur",
+    "scores": {
+      "skill": 34,
+      "entry": 22,
+      "commute": 10,
+      "conditions": 6
+    },
+    "effort_minutes": 25,
+    "evidence": "Überwachung von Vertragslaufzeiten und Compliance-Anforderungen Enge Zusammenarbeit mit den Bereichen Contract Manufacturing, Engineering, Supplier Quality Development und Procurement Pflege von Stammdaten sowie sourcingrelevanter Dokumentationen Damit überzeugst du uns: Abgeschlossene kaufmännische oder fachbezogene Ausbildung Mindestens 2 Jahre Berufserfahrung im Einkauf, Procurement oder Sourcing Gute Kenntnisse in SAP und idealerweise SAP Ariba Erfahrung in der",
+    "score": 72,
+    "verification": "Live detail page and supporting quotation checked",
+    "date": "2026-11-11",
+    "delivery_status": "sent"
   }
 ]
