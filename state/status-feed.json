@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T08:00:42.388674+00:00",
+  "updated_at": "2026-11-11T08:00:43.463532+00:00",
   "timezone": "Europe/Berlin",
   "schedule": {
     "mode": "prepared_immediate",
@@ -999,10 +999,6 @@
     "status": "disabled"
   },
   "recovery": {
-    "2026-10-22": {
-      "status": "scheduled",
-      "attempts": 2
-    },
     "2026-10-23": {
       "status": "scheduled",
       "attempts": 3
@@ -1054,6 +1050,10 @@
     "2026-11-11": {
       "status": "sent",
       "attempts": 2
+    },
+    "2026-11-12": {
+      "status": "running",
+      "attempts": 1
     }
   },
   "delivery_alerts": {
