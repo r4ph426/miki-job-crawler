@@ -6,7 +6,12 @@
       "started_at": "2026-11-11T08:00:42.383124+00:00",
       "status": "failed",
       "finished_at": "2026-11-11T08:06:19.943870+00:00"
+    },
+    {
+      "phase": "research",
+      "started_at": "2026-11-11T08:07:21.014288+00:00",
+      "status": "running"
     }
   ],
-  "status": "failed"
+  "status": "running"
 }
