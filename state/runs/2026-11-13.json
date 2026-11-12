@@ -1,0 +1,276 @@
+{
+  "date": "2026-11-13",
+  "created_at": "2026-11-12T08:00:44.413321+00:00",
+  "status": "prepared",
+  "subject": "Wochenüberblick Stellensuche · KW 46",
+  "report": {
+    "summary": "Recherche vom 12.11.2026 für den Versand am 13.11.2026. Abdeckung aller fünf Quellen erfüllt. 6 belastbare, neue Vorschläge ≥55 Punkten gefunden (B, C und A gemischt), mit direkten Zitaten der Live-Anzeigen. Keine Dubletten zu den bereits gemeldeten Stellen. Alle Anzeigen heute (12.11.2026) erneut verifiziert. Pendelzeiten ab Berlin‑Heinersdorf konservativ geschätzt, bei fehlender Adresse gekennzeichnet.",
+    "next_action": "Heute zwei schnelle ATS‑Bewerbungen vorbereiten: 1) marta Executive Assistant & Office Manager (klare Gehaltsangabe, Mitte, passender Zuschnitt), 2) Eberhardt Service Group (Junior) Strategischer Einkäufer (Einstieg offen, Facility‑Beschaffung anschlussfähig). Parallel Profile für Siemens‑Portale bereitmachen (Lebenslauf ohne Deckblatt, Projekte stichpunktartig) und morgen einreichen.",
+    "weekend_action": "60 Minuten: Zielgruppen-Lebenslauf für Beschaffung/Order‑Management schärfen (Stichworte MOQ, Lead Times, Fracht, Lieferantenkommunikation, PLM/SAP) und ein kurzes Anschreiben‑Template für Office‑Management/Assistenz anlegen.",
+    "jobs": [
+      {
+        "title": "Mitarbeiter Auftragsabwicklung / Project Order Manager (w/m/d)",
+        "employer": "Siemens Energy Global GmbH & Co. KG",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/15170-494601958-S",
+        "district": "Moabit (10553)",
+        "hours": "Vollzeit, Teilzeit (Vormittag, Nachmittag)",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 45 Min. ÖPNV von Berlin‑Heinersdorf nach 10553 (Moabit), geschätzt",
+        "pro": "Starker Fit: End-to-End Auftrags- und Beschaffungsabwicklung mit SAP und bereichsübergreifender Koordination.",
+        "con": "Industrienähe (Kraftwerks-Service) und regelmäßige Präsenz gefordert; Branchenwechsel aus Fashion nötig.",
+        "effort_details": "Konzernportal (Profil anlegen/Fragen) 40 Min • CV/Anschreiben anpassen 35 Min • Upload/Finalisierung 15 Min",
+        "deadline": "",
+        "family": "A",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 35,
+          "entry": 26,
+          "commute": 15,
+          "conditions": 8
+        },
+        "effort_minutes": 90,
+        "evidence": "als Industriekaufmann/-frau, Kaufmann/-frau für Groß- und Außenhandelsmanagement, Technische/r Kaufmann/-frau oder in einer vergleichbaren Fachrichtung. Ein Hochschulstudium ist wünschenswert aber keine Voraussetzung. * Mehrjährige Berufserfahrung im Order Management, in der Auftragsabwicklung, Projektkoordination, Materialplanung oder einer vergleichbaren Funktion in einem industriellen Umfeld. * Erfahrung in der parallelen Steuerung mehrerer Vorgänge sowie in der Zusammenarbeit mit",
+        "score": 84,
+        "verification": "Live detail page and supporting quotation checked"
+      },
+      {
+        "title": "Angebots- und Auftragsbearbeiter (w/m/d) Order Management",
+        "employer": "Siemens AG",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12465-1652265-1-S",
+        "district": "Mitte (10115)",
+        "hours": "Vollzeit",
+        "contract": "Unbefristet",
+        "salary": "Unbekannt",
+        "commute": "ca. 40 Min. ÖPNV von Berlin‑Heinersdorf nach 10115 (Mitte), geschätzt",
+        "pro": "E2E-Verantwortung für Supply Chain/Logistik eines Kundensegments inkl. Termin- und Bestandsziele.",
+        "con": "„Langjährige“ Order-Management- und SAP-SD-Erfahrung gefordert; Modulkenntnisse ggf. nachzuweisen.",
+        "effort_details": "Konzernportal (Profil/Fragen) 40 Min • Unterlagen anpassen 35 Min • Upload/Abschluss 15 Min",
+        "deadline": "",
+        "family": "A",
+        "source_group": "arbeitsagentur",
+        "scores": {
+          "skill": 34,
+          "entry": 24,
+          "commute": 15,
+          "conditions": 8
+        },
+        "effort_minutes": 90,
+        "evidence": "können, findest du hier weitere Informationen. Die einzelnen Benefits unterliegen gesetzlichen, tarif-/vertraglichen oder betrieblichen Bedingungen. Bringe deine Expertise ein:- In dieser Position trägst du die Verantwortung für die Supply Chain/Logistik deines definierten Kundenspektrums. Von der Bedarfsannahme über die Planung und Bestätigung bis zur Lieferung bist du für die Koordination zuständig.- Deine Aufgabe ist es, die Liefertermine zuverlässig einzuhalten und sicherzustellen,",
+        "score": 81,
+        "verification": "Live detail page and supporting quotation checked"
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektkoordination Berlin site:arbeitsagentur.de 7 Tage",
+        "Projektassistenz Berlin site:stepstone.de",
+        "Teamassistenz Berlin site:karriereportal-stellen.berlin.de",
+        "Office Management Berlin site:personio.de",
+        "Marketingkoordination Berlin site:stepstone.de"
+      ],
+      "B": [
+        "Einkäufer Berlin site:arbeitsagentur.de veroeffentlichtseit=7",
+        "Sachbearbeiter Einkauf Berlin site:stepstone.de",
+        "Supply Chain Berlin site:arbeitsagentur.de",
+        "Beschaffung Berlin site:karriereportal-stellen.berlin.de",
+        "Order Management Berlin site:arbeitsagentur.de",
+        "Lieferantenmanagement Berlin site:stepstone.de"
+      ],
+      "C": [
+        "Product Coordinator Berlin site:stepstone.de",
+        "Vertriebsinnendienst Berlin site:arbeitsagentur.de",
+        "Merchandising Koordination Berlin site:fashionjobs.com"
+      ]
+    },
+    "family_observations": {
+      "A": "Heute mehrere belastbare Office‑Management/Assistenz‑Rollen über Personio (marta mit klarer Gehaltsangabe; GFK, Trisor). Öffentlicher Dienst ebenfalls aktiv, aber viele Anzeigen mit Fristen/Juristikumlast – selektiv prüfen.",
+      "B": "BA‑Liste tagesaktuell stark; Siemens Energy/Siemens mit mehreren passenden Order‑/Einkaufsrollen. Einsteigerfreundliche Privatwirtschaft (COMDOK) zusätzlich gut.",
+      "C": "Order‑Management bei Siemens (BA) heute neu/aktualisiert; Fashion‑Merchandising eher retail‑/VM‑lastig (FashionJobs) und damit nur Randtreffer."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere passende Detailseiten heute veröffentlicht/aktualisiert (Siemens Energy, Siemens)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "COMDOK‑Anzeige mit vollem Text abrufbar."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio‑Seiten (marta, GFK, Trisor, Eberhardt) erreichbar und aktuell."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal funktionsfähig; LAGeSo‑Anzeige mit Frist 2026‑11‑12 verifiziert (bereits früher gemeldet, daher heute nicht erneut gelistet)."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited erreichbar; Berlin‑Treffer überwiegend Visual Merchandising/Praktika (nicht gelistet)."
+      }
+    ],
+    "assessment_exclusions": [],
+    "assessment_pages_checked": 6,
+    "rejected": [
+      {
+        "title": "(Junior)Strategischer Einkäufer / Strategic Procurement Manager (m/w/d)",
+        "url": "https://es-group.jobs.personio.de/job/2862795?language=de",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "(Junior)Strategischer Einkäufer / Strategic Procurement Manager (m/w/d)",
+          "employer": "Eberhardt Service Group GmbH",
+          "url": "https://es-group.jobs.personio.de/job/2862795?language=de",
+          "district": "Unbekannt (Berlin)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 60 Min. ÖPNV von Berlin‑Heinersdorf (konservativ geschätzt, Adresse nicht genannt)",
+          "pro": "Operativer und taktischer Einkauf mit Ausschreibungen, Angebotsvergleichen und Dienstleistersteuerung.",
+          "con": "Führerschein Klasse B und häufige Vor-Ort-Termine an Standorten; Branchenfokus Facility Services.",
+          "effort_details": "ATS (Personio) Formulare 20 Min • CV/Anschreiben anpassen 25 Min • Upload/Abschluss 10 Min",
+          "deadline": "",
+          "family": "C",
+          "source_group": "ats",
+          "scores": {
+            "skill": 33,
+            "entry": 28,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "(Junior)Strategischer Einkäufer / Strategic Procurement Manager (m/w/d) | Jobs bei Eberhardt Service Group GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen (Junior)Strategischer Einkäufer / Strategic Procurement Manager (m/w/d) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Deine Aufgaben Du unterstützt bei Ausschreibungen für Facility Services wie Reinigung, Sicherheit, Wartung und Instandhaltung, holst Angebote ein, wertest sie aus und wirkst bei Vertrags- und"
+        }
+      },
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta",
+          "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+          "district": "Mitte",
+          "hours": "Vollzeit, tägliche Präsenz erwartet",
+          "contract": "Unbefristet",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ca. 40 Min. ÖPNV von Berlin‑Heinersdorf nach Mitte, geschätzt",
+          "pro": "Transparente Gehaltsangabe und breite Verantwortung für Office, Verträge und Tools nahe dem Führungsteam.",
+          "con": "Starke Office- und Präsenzlastigkeit, weniger Produkt-/Supply‑Chain‑Bezug als Wunschprofil Fashion/SCM.",
+          "effort_details": "ATS (Personio) Formulare 20 Min • CV knapp + 5‑Satz‑Motivation 25 Min • Upload/Abschluss 10 Min",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 26,
+            "commute": 15,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
+        }
+      },
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+          "employer": "GFK Ingenieure GmbH",
+          "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+          "district": "Charlottenburg (10629)",
+          "hours": "Vollzeit (40 Std./Woche), hybrid",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 50 Min. ÖPNV von Berlin‑Heinersdorf nach 10629 Charlottenburg, geschätzt",
+          "pro": "Klare Büro-Adresse, 40 Std./Woche mit Hybrid-Option und umfangreichen Benefits.",
+          "con": "Primär Office-/Assistenzfokus ohne direkten Produkt-/Einkaufsanteil; hohe Präsenz wichtig.",
+          "effort_details": "ATS (Personio) Formulare 20 Min • CV/Anschreiben anpassen 25 Min • Upload/Abschluss 10 Min",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 22,
+            "entry": 25,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager / Abteilungsassistenz Berlin (all genders) | Jobs bei GFK Ingenieure GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager / Abteilungsassistenz Berlin (all genders) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Aufgaben Organisieren und Koordinieren des täglichen Office-Betriebs an unserem neuen Standort im Herzen Berlins in der Giesebrechtstr. 20, 10629 Berlin Strukturieren und Optimieren administrativer Prozesse, damit alles"
+        }
+      },
+      {
+        "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+        "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager (m/w/d): Geschäftsführungsassistenz & Administration",
+          "employer": "Trisor GmbH",
+          "url": "https://trisor-gmbh.jobs.personio.de/job/2838125",
+          "district": "Unbekannt (Berlin - HQ)",
+          "hours": "Vollzeit",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 55 Min. ÖPNV von Berlin‑Heinersdorf (konservativ geschätzt, genaue Adresse fehlt)",
+          "pro": "Breites Aufgabenspektrum inkl. Office‑Management, Travel, Dokumentation und kaufmännischen Prozessen.",
+          "con": "Keine Gehaltsangabe; stark administrativ, wenig Schnittstelle zu Produkt-/Einkaufsthemen.",
+          "effort_details": "ATS (Personio) Formulare 20 Min • CV/Anschreiben anpassen 25 Min • Upload/Abschluss 10 Min",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 22,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 55,
+          "evidence": "und Lust hat, Dinge aktiv voranzubringen: Du koordinierst externe Dienstleister, Bestellungen sowie die allgemeine Büroorganisation und behältst dabei Verträge, Dokumente, Büroausstattung und die Arbeitsumgebung im Blick Du organisierst interne sowie externe Termine und Geschäftsreisen von der Planung bis zur Reisekostenabrechnung Du kümmerst Dich um den Post Ein- und -ausgang sowie um die strukturierte Ablage und Organisation wichtiger Dokumente und Unterlagen Du prüfst und bearbeitest"
+        }
+      },
+      {
+        "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+        "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Sachbearbeiter Einkauf und Beschaffung (m/w/d)",
+          "employer": "COMDOK GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html",
+          "district": "Mitte (Standortangabe: „Moderner Arbeitsplatz in Berlins Mitte“)",
+          "hours": "Vollzeit (Gleitzeit, alternierende Telearbeit möglich)",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 30 Min mit ÖPNV ab Heinersdorf (geschätzt)",
+          "pro": "Niedrige Einstiegshürde, Einarbeitung in Einkauf/Vergabe angekündigt.",
+          "con": "Kleines Unternehmen; Gehalt nicht genannt.",
+          "effort_details": "StepStone → Firmenbewerbung (normal), CV+Kurzanschreiben+Zeugnisse.",
+          "deadline": "",
+          "evidence": "„Zur sofortigen Verstärkung unserer Vergabestelle suchen wir in Berlin zur unbefristeten Festanstellung … Sie müssen noch kein Vergabeprofi sein. Wichtig sind uns kaufmännisches Verständnis und Sorgfalt. … Gleitzeit und die Möglichkeit zur alternierenden Telearbeit.“ ([stepstone.de](https://www.stepstone.de/stellenangebote--Sachbearbeiter-Einkauf-und-Beschaffung-m-w-d-Berlin-COMDOK-GmbH--14685866-inline.html))",
+          "family": "B",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 28,
+            "entry": 28,
+            "commute": 20,
+            "conditions": 7
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 2,
+  "researched_at": "2026-11-12T08:00:44.413321+00:00",
+  "prepared_at": "2026-11-12T08:03:54.170276+00:00",
+  "message_id": "<miki-2026-11-13-8e8a57437d38ec2a@miki-jobsearch>",
+  "last_attempt_at": "2026-11-12T08:00:44.413321+00:00",
+  "last_attempt_run_id": "43179468548",
+  "design_version": "electric-blue-v1"
+}
