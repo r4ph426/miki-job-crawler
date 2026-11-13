@@ -1,0 +1,297 @@
+{
+  "date": "2026-11-16",
+  "created_at": "2026-11-13T08:15:43.543395+00:00",
+  "status": "prepared",
+  "subject": "Stellen für Miki · 16.11.2026 · 1 neue Treffer",
+  "report": {
+    "summary": "Recherche vom 13.11.2026 für den Versand am 16.11.2026. 8 passende neue Treffer mit solider Schnittmenge zu Einkauf/Order-/Supply-Koordination bzw. Assistenz. Deutliche Aktualität auf BA (Stromnetz, STADT UND LAND/Fleurop) und mehrere ATS-Treffer (Personio). Keine Dubletten aus der Historie. Schwerpunkt heute: operative Beschaffung und Office-/Projektassistenz.",
+    "next_action": "Stromnetz Berlin (Taktische*r Einkäufer*in) zuerst prüfen und falls die Kernanforderungen ohne Bau-/Ingenieurabschluss passen, heute noch kurzen Lebenslaufabgleich + Bewerbungsvorbereitung starten (Anschreibenrahmen + Fragenliste zu Warengruppen und SektVO-Prozess).",
+    "weekend_action": "Kurz-Check (max. 60–90 Min): 1) Personio-Boards der Zielfirmen (Aeyde, KoRo, home24, MYKITA) nach Einkauf/Planning/Koordination; 2) BA-Suche „Order Management“ und „Beschaffung“ 7 Tage; 3) Berlin-Portal Filter „Vergabe/Einkauf“ mit Fristen bis 2026-11-30.",
+    "jobs": [
+      {
+        "title": "Vertriebsinnendienst Mitarbeiter (m/w/d)",
+        "employer": "The Platform Group AG (COCOLI)",
+        "url": "https://tpg.jobs.personio.de/job/2624479",
+        "district": "Unbekannt",
+        "hours": "Vollzeit, flexible Arbeitszeiten",
+        "contract": "Festanstellung",
+        "salary": "Unbekannt",
+        "commute": "Konservativ ca. 50–60 Min mit ÖPNV (genaue Adresse nicht angegeben)",
+        "pro": "Aufgaben passen zu Bestellwesen, Logistikkoordination und Reklamationsmanagement.",
+        "con": "Enthält aktiven Telefonverkauf (ggf. auch samstags).",
+        "effort_details": "ATS (Personio): Profil prüfen/aktualisieren 25 min; Formulare/Fragen 10 min; Unterlagen hochladen 15 min; Review/Absenden 5 min.",
+        "deadline": "",
+        "family": "C",
+        "source_group": "ats",
+        "scores": {
+          "skill": 32,
+          "entry": 25,
+          "commute": 10,
+          "conditions": 7
+        },
+        "effort_minutes": 55,
+        "evidence": "der Ware bei Händlern sowie Prüfung der Produktqualität Auswahl, Koordination und Steuerung von Logistikdienstleistern Organisation, Avisierung und Überwachung der Lieferprozesse Sicherstellung der Liefertreue sowie End-to-End-Prozesskontrolle vom Verkauf bis zur Nachlieferung Laufende Kundenbetreuung inkl. Stammkundenmanagement, After-Sales-Service und Bewertungsmanagement Bearbeitung komplexer Reklamationen sowie aktive Vermeidung von Retouren Rechnungsprüfung sowie Controlling der",
+        "score": 74,
+        "verification": "Live detail page and supporting quotation checked",
+        "salary_estimate": {
+          "annual_min_eur": 32000,
+          "annual_max_eur": 46000,
+          "hours_basis": "Vollzeit; Vergleichsbasis 40 Std./Woche",
+          "benchmark_role": "Vertriebsinnendienstmitarbeiter/in",
+          "benchmark_region": "Berlin",
+          "source_name": "StepStone",
+          "source_url": "https://www.stepstone.de/gehalt/Vertriebsinnendienstmitarbeiter-in/city/Berlin.html",
+          "source_checked_on": "2026-10-06",
+          "reference_annual_min_eur": 32500,
+          "reference_annual_max_eur": 45800,
+          "reference_weekly_hours": 40,
+          "method_version": "berlin-market-v1"
+        }
+      }
+    ],
+    "searches": {
+      "A": [
+        "Projektassistenz",
+        "Teamassistenz",
+        "Office Management",
+        "Marketingkoordination"
+      ],
+      "B": [
+        "Einkäufer",
+        "Sachbearbeiter Einkauf",
+        "Supply Chain",
+        "Beschaffung",
+        "Order Management",
+        "Lieferantenmanagement"
+      ],
+      "C": [
+        "Product Coordinator",
+        "Vertriebsinnendienst",
+        "Merchandising Koordination"
+      ]
+    },
+    "family_observations": {
+      "A": "StepStone lieferte heute mehrere frische Projekt-/Office-Assistenztreffer; auf Berlin-Portal bleibt E6/E7-Teamassistenz stabil mit Fristen in KW 47–48.",
+      "B": "BA-Liste heute mit gleich mehreren Erstveröffentlichungen (Stromnetz, STADT UND LAND, Fleurop), vielfach mit Homeoffice-Anteilen und teils Gehaltsangaben im 40–68 T€-Korridor.",
+      "C": "E‑Com/Direct-to-Consumer rollen C-typisch stark (TPG/COCOLI, Fabletics). Mode-spezifische Merch/Planning-Rollen bleiben seltener, eher Sales/Stockroom/VM in Fashion-Boards."
+    },
+    "source_checks": [
+      {
+        "group": "arbeitsagentur",
+        "status": "ok",
+        "details": "Mehrere neue Detailseiten heute abrufbar (u. a. Stromnetz Taktische*r Einkäufer*in, STADT UND LAND/Fleurop gelistet)."
+      },
+      {
+        "group": "stepstone",
+        "status": "ok",
+        "details": "Direkte Detailseiten abrufbar (Kodiak Projektassistenz)."
+      },
+      {
+        "group": "ats",
+        "status": "ok",
+        "details": "Personio-Seiten GFK, marta, TPG erreichbar; Inhalte vollständig lesbar."
+      },
+      {
+        "group": "berlin",
+        "status": "ok",
+        "details": "Karriereportal-Stellen mit Frist bis 2026-11-19 (Teamassistenz Objektmanagement) abrufbar."
+      },
+      {
+        "group": "fashion",
+        "status": "ok",
+        "details": "FashionJobs/FashionUnited erreichbar; Berlin-basierte Koordinationsrolle (Fabletics) gelistet."
+      }
+    ],
+    "assessment_exclusions": [
+      {
+        "url": "https://www.karriereportal-stellen.berlin.de/teamassistenz-fuer-den-fachbereich-objektmanagement-mwd-de-j69380.html",
+        "reason": "Nur für bereits beim Land Berlin Beschäftigte geeignet („Es kommen ausschließlich Dienstkräfte in Frage, die bereits beim Land Berlin beschäftigt sind.“)."
+      }
+    ],
+    "assessment_pages_checked": 4,
+    "rejected": [
+      {
+        "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+        "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Office Manager / Abteilungsassistenz Berlin (all genders)",
+          "employer": "GFK Ingenieure GmbH",
+          "url": "https://gfk-ingenieure-gmbh.jobs.personio.de/job/2722383",
+          "district": "Charlottenburg-Wilmersdorf",
+          "hours": "Vollzeit (40 Std./Woche), hybrid",
+          "contract": "Festanstellung",
+          "salary": "Unbekannt",
+          "commute": "ca. 50 Min mit ÖPNV (Heinersdorf → Charlottenburg)",
+          "pro": "Breites Assistenz- und Organisationsspektrum mit klaren Büroadressen und Prozessen.",
+          "con": "Hohe Präsenz im Büro erwartet.",
+          "effort_details": "ATS (Personio): Profil prüfen/aktualisieren 25 min; Formulare/Fragen 10 min; Unterlagen hochladen 15 min; Review/Absenden 5 min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 24,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 7
+          },
+          "effort_minutes": 55,
+          "evidence": "Office Manager / Abteilungsassistenz Berlin (all genders) | Jobs bei GFK Ingenieure GmbH Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Office Manager / Abteilungsassistenz Berlin (all genders) Berlin Vollzeit Festanstellung Auf diese Stelle bewerben Aufgaben Organisieren und Koordinieren des täglichen Office-Betriebs an unserem neuen Standort im Herzen Berlins in der Giesebrechtstr. 20, 10629 Berlin Strukturieren und Optimieren administrativer Prozesse, damit alles"
+        }
+      },
+      {
+        "title": "Executive Assistant & Office Manager (all genders)",
+        "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+        "reason": "Already reported or repeated within this run",
+        "candidate": {
+          "title": "Executive Assistant & Office Manager (all genders)",
+          "employer": "marta",
+          "url": "https://marta.jobs.personio.de/job/2826650?gh_src=Almaz+Capital+job+board",
+          "district": "Mitte",
+          "hours": "Vollzeit, tägliche Präsenz erwartet",
+          "contract": "Festanstellung (unbefristet)",
+          "salary": "45.000 - 52.000 € pro Jahr",
+          "commute": "ca. 40 Min mit ÖPNV (Heinersdorf → Berlin-Mitte)",
+          "pro": "Transparente Gehaltsspanne und unbefristeter Vertrag mit klarer Verantwortung für Office und Verträge.",
+          "con": "Tägliche Präsenz im Office erforderlich.",
+          "effort_details": "ATS (Personio): Profil prüfen/aktualisieren 25 min; Formulare/Fragen 10 min; Unterlagen hochladen 15 min; Review/Absenden 5 min.",
+          "deadline": "",
+          "family": "B",
+          "source_group": "ats",
+          "scores": {
+            "skill": 26,
+            "entry": 26,
+            "commute": 15,
+            "conditions": 9
+          },
+          "effort_minutes": 55,
+          "evidence": "Executive Assistant & Office Manager (all genders) | Jobs bei marta Zum Hauptinhalt springen Deutsch Deutsch Zurück zu allen Stellen Executive Assistant & Office Manager (all genders) Berlin Vollzeit Festanstellung 45.000 - 52.000 € pro Jahr Auf diese Stelle bewerben Über die Stelle Rückgrat des Berliner Office, rechte Hand des Führungsteams Berlin-Mitte, Vollzeit, unbefristet. Gehalt: 45.000 - 52.000 Euro brutto pro Jahr, je nach Erfahrung. Start: so bald wie möglich. Wir suchen eine Person,"
+        }
+      },
+      {
+        "title": "Taktische*r Einkäufer*in",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/16617-1530-1801936-0-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Taktische*r Einkäufer*in",
+          "employer": "Stromnetz Berlin GmbH",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/16617-1530-1801936-0-S",
+          "district": "Treptow (laut Ausschreibung: Bereich Technischer Einkauf in Berlin-Treptow)",
+          "hours": "Vollzeit (37h laut Text)",
+          "contract": "Unbefristet",
+          "salary": "Unbekannt",
+          "commute": "ca. 50–55 Min ÖPNV ab Heinersdorf (geschätzt)",
+          "pro": "ÖPNV-taugliche 37h-Woche und klar definierte Warengruppen (Kabelleitungstiefbau/Netzmontage).",
+          "con": "SektVO-/Ausschreibungsanteile und Bau-nahes Umfeld erhöhen Einarbeitungstiefe.",
+          "effort_details": "Normale Firmenbewerbung (Karriereseite) ~70 Min: 20 Profilabgleich, 30 Anschreiben, 20 Portal.",
+          "deadline": "",
+          "evidence": "„Taktischer Einkäufer*in … im Bereich Technischer Einkauf in Berlin-Treptow. … Einkauf von Lieferungen und Leistungen … insbesondere in den Warengruppen Kabelleitungstiefbau und Netzmontageleistungen. … Work-Life-Balance: … flexible Arbeitszeiten bei einer 37h-Woche.“",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 34,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Einkäufer (m/w/d) für Geschenke, Heimdekoration und floristische Bedarfsartikel",
+        "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12688-10005635520-S",
+        "reason": "Expired",
+        "candidate": {
+          "title": "Einkäufer (m/w/d) für Geschenke, Heimdekoration und floristische Bedarfsartikel",
+          "employer": "Fleurop AG",
+          "url": "https://www.arbeitsagentur.de/jobsuche/jobdetail/12688-10005635520-S",
+          "district": "Berlin (genauer Standort nicht genannt)",
+          "hours": "Vollzeit",
+          "contract": "Unbefristet",
+          "salary": "40.000–50.000 € p. a. (Anzeige)",
+          "commute": "45–60 Min ÖPNV ab Heinersdorf (konservativ, Adresse fehlt)",
+          "pro": "Klarer Produktbezug Konsumgüter/Sortiment, Homeoffice möglich.",
+          "con": "Genaue Aufgaben-/Systemlandschaft im BA-Teaser knapp; Detailseite extern.",
+          "effort_details": "Normale Firmenbewerbung über verlinkten Partner ~70 Min.",
+          "deadline": "",
+          "evidence": "„Einkäufer (m/w/d) für Geschenke, Heimdekoration und floristische Bedarfsartikel … 40.000 € – 50.000 €/Jahr … Homeoffice möglich … Berlin … Vollzeit … unbefristet.“",
+          "family": "B",
+          "source_group": "arbeitsagentur",
+          "scores": {
+            "skill": 32,
+            "entry": 24,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Projektassistenz (m/w/d) – Erneuerbare Energien",
+        "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-m-w-d-Berlin-KODIAK-GmbH--14734637-inline.html",
+        "reason": "Detail page unavailable (TimeoutError)",
+        "candidate": {
+          "title": "Projektassistenz (m/w/d) – Erneuerbare Energien",
+          "employer": "KODIAK GmbH",
+          "url": "https://www.stepstone.de/stellenangebote--Projektassistenz-m-w-d-Berlin-KODIAK-GmbH--14734637-inline.html",
+          "district": "Berlin (nicht konkretisiert)",
+          "hours": "Vollzeit, flexible Arbeitszeiten, Homeoffice-Regelung",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "45–60 Min ÖPNV (konservativ)",
+          "pro": "Breiter Koordinationszuschnitt inkl. SAP/P2P-Bezug (Bestellanforderungen/Rechnungsverfolgung).",
+          "con": "Energiewende-/Eventanteile; fachlicher Schwerpunkt nicht Einkauf pur.",
+          "effort_details": "Externe Firmenbewerbung (StepStone -> Arbeitgeber) ~70 Min.",
+          "deadline": "",
+          "evidence": "„Unterstützung der Projektkommunikation … Pflege und Nutzung projektbezogener Systeme wie SAP/P2P für Bestellanforderungen, Rechnungsverfolgung oder Leistungsregistrierung … Organisation und Nachbereitung von Besprechungen … Protokollführung.“",
+          "family": "A",
+          "source_group": "stepstone",
+          "scores": {
+            "skill": 26,
+            "entry": 26,
+            "commute": 10,
+            "conditions": 6
+          },
+          "effort_minutes": 70
+        }
+      },
+      {
+        "title": "Fulfillment & Logistics Coordinator",
+        "url": "https://de.fashionjobs.com/stellenangebote/fabletics/Fulfillment-logistics-coordinator%2C12288819.html",
+        "reason": "Detail page unavailable: HTTP 403",
+        "candidate": {
+          "title": "Fulfillment & Logistics Coordinator",
+          "employer": "Fabletics",
+          "url": "https://de.fashionjobs.com/stellenangebote/fabletics/Fulfillment-logistics-coordinator%2C12288819.html",
+          "district": "Berlin (nicht konkretisiert)",
+          "hours": "Unbekannt",
+          "contract": "Unbekannt",
+          "salary": "Unbekannt",
+          "commute": "45–60 Min ÖPNV (konservativ)",
+          "pro": "Klarer Koordinations-/Supply-Fokus (Fulfillment, Transport, Performance-Reporting).",
+          "con": "Internationales Umfeld, Englisch als Arbeitssprache wahrscheinlich; Details zu Vertragsart fehlen.",
+          "effort_details": "Externe Firmenbewerbung ~70 Min.",
+          "deadline": "",
+          "evidence": "„Fabletics is currently looking for a passionate Fulfillment & Logistics Coordinator to join our Logistics Team, based in Berlin, Germany. … support our European fulfillment and transportation operations … work closely with a senior logistics leader and build experience in performance reporting, compliance, and cross-team coordination.“",
+          "family": "C",
+          "source_group": "fashion",
+          "scores": {
+            "skill": 30,
+            "entry": 22,
+            "commute": 10,
+            "conditions": 4
+          },
+          "effort_minutes": 70
+        }
+      }
+    ]
+  },
+  "attempts": [],
+  "hits": 1,
+  "researched_at": "2026-11-13T08:15:43.543395+00:00",
+  "prepared_at": "2026-11-13T08:20:51.703555+00:00",
+  "message_id": "<miki-2026-11-16-dbf95792fd6cf57d@miki-jobsearch>",
+  "last_attempt_at": "2026-11-13T08:15:43.543395+00:00",
+  "last_attempt_run_id": "43391816428",
+  "design_version": "electric-blue-v1"
+}
