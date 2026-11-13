@@ -270,7 +270,8 @@
   "researched_at": "2026-11-12T08:00:44.413321+00:00",
   "prepared_at": "2026-11-12T08:03:54.170276+00:00",
   "message_id": "<miki-2026-11-13-8e8a57437d38ec2a@miki-jobsearch>",
-  "last_attempt_at": "2026-11-12T08:00:44.413321+00:00",
-  "last_attempt_run_id": "43179468548",
-  "design_version": "electric-blue-v1"
+  "last_attempt_at": "2026-11-13T07:30:00.272977+00:00",
+  "last_attempt_run_id": "43382627174",
+  "design_version": "electric-blue-v1",
+  "email_provider": "brevo"
 }
