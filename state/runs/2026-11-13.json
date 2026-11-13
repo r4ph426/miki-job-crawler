@@ -1,7 +1,7 @@
 {
   "date": "2026-11-13",
   "created_at": "2026-11-12T08:00:44.413321+00:00",
-  "status": "prepared",
+  "status": "sending",
   "subject": "Wochenüberblick Stellensuche · KW 46",
   "report": {
     "summary": "Recherche vom 12.11.2026 für den Versand am 13.11.2026. Abdeckung aller fünf Quellen erfüllt. 6 belastbare, neue Vorschläge ≥55 Punkten gefunden (B, C und A gemischt), mit direkten Zitaten der Live-Anzeigen. Keine Dubletten zu den bereits gemeldeten Stellen. Alle Anzeigen heute (12.11.2026) erneut verifiziert. Pendelzeiten ab Berlin‑Heinersdorf konservativ geschätzt, bei fehlender Adresse gekennzeichnet.",
@@ -265,7 +265,12 @@
       }
     ]
   },
-  "attempts": [],
+  "attempts": [
+    {
+      "started_at": "2026-11-13T07:30:03.841518+00:00",
+      "status": "sending"
+    }
+  ],
   "hits": 2,
   "researched_at": "2026-11-12T08:00:44.413321+00:00",
   "prepared_at": "2026-11-12T08:03:54.170276+00:00",
@@ -273,5 +278,7 @@
   "last_attempt_at": "2026-11-13T07:30:00.272977+00:00",
   "last_attempt_run_id": "43382627174",
   "design_version": "electric-blue-v1",
-  "email_provider": "brevo"
+  "email_provider": "brevo",
+  "recipient_set_id": "1b8600ac7be8e3c4b9b596d94d7d48559582992798a6d61ea5253c320a6a42e7",
+  "expected_recipients": 2
 }
